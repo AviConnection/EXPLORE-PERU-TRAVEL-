@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Explore Peru Travel | Agencia de Viajes de Lujo en Cusco</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- SKELETON LOADER -->
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-navbar"></div>
+        <div class="skeleton-hero"></div>
+        <div class="skeleton-cards">
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+    </div>
+
+    <!-- CABECERA PREMIUM -->
+    <header class="main-header" id="mainHeader">
+        <div class="top-bar">
+            <div class="top-container">
+                <div class="top-links">
+                    <a href="contacto.html" data-key="contact">Contáctenos</a>
+                    <span class="top-sep">|</span>
+                    <a href="#testimonios" data-key="testimonials">Testimonios</a>
+                    <span class="top-sep">|</span>
+                    <a href="nosotros.html" data-key="explore">Explore Peru Travel</a>
+                </div>
+                <div class="contact-data">
+                    <span><i class="far fa-bell"></i> <span data-key="schedule">Lun - Sab; 09:00 - 19:00
+                            hrs</span></span>
+                    <span><i class="fab fa-whatsapp" style="color:#25D366;"></i> +51 930 164 904</span>
+                    <a href="https://wa.me/51930164904" target="_blank" class="whatsapp-badge"><i
+                            class="fab fa-whatsapp"></i> <span data-key="askNow">PREGUNTAR AHORA</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-navbar">
+            <div class="nav-flex">
+                <div class="logo-area">
+                    <a href="index.html">
+                        <img src="tours_y_logos/logo.png" alt="Explore Peru Travel" class="logo-img"
+                            onerror="this.src='https://placehold.co/280x90?text=Explore+Peru'">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" data-key="home">INICIO</a></li>
+                    <li><a href="nosotros.html" data-key="about">NOSOTROS</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="tours.html" data-key="tours">TOURS <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="tours/Paquete Cusco Basico.html" data-key="navT1">Paquete Cusco Básico (3 Días
+                                    / 2 Noches)</a></li>
+                            <li><a href="tours/Paquete Cusco Clásico.html" data-key="navT2">Paquete Cusco Clásico (4
+                                    Días / 3 Noches)</a></li>
+                            <li><a href="tours/Paquete Cusco Arqueológico" data-key="navT3">Paquete
+                                    Cusco Arqueológico (5 Días / 4 Noches)</a></li>
+                            <li><a href="tours/Paquete Experiencia Cusco Total.html" data-key="navT4">Paquete
+                                    Experiencia Cusco Total (6 Días / 5 Noches)</a></li>
+                            <li><a href="tours/Inka Jungle.html" data-key="navT5">Paquete Aventura Extrema: Inka Jungle
+                                    (4 Días / 3 Noches)</a></li>
+                            <li><a href="tours/Paquete_Desafio_Andino_Salkantay_Trek.html" data-key="navT6">Paquete
+                                    Desafío Andino: Salkantay
+                                    Trek (5 Días / 4 Noches)</a></li>
+                            <li><a href="tours/Camino Inca Clasico.html" data-key="navT7">Camino Inca Clásico a Machu
+                                    Picchu (4 Días / 3 Noches)</a></li>
+                            <li><a href="tours/Trekking Choquequirao.html" data-key="navT8">Trekking Choquequirao
+                                    Extremo (4 Días / 3 Noches)</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="tours-cortos.html" data-key="shortTours">TOURS CORTOS <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="tours cortos/City Tour Cusco.html" data-key="shortTour1">City Tour Cusco (Medio
+                                    Día)</a></li>
+                            <li><a href="tours cortos/Tour Chinchero, Maras y Moray.html" data-key="shortTour2">Tour
+                                    Chinchero, Maras y
+                                    Moray</a></li>
+                            <li><a href="tours cortos/Tour Valle Sur Cusco.html" data-key="shortTour3">Tour Valle Sur
+                                    Cusco (Medio
+                                    Día)</a></li>
+                            <li><a href="tours cortos/Tour Valle Sagrado de los Incas.html" data-key="shortTour4">Tour
+                                    Valle Sagrado (Full
+                                    Day)</a></li>
+                        </ul>
+                    </li>
+                    <li class="current menu-item-has-children">
+                        <a href="viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="viajes escolares/escolar-imperial.html" data-key="school1">🏔️ Ruta Imperial:
+                                    Arequipa - Cusco -
+                                    Oxapampa |
+                                    6D/5N</a></li>
+                            <li><a href="viajes escolares/escolar-sur-chile.html" data-key="school2">🇨🇱 Ruta al Sur:
+                                    Chile - Santiago | 5D/4N</a>
+                            </li>
+                            <li><a href="viajes escolares/escolar-norte-ecuador.html" data-key="school3">🇪🇨 Ruta al
+                                    Norte: Tumbes - Guayaquil |
+                                    5D/4N</a></li>
+                            <li><a href="viajes escolares/escolar-cusco-selva.html" data-key="school4">🏔️ Cusco - Machu
+                                    Picchu - Selva Cusqueña |
+                                    5D/4N</a></li>
+                            <li><a href="viajes escolares/escolar-cusco-machupicchu.html" data-key="school5">🚂 Cusco -
+                                    Machu Picchu (Tren Turístico) | 2D/1N</a>
+                            </li>
+                            <li><a href="viajes escolares/escolar-lima-ica-paracas.html" data-key="school6">🏜️ Lima -
+                                    Ica - Huacachina - Paracas | 3D/2N</a>
+                            </li>
+                            <li><a href="viajes escolares/escolar-arica-chile.html" data-key="school7">🌊 Arica - Chile
+                                    (Puno - Arequipa - Tacna) |
+                                    4D/3N</a></li>
+                            <li><a href="viajes escolares/escolar-norte-peruano.html" data-key="school8">🏝️ Norte
+                                    Peruano: Chiclayo - Máncora -
+                                    Ecuador | 6D/5N</a></li>
+                            <li><a href="viajes escolares/escolar-lima-oxapampa.html" data-key="school9">🌿 Lima y
+                                    Oxapampa Aventura | 5D/4N</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="aventuras.html" data-key="adventure">AVENTURA <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="aventuras/Aventura en Cuatrimotos.html" data-key="adv1">Aventura en Cuatrimotos
+                                    - Maras y
+                                    Moray</a></li>
+                            <li><a href="aventuras/Vía Ferrata y Zipline.html" data-key="adv2">Vía Ferrata y Zipline en
+                                    el Valle
+                                    Sagrado</a></li>
+                            <li><a href="aventuras/Canotaje (Rafting).html" data-key="adv3">Canotaje (Rafting) en el Río
+                                    Vilcanota</a></li>
+                            <li><a href="aventuras/Bungee Jumping.html" data-key="adv4">Bungee Jumping y Slingshot</a>
+                            </li>
+                            <li><a href="aventuras/Parapente sobre el valle sagrado.html" data-key="adv5">Parapente
+                                    sobre el Valle Sagrado</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero" id="inicio">
+            <div class="video-wrapper">
+                <video autoplay muted loop playsinline preload="auto" class="hero-video">
+                    <source src="tours_y_logos/Header.mp4" type="video/mp4">
+                </video>
+                <div class="overlay-gradient"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="title"><span data-key="heroTitle1">Vive la magia de</span><br><span class="text-gradient"
+                        data-key="heroTitle2">Cusco y el Perú</span></h1>
+                <p class="subtitle" data-key="heroSubtitle">Experiencias auténticas diseñadas para aventureros de
+                    verdad.</p>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECCIÓN 1: TOURS CORTOS (CARRUSEL) -->
+        <!-- ============================================================ -->
+        <section class="tours-cortos-carousel-section" id="tours-cortos">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title" data-key="shortPre">EXPERIENCIAS BREVES</span>
+                    <h2 class="section-title"><span data-key="shortTitle1">Tours</span> <span class="text-gradient"
+                            data-key="shortTitle2">Cortos</span></h2>
+                    <p class="section-description" data-key="shortDesc">Descubre lo mejor de Cusco en tours de medio día
+                        o un día completo.</p>
+                </div>
+                <div class="carousel-container">
+                    <div class="carousel-wrapper">
+                        <div class="carousel-track" id="carouselTrack">
+                            <div class="carousel-card">
+                                <div class="carousel-image"><img src="tours_y_logos/City tour Cusco 1 día.jpg"
+                                        alt="City Tour Cusco"></div>
+                                <div class="carousel-content">
+                                    <h3 data-key="car1Title">City Tour Cusco</h3>
+                                    <p class="carousel-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="car1Loc">Cusco - Qorikancha - Sacsayhuamán</span></p>
+                                    <div class="carousel-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="car1Days">Medio Día</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="car1Min">Mín. 2
+                                                personas</span></span></div>
+                                    <a href="tours-cortos.html#city-tour" class="carousel-btn" data-key="details">Ver
+                                        detalles <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="carousel-card">
+                                <div class="carousel-image"><img
+                                        src="tours_y_logos/Tour Chinchero, Maras y Moray 1 día.jpg"
+                                        alt="Chinchero Maras Moray"></div>
+                                <div class="carousel-content">
+                                    <h3 data-key="car2Title">Tour Chinchero, Maras y Moray</h3>
+                                    <p class="carousel-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="car2Loc">Valle Sagrado - Chinchero - Maras</span></p>
+                                    <div class="carousel-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="car2Days">Medio Día</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="car2Min">Mín. 2
+                                                personas</span></span></div>
+                                    <a href="tours-cortos.html#chinchero" class="carousel-btn" data-key="details">Ver
+                                        detalles <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="carousel-card">
+                                <div class="carousel-image"><img src="tours_y_logos/Tour valle sur cusco.jpg"
+                                        alt="Valle Sur Cusco"></div>
+                                <div class="carousel-content">
+                                    <h3 data-key="car3Title">Tour Valle Sur Cusco</h3>
+                                    <p class="carousel-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="car3Loc">Cusco - Tipón - Pikillaqta - Andahuaylillas</span></p>
+                                    <div class="carousel-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="car3Days">Medio Día</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="car3Min">Mín. 2
+                                                personas</span></span></div>
+                                    <a href="tours-cortos.html#valle-sur" class="carousel-btn" data-key="details">Ver
+                                        detalles <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="carousel-card">
+                                <div class="carousel-image"><img
+                                        src="tours_y_logos/Tour Valle Sagrado y Machu Picchu 2 días 2.jpg"
+                                        alt="Valle Sagrado"></div>
+                                <div class="carousel-content">
+                                    <h3 data-key="car4Title">Tour Valle Sagrado de los Incas</h3>
+                                    <p class="carousel-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="car4Loc">Pisac - Urubamba - Ollantaytambo</span></p>
+                                    <div class="carousel-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="car4Days">Full Day</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="car4Min">Mín. 2
+                                                personas</span></span></div>
+                                    <a href="tours-cortos.html#valle-sagrado" class="carousel-btn"
+                                        data-key="details">Ver detalles <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="carousel-btn-prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="carousel-btn-next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+                    <div class="carousel-dots" id="carouselDots"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECCIÓN 2: TOURS EXCLUSIVOS (GRID - 6 PAQUETES) -->
+        <!-- ============================================================ -->
+        <section class="exclusive-tours-section" id="exclusive-tours">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title" data-key="exclusivePre">PAQUETES PREMIUM</span>
+                    <h2 class="section-title"><span data-key="exclusiveTitle1">Tours</span> <span class="text-gradient"
+                            data-key="exclusiveTitle2">exclusivos</span></h2>
+                    <p class="section-description" data-key="exclusiveDesc">Descubre nuestros paquetes exclusivos
+                        diseñados para ofrecerte la mejor experiencia en Perú.</p>
+                </div>
+                <div class="exclusive-tours-grid">
+                    <div class="exclusive-card">
+                        <div class="exclusive-number">1</div>
+                        <div class="exclusive-image"><img src="tours_y_logos/Paquete Cusco Básico.jpg"
+                                alt="Cusco Básico"></div>
+                        <div class="exclusive-content">
+                            <h3 data-key="exName1">Paquete Cusco Básico</h3>
+                            <div class="exclusive-meta"><span><i class="fas fa-clock"></i> <span data-key="exDays1">3
+                                        Días / 2 Noches</span></span><span><i class="fas fa-users"></i> <span
+                                        data-key="exMin1">Mínimo 2 personas</span></span></div>
+                            <a href="tours/Paquete Cusco Basico.html" class="exclusive-btn" data-key="viewOffer">Ver
+                                Oferta <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="exclusive-card">
+                        <div class="exclusive-number">2</div>
+                        <div class="exclusive-image"><img src="tours_y_logos/Paquete Cusco Clásico.jpg"
+                                alt="Cusco Clásico"></div>
+                        <div class="exclusive-content">
+                            <h3 data-key="exName2">Paquete Cusco Clásico</h3>
+                            <div class="exclusive-meta"><span><i class="fas fa-clock"></i> <span data-key="exDays2">4
+                                        Días / 3 Noches</span></span><span><i class="fas fa-users"></i> <span
+                                        data-key="exMin2">Mínimo 2 personas</span></span></div>
+                            <a href="tours/Paquete Cusco Clásico.html" class="exclusive-btn" data-key="viewOffer">Ver
+                                Oferta <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="exclusive-card">
+                        <div class="exclusive-number">3</div>
+                        <div class="exclusive-image"><img src="tours_y_logos/Paquete Cusco Arqueológico.jpg"
+                                alt="Cusco Arqueológico"></div>
+                        <div class="exclusive-content">
+                            <h3 data-key="exName3">Paquete Cusco Arqueológico</h3>
+                            <div class="exclusive-meta"><span><i class="fas fa-clock"></i> <span data-key="exDays3">5
+                                        Días / 4 Noches</span></span><span><i class="fas fa-users"></i> <span
+                                        data-key="exMin3">Mínimo 2 personas</span></span></div>
+                            <a href="tours/Paquete Cusco Arqueológico y Paisajístico.html" class="exclusive-btn"
+                                data-key="viewOffer">Ver Oferta <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="exclusive-card">
+                        <div class="exclusive-number">4</div>
+                        <div class="exclusive-image"><img src="tours_y_logos/Paquete Experiencia Cusco Total.jpg"
+                                alt="Experiencia Total"></div>
+                        <div class="exclusive-content">
+                            <h3 data-key="exName4">Paquete Experiencia Cusco Total</h3>
+                            <div class="exclusive-meta"><span><i class="fas fa-clock"></i> <span data-key="exDays4">6
+                                        Días / 5 Noches</span></span><span><i class="fas fa-users"></i> <span
+                                        data-key="exMin4">Mínimo 2 personas</span></span></div>
+                            <a href="tours/Paquete Experiencia Cusco Total.html" class="exclusive-btn"
+                                data-key="viewOffer">Ver Oferta <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="exclusive-card">
+                        <div class="exclusive-number">5</div>
+                        <div class="exclusive-image"><img src="tours_y_logos/Paquete Aventura Inka Jungle.jpg"
+                                alt="Inka Jungle"></div>
+                        <div class="exclusive-content">
+                            <h3 data-key="exName5">Paquete Aventura: Inka Jungle</h3>
+                            <div class="exclusive-meta"><span><i class="fas fa-clock"></i> <span data-key="exDays5">4
+                                        Días / 3 Noches</span></span><span><i class="fas fa-users"></i> <span
+                                        data-key="exMin5">Mínimo 2 personas</span></span></div>
+                            <a href="tours/Inka Jungle.html" class="exclusive-btn" data-key="viewOffer">Ver Oferta <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="exclusive-card">
+                        <div class="exclusive-number">6</div>
+                        <div class="exclusive-image"><img src="tours_y_logos/Paquete Desafío Andino Salkantay Trek.jpg"
+                                alt="Salkantay"></div>
+                        <div class="exclusive-content">
+                            <h3 data-key="exName6">Paquete Desafío Andino: Salkantay Trek</h3>
+                            <div class="exclusive-meta"><span><i class="fas fa-clock"></i> <span data-key="exDays6">5
+                                        Días / 4 Noches</span></span><span><i class="fas fa-users"></i> <span
+                                        data-key="exMin6">Mínimo 2 personas</span></span></div>
+                            <a href="tours/Salkantay Trek.html" class="exclusive-btn" data-key="viewOffer">Ver Oferta <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECCIÓN 3: VIAJES ESCOLARES (CARRUSEL) -->
+        <!-- ============================================================ -->
+        <section class="tours-showcase" id="tours-destacados">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title" data-key="showcasePre">PAQUETES ESCOLARES 2026</span>
+                    <h2 class="section-title"><span data-key="showcaseTitle1">Conoce nuestros</span> <span
+                            class="text-gradient" data-key="showcaseTitle2">Viajes escolares</span></h2>
+                    <p class="section-description" data-key="showcaseDesc">Desde la majestuosa Machu Picchu hasta la
+                        imponente Montaña de 7 Colores, estos recorridos son los favoritos por su calidad y experiencias
+                        inolvidables.</p>
+                </div>
+
+                <div class="carousel-escolar-container">
+                    <div class="carousel-escolar-wrapper">
+                        <div class="carousel-escolar-track" id="carouselEscolarTrack">
+                            <div class="tour-show-card">
+                                <div class="tour-show-image"><img
+                                        src="tours_y_logos/Ruta Imperial Arequipa - Cusco - Oxapampa.jpg"
+                                        alt="Ruta Imperial">
+                                    <div class="tour-badge">$1,119 USD <span class="igv-text">+ IGV</span></div>
+                                </div>
+                                <div class="tour-show-body">
+                                    <div class="tour-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="schoolDays1">6 Días / 5 Noches</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="schoolMin1">Min. 28
+                                                Pers.</span></span></div>
+                                    <h3 data-key="schoolTitle1">Ruta Imperial: Arequipa - Cusco - Oxapampa</h3>
+                                    <p class="tour-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="schoolLoc1">Arequipa - Cusco - Oxapampa - Pozuzo</span></p>
+                                    <p class="tour-description" data-key="schoolDesc1">Cusco imperial, Valle Sagrado,
+                                        comunidad Asháninca, cataratas, Pozuzo y selva central.</p>
+                                    <a href="viajes-escolares.html#imperial" class="btn-read-more"
+                                        data-key="readMore">LEER MÁS <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="tour-show-card">
+                                <div class="tour-show-image"><img src="tours_y_logos/Ruta al Sur Chile - Santiago.jpg"
+                                        alt="Chile Santiago">
+                                    <div class="tour-badge">$1,230 USD <span class="igv-text">+ IGV</span></div>
+                                </div>
+                                <div class="tour-show-body">
+                                    <div class="tour-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="schoolDays2">5 Días / 4 Noches</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="schoolMin2">Min. 28
+                                                Pers.</span></span></div>
+                                    <h3 data-key="schoolTitle2">Ruta al Sur: Chile - Santiago</h3>
+                                    <p class="tour-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="schoolLoc2">Arequipa - Tacna - Arica - Santiago</span></p>
+                                    <p class="tour-description" data-key="schoolDesc2">Playas de Chile, Cerro San
+                                        Cristóbal, teleférico, Parque Bicentenario y tour safari.</p>
+                                    <a href="viajes-escolares.html#sur-chile" class="btn-read-more"
+                                        data-key="readMore">LEER MÁS <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="tour-show-card">
+                                <div class="tour-show-image"><img
+                                        src="tours_y_logos/Ruta al Norte Tumbes - Guayaquil.jpg" alt="Tumbes Ecuador">
+                                    <div class="tour-badge">$1,716 USD <span class="igv-text">+ IGV</span></div>
+                                </div>
+                                <div class="tour-show-body">
+                                    <div class="tour-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="schoolDays3">5 Días / 4 Noches</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="schoolMin3">Min. 28
+                                                Pers.</span></span></div>
+                                    <h3 data-key="schoolTitle3">Ruta al Norte: Tumbes - Guayaquil</h3>
+                                    <p class="tour-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="schoolLoc3">Tumbes - Guayaquil (Ecuador)</span></p>
+                                    <p class="tour-description" data-key="schoolDesc3">Manglares, criadero de
+                                        cocodrilos, Malecón 2000, Cerro Santa Ana y teleférico.</p>
+                                    <a href="viajes-escolares.html#norte-ecuador" class="btn-read-more"
+                                        data-key="readMore">LEER MÁS <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="tour-show-card">
+                                <div class="tour-show-image"><img
+                                        src="tours_y_logos/Cusco - Machu Picchu - Selva Cusqueña.jpg" alt="Cusco Selva">
+                                    <div class="tour-badge">$467 USD <span class="igv-text">+ IGV</span></div>
+                                </div>
+                                <div class="tour-show-body">
+                                    <div class="tour-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="schoolDays4">5 Días / 4 Noches</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="schoolMin4">Min. 28
+                                                Pers.</span></span></div>
+                                    <h3 data-key="schoolTitle4">Cusco - Machu Picchu - Selva Cusqueña</h3>
+                                    <p class="tour-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="schoolLoc4">Cusco - Quillabamba - Santa Teresa</span></p>
+                                    <p class="tour-description" data-key="schoolDesc4">Valle Sagrado, Moray,
+                                        Ollantaytambo, piscinas termales de Cocalmayo y Machu Picchu.</p>
+                                    <a href="viajes-escolares.html#cusco-selva" class="btn-read-more"
+                                        data-key="readMore">LEER MÁS <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="tour-show-card">
+                                <div class="tour-show-image"><img
+                                        src="tours_y_logos/Cusco - Machu Picchu (Tren Turístico).jpg"
+                                        alt="Machu Picchu Tren">
+                                    <div class="tour-badge">S/ 1,097 <span class="igv-text">+ IGV</span></div>
+                                </div>
+                                <div class="tour-show-body">
+                                    <div class="tour-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="schoolDays5">2 Días / 1 Noche</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="schoolMin5">Min. 28
+                                                Pers.</span></span></div>
+                                    <h3 data-key="schoolTitle5">Cusco - Machu Picchu (Tren Turístico)</h3>
+                                    <p class="tour-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="schoolLoc5">Cusco - Valle Sagrado - Machu Picchu</span></p>
+                                    <p class="tour-description" data-key="schoolDesc5">Chincheros, Salineras de Maras,
+                                        cataratas Poc Poc, Ollantaytambo y tren turístico.</p>
+                                    <a href="viajes-escolares.html#tren" class="btn-read-more" data-key="readMore">LEER
+                                        MÁS <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="tour-show-card">
+                                <div class="tour-show-image"><img
+                                        src="tours_y_logos/Lima - Ica - Huacachina - Paracas.jpg" alt="Lima Ica">
+                                    <div class="tour-badge">S/ 1,218 <span class="igv-text">+ IGV</span></div>
+                                </div>
+                                <div class="tour-show-body">
+                                    <div class="tour-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="schoolDays6">3 Días / 2 Noches</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="schoolMin6">Min. 28
+                                                Pers.</span></span></div>
+                                    <h3 data-key="schoolTitle6">Lima - Ica - Huacachina - Paracas</h3>
+                                    <p class="tour-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="schoolLoc6">Lima - Paracas - Ica</span></p>
+                                    <p class="tour-description" data-key="schoolDesc6">Real Felipe, Islas Ballestas,
+                                        Huacachina, dunas, sandboarding y Parque de las Leyendas.</p>
+                                    <a href="viajes-escolares.html#lima-ica" class="btn-read-more"
+                                        data-key="readMore">LEER MÁS <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="tour-show-card">
+                                <div class="tour-show-image"><img
+                                        src="tours_y_logos/Arica - Chile (Puno - Arequipa - Tacna).jpg"
+                                        alt="Arica Chile">
+                                    <div class="tour-badge">S/ 1,478 <span class="igv-text">+ IGV</span></div>
+                                </div>
+                                <div class="tour-show-body">
+                                    <div class="tour-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="schoolDays7">4 Días / 3 Noches</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="schoolMin7">Min. 28
+                                                Pers.</span></span></div>
+                                    <h3 data-key="schoolTitle7">Arica - Chile (Puno - Arequipa - Tacna)</h3>
+                                    <p class="tour-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="schoolLoc7">Puno - Arequipa - Mollendo - Tacna - Arica</span></p>
+                                    <p class="tour-description" data-key="schoolDesc7">Islas Uros, City Tour Arequipa,
+                                        Monasterio Santa Catalina, playas de Mollendo.</p>
+                                    <a href="viajes-escolares.html#arica-chile" class="btn-read-more"
+                                        data-key="readMore">LEER MÁS <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="tour-show-card">
+                                <div class="tour-show-image"><img
+                                        src="tours_y_logos/Norte Peruano Chiclayo - Máncora - Ecuador.jpg"
+                                        alt="Norte Peruano">
+                                    <div class="tour-badge">S/ 2,185 <span class="igv-text">+ IGV</span></div>
+                                </div>
+                                <div class="tour-show-body">
+                                    <div class="tour-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="schoolDays8">6 Días / 5 Noches</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="schoolMin8">Min. 28
+                                                Pers.</span></span></div>
+                                    <h3 data-key="schoolTitle8">Norte Peruano: Chiclayo - Máncora - Ecuador</h3>
+                                    <p class="tour-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="schoolLoc8">Chiclayo - Máncora - Tumbes - Ecuador</span></p>
+                                    <p class="tour-description" data-key="schoolDesc8">Manglares de Tumbes, playas, nado
+                                        con tortugas, paseo en lancha y frontera con Ecuador.</p>
+                                    <a href="viajes-escolares.html#norte-peruano" class="btn-read-more"
+                                        data-key="readMore">LEER MÁS <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                            <div class="tour-show-card">
+                                <div class="tour-show-image"><img src="tours_y_logos/Lima y Oxapampa Aventura.jpg"
+                                        alt="Lima Oxapampa">
+                                    <div class="tour-badge">S/ 1,885 <span class="igv-text">+ IGV</span></div>
+                                </div>
+                                <div class="tour-show-body">
+                                    <div class="tour-meta"><span><i class="fas fa-clock"></i> <span
+                                                data-key="schoolDays9">5 Días / 4 Noches</span></span><span><i
+                                                class="fas fa-users"></i> <span data-key="schoolMin9">Min. 28
+                                                Pers.</span></span></div>
+                                    <h3 data-key="schoolTitle9">Lima y Oxapampa Aventura</h3>
+                                    <p class="tour-location"><i class="fas fa-map-marker-alt"></i> <span
+                                            data-key="schoolLoc9">Lima - Oxapampa - Pozuzo - Valle del Perené</span></p>
+                                    <p class="tour-description" data-key="schoolDesc9">Centro de Lima, Pozuzo, comunidad
+                                        Asháninca, cataratas, y selva central.</p>
+                                    <a href="viajes-escolares.html#oxapampa" class="btn-read-more"
+                                        data-key="readMore">LEER MÁS <i class="fas fa-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-escolar-dots" id="carouselEscolarDots"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============================================================ -->
+        <!-- SECCIÓN 4: AVENTURA (GRID - 4 ACTIVIDADES) -->
+        <!-- ============================================================ -->
+        <section class="aventura-section" id="aventura">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title" data-key="aventuraPre">ADVENTURE & EXTREME</span>
+                    <h2 class="section-title"><span data-key="aventuraTitle1">Turismo de</span> <span
+                            class="text-gradient" data-key="aventuraTitle2">Aventura</span></h2>
+                    <p class="section-description" data-key="aventuraDesc">Vive la adrenalina con nuestros tours
+                        extremos en Cusco.</p>
+                </div>
+                <div class="aventura-grid">
+                    <div class="aventura-card">
+                        <div class="aventura-image"><img src="tours_y_logos/Aventura en Cuatrimotos.jpg"
+                                alt="Cuatrimotos"></div>
+                        <div class="aventura-content">
+                            <h3 data-key="advTitle1">Aventura en Cuatrimotos</h3>
+                            <p data-key="advDesc1">Recorre Maras y Moray en un emocionante paseo en ATV.</p>
+                            <a href="aventuras.html#cuatrimotos" class="btn-aventura" data-key="viewMore">Ver más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="aventura-card">
+                        <div class="aventura-image"><img src="tours_y_logos/Vía Ferrata y Zipline.jpg"
+                                alt="Vía Ferrata"></div>
+                        <div class="aventura-content">
+                            <h3 data-key="advTitle2">Vía Ferrata y Zipline</h3>
+                            <p data-key="advDesc2">Ascenso vertical y vuelo en tirolesa en el Valle Sagrado.</p>
+                            <a href="aventuras.html#via-ferrata" class="btn-aventura" data-key="viewMore">Ver más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="aventura-card">
+                        <div class="aventura-image"><img src="tours_y_logos/Canotaje (Rafting).jpg" alt="Rafting"></div>
+                        <div class="aventura-content">
+                            <h3 data-key="advTitle3">Canotaje (Rafting)</h3>
+                            <p data-key="advDesc3">Aguas rápidas del río Vilcanota para los más atrevidos.</p>
+                            <a href="aventuras.html#rafting" class="btn-aventura" data-key="viewMore">Ver más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="aventura-card">
+                        <div class="aventura-image"><img src="tours_y_logos/Bungee Jumping.jpg" alt="Bungee"></div>
+                        <div class="aventura-content">
+                            <h3 data-key="advTitle4">Bungee Jumping</h3>
+                            <p data-key="advDesc4">Salta al vacío desde el puente más alto de Cusco.</p>
+                            <a href="aventuras.html#bungee" class="btn-aventura" data-key="viewMore">Ver más <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MAPA INTERACTIVO -->
+        <section class="map-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title" data-key="mapPre">NUESTROS DESTINOS</span>
+                    <h2 class="section-title"><span data-key="mapTitle1">Explora</span> <span class="text-gradient"
+                            data-key="mapTitle2">Perú con Nosotros</span></h2>
+                    <p class="section-description" data-key="mapDesc">Descubre los lugares mágicos que te esperan en
+                        cada rincón de nuestro país.</p>
+                </div>
+                <div id="travelMap" class="travel-map"></div>
+            </div>
+        </section>
+
+        <!-- ANDEAN INSPIRATION -->
+        <section class="andin-inspiration-section" id="nosotros">
+            <div class="andin-bg-overlay"></div>
+            <div class="container andin-container">
+                <div class="andin-content">
+                    <span class="andin-pre-title" data-key="andinBrand">Explore Peru Travel</span>
+                    <h2 class="andin-title"><span data-key="andinTitle1">Agencia de viajes en</span> <span
+                            class="text-gradient" data-key="andinTitle2">Perú</span></h2>
+                    <h3 class="andin-subtitle" data-key="andinSubtitle">Viajes Personalizados en el Corazón de los Andes
+                    </h3>
+                    <p class="andin-description" data-key="andinDesc">Fundada en 2024, Explore Peru Travel se
+                        especializa en diseñar experiencias de viaje a medida, explorando los tesoros menos conocidos de
+                        Perú.</p>
+                    <a href="nosotros.html" class="andin-btn" data-key="aboutUs">Saber más de nosotros <i
+                            class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMENTARIOS -->
+        <section class="comentarios-section" id="comentarios">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title" data-key="comentariosPre">OPINIONES DE VIAJEROS</span>
+                    <h2 class="section-title"><span data-key="comentariosTitle1">Comparte tu</span> <span
+                            class="text-gradient" data-key="comentariosTitle2">Experiencia</span></h2>
+                    <p class="section-description" data-key="comentariosDesc">Tu opinión es muy importante para
+                        nosotros. Deja tu comentario y ayuda a otros viajeros.</p>
+                </div>
+                <div class="comentarios-grid" id="comentariosGrid"></div>
+                <div class="comentario-form-wrapper">
+                    <h3 data-key="comentariosFormTitle">Deja tu comentario</h3>
+                    <form id="comentarioForm" class="comentario-form">
+                        <div class="form-row">
+                            <div class="form-group"><label data-key="comentariosName">Nombre *</label><input type="text"
+                                    id="comentarioNombre" required></div>
+                            <div class="form-group"><label data-key="comentariosDestination">Destino *</label><select
+                                    id="comentarioDestino">
+                                    <option value="Cusco / Machu Picchu" data-key="dest1">Cusco / Machu Picchu</option>
+                                    <option value="Lima / Paracas / Ica" data-key="dest2">Lima / Paracas / Ica</option>
+                                    <option value="Norte Peruano" data-key="dest3">Norte Peruano</option>
+                                    <option value="Selva Central" data-key="dest4">Selva Central</option>
+                                    <option value="Arequipa / Puno" data-key="dest5">Arequipa / Puno</option>
+                                </select></div>
+                        </div>
+                        <div class="form-group"><label data-key="comentariosMessage">Comentario *</label><textarea
+                                id="comentarioTexto" rows="3" required></textarea></div>
+                        <div class="rating-group">
+                            <label data-key="comentariosRating">Calificación *</label>
+                            <div class="rating-stars">
+                                <span class="star" data-value="1"><i class="far fa-star"></i></span>
+                                <span class="star" data-value="2"><i class="far fa-star"></i></span>
+                                <span class="star" data-value="3"><i class="far fa-star"></i></span>
+                                <span class="star" data-value="4"><i class="far fa-star"></i></span>
+                                <span class="star" data-value="5"><i class="far fa-star"></i></span>
+                            </div>
+                            <input type="hidden" id="comentarioRating" value="5">
+                        </div>
+                        <button type="submit" class="btn-submit-comentario" data-key="comentariosSubmit">PUBLICAR
+                            COMENTARIO <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIOS -->
+        <section class="testimonios-section" id="testimonios">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title" data-key="testPre">LO QUE DICEN NUESTROS VIAJEROS</span>
+                    <h2 class="section-title"><span data-key="testTitle1">Testimonios</span> <span class="text-gradient"
+                            data-key="testTitle2">Inspiradores</span></h2>
+                    <p class="section-description" data-key="testDesc">Estamos muy orgullosos de cuidar las experiencias
+                        de nuestros pasajeros.</p>
+                </div>
+                <div class="testimonios-grid">
+                    <div class="testimonio-card">
+                        <div class="testimonio-icon"><i class="fas fa-quote-right"></i></div>
+                        <div class="testimonio-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonio-text" data-key="test1Text">"Una experiencia increíble, el equipo hizo que
+                            nuestro viaje a Machu Picchu fuera inolvidable."</p>
+                        <div class="testimonio-author">
+                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                            <div class="author-info">
+                                <h4 data-key="test1Name">María González</h4><span data-key="test1From">Viajera de
+                                    Chile</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonio-card">
+                        <div class="testimonio-icon"><i class="fas fa-quote-right"></i></div>
+                        <div class="testimonio-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonio-text" data-key="test2Text">"El tour a la Montaña de 7 Colores fue
+                            espectacular. Todo perfectamente organizado."</p>
+                        <div class="testimonio-author">
+                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                            <div class="author-info">
+                                <h4 data-key="test2Name">Carlos Ramírez</h4><span data-key="test2From">Viajero de
+                                    México</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonio-card">
+                        <div class="testimonio-icon"><i class="fas fa-quote-right"></i></div>
+                        <div class="testimonio-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        <p class="testimonio-text" data-key="test3Text">"Excelente servicio, muy profesionales. El
+                            Camino Inca fue una experiencia única."</p>
+                        <div class="testimonio-author">
+                            <div class="author-avatar"><i class="fas fa-user-circle"></i></div>
+                            <div class="author-info">
+                                <h4 data-key="test3Name">Laura Fernández</h4><span data-key="test3From">Viajera de
+                                    España</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- IDENTIDAD -->
+        <section class="identidad-section" id="identidad">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title" data-key="identidadPre">IDENTIDAD DE EXPLORE PERU TRAVEL</span>
+                    <h2 class="section-title"><span data-key="identidadTitle1">Nuestra</span> <span
+                            class="text-gradient" data-key="identidadTitle2">Esencia</span></h2>
+                    <p class="section-description" data-key="identidadDesc">El grupo humano a cargo de la operación en
+                        Explore Peru Travel tiene valores y ética en los que basa su trabajo.</p>
+                </div>
+                <div class="identidad-grid">
+                    <div class="identidad-card">
+                        <div class="identidad-icon"><i class="fas fa-compass"></i></div>
+                        <div class="identidad-number">01</div>
+                        <h3 data-key="identidadCard1Title">Experiencias Personalizadas</h3>
+                        <p data-key="identidadCard1Desc">Cada viaje es único. Diseñamos itinerarios a medida.</p>
+                        <div class="identidad-emoji">📍</div>
+                    </div>
+                    <div class="identidad-card">
+                        <div class="identidad-icon"><i class="fas fa-leaf"></i></div>
+                        <div class="identidad-number">02</div>
+                        <h3 data-key="identidadCard2Title">Compromiso Sostenible</h3>
+                        <p data-key="identidadCard2Desc">Trabajamos con turismo responsable y sostenible.</p>
+                        <div class="identidad-emoji">🏞️</div>
+                    </div>
+                    <div class="identidad-card">
+                        <div class="identidad-icon"><i class="fas fa-heart"></i></div>
+                        <div class="identidad-number">03</div>
+                        <h3 data-key="identidadCard3Title">Nuestros valores</h3>
+                        <p data-key="identidadCard3Desc">Nos guiamos por la honestidad, la responsabilidad y la pasión.
+                        </p>
+                        <div class="identidad-emoji">🌱</div>
+                    </div>
+                    <div class="identidad-card">
+                        <div class="identidad-icon"><i class="fas fa-mountain"></i></div>
+                        <div class="identidad-number">04</div>
+                        <h3 data-key="identidadCard4Title">Destinos Imperdibles</h3>
+                        <p data-key="identidadCard4Desc">Te llevamos a los lugares más asombrosos de Perú.</p>
+                        <div class="identidad-emoji">🎉</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESTADÍSTICAS Y CERTIFICACIONES -->
+        <section class="stats-section" id="certificaciones">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number"><span class="counter" data-target="1">0</span><span
+                                class="stat-suffix">+</span></div>
+                        <p class="stat-label" data-key="stat1">AÑOS DE EXPERIENCIA</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><span class="counter" data-target="3000">0</span><span
+                                class="stat-suffix">+</span></div>
+                        <p class="stat-label" data-key="stat2">SEGUIDORES</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><span class="counter" data-target="100">0</span><span
+                                class="stat-suffix">+</span></div>
+                        <p class="stat-label" data-key="stat3">AVENTURAS PLANEADAS</p>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number"><span class="counter" data-target="10">0</span><span
+                                class="stat-suffix">+</span></div>
+                        <p class="stat-label" data-key="stat4">CLIENTES FELICES</p>
+                    </div>
+                </div>
+                <div class="certifications-section">
+                    <div class="cert-carousel-container">
+                        <div class="cert-carousel-wrapper">
+                            <div class="cert-carousel-track" id="certCarouselTrack">
+                                <div class="cert-carousel-slide"><img src="tours_y_logos/safetravels.png"
+                                        alt="Safe Travels" class="cert-logo"></div>
+                                <div class="cert-carousel-slide"><a
+                                        href="https://www.gob.pe/15106-ministerio-de-comercio-exterior-y-turismo-prevencion-de-la-explotacion-sexual-de-ninas-ninos-y-adolescentes-en-el-ambito-del-turismo-esnna"
+                                        target="_blank" class="cert-link"><img src="tours_y_logos/protegeme.png"
+                                            alt="Protegeme" class="cert-logo"></a></div>
+                                <div class="cert-carousel-slide"><img src="tours_y_logos/gercetur.png" alt="Gercetur"
+                                        class="cert-logo"></div>
+                                <div class="cert-carousel-slide"><img src="tours_y_logos/sernamp.png" alt="SERNANP"
+                                        class="cert-logo"></div>
+                                <div class="cert-carousel-slide"><img src="tours_y_logos/mincetur.png" alt="MINCETUR"
+                                        class="cert-logo"></div>
+                                <div class="cert-carousel-slide"><img src="tours_y_logos/marcaperu.png" alt="Marca Perú"
+                                        class="cert-logo"></div>
+                                <div class="cert-carousel-slide"><img src="tours_y_logos/turismo.png" alt="Turismo"
+                                        class="cert-logo"></div>
+                            </div>
+                        </div>
+                        <div class="cert-carousel-dots" id="certCarouselDots"></div>
+                    </div>
+                    <p class="cert-note" data-key="certNote">Turismo Responsable para prevenir la explotación sexual de
+                        niños, niñas y adolescentes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMULARIO DE CONTACTO -->
+        <section class="contacto-form-section" id="contacto-form">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title" data-key="formPre">CONTACTO</span>
+                    <h2 class="section-title"><span data-key="formTitle1">¿Listo para</span> <span class="text-gradient"
+                            data-key="formTitle2">viajar con nosotros?</span></h2>
+                    <p class="section-description" data-key="formDesc">Completa el formulario y uno de nuestros asesores
+                        te contactará a la brevedad.</p>
+                </div>
+                <div class="form-wrapper">
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group"><label data-key="formName">Nombre completo *</label><input
+                                    type="text" id="nombre" required><span class="error-message"
+                                    id="nombreError"></span></div>
+                            <div class="form-group"><label data-key="formEmail">Correo electrónico *</label><input
+                                    type="email" id="email" required><span class="error-message" id="emailError"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><label data-key="formPhone">Teléfono / WhatsApp</label><input
+                                    type="tel" id="telefono"></div>
+                            <div class="form-group"><label data-key="formDestination">Destino de interés
+                                    *</label><select id="destino" required>
+                                    <option value="" data-key="formSelectOption">Selecciona un destino</option>
+                                    <option value="cusco" data-key="destCusco">Cusco / Machu Picchu</option>
+                                    <option value="lima" data-key="destLima">Lima / Paracas / Ica</option>
+                                    <option value="norte" data-key="destNorte">Norte Peruano</option>
+                                    <option value="selva" data-key="destSelva">Selva Central</option>
+                                    <option value="internacional" data-key="destInternacional">Viaje Internacional
+                                    </option>
+                                </select><span class="error-message" id="destinoError"></span></div>
+                        </div>
+                        <div class="form-group"><label data-key="formDate">Fecha de viaje preferida</label><input
+                                type="date" id="fecha"></div>
+                        <div class="form-group"><label data-key="formMessage">Mensaje</label><textarea id="mensaje"
+                                rows="3"></textarea></div>
+                        <div class="form-group checkbox-group"><input type="checkbox" id="terminos" required><label
+                                data-key="formTerms">Acepto los <a href="#">términos y condiciones</a> *</label><span
+                                class="error-message" id="terminosError"></span></div>
+                        <button type="submit" class="btn-submit" data-key="formSubmit">ENVIAR SOLICITUD <i
+                                class="fas fa-paper-plane"></i></button>
+                        <div class="form-success" id="formSuccess"><i class="fas fa-check-circle"></i>
+                            <p data-key="formSuccessMsg">¡Gracias por contactarnos! Te responderemos en menos de 24
+                                horas.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACTO EXPERTOS -->
+        <section class="contact-expertos-section" id="contacto">
+            <div class="container">
+                <div class="contact-expertos-wrapper">
+                    <div class="contact-expertos-content">
+                        <div class="contact-badge"><i class="fas fa-headset"></i><span data-key="expertBadge">ASISTENCIA
+                                PERSONALIZADA</span></div>
+                        <h2 class="contact-title" data-key="expertTitle1">¿Necesitas consejos?</h2>
+                        <h3 class="contact-subtitle" data-key="expertTitle2">¿Un plan de viaje, una pregunta?</h3>
+                        <a href="https://wa.me/51930164904" target="_blank" class="contact-expert-btn"><span
+                                class="btn-text" data-key="expertBtnText">ESCRIBE A NUESTROS EXPERTOS</span><i
+                                class="fab fa-whatsapp"></i></a>
+                        <div class="contact-phone"><i class="fas fa-phone-alt"></i><span data-key="phoneNumber">📞 +51
+                                930 164 904</span></div>
+                    </div>
+                    <div class="contact-expertos-logo"><img src="tours_y_logos/logoprincipal.png"
+                            alt="Explore Peru Travel" class="footer-logo-img"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-futurista">
+        <div class="footer-bg"><video autoplay muted loop playsinline class="footer-video-bg">
+                <source src="tours_y_logos/footer-bg.mp4" type="video/mp4">
+            </video>
+            <div class="footer-overlay-gradient"></div>
+        </div>
+        <div class="container footer-container">
+            <div class="footer-grid futurista-grid">
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-compass"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerAboutTitle">QUIENES SOMOS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="nosotros.html" data-key="footerAboutUs">Sobre nosotros</a></li>
+                        <li><a href="#" data-key="footerConditions">Condiciones de venta</a></li>
+                        <li><a href="#" data-key="footerPayments">Formas de pago</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerMenuTitle">MENÚ PRINCIPAL</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="index.html" data-key="home">INICIO</a></li>
+                        <li><a href="nosotros.html" data-key="about">NOSOTROS</a></li>
+                        <li><a href="tours/tours.html" data-key="tours">TOURS</a></li>
+                        <li><a href="tours-cortos.html" data-key="shortTours">TOURS CORTOS</a></li>
+                        <li><a href="viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES</a></li>
+                        <li><a href="aventuras.html" data-key="adventure">AVENTURA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="policiesTitle">POLÍTICAS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="#" data-key="policy1">Políticas y Condiciones de Pago</a></li>
+                        <li><a href="#" data-key="policy2">Protección de Datos Personales</a></li>
+                        <li><a href="#" data-key="policy3">Prevención de la ESNNA en turismo</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerContactTitle">CONTÁCTENOS</h3>
+                    <ul class="footer-contact-list futurista-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span data-key="footerAddress">Urbanización Tito
+                                Z-26<br>Wanchag - Cusco</span></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:exploreperutravel@gmail.com">exploreperutravel@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i>
+                            <div class="footer-phones"><span>+51 930 164 904</span><span>+51 984 764 403</span><span>+51
+                                    986 530 343</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider futurista-divider">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fas fa-star-of-life"></i></div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="footer-bottom futurista-bottom">
+                <p class="copyright futurista-copyright" data-key="footerCopyright">© 2025 EXPLORE PERU TRAVEL | Agencia
+                    de Viajes y Turismo</p>
+                <div class="footer-social futurista-social"><a href="#"><i class="fab fa-facebook-f"></i></a><a
+                        href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-whatsapp"></i></a><a
+                        href="#"><i class="fab fa-tripadvisor"></i></a></div>
+            </div>
+            <div class="footer-neon-line"></div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/51930164904" class="fab-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i><span
+            class="fab-tooltip" data-key="whatsappTooltip">¿Necesitas ayuda?</span></a>
+
+    <!-- LIGHTBOX MODAL -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <button class="lightbox-close" id="lightboxClose">&times;</button>
+        <button class="lightbox-prev" id="lightboxPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="lightbox-next" id="lightboxNext"><i class="fas fa-chevron-right"></i></button>
+        <img class="lightbox-image" id="lightboxImage" alt="">
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
