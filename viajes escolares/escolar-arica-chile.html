@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description"
+        content="Arica - Chile. Viaje de Promoción Escolar 2026. Incluye Puno, Islas Uros, Arequipa, Monasterio Santa Catalina, playas de Mollendo, Tacna y tour por Arica.">
+    <title>Arica - Chile | Viaje Escolar 2026 | Explore Peru Travel</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .tour-hero {
+            position: relative;
+            padding: 180px 5% 120px;
+            background: linear-gradient(135deg, #0f1f1f 0%, #1a2c2c 100%);
+            overflow: hidden;
+            margin-top: 122px;
+        }
+
+        .tour-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('https://images.unsplash.com/photo-1520430394463-5ab6c8e8f5a9?w=1600') center/cover no-repeat;
+            opacity: 0.25;
+            animation: slowZoom 25s ease-in-out infinite alternate;
+        }
+
+        @keyframes slowZoom {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.08);
+            }
+        }
+
+        .tour-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .tour-hero-badge {
+            display: inline-block;
+            background: rgba(212, 163, 67, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 8px 22px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #d4a017;
+            margin-bottom: 20px;
+        }
+
+        .tour-hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.8rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .tour-hero-price {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #d4a017;
+            margin: 20px 0;
+        }
+
+        .tour-hero-price small {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .tour-hero-features {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .tour-hero-features span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            color: white;
+        }
+
+        .tour-hero-image {
+            border-radius: 28px;
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.3);
+            border: 4px solid rgba(212, 163, 67, 0.5);
+            transition: all 0.4s;
+            width: 100%;
+        }
+
+        .tour-hero-image:hover {
+            transform: scale(1.02);
+            border-color: #d4a017;
+        }
+
+        .features-highlight {
+            padding: 60px 0;
+            background: linear-gradient(135deg, #fefaf5 0%, #fff4e8 100%);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 24px;
+            transition: all 0.4s;
+            border: 1px solid #e8dcc8;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            border-color: #d4a017;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(212, 163, 23, 0.1), rgba(212, 163, 23, 0.05));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2rem;
+            color: #d4a017;
+        }
+
+        .timeline-section {
+            padding: 80px 0;
+            background: #fdf8f0;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 50px auto 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(to bottom, #d4a017, #e8dcc8, #d4a017);
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            border: 1px solid #e8dcc8;
+            transition: all 0.3s;
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            border-color: #d4a017;
+        }
+
+        .timeline-day {
+            display: inline-block;
+            background: #d4a017;
+            color: #2c2418;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            color: #2c2418;
+            margin-bottom: 15px;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-content li {
+            padding: 6px 0;
+            padding-left: 22px;
+            position: relative;
+            font-size: 0.85rem;
+            color: #6b5b4a;
+        }
+
+        .timeline-content li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #d4a017;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: #d4a017;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px rgba(212, 163, 23, 0.3);
+        }
+
+        .inclusion-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #fff4e8, #fefaf5);
+        }
+
+        .inclusion-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .inclusion-card {
+            background: white;
+            border-radius: 24px;
+            padding: 35px;
+            border: 1px solid #e8dcc8;
+            transition: all 0.3s;
+        }
+
+        .inclusion-card:hover {
+            transform: translateY(-5px);
+            border-color: #d4a017;
+        }
+
+        .inclusion-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            color: #d4a017;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .inclusion-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .inclusion-card li {
+            padding: 10px 0;
+            padding-left: 28px;
+            position: relative;
+            border-bottom: 1px dashed #e8dcc8;
+        }
+
+        .inclusion-card li:last-child {
+            border-bottom: none;
+        }
+
+        .inclusion-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #d4a017;
+        }
+
+        .btn-wa {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .btn-wa:hover {
+            transform: translateY(-3px);
+            background: #1ebe57;
+        }
+
+        .gallery-section {
+            padding: 80px 0;
+            background: #fdf8f0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 280px;
+            border-radius: 20px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(44, 36, 24, 0.8), transparent);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay span {
+            color: white;
+            font-weight: 600;
+        }
+
+        .cta-final {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a2c2c, #0f1f1f);
+            text-align: center;
+        }
+
+        .cta-final h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid #d4a017;
+            color: #d4a017;
+            padding: 14px 30px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #d4a017;
+            color: #1a2c2c;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 1024px) {
+            .tour-hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .inclusion-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                padding-left: 40px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .tour-hero {
+                padding: 140px 5% 80px;
+                margin-top: 104px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-final h2 {
+                font-size: 1.8rem;
+            }
+
+            .tour-hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-navbar"></div>
+        <div class="skeleton-hero"></div>
+        <div class="skeleton-cards"></div>
+    </div>
+
+    <header class="main-header" id="mainHeader">
+        <div class="top-bar">
+            <div class="top-container">
+                <div class="top-links">
+                    <a href="../index.html#contacto">Contáctenos</a>
+                    <span class="top-sep">|</span>
+                    <a href="../index.html#testimonios">Testimonios</a>
+                    <span class="top-sep">|</span>
+                    <a href="../nosotros.html">Explore Peru Travel</a>
+                </div>
+                <div class="contact-data">
+                    <span><i class="far fa-bell"></i> Lun - Sab; 09:00 - 19:00 hrs</span>
+                    <span><i class="fab fa-whatsapp" style="color:#25D366;"></i> +51 930 164 904</span>
+                    <a href="https://wa.me/51930164904" target="_blank" class="whatsapp-badge"><i
+                            class="fab fa-whatsapp"></i> PREGUNTAR AHORA</a>
+                </div>
+            </div>
+        </div>
+        <div class="main-navbar">
+            <div class="nav-flex">
+                <div class="logo-area">
+                    <a href="../index.html">
+                        <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel" class="logo-img">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../viajes-escolares.html" style="color: var(--gold);">← VIAJES ESCOLARES</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="#" style="color: var(--gold);">TOURS 2026 <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="escolar-imperial.html">🏔️ Ruta Imperial</a></li>
+                            <li><a href="escolar-sur-chile.html">🇨🇱 Ruta al Sur: Chile</a></li>
+                            <li><a href="escolar-norte-ecuador.html">🇪🇨 Ruta al Norte: Ecuador</a></li>
+                            <li><a href="escolar-cusco-selva.html">🏔️ Cusco - Selva</a></li>
+                            <li><a href="escolar-cusco-machupicchu.html">🚂 Machu Picchu Tren</a></li>
+                            <li><a href="escolar-lima-ica-paracas.html">🏜️ Lima - Ica - Paracas</a></li>
+                            <li><a href="escolar-arica-chile.html" style="color: var(--gold);">🌊 Arica - Chile</a></li>
+                            <li><a href="escolar-norte-peruano.html">🏝️ Norte Peruano</a></li>
+                            <li><a href="escolar-lima-oxapampa.html">🌿 Lima y Oxapampa</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="tour-hero">
+            <div class="tour-hero-content">
+                <div>
+                    <div class="tour-hero-badge"><i class="fas fa-star-of-life"></i> 🎓 VIAJE DE PROMOCIÓN 2026</div>
+                    <h1>🌊 Arica - <span class="text-gradient">Chile</span><br>(Puno - Arequipa - Tacna)</h1>
+                    <div class="tour-hero-price">S/ 1,478 <small>+ IGV</small></div>
+                    <p style="color: rgba(255,255,255,0.85);">Un recorrido que combina los destinos más hermosos del sur
+                        peruano y chileno. Islas Uros, City Tour Arequipa, playas de Mollendo, zona franca de Tacna y
+                        tour por Arica.</p>
+                    <div class="tour-hero-features">
+                        <span><i class="fas fa-clock"></i> 4 Días / 3 Noches</span>
+                        <span><i class="fas fa-users"></i> Mínimo 28 personas</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Puno - Arequipa - Mollendo - Tacna - Arica</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="../tours_y_logos/arica-chile.jpg" alt="Arica Chile" class="tour-hero-image"
+                        onerror="this.src='https://placehold.co/600x400?text=Arica+Chile'">
+                </div>
+            </div>
+        </section>
+
+        <section class="features-highlight">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title">EXPERIENCIAS ÚNICAS</span>
+                    <h2 class="section-title">Lo que <span class="text-gradient">vivirás</span></h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-water"></i></div>
+                        <h3>Islas Uros</h3>
+                        <p>Islas flotantes del Titicaca</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-church"></i></div>
+                        <h3>Monasterio Santa Catalina</h3>
+                        <p>Ciudad dentro de otra ciudad</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-umbrella-beach"></i></div>
+                        <h3>Playas de Mollendo</h3>
+                        <p>Castillo Forga</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon"><i class="fas fa-mountain"></i></div>
+                        <h3>Morro de Arica</h3>
+                        <p>Mirador histórico</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="timeline-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title">DÍA A DÍA</span>
+                    <h2 class="section-title"><span class="text-gradient">Itinerario</span> Detallado</h2>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content"><span class="timeline-day">DÍA 0</span>
+                            <h3>🌙 Salida nocturna de Cusco hacia Arequipa</h3>
+                            <ul>
+                                <li>Salida desde institución educativa</li>
+                                <li>Viaje nocturno hacia Arequipa</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content"><span class="timeline-day">DÍA 1</span>
+                            <h3>🏞️ Puno - Islas de los Uros - Arequipa</h3>
+                            <ul>
+                                <li>Amanecer en Puno</li>
+                                <li>Desayuno</li>
+                                <li>Paseo en lancha por el lago Titicaca hacia las Islas de los Uros</li>
+                                <li>Visita a las islas flotantes</li>
+                                <li>Visita a la ciudad de Puno (Plaza Mayor, Santuario de la Virgen de la Candelaria)
+                                </li>
+                                <li>Almuerzo</li>
+                                <li>Viaje a Arequipa</li>
+                                <li>Cena y alojamiento en Arequipa</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content"><span class="timeline-day">DÍA 2</span>
+                            <h3>⛪ Arequipa - City Tour - Monasterio Santa Catalina - Playas de Mollendo</h3>
+                            <ul>
+                                <li>Desayuno</li>
+                                <li>City Tour por Arequipa: Plaza de Armas, Iglesia de la Compañía, Casona Tristán del
+                                    Pozo, Barrio San Lázaro</li>
+                                <li>Visita al Monasterio de Santa Catalina</li>
+                                <li>Almuerzo</li>
+                                <li>Viaje a Mollendo</li>
+                                <li>Visita a las playas de Mollendo y Castillo Forga</li>
+                                <li>Cena y alojamiento en Mollendo</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content"><span class="timeline-day">DÍA 3</span>
+                            <h3>🛍️ Mollendo - Ilo - Tacna - Tarde libre de compras</h3>
+                            <ul>
+                                <li>Desayuno</li>
+                                <li>Viaje a Tacna con parada en Ilo</li>
+                                <li>Degustación de ceviche en Ilo</li>
+                                <li>Llegada a Tacna y almuerzo</li>
+                                <li>Tarde libre para compras en zona franca</li>
+                                <li>Cena y alojamiento en Tacna</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content"><span class="timeline-day">DÍA 4</span>
+                            <h3>🇨🇱 Tacna - Arica - Tour por Chile - Retorno a Cusco</h3>
+                            <ul>
+                                <li>Desayuno</li>
+                                <li>Viaje a Arica (1.5 horas)</li>
+                                <li>Trámites de migración Perú - Chile</li>
+                                <li>Tour por Arica: Morro de Arica, Casa de la Respuesta, Península del Alacrán,
+                                    Parinacota, Catedral de San Marcos, Museo de Sitio Colón 10</li>
+                                <li>Almuerzo en Arica</li>
+                                <li>Retorno a Tacna</li>
+                                <li>Cena</li>
+                                <li>Viaje nocturno de retorno a Cusco</li>
+                                <li>🎉 Fin del viaje de promoción</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="inclusion-section">
+            <div class="container">
+                <div class="inclusion-grid">
+                    <div class="inclusion-card">
+                        <h3><i class="fas fa-check-circle"></i> ✅ ¿Qué incluye?</h3>
+                        <ul>
+                            <li>Transporte privado para todo el viaje</li>
+                            <li>Traslado Cusco - Puno</li>
+                            <li>Tour en las Islas Flotantes de los Uros (paseo en lancha)</li>
+                            <li>Visita al centro de la ciudad de Puno</li>
+                            <li>Visita al Santuario de la Virgen de la Candelaria</li>
+                            <li>Traslado a Arequipa</li>
+                            <li>Alojamiento en Arequipa, Mollendo y Tacna</li>
+                            <li>Alimentación completa (desayuno, almuerzo, cena)</li>
+                            <li>City Tour por Arequipa: Plaza de Armas, Iglesia de la Compañía, Barrio San Lázaro</li>
+                            <li>Ingreso al Monasterio de Santa Catalina</li>
+                            <li>Visita a las playas de Mollendo y Castillo Forga</li>
+                            <li>City Tour por Tacna</li>
+                            <li>Tarde libre para compras en Tacna (zona franca)</li>
+                            <li>Tour por Arica, Chile: Morro, Casa de la Respuesta, Catedral de San Marcos</li>
+                            <li>Trámites de frontera</li>
+                            <li>Guía oficial de turismo</li>
+                        </ul>
+                    </div>
+                    <div class="inclusion-card">
+                        <h3><i class="fas fa-info-circle"></i> 📋 Condiciones Generales</h3>
+                        <ul>
+                            <li>💰 Precios no incluyen IGV</li>
+                            <li>👥 Mínimo 28 pasajeros</li>
+                            <li>📝 Contrato notarial</li>
+                            <li>🛂 Documentos de identidad al día (DNI / Pasaporte)</li>
+                            <li>⚠️ Cancelaciones con 90 días de anticipación tienen penalidades</li>
+                            <li>🛍️ Las compras en zona franca son personales</li>
+                        </ul>
+                        <a href="https://wa.me/51930164904?text=Hola%2C%20estoy%20interesado%20en%20el%20paquete%20Arica%20-%20Chile%20(Puno%20-%20Arequipa%20-%20Tacna)"
+                            target="_blank" class="btn-wa" style="display: block; margin-top: 30px;"><i
+                                class="fab fa-whatsapp"></i> Cotizar por WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="gallery-section">
+            <div class="container">
+                <div class="section-header center">
+                    <span class="pre-title">GALERÍA</span>
+                    <h2 class="section-title">Momentos <span class="text-gradient">Inolvidables</span></h2>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1545338410-2c6dd3d7a9e7?w=500"
+                            alt="Islas Uros">
+                        <div class="gallery-overlay"><span>🛶 Islas Uros</span></div>
+                    </div>
+                    <div class="gallery-item"><img
+                            src="https://images.unsplash.com/photo-1583719093627-e18f9cd050c5?w=500"
+                            alt="Santa Catalina">
+                        <div class="gallery-overlay"><span>⛪ Monasterio Santa Catalina</span></div>
+                    </div>
+                    <div class="gallery-item"><img
+                            src="https://images.unsplash.com/photo-1520430394463-5ab6c8e8f5a9?w=500" alt="Arica">
+                        <div class="gallery-overlay"><span>🌊 Morro de Arica</span></div>
+                    </div>
+                    <div class="gallery-item"><img
+                            src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=500" alt="Mollendo">
+                        <div class="gallery-overlay"><span>🏖️ Playas de Mollendo</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-final">
+            <div class="container">
+                <h2>🌊 ¿Listos para cruzar la frontera sur?</h2>
+                <p style="color: rgba(255,255,255,0.7); margin-bottom: 20px;">Cotiza ahora el viaje internacional de tu
+                    promoción</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/51930164904" class="btn-wa"><i class="fab fa-whatsapp"></i> Consultar
+                        ahora</a>
+                    <a href="../viajes-escolares.html" class="btn-secondary"><i class="fas fa-arrow-left"></i> Ver todos
+                        los paquetes</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer-futurista">
+        <div class="footer-bg"><video autoplay muted loop playsinline class="footer-video-bg">
+                <source src="../tours_y_logos/footer-bg.mp4" type="video/mp4">
+            </video>
+            <div class="footer-overlay-gradient"></div>
+        </div>
+        <div class="container footer-container">
+            <div class="footer-grid futurista-grid">
+                <div class="footer-col futurista-col">
+                    <h3>QUIENES SOMOS</h3>
+                    <ul>
+                        <li><a href="../nosotros.html">Sobre nosotros</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <h3>VIAJES ESCOLARES</h3>
+                    <ul>
+                        <li><a href="escolar-imperial.html">Ruta Imperial</a></li>
+                        <li><a href="escolar-sur-chile.html">Ruta al Sur: Chile</a></li>
+                        <li><a href="escolar-norte-ecuador.html">Ruta al Norte: Ecuador</a></li>
+                        <li><a href="escolar-cusco-selva.html">Cusco - Selva</a></li>
+                        <li><a href="escolar-cusco-machupicchu.html">Machu Picchu Tren</a></li>
+                        <li><a href="escolar-lima-ica-paracas.html">Lima - Ica - Paracas</a></li>
+                        <li><a href="escolar-arica-chile.html">Arica - Chile</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <h3>CONTÁCTENOS</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Urbanización Tito Z-26, Wanchag - Cusco</li>
+                        <li><i class="fas fa-envelope"></i> exploreperutravel@gmail.com</li>
+                        <li><i class="fas fa-phone-alt"></i> +51 930 164 904</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 EXPLORE PERU TRAVEL</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/51930164904" class="fab-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <script src="../script.js"></script>
+    <script>
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else header.classList.remove('scrolled');
+        });
+    </script>
+</body>
+
+</html>

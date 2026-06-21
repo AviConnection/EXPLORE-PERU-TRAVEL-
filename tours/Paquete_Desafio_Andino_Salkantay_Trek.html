@@ -1,0 +1,1898 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Salkantay Trek - Explore Peru Travel</title>
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS (Para el contenido del Tour) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: '#1A3C34',
+                        gold: '#D4AF37',
+                        cream: '#FDFBF7',
+                        terracotta: '#E2725B',
+                        jungle: '#2C5E3B',
+                        mustard: '#E1AD01',
+                        sky: '#4A90E2',
+                        snow: '#E0E7FF'
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['Montserrat', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- AOS & Swiper CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        /* ============================================================
+           1. VARIABLES Y ESTILOS GLOBALES
+           ============================================================ */
+        :root {
+            --deep: #2c2418;
+            --forest: #3a2e24;
+            --forest-mid: #4f3f31;
+            --forest-light: #6b5442;
+            --gold: #b8860b;
+            --gold-bright: #d4a017;
+            --gold-pale: #f5e6b8;
+            --gold-muted: rgba(184, 134, 11, 0.12);
+            --cream: #fdf8f0;
+            --cream-warm: #f5ede0;
+            --cream-border: #e8dcc8;
+            --stone: #8b7a5c;
+            --muted: #6b5b4a;
+            --muted-light: #8f7e6b;
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-pill: 100px;
+            --shadow-lg: 0 28px 56px rgba(0, 0, 0, 0.13);
+            --shadow-gold: 0 12px 32px rgba(184, 134, 11, 0.25);
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+            --transition: 0.4s var(--ease-out);
+            --nav-height-top: 40px;
+            --nav-height-main: 82px;
+            --nav-total: calc(var(--nav-height-top) + var(--nav-height-main));
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--forest);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 9999;
+        }
+
+        /* ============================================================
+           2. HEADER Y NAVBAR
+           ============================================================ */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1050;
+            transition: var(--transition);
+        }
+
+        .top-bar {
+            background: var(--forest);
+            height: var(--nav-height-top);
+            display: flex;
+            align-items: center;
+            font-size: 0.68rem;
+            transition: height 0.4s var(--ease-out), opacity 0.3s ease;
+            overflow: hidden;
+        }
+
+        .main-header.scrolled .top-bar {
+            height: 0;
+            opacity: 0;
+        }
+
+        .top-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .top-links {
+            display: flex;
+            gap: 14px;
+        }
+
+        .top-links a {
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .top-links a:hover {
+            color: var(--gold-pale);
+        }
+
+        .top-sep {
+            color: rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-data {
+            display: flex;
+            gap: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .whatsapp-badge {
+            background: var(--gold);
+            color: var(--forest);
+            padding: 4px 14px;
+            border-radius: var(--radius-pill);
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: var(--transition);
+        }
+
+        .whatsapp-badge:hover {
+            background: white;
+            transform: translateY(-1px);
+        }
+
+        .main-navbar {
+            height: var(--nav-height-main);
+            display: flex;
+            align-items: center;
+            background: rgba(253, 248, 240, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--cream-border);
+            transition: all 0.4s var(--ease-out);
+        }
+
+        .nav-flex {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            transition: all 0.4s var(--ease-out);
+        }
+
+        .logo-img {
+            width: 250px;
+            transition: all 0.4s var(--ease-out);
+        }
+
+        .main-header.scrolled .main-navbar {
+            height: 56px;
+            margin: 10px 20px;
+            width: calc(100% - 40px);
+            border-radius: 40px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(184, 134, 11, 0.15);
+        }
+
+        .main-header.scrolled .logo-img {
+            display: none;
+            width: 0;
+            opacity: 0;
+        }
+
+        .main-header.scrolled .nav-flex {
+            justify-content: center;
+        }
+
+        .main-header.scrolled .nav-menu {
+            margin: 0 auto;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            color: var(--forest-mid);
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 1.5px;
+            background: var(--gold);
+            transition: width 0.3s var(--ease-out);
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 3px;
+            background: var(--cream-warm);
+            padding: 3px;
+            border-radius: var(--radius-pill);
+            border: 1px solid var(--cream-border);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-weight: 700;
+            font-size: 0.65rem;
+            color: var(--muted-light);
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--gold);
+            color: white;
+        }
+
+        .menu-item-has-children {
+            position: relative;
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 0;
+            min-width: 250px;
+            background: rgba(253, 248, 240, 0.98);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-md);
+            padding: 10px 0;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--cream-border);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.35s var(--ease-out);
+            z-index: 100;
+            list-style: none;
+        }
+
+        .menu-item-has-children:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% + 8px);
+        }
+
+        .sub-menu li a {
+            padding: 8px 20px;
+            font-size: 0.75rem;
+            white-space: normal;
+        }
+
+        .sub-menu li a:hover {
+            background: var(--gold-muted);
+            color: var(--gold);
+            padding-left: 24px;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            width: 22px;
+            height: 2px;
+            background: var(--forest);
+            transition: var(--transition);
+        }
+
+        .hamburger.open span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.open span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(44, 36, 24, 0.6);
+            z-index: 1055;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.3s;
+            backdrop-filter: blur(4px);
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(320px, 85vw);
+            height: 100dvh;
+            background: var(--cream);
+            z-index: 1060;
+            padding: 70px 24px 30px;
+            transform: translateX(100%);
+            transition: 0.45s var(--ease-out);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav-list li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-nav-list a {
+            font-weight: 600;
+            color: var(--forest);
+            display: block;
+            font-size: 1.1rem;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            background: var(--cream-warm);
+            border: none;
+            border-radius: 50%;
+            font-size: 1rem;
+        }
+
+        .mobile-contact-info {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid var(--cream-border);
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        .mobile-contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .mobile-whatsapp-btn {
+            display: inline-flex;
+            gap: 8px;
+            background: var(--gold);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --nav-height-top: 0px;
+            }
+
+            .top-bar,
+            .nav-menu,
+            .lang-selector {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .main-header.scrolled .main-navbar {
+                width: calc(100% - 24px);
+                margin: 8px 12px;
+                height: 50px;
+            }
+
+            .main-header.scrolled .nav-flex {
+                justify-content: space-between;
+            }
+        }
+
+        /* ============================================================
+           3. ESTILOS ESPECÍFICOS DEL TOUR (Salkantay)
+           ============================================================ */
+        .hero-tour {
+            position: relative;
+            height: 90vh;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: var(--nav-total);
+            overflow: hidden;
+            background: #0f1c19;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .animate-float-delayed {
+            animation: float 6s ease-in-out 3s infinite;
+        }
+
+        /* Nieve / Esporas de Montaña */
+        .snow-particles {
+            position: absolute;
+            inset: 0;
+            background-image:
+                radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 40px),
+                radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 30px),
+                radial-gradient(white, rgba(255, 255, 255, .1) 2px, transparent 40px);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            background-position: 0 0, 40px 60px, 130px 270px;
+            animation: snow-anim 20s linear infinite;
+            z-index: 1;
+            opacity: 0.4;
+        }
+
+        @keyframes snow-anim {
+            0% {
+                background-position: 0px 0px, 0px 0px, 0px 0px;
+            }
+
+            100% {
+                background-position: 500px 1000px, 400px 400px, 300px 300px;
+            }
+        }
+
+        .torn-paper-bottom {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z' opacity='.25' fill='%23FDFBF7'/%3E%3Cpath d='M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z' opacity='.5' fill='%23FDFBF7'/%3E%3Cpath d='M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z' fill='%23FDFBF7'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-position: center;
+            z-index: 10;
+        }
+
+        .post-it {
+            background-color: theme('colors.mustard');
+            padding: 2rem;
+            position: relative;
+            box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.15);
+            border-bottom-right-radius: 20px 5px;
+            transform: rotate(2deg);
+            transition: transform 0.3s ease;
+        }
+
+        .post-it:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .post-it::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            width: 80px;
+            height: 25px;
+            background-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transform: translateX(-50%) rotate(-2deg);
+        }
+
+        .timeline-container {
+            position: relative;
+        }
+
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 24px;
+            width: 4px;
+            background: repeating-linear-gradient(to bottom, #2C5E3B, #2C5E3B 10px, transparent 10px, transparent 20px);
+            z-index: 0;
+        }
+
+        .timeline-item {
+            position: relative;
+            z-index: 1;
+            padding-left: 70px;
+            margin-bottom: 3rem;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 10px;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .btn-neon-rustic {
+            background: linear-gradient(135deg, theme('colors.gold'), #b8860b);
+            color: var(--forest);
+            box-shadow: 0 4px 15px rgba(184, 134, 11, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-neon-rustic:hover {
+            box-shadow: 0 0 25px rgba(184, 134, 11, 0.8);
+            transform: translateY(-2px);
+            color: white;
+        }
+
+        /* ============================================================
+           4. FOOTER FUTURISTA
+           ============================================================ */
+        .footer-futurista {
+            position: relative;
+            padding: 60px 0 25px;
+            overflow: hidden;
+            color: white;
+            background: var(--deep);
+        }
+
+        .footer-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            overflow: hidden;
+            background: var(--deep);
+        }
+
+        .footer-overlay-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44, 36, 24, 0.95) 0%, rgba(58, 46, 36, 0.93) 100%);
+            z-index: 1;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 2;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .futurista-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1024px) {
+            .futurista-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .futurista-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .futurista-col {
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(184, 134, 11, 0.12);
+            transition: var(--transition);
+        }
+
+        .futurista-col:hover {
+            transform: translateY(-4px);
+            border-color: rgba(184, 134, 11, 0.3);
+        }
+
+        .footer-glow-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.12), rgba(184, 134, 11, 0.04));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .footer-glow-icon i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .futurista-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        .futurista-links,
+        .futurista-contact {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .futurista-links li,
+        .futurista-contact li {
+            margin-bottom: 12px;
+        }
+
+        .futurista-links a {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.78rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .futurista-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .futurista-contact li {
+            display: flex;
+            gap: 10px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .futurista-contact i {
+            color: var(--gold);
+            margin-top: 3px;
+        }
+
+        .footer-phones {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .futurista-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 25px;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.4), transparent);
+        }
+
+        .divider-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .divider-icon i {
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        .futurista-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding-top: 12px;
+        }
+
+        .futurista-copyright {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.45);
+            letter-spacing: 1px;
+        }
+
+        .futurista-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .futurista-social a {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(184, 134, 11, 0.15);
+            transition: var(--transition);
+        }
+
+        .futurista-social a:hover {
+            color: var(--forest);
+            background: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-neon-line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold), var(--gold-bright), var(--gold), transparent);
+            margin-top: 25px;
+            opacity: 0.6;
+        }
+
+        /* Floating WhatsApp */
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s var(--ease-out);
+            z-index: 1000;
+        }
+
+        .fab-whatsapp:hover {
+            transform: scale(1.1);
+        }
+
+        .fab-tooltip {
+            position: absolute;
+            right: 65px;
+            background: var(--forest);
+            color: white;
+            padding: 5px 10px;
+            border-radius: var(--radius-pill);
+            font-size: 0.7rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.3s;
+        }
+
+        .fab-whatsapp:hover .fab-tooltip {
+            opacity: 1;
+            visibility: visible;
+            right: 70px;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- CABECERA PREMIUM ACTUALIZADA -->
+    <header class="main-header" id="mainHeader">
+        <div class="top-bar">
+            <div class="top-container">
+                <div class="top-links">
+                    <a href="../contacto.html" data-key="contact">Contáctenos</a>
+                    <span class="top-sep">|</span>
+                    <a href="../index.html#testimonios" data-key="testimonials">Testimonios</a>
+                    <span class="top-sep">|</span>
+                    <a href="../nosotros.html" data-key="explore">Explore Peru Travel</a>
+                </div>
+                <div class="contact-data">
+                    <span><i class="far fa-bell"></i> <span data-key="schedule">Lun - Sab; 09:00 - 19:00
+                            hrs</span></span>
+                    <span><i class="fab fa-whatsapp" style="color:#25D366;"></i> +51 930 164 904</span>
+                    <a href="https://wa.me/51930164904" target="_blank" class="whatsapp-badge"><i
+                            class="fab fa-whatsapp"></i> <span data-key="askNow">PREGUNTAR AHORA</span></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-navbar">
+            <div class="nav-flex">
+                <div class="logo-area">
+                    <a href="../index.html">
+                        <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel" class="logo-img"
+                            onerror="this.src='https://placehold.co/280x90?text=Explore+Peru'">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" data-key="home">INICIO</a></li>
+                    <li><a href="../nosotros.html" data-key="about">NOSOTROS</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="../tours.html" data-key="tours">TOURS <i class="fas fa-chevron-down"></i></a>
+                        <!-- Submenú de Tours con Enlaces Correctos -->
+                        <ul class="sub-menu">
+                            <li><a href="Paquete Cusco Basico.html" data-key="navT1">Paquete Cusco Básico (3 Días / 2
+                                    Noches)</a></li>
+                            <li><a href="Paquete Cusco Clásico.html" data-key="navT2">Paquete Cusco Clásico (4 Días / 3
+                                    Noches)</a></li>
+                            <li><a href="Paquete Cusco Arqueologico.html" data-key="navT3">Paquete Cusco Arqueológico (5
+                                    Días / 4 Noches)</a></li>
+                            <li><a href="Paquete Experiencia Cusco Total.html" data-key="navT4">Paquete Experiencia
+                                    Cusco Total (6 Días / 5 Noches)</a></li>
+                            <li><a href="Inka Jungle.html" data-key="navT5">Paquete Aventura Extrema: Inka Jungle (4
+                                    Días / 3 Noches)</a></li>
+                            <li><a href="Paquete_Desafio_Andino_Salkantay_Trek.html" data-key="navT6"
+                                    class="text-gold font-bold">Paquete Desafío Andino: Salkantay Trek (5 Días / 4
+                                    Noches)</a></li>
+                            <li><a href="Camino Inca Clasico.html" data-key="navT7">Camino Inca Clásico a Machu Picchu
+                                    (4 Días / 3 Noches)</a></li>
+                            <li><a href="Trekking Choquequirao.html" data-key="navT8">Trekking Choquequirao Extremo (4
+                                    Días / 3 Noches)</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../tours-cortos.html" data-key="shortTours">TOURS CORTOS <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../tours-cortos.html#city-tour" data-key="shortTour1">City Tour Cusco (Medio
+                                    Día)</a></li>
+                            <li><a href="../tours-cortos.html#chinchero" data-key="shortTour2">Tour Chinchero, Maras y
+                                    Moray</a></li>
+                            <li><a href="../tours-cortos.html#valle-sur" data-key="shortTour3">Tour Valle Sur Cusco
+                                    (Medio Día)</a></li>
+                            <li><a href="../tours-cortos.html#valle-sagrado" data-key="shortTour4">Tour Valle Sagrado
+                                    (Full Day)</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../viajes escolares/escolar-imperial.html" data-key="school1">🏔️ Ruta
+                                    Imperial: Arequipa - Cusco - Oxapampa | 6D/5N</a></li>
+                            <li><a href="../viajes escolares/escolar-sur-chile.html" data-key="school2">🇨🇱 Ruta al
+                                    Sur: Chile - Santiago | 5D/4N</a></li>
+                            <li><a href="../viajes escolares/escolar-norte-ecuador.html" data-key="school3">🇪🇨 Ruta al
+                                    Norte: Tumbes - Guayaquil | 5D/4N</a></li>
+                            <li><a href="../viajes escolares/escolar-cusco-selva.html" data-key="school4">🏔️ Cusco -
+                                    Machu Picchu - Selva Cusqueña | 5D/4N</a></li>
+                            <li><a href="../viajes escolares/escolar-cusco-machupicchu.html" data-key="school5">🚂 Cusco
+                                    - Machu Picchu (Tren Turístico) | 2D/1N</a></li>
+                            <li><a href="../viajes escolares/escolar-lima-ica-paracas.html" data-key="school6">🏜️ Lima
+                                    - Ica - Huacachina - Paracas | 3D/2N</a></li>
+                            <li><a href="../viajes escolares/escolar-arica-chile.html" data-key="school7">🌊 Arica -
+                                    Chile (Puno - Arequipa - Tacna) | 4D/3N</a></li>
+                            <li><a href="../viajes escolares/escolar-norte-peruano.html" data-key="school8">🏝️ Norte
+                                    Peruano: Chiclayo - Máncora - Ecuador | 6D/5N</a></li>
+                            <li><a href="../viajes escolares/escolar-lima-oxapampa.html" data-key="school9">🌿 Lima y
+                                    Oxapampa Aventura | 5D/4N</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../aventuras.html" data-key="adventure">AVENTURA <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../aventuras/Aventura en Cuatrimotos.html" data-key="adv1">Aventura en
+                                    Cuatrimotos - Maras y Moray</a></li>
+                            <li><a href="../aventuras/Vía Ferrata y Zipline.html" data-key="adv2">Vía Ferrata y Zipline
+                                    en el Valle Sagrado</a></li>
+                            <li><a href="../aventuras/Canotaje (Rafting).html" data-key="adv3">Canotaje (Rafting) en el
+                                    Río Vilcanota</a></li>
+                            <li><a href="../aventuras/Bungee Jumping.html" data-key="adv4">Bungee Jumping y
+                                    Slingshot</a></li>
+                            <li><a href="../aventuras/Parapente sobre el valle sagrado.html" data-key="adv5">Parapente
+                                    sobre el Valle Sagrado</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section Animado y Rústico (Mejorado) -->
+        <section class="hero-tour">
+            <!-- Background Image -->
+            <div class="absolute inset-0 z-0">
+                <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80"
+                    alt="Salkantay Mountain" class="w-full h-full object-cover opacity-80">
+                <div class="absolute inset-0 bg-forest/50 mix-blend-multiply"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0f1c19] via-transparent to-transparent opacity-90">
+                </div>
+                <!-- Animación de Nieve -->
+                <div class="snow-particles"></div>
+            </div>
+
+            <!-- Floating Shapes (Rustic Fun) -->
+            <div class="absolute top-1/4 left-10 text-white/20 text-7xl animate-float z-0">
+                <i class="fas fa-mountain"></i>
+            </div>
+            <div class="absolute bottom-1/3 right-12 text-gold/30 text-8xl animate-float-delayed z-0">
+                <i class="far fa-compass"></i>
+            </div>
+
+            <!-- Content -->
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto -translate-y-8" data-aos="zoom-in"
+                data-aos-duration="1000">
+                <span
+                    class="inline-block py-1 px-4 rounded-full border border-gold/50 bg-forest/40 backdrop-blur-sm text-gold text-xs font-bold tracking-widest mb-6 shadow-lg uppercase"
+                    data-key="badge_challenge">
+                    Desafío Épico Andino
+                </span>
+
+                <!-- Título Mejorado con Degradado Oro -->
+                <h1 class="text-6xl md:text-8xl font-serif font-bold mb-6 drop-shadow-2xl">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-white to-gold"
+                        data-key="hero_title">
+                        Salkantay Trek
+                    </span>
+                </h1>
+
+                <p class="text-xl md:text-2xl text-cream/90 font-sans font-light mb-10 text-shadow"
+                    data-key="hero_subtitle">
+                    5 Días / 4 Noches • El camino salvaje hacia Machu Picchu
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="#itinerario" class="btn-neon-rustic px-8 py-3 rounded-full font-bold text-lg tracking-wide"
+                        data-key="btn_itinerary">
+                        VER ITINERARIO
+                    </a>
+                    <a href="https://wa.me/51999999999"
+                        class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-3 rounded-full font-bold text-lg border border-white/30 transition-all flex items-center gap-2"
+                        data-key="btn_book">
+                        <i class="fab fa-whatsapp text-green-400"></i> Reservar Ahora
+                    </a>
+                </div>
+            </div>
+
+            <!-- Torn Paper Effect Bottom -->
+            <div class="torn-paper-bottom"></div>
+        </section>
+
+        <!-- Info Rápida Estilo "Experiencia Cusco Total" (Flotante Blanca con línea Dorada) -->
+        <div class="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-16 sm:-mt-20">
+            <div class="bg-white rounded-2xl shadow-2xl p-6 sm:p-8 border-t-4 border-gold flex flex-wrap justify-between items-center gap-6"
+                data-aos="fade-up" data-aos-delay="200">
+
+                <!-- Duración -->
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-cream-warm flex items-center justify-center text-gold text-xl shadow-inner">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-muted-light uppercase tracking-wider"
+                            data-key="info_duration_title">Duración</h4>
+                        <p class="font-serif text-xl font-bold text-forest" data-key="info_duration_val">5 Días / 4
+                            Noches</p>
+                    </div>
+                </div>
+
+                <!-- Grupo -->
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-cream-warm flex items-center justify-center text-gold text-xl shadow-inner">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-muted-light uppercase tracking-wider"
+                            data-key="info_group_title">Grupo</h4>
+                        <p class="font-serif text-xl font-bold text-forest" data-key="info_group_val">Mínimo 2 personas
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Dificultad -->
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-cream-warm flex items-center justify-center text-gold text-xl shadow-inner">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-muted-light uppercase tracking-wider"
+                            data-key="info_diff_title">Dificultad</h4>
+                        <p class="font-serif text-xl font-bold text-forest" data-key="info_diff_val">Alta / Exigente</p>
+                    </div>
+                </div>
+
+                <!-- Altitud -->
+                <div class="flex items-center gap-4">
+                    <div
+                        class="w-12 h-12 rounded-full bg-cream-warm flex items-center justify-center text-gold text-xl shadow-inner">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-bold text-muted-light uppercase tracking-wider"
+                            data-key="info_alt_title">Altitud Máx</h4>
+                        <p class="font-serif text-xl font-bold text-forest">4,600 msnm</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- NUEVA SECCIÓN: Puntos Destacados -->
+        <section class="py-16 bg-cream mt-4">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-serif font-bold text-forest mb-4" data-key="highlights_title">Lo que te
+                        espera en este viaje</h2>
+                    <div class="w-24 h-1 bg-gold mx-auto"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Highlight 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Laguna Humantay"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            <div
+                                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-sky px-3 py-1 rounded-full text-xs font-bold">
+                                Día 1</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-2xl font-bold text-forest mb-2" data-key="high1_title">Laguna
+                                Humantay</h3>
+                            <p class="text-gray-600 text-sm" data-key="high1_desc">Un tesoro natural de aguas color
+                                turquesa rodeado de glaciares imponentes. Una recompensa perfecta en tu primer día de
+                                caminata.</p>
+                        </div>
+                    </div>
+
+                    <!-- Highlight 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1526392060635-9d60198d3de3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Abra Salkantay"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            <div
+                                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-forest px-3 py-1 rounded-full text-xs font-bold">
+                                Día 2</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-2xl font-bold text-forest mb-2" data-key="high2_title">Abra
+                                Salkantay (4,600m)</h3>
+                            <p class="text-gray-600 text-sm" data-key="high2_desc">El punto más alto y desafiante.
+                                Siente la energía de la montaña sagrada Apu Salkantay muy cerca del cielo andino.</p>
+                        </div>
+                    </div>
+
+                    <!-- Highlight 3 -->
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100 hover:-translate-y-2 transition-transform duration-300"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1580975618494-b2ccbfbba77e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+                                alt="Ceja de Selva"
+                                class="w-full h-full object-cover transition-transform duration-500 hover:scale-110">
+                            <div
+                                class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-jungle px-3 py-1 rounded-full text-xs font-bold">
+                                Día 3 y 4</div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif text-2xl font-bold text-forest mb-2" data-key="high3_title">Transición
+                                a la Selva</h3>
+                            <p class="text-gray-600 text-sm" data-key="high3_desc">Observa cómo el paisaje cambia
+                                drásticamente de montañas nevadas a la cálida y exuberante selva tropical húmeda.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Content: Itinerario + Sidebar -->
+        <section class="py-16 bg-cream" id="itinerario">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+                    <!-- Columna Izquierda: Itinerario Mapa del Tesoro -->
+                    <div class="lg:col-span-2">
+                        <div class="mb-10 text-center lg:text-left" data-aos="fade-right">
+                            <h2 class="text-4xl font-serif font-bold text-forest mb-4" data-key="itin_title">El Camino
+                                del Explorador</h2>
+                            <p class="text-gray-600 text-lg" data-key="itin_subtitle">Atraviesa nevados espectaculares y
+                                desciende hacia la selva tropical hasta llegar a la ciudadela perdida.</p>
+                        </div>
+
+                        <div class="timeline-container">
+                            <!-- Día 1 -->
+                            <div class="timeline-item" data-aos="fade-up">
+                                <div class="timeline-dot bg-sky"><i class="fas fa-water text-xs"></i></div>
+                                <div
+                                    class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-sky hover:-translate-y-1 transition-transform">
+                                    <span class="text-sky font-bold text-sm uppercase tracking-wide"
+                                        data-key="day1_label">Día 1</span>
+                                    <h3 class="text-2xl font-serif font-bold text-forest mt-1 mb-3"
+                                        data-key="day1_title">Cusco - Mollepata - Laguna Humantay - Soraypampa</h3>
+                                    <p class="text-gray-600 leading-relaxed" data-key="day1_desc">Comenzamos
+                                        recogiéndote en tu hotel muy temprano. Viajamos a Mollepata para desayunar y
+                                        luego a Challacancha para iniciar el trekking. Caminaremos hacia Soraypampa y
+                                        por la tarde ascenderemos a la mágica Laguna Humantay, un espejo de agua
+                                        turquesa al pie del glaciar. Pasaremos la noche en nuestro campamento rodeados
+                                        de montañas.</p>
+                                    <div class="mt-4 flex gap-3 text-sm text-gray-500 font-semibold">
+                                        <span><i class="fas fa-hiking text-terracotta"></i> 12 km</span>
+                                        <span><i class="fas fa-bed text-jungle"></i> Soraypampa Camp</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Día 2 -->
+                            <div class="timeline-item" data-aos="fade-up">
+                                <div class="timeline-dot bg-gray-300 text-forest"><i
+                                        class="fas fa-snowflake text-xs"></i></div>
+                                <div
+                                    class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-gray-300 hover:-translate-y-1 transition-transform">
+                                    <span class="text-gray-500 font-bold text-sm uppercase tracking-wide"
+                                        data-key="day2_label">Día 2</span>
+                                    <h3 class="text-2xl font-serif font-bold text-forest mt-1 mb-3"
+                                        data-key="day2_title">Soraypampa - Abra Salkantay - Chaullay</h3>
+                                    <p class="text-gray-600 leading-relaxed" data-key="day2_desc">El día más desafiante
+                                        y gratificante. Ascenderemos hasta el Abra Salkantay (4,600 m), el punto más
+                                        alto del trek, ofreciendo vistas asombrosas de la montaña sagrada. Después,
+                                        descenderemos drásticamente dejando atrás la nieve para adentrarnos en la ceja
+                                        de selva tropical hasta nuestro campamento en Chaullay.</p>
+                                    <div class="mt-4 flex gap-3 text-sm text-gray-500 font-semibold">
+                                        <span><i class="fas fa-hiking text-terracotta"></i> 22 km</span>
+                                        <span><i class="fas fa-bed text-jungle"></i> Chaullay Camp</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Día 3 -->
+                            <div class="timeline-item" data-aos="fade-up">
+                                <div class="timeline-dot bg-jungle"><i class="fas fa-leaf text-xs"></i></div>
+                                <div
+                                    class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-jungle hover:-translate-y-1 transition-transform">
+                                    <span class="text-jungle font-bold text-sm uppercase tracking-wide"
+                                        data-key="day3_label">Día 3</span>
+                                    <h3 class="text-2xl font-serif font-bold text-forest mt-1 mb-3"
+                                        data-key="day3_title">Chaullay - Playa Sahuayaco - Santa Teresa</h3>
+                                    <p class="text-gray-600 leading-relaxed" data-key="day3_desc">Un día inmerso en la
+                                        selva alta. Caminaremos rodeados de exuberante vegetación, cascadas, orquídeas y
+                                        plantaciones de café, plátano y palta. Llegaremos a Playa Sahuayaco para
+                                        almorzar y luego nos dirigiremos a Santa Teresa, donde podremos relajarnos en
+                                        las famosas aguas termales de Cocalmayo.</p>
+                                    <div class="mt-4 flex gap-3 text-sm text-gray-500 font-semibold">
+                                        <span><i class="fas fa-hiking text-terracotta"></i> 16 km</span>
+                                        <span><i class="fas fa-hot-tub text-mustard"></i> Aguas Termales</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Día 4 -->
+                            <div class="timeline-item" data-aos="fade-up">
+                                <div class="timeline-dot bg-terracotta"><i class="fas fa-train text-xs"></i></div>
+                                <div
+                                    class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-terracotta hover:-translate-y-1 transition-transform">
+                                    <span class="text-terracotta font-bold text-sm uppercase tracking-wide"
+                                        data-key="day4_label">Día 4</span>
+                                    <h3 class="text-2xl font-serif font-bold text-forest mt-1 mb-3"
+                                        data-key="day4_title">Santa Teresa - Hidroeléctrica - Aguas Calientes</h3>
+                                    <p class="text-gray-600 leading-relaxed" data-key="day4_desc">Opcionalmente, puedes
+                                        realizar tirolesa por la mañana. Luego caminaremos hacia Hidroeléctrica. Desde
+                                        allí, seguiremos las vías del tren a través de un denso bosque nuboso, una
+                                        caminata plana y hermosa, hasta llegar al pintoresco pueblo de Aguas Calientes,
+                                        a los pies de Machu Picchu. Noche en hotel.</p>
+                                    <div class="mt-4 flex gap-3 text-sm text-gray-500 font-semibold">
+                                        <span><i class="fas fa-hiking text-terracotta"></i> 11 km</span>
+                                        <span><i class="fas fa-hotel text-sky"></i> Hotel en Aguas Calientes</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Día 5 -->
+                            <div class="timeline-item" data-aos="fade-up">
+                                <div class="timeline-dot bg-gold"><i class="fas fa-sun text-xs"></i></div>
+                                <div
+                                    class="bg-white p-6 rounded-2xl shadow-md border-t-4 border-gold hover:-translate-y-1 transition-transform">
+                                    <span class="text-gold font-bold text-sm uppercase tracking-wide"
+                                        data-key="day5_label">Día 5</span>
+                                    <h3 class="text-2xl font-serif font-bold text-forest mt-1 mb-3"
+                                        data-key="day5_title">Aguas Calientes - Machu Picchu - Cusco</h3>
+                                    <p class="text-gray-600 leading-relaxed" data-key="day5_desc">¡El gran día!
+                                        Subiremos temprano a Machu Picchu para ver el amanecer. Tendrás una visita
+                                        guiada de 2 horas por los templos y terrazas de esta Maravilla del Mundo. Luego
+                                        tendrás tiempo libre. Por la tarde, tomaremos el tren de regreso a Ollantaytambo
+                                        y un bus que nos dejará de vuelta en Cusco.</p>
+                                    <div class="mt-4 flex gap-3 text-sm text-gray-500 font-semibold">
+                                        <span><i class="fas fa-camera text-forest"></i> Maravilla del Mundo</span>
+                                        <span><i class="fas fa-bus text-jungle"></i> Retorno a Cusco</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna Derecha: Widgets (Post-it, Inclusiones) -->
+                    <div class="lg:col-span-1 space-y-8">
+                        <!-- Qué Llevar (Post-it) -->
+                        <div class="post-it" data-aos="fade-left" data-aos-delay="100">
+                            <h3 class="font-serif text-2xl font-bold mb-4 flex items-center gap-2 border-b-2 border-forest/20 pb-2 text-forest"
+                                data-key="pack_title">
+                                <i class="fas fa-backpack text-terracotta"></i> ¿Qué llevar?
+                            </h3>
+                            <ul class="space-y-3 text-forest font-semibold">
+                                <li class="flex items-start gap-2"><i class="fas fa-check text-jungle mt-1"></i> <span
+                                        data-key="pack_1">Pasaporte Original</span></li>
+                                <li class="flex items-start gap-2"><i class="fas fa-check text-jungle mt-1"></i> <span
+                                        data-key="pack_2">Zapatos de trekking</span></li>
+                                <li class="flex items-start gap-2"><i class="fas fa-check text-jungle mt-1"></i> <span
+                                        data-key="pack_3">Casaca impermeable/poncho</span></li>
+                                <li class="flex items-start gap-2"><i class="fas fa-check text-jungle mt-1"></i> <span
+                                        data-key="pack_4">Ropa abrigadora (gorro, guantes)</span></li>
+                                <li class="flex items-start gap-2"><i class="fas fa-check text-jungle mt-1"></i> <span
+                                        data-key="pack_5">Repelente de mosquitos</span></li>
+                                <li class="flex items-start gap-2"><i class="fas fa-check text-jungle mt-1"></i> <span
+                                        data-key="pack_6">Bloqueador solar y lentes</span></li>
+                                <li class="flex items-start gap-2"><i class="fas fa-check text-jungle mt-1"></i> <span
+                                        data-key="pack_7">Ropa de baño (aguas termales)</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- Incluye -->
+                        <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-t-4 border-jungle shadow-lg"
+                            data-aos="fade-left" data-aos-delay="200">
+                            <h3 class="font-serif text-xl font-bold mb-4 text-forest" data-key="inc_title">El Paquete
+                                Incluye</h3>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li class="flex items-center gap-2"><i class="fas fa-plus-circle text-jungle"></i> <span
+                                        data-key="inc_1">Briefing previo al trek</span></li>
+                                <li class="flex items-center gap-2"><i class="fas fa-plus-circle text-jungle"></i> <span
+                                        data-key="inc_2">Transporte Cusco - Challacancha</span></li>
+                                <li class="flex items-center gap-2"><i class="fas fa-plus-circle text-jungle"></i> <span
+                                        data-key="inc_3">Guía profesional bilingüe</span></li>
+                                <li class="flex items-center gap-2"><i class="fas fa-plus-circle text-jungle"></i> <span
+                                        data-key="inc_4">Caballos y arrieros (para equipo)</span></li>
+                                <li class="flex items-center gap-2"><i class="fas fa-plus-circle text-jungle"></i> <span
+                                        data-key="inc_5">Comidas (4D, 4A, 4C)</span></li>
+                                <li class="flex items-center gap-2"><i class="fas fa-plus-circle text-jungle"></i> <span
+                                        data-key="inc_6">Equipo de campamento (carpas)</span></li>
+                                <li class="flex items-center gap-2"><i class="fas fa-plus-circle text-jungle"></i> <span
+                                        data-key="inc_7">1 noche hotel en Aguas Calientes</span></li>
+                                <li class="flex items-center gap-2"><i class="fas fa-plus-circle text-jungle"></i> <span
+                                        data-key="inc_8">Entrada a Machu Picchu</span></li>
+                                <li class="flex items-center gap-2"><i class="fas fa-plus-circle text-jungle"></i> <span
+                                        data-key="inc_9">Tren de retorno y bus a Cusco</span></li>
+                            </ul>
+                        </div>
+
+                        <!-- No Incluye -->
+                        <div class="bg-white/90 backdrop-blur-md rounded-2xl p-6 border-t-4 border-terracotta shadow-lg"
+                            data-aos="fade-left" data-aos-delay="300">
+                            <h3 class="font-serif text-xl font-bold mb-4 text-forest" data-key="exc_title">No Incluye
+                            </h3>
+                            <ul class="space-y-2 text-gray-600 text-sm">
+                                <li class="flex items-center gap-2"><i class="fas fa-minus-circle text-terracotta"></i>
+                                    <span data-key="exc_1">Bolsa de dormir (se puede alquilar)</span></li>
+                                <li class="flex items-center gap-2"><i class="fas fa-minus-circle text-terracotta"></i>
+                                    <span data-key="exc_2">Primer desayuno y último almuerzo</span></li>
+                                <li class="flex items-center gap-2"><i class="fas fa-minus-circle text-terracotta"></i>
+                                    <span data-key="exc_3">Entrada a Montaña Huayna Picchu</span></li>
+                                <li class="flex items-center gap-2"><i class="fas fa-minus-circle text-terracotta"></i>
+                                    <span data-key="exc_4">Bus de bajada (Machu Picchu - Pueblo)</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Galería 3D Swiper -->
+        <section class="py-16 bg-forest overflow-hidden relative">
+            <div class="absolute inset-0 opacity-10"
+                style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+            </div>
+            <div class="max-w-7xl mx-auto px-4 text-center mb-10 relative z-10">
+                <h2 class="text-4xl font-serif font-bold text-cream mb-2" data-key="gallery_title">Galería de la
+                    Aventura</h2>
+                <p class="text-gold" data-key="gallery_subtitle">Desliza para explorar los paisajes de Salkantay</p>
+            </div>
+
+            <div class="swiper mySwiper w-full py-10 relative z-10">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide w-80 h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                        <img src="https://images.unsplash.com/photo-1526392060635-9d60198d3de3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover" alt="Salkantay">
+                    </div>
+                    <div class="swiper-slide w-80 h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                        <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover" alt="Machu Picchu">
+                    </div>
+                    <div class="swiper-slide w-80 h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                        <img src="https://images.unsplash.com/photo-1600010996884-63cf3ed08034?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover" alt="Trekking Peru">
+                    </div>
+                    <div class="swiper-slide w-80 h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                        <img src="https://images.unsplash.com/photo-1580975618494-b2ccbfbba77e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover" alt="Montañas Andes">
+                    </div>
+                    <div class="swiper-slide w-80 h-96 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/20">
+                        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                            class="w-full h-full object-cover" alt="Selva alta">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <!-- Preguntas Frecuentes (FAQ) -->
+        <section class="py-16 bg-cream">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="text-center mb-10">
+                    <h2 class="text-4xl font-serif font-bold text-forest mb-4" data-key="faq_title">Preguntas Frecuentes
+                    </h2>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ 1 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
+                        data-aos="fade-up">
+                        <button
+                            class="w-full px-6 py-4 text-left flex justify-between items-center text-forest font-bold hover:bg-gray-50 transition-colors"
+                            onclick="toggleFAQ(this)">
+                            <span data-key="faq_q1">¿Qué tan difícil es el Salkantay Trek?</span>
+                            <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6 bg-gray-50 text-gray-600">
+                            <p data-key="faq_a1">Es un trek desafiante, especialmente el segundo día al subir el Abra
+                                Salkantay (4,600m). Requiere buena condición física y previa aclimatación en Cusco (al
+                                menos 2 días antes del trek).</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <button
+                            class="w-full px-6 py-4 text-left flex justify-between items-center text-forest font-bold hover:bg-gray-50 transition-colors"
+                            onclick="toggleFAQ(this)">
+                            <span data-key="faq_q2">¿Cómo es el clima y las temperaturas?</span>
+                            <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6 bg-gray-50 text-gray-600">
+                            <p data-key="faq_a2">Los dos primeros días son fríos, especialmente de noche (puede bajar a
+                                -5°C). A partir del tercer día, bajamos a la ceja de selva y el clima se vuelve cálido,
+                                húmedo y con mosquitos.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="faq-item bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <button
+                            class="w-full px-6 py-4 text-left flex justify-between items-center text-forest font-bold hover:bg-gray-50 transition-colors"
+                            onclick="toggleFAQ(this)">
+                            <span data-key="faq_q3">¿Están incluidos los caballos?</span>
+                            <i class="fas fa-chevron-down faq-icon transition-transform"></i>
+                        </button>
+                        <div class="faq-answer px-6 bg-gray-50 text-gray-600">
+                            <p data-key="faq_a3">Sí, incluimos caballos de carga que llevarán el equipo de campamento,
+                                la comida y hasta 5 kg de tus pertenencias personales (en un duffel bag que te
+                                entregamos). Tú solo caminas con una mochila pequeña.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER FUTURISTA -->
+    <footer class="footer-futurista">
+        <div class="footer-bg">
+            <video autoplay muted loop playsinline class="footer-video-bg">
+                <source src="../tours_y_logos/footer-bg.mp4" type="video/mp4">
+            </video>
+            <div class="footer-overlay-gradient"></div>
+        </div>
+        <div class="footer-container">
+            <div class="futurista-grid">
+                <div class="futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-compass"></i></div>
+                    <h3 class="futurista-title" data-key="footerAboutTitle">QUIENES SOMOS</h3>
+                    <ul class="futurista-links">
+                        <li><a href="../nosotros.html" data-key="footerAboutUs">Sobre nosotros</a></li>
+                        <li><a href="#" data-key="footerConditions">Condiciones de venta</a></li>
+                        <li><a href="#" data-key="footerPayments">Formas de pago</a></li>
+                    </ul>
+                </div>
+                <div class="futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="futurista-title" data-key="footerMenuTitle">MENÚ PRINCIPAL</h3>
+                    <ul class="futurista-links">
+                        <li><a href="../index.html" data-key="home">INICIO</a></li>
+                        <li><a href="../nosotros.html" data-key="about">NOSOTROS</a></li>
+                        <li><a href="../tours.html" data-key="tours">TOURS</a></li>
+                        <li><a href="../tours-cortos.html" data-key="shortTours">TOURS CORTOS</a></li>
+                        <li><a href="../viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES</a></li>
+                        <li><a href="../aventuras.html" data-key="adventure">AVENTURA</a></li>
+                    </ul>
+                </div>
+                <div class="futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="futurista-title" data-key="policiesTitle">POLÍTICAS</h3>
+                    <ul class="futurista-links">
+                        <li><a href="#" data-key="policy1">Políticas y Condiciones de Pago</a></li>
+                        <li><a href="#" data-key="policy2">Protección de Datos Personales</a></li>
+                        <li><a href="#" data-key="policy3">Prevención de la ESNNA en turismo</a></li>
+                    </ul>
+                </div>
+                <div class="futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="futurista-title" data-key="footerContactTitle">CONTÁCTENOS</h3>
+                    <ul class="futurista-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span data-key="footerAddress">Urbanización Tito
+                                Z-26<br>Wanchag - Cusco</span></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:exploreperutravel@gmail.com">exploreperutravel@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i>
+                            <div class="footer-phones"><span>+51 930 164 904</span><span>+51 984 764 403</span><span>+51
+                                    986 530 343</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="futurista-divider">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fas fa-star-of-life"></i></div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="futurista-bottom">
+                <p class="futurista-copyright" data-key="footerCopyright">© 2025 EXPLORE PERU TRAVEL | Agencia de Viajes
+                    y Turismo</p>
+                <div class="futurista-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+            <div class="footer-neon-line"></div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/51930164904" class="fab-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i><span
+            class="fab-tooltip" data-key="whatsappTooltip">¿Necesitas ayuda?</span></a>
+
+    <!-- SCRIPTS CONSOLIDADOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. Inicialización de AOS (Animaciones)
+            AOS.init({ once: true, offset: 50, duration: 800 });
+
+            // 2. Navbar Glass Effect on Scroll (Isla Dinámica)
+            const header = document.getElementById('mainHeader');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) header.classList.add('scrolled');
+                    else header.classList.remove('scrolled');
+                });
+            }
+
+            // 3. Lógica del Menú Móvil
+            const hamburger = document.getElementById('hamburger');
+            if (hamburger && !document.querySelector('.mobile-menu')) {
+                const mobileMenuOverlay = document.createElement('div');
+                mobileMenuOverlay.className = 'mobile-menu-overlay';
+                const mobileMenu = document.createElement('div');
+                mobileMenu.className = 'mobile-menu';
+
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'mobile-menu-close';
+                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                mobileMenu.appendChild(closeBtn);
+
+                const navMenu = document.querySelector('.nav-menu');
+                const mobileNavList = document.createElement('ul');
+                mobileNavList.className = 'mobile-nav-list';
+
+                if (navMenu) {
+                    const navLinks = navMenu.querySelectorAll('li');
+                    navLinks.forEach(li => {
+                        const a = li.querySelector('a');
+                        if (a) {
+                            const liCopy = document.createElement('li');
+                            const aCopy = document.createElement('a');
+                            aCopy.href = a.href;
+                            aCopy.innerHTML = a.innerHTML;
+                            liCopy.appendChild(aCopy);
+                            mobileNavList.appendChild(liCopy);
+                        }
+                    });
+                }
+                mobileMenu.appendChild(mobileNavList);
+
+                const contactInfo = document.createElement('div');
+                contactInfo.className = 'mobile-contact-info';
+                contactInfo.innerHTML = `
+                    <p><i class="fab fa-whatsapp"></i> +51 930 164 904</p>
+                    <p><i class="far fa-envelope"></i> exploreperutravel@gmail.com</p>
+                    <a href="https://wa.me/51930164904" class="mobile-whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                `;
+                mobileMenu.appendChild(contactInfo);
+
+                document.body.appendChild(mobileMenuOverlay);
+                document.body.appendChild(mobileMenu);
+
+                function toggleMobileMenu() {
+                    hamburger.classList.toggle('open');
+                    mobileMenu.classList.toggle('open');
+                    mobileMenuOverlay.classList.toggle('open');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                }
+
+                hamburger.addEventListener('click', toggleMobileMenu);
+                closeBtn.addEventListener('click', toggleMobileMenu);
+                mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+            }
+
+            // Dropdowns en Móvil
+            function initMobileDropdowns() {
+                const menuItems = document.querySelectorAll('.menu-item-has-children');
+                if (window.innerWidth <= 768) {
+                    menuItems.forEach(item => {
+                        const link = item.querySelector(':scope > a');
+                        if (link && !link.hasAttribute('data-mobile-handler')) {
+                            link.setAttribute('data-mobile-handler', 'true');
+                            link.addEventListener('click', function (e) {
+                                e.preventDefault();
+                                const parent = this.parentElement;
+                                parent.classList.toggle('active');
+                                const submenu = parent.querySelector('.sub-menu');
+                                if (submenu) submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                            });
+                        }
+                    });
+                }
+            }
+            initMobileDropdowns();
+            window.addEventListener('resize', initMobileDropdowns);
+
+            // 4. Inicialización Swiper (Galería 3D)
+            var swiper = new Swiper(".mySwiper", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                loop: true,
+                coverflowEffect: { rotate: 20, stretch: 0, depth: 200, modifier: 1, slideShadows: true },
+                autoplay: { delay: 3000, disableOnInteraction: false }
+            });
+
+            // 5. SISTEMA GLOBAL DE TRADUCCIÓN (Diccionario unificado script.js + Tour Salkantay)
+            const translations = {
+                es: {
+                    // --- Desde script.js (Header/Footer) ---
+                    contact: "Contáctenos", testimonials: "Testimonios", explore: "Explore Peru Travel",
+                    schedule: "Lun - Sab; 09:00 - 19:00 hrs", askNow: "PREGUNTAR AHORA",
+                    home: "INICIO", about: "NOSOTROS", tours: "TOURS", shortTours: "TOURS CORTOS",
+                    schoolTrips: "VIAJES ESCOLARES", adventure: "AVENTURA",
+                    navT1: "Paquete Cusco Básico (3 Días / 2 Noches)", navT2: "Paquete Cusco Clásico (4 Días / 3 Noches)",
+                    navT3: "Paquete Cusco Arqueológico (5 Días / 4 Noches)", navT4: "Paquete Experiencia Cusco Total (6 Días / 5 Noches)",
+                    navT5: "Paquete Aventura Extrema: Inka Jungle (4 Días / 3 Noches)", navT6: "Paquete Desafío Andino: Salkantay Trek (5 Días / 4 Noches)",
+                    navT7: "Camino Inca Clásico a Machu Picchu (4 Días / 3 Noches)", navT8: "Trekking Choquequirao Extremo (4 Días / 3 Noches)",
+                    shortTour1: "City Tour Cusco (Medio Día)", shortTour2: "Tour Chinchero, Maras y Moray",
+                    shortTour3: "Tour Valle Sur Cusco (Medio Día)", shortTour4: "Tour Valle Sagrado (Full Day)",
+                    school1: "🏔️ Ruta Imperial: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "🇨🇱 Ruta al Sur: Chile - Santiago | 5D/4N",
+                    school3: "🇪🇨 Ruta al Norte: Tumbes - Guayaquil | 5D/4N", school4: "🏔️ Cusco - Machu Picchu - Selva Cusqueña | 5D/4N",
+                    school5: "🚂 Cusco - Machu Picchu (Tren Turístico) | 2D/1N", school6: "🏜️ Lima - Ica - Huacachina - Paracas | 3D/2N",
+                    school7: "🌊 Arica - Chile (Puno - Arequipa - Tacna) | 4D/3N", school8: "🏝️ Norte Peruano: Chiclayo - Máncora - Ecuador | 6D/5N",
+                    school9: "🌿 Lima y Oxapampa Aventura | 5D/4N",
+                    adv1: "Aventura en Cuatrimotos - Maras y Moray", adv2: "Vía Ferrata y Zipline en el Valle Sagrado",
+                    adv3: "Canotaje (Rafting) en el Río Vilcanota", adv4: "Bungee Jumping y Slingshot", adv5: "Parapente sobre el Valle Sagrado",
+                    footerAboutTitle: "QUIENES SOMOS", footerAboutUs: "Sobre nosotros", footerConditions: "Condiciones de venta",
+                    footerPayments: "Formas de pago", footerMenuTitle: "MENÚ PRINCIPAL", footerContactTitle: "CONTÁCTENOS",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco", footerCopyright: "© 2025 EXPLORE PERU TRAVEL | Agencia de Viajes y Turismo",
+                    policiesTitle: "POLÍTICAS", policy1: "Políticas y Condiciones de Pago", policy2: "Protección de Datos Personales",
+                    policy3: "Prevención de la ESNNA en turismo", whatsappTooltip: "¿Necesitas ayuda?",
+
+                    // --- Específicos del Tour Salkantay ---
+                    badge_challenge: 'Desafío Épico Andino', hero_title: 'Salkantay Trek', hero_subtitle: '5 Días / 4 Noches • El camino salvaje hacia Machu Picchu',
+                    btn_itinerary: 'VER ITINERARIO', btn_book: 'Reservar Ahora',
+                    info_duration_title: 'Duración', info_duration_val: '5 Días / 4 Noches',
+                    info_group_title: 'Grupo', info_group_val: 'Mínimo 2 personas',
+                    info_diff_title: 'Dificultad', info_diff_val: 'Alta / Exigente', info_alt_title: 'Altitud Máx',
+
+                    // Highlights
+                    highlights_title: "Lo que te espera en este viaje",
+                    high1_title: "Laguna Humantay",
+                    high1_desc: "Un tesoro natural de aguas color turquesa rodeado de glaciares imponentes. Una recompensa perfecta en tu primer día de caminata.",
+                    high2_title: "Abra Salkantay (4,600m)",
+                    high2_desc: "El punto más alto y desafiante. Siente la energía de la montaña sagrada Apu Salkantay muy cerca del cielo andino.",
+                    high3_title: "Transición a la Selva",
+                    high3_desc: "Observa cómo el paisaje cambia drásticamente de montañas nevadas a la cálida y exuberante selva tropical húmeda.",
+
+                    itin_title: 'El Camino del Explorador', itin_subtitle: 'Atraviesa nevados espectaculares y desciende hacia la selva tropical hasta llegar a la ciudadela perdida.',
+                    day1_label: 'Día 1', day1_title: 'Cusco - Mollepata - Laguna Humantay - Soraypampa',
+                    day1_desc: 'Comenzamos recogiéndote en tu hotel muy temprano. Viajamos a Mollepata para desayunar y luego a Challacancha para iniciar el trekking. Caminaremos hacia Soraypampa y por la tarde ascenderemos a la mágica Laguna Humantay, un espejo de agua turquesa al pie del glaciar. Pasaremos la noche en nuestro campamento rodeados de montañas.',
+                    day2_label: 'Día 2', day2_title: 'Soraypampa - Abra Salkantay - Chaullay',
+                    day2_desc: 'El día más desafiante y gratificante. Ascenderemos hasta el Abra Salkantay (4,600 m), el punto más alto del trek, ofreciendo vistas asombrosas de la montaña sagrada. Después, descenderemos drásticamente dejando atrás la nieve para adentrarnos en la ceja de selva tropical hasta nuestro campamento en Chaullay.',
+                    day3_label: 'Día 3', day3_title: 'Chaullay - Playa Sahuayaco - Santa Teresa',
+                    day3_desc: 'Un día inmerso en la selva alta. Caminaremos rodeados de exuberante vegetación, cascadas, orquídeas y plantaciones de café, plátano y palta. Llegaremos a Playa Sahuayaco para almorzar y luego nos dirigiremos a Santa Teresa, donde podremos relajarnos en las famosas aguas termales de Cocalmayo.',
+                    day4_label: 'Día 4', day4_title: 'Santa Teresa - Hidroeléctrica - Aguas Calientes',
+                    day4_desc: 'Opcionalmente, puedes realizar tirolesa por la mañana. Luego caminaremos hacia Hidroeléctrica. Desde allí, seguiremos las vías del tren a través de un denso bosque nuboso, una caminata plana y hermosa, hasta llegar al pintoresco pueblo de Aguas Calientes, a los pies de Machu Picchu. Noche en hotel.',
+                    day5_label: 'Día 5', day5_title: 'Aguas Calientes - Machu Picchu - Cusco',
+                    day5_desc: '¡El gran día! Subiremos temprano a Machu Picchu para ver el amanecer. Tendrás una visita guiada de 2 horas por los templos y terrazas de esta Maravilla del Mundo. Luego tendrás tiempo libre. Por la tarde, tomaremos el tren de regreso a Ollantaytambo y un bus que nos dejará de vuelta en Cusco.',
+                    pack_title: '¿Qué llevar?', pack_1: 'Pasaporte Original', pack_2: 'Zapatos de trekking', pack_3: 'Casaca impermeable/poncho',
+                    pack_4: 'Ropa abrigadora (gorro, guantes)', pack_5: 'Repelente de mosquitos', pack_6: 'Bloqueador solar y lentes', pack_7: 'Ropa de baño (aguas termales)',
+                    inc_title: 'El Paquete Incluye', inc_1: 'Briefing previo al trek', inc_2: 'Transporte Cusco - Challacancha', inc_3: 'Guía profesional bilingüe',
+                    inc_4: 'Caballos y arrieros (para equipo)', inc_5: 'Comidas (4D, 4A, 4C)', inc_6: 'Equipo de campamento (carpas)', inc_7: '1 noche hotel en Aguas Calientes',
+                    inc_8: 'Entrada a Machu Picchu', inc_9: 'Tren de retorno y bus a Cusco',
+                    exc_title: 'No Incluye', exc_1: 'Bolsa de dormir (se puede alquilar)', exc_2: 'Primer desayuno y último almuerzo', exc_3: 'Entrada a Montaña Huayna Picchu', exc_4: 'Bus de bajada (Machu Picchu - Pueblo)',
+                    gallery_title: 'Galería de la Aventura', gallery_subtitle: 'Desliza para explorar los paisajes de Salkantay',
+                    faq_title: 'Preguntas Frecuentes', faq_q1: '¿Qué tan difícil es el Salkantay Trek?',
+                    faq_a1: 'Es un trek desafiante, especialmente el segundo día al subir el Abra Salkantay (4,600m). Requiere buena condición física y previa aclimatación en Cusco (al menos 2 días antes del trek).',
+                    faq_q2: '¿Cómo es el clima y las temperaturas?',
+                    faq_a2: 'Los dos primeros días son fríos, especialmente de noche (puede bajar a -5°C). A partir del tercer día, bajamos a la ceja de selva y el clima se vuelve cálido, húmedo y con mosquitos.',
+                    faq_q3: '¿Están incluidos los caballos?',
+                    faq_a3: 'Sí, incluimos caballos de carga que llevarán el equipo de campamento, la comida y hasta 5 kg de tus pertenencias personales (en un duffel bag que te entregamos). Tú solo caminas con una mochila pequeña.'
+                },
+                en: {
+                    // --- Desde script.js (Header/Footer) ---
+                    contact: "Contact Us", testimonials: "Testimonials", explore: "Explore Peru Travel",
+                    schedule: "Mon - Sat; 09:00 - 19:00 hrs", askNow: "ASK NOW",
+                    home: "HOME", about: "ABOUT US", tours: "TOURS", shortTours: "SHORT TOURS",
+                    schoolTrips: "SCHOOL TRIPS", adventure: "ADVENTURE",
+                    navT1: "Cusco Basic Package (3 Days / 2 Nights)", navT2: "Cusco Classic Package (4 Days / 3 Nights)",
+                    navT3: "Cusco Archaeological Package (5 Days / 4 Nights)", navT4: "Cusco Total Experience Package (6 Days / 5 Nights)",
+                    navT5: "Extreme Adventure: Inka Jungle Package (4 Days / 3 Nights)", navT6: "Andean Challenge: Salkantay Trek Package (5 Days / 4 Nights)",
+                    navT7: "Classic Inca Trail to Machu Picchu (4 Days / 3 Nights)", navT8: "Extreme Choquequirao Trekking (4 Days / 3 Nights)",
+                    shortTour1: "Cusco City Tour (Half Day)", shortTour2: "Chinchero, Maras and Moray Tour",
+                    shortTour3: "Cusco South Valley Tour (Half Day)", shortTour4: "Sacred Valley Tour (Full Day)",
+                    school1: "🏔️ Imperial Route: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "🇨🇱 Southern Route: Chile - Santiago | 5D/4N",
+                    school3: "🇪🇨 Northern Route: Tumbes - Guayaquil | 5D/4N", school4: "🏔️ Cusco - Machu Picchu - Cusco Jungle | 5D/4N",
+                    school5: "🚂 Cusco - Machu Picchu (Tourist Train) | 2D/1N", school6: "🏜️ Lima - Ica - Huacachina - Paracas | 3D/2N",
+                    school7: "🌊 Arica - Chile (Puno - Arequipa - Tacna) | 4D/3N", school8: "🏝️ Northern Peru: Chiclayo - Máncora - Ecuador | 6D/5N",
+                    school9: "🌿 Lima and Oxapampa Adventure | 5D/4N",
+                    adv1: "ATV Adventure - Maras and Moray", adv2: "Via Ferrata and Zipline in Sacred Valley",
+                    adv3: "Rafting on Vilcanota River", adv4: "Bungee Jumping and Slingshot", adv5: "Paragliding over Sacred Valley",
+                    footerAboutTitle: "ABOUT US", footerAboutUs: "About us", footerConditions: "Terms and conditions",
+                    footerPayments: "Payment methods", footerMenuTitle: "MAIN MENU", footerContactTitle: "CONTACT US",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco", footerCopyright: "© 2025 EXPLORE PERU TRAVEL | Travel and Tourism Agency",
+                    policiesTitle: "POLICIES", policy1: "Payment Policies and Conditions", policy2: "Personal Data Protection",
+                    policy3: "Prevention of ESNNA in tourism", whatsappTooltip: "Need help?",
+
+                    // --- Específicos del Tour Salkantay ---
+                    badge_challenge: 'Epic Andean Challenge', hero_title: 'Salkantay Trek', hero_subtitle: '5 Days / 4 Nights • The wild path to Machu Picchu',
+                    btn_itinerary: 'VIEW ITINERARY', btn_book: 'Book Now',
+                    info_duration_title: 'Duration', info_duration_val: '5 Days / 4 Nights',
+                    info_group_title: 'Group', info_group_val: 'Min. 2 people',
+                    info_diff_title: 'Difficulty', info_diff_val: 'High / Demanding', info_alt_title: 'Max Altitude',
+
+                    // Highlights
+                    highlights_title: "What awaits you on this journey",
+                    high1_title: "Humantay Lake",
+                    high1_desc: "A natural treasure of turquoise waters surrounded by imposing glaciers. A perfect reward on your first day of hiking.",
+                    high2_title: "Salkantay Pass (4,600m)",
+                    high2_desc: "The highest and most challenging point. Feel the energy of the sacred Apu Salkantay mountain very close to the Andean sky.",
+                    high3_title: "Transition to the Jungle",
+                    high3_desc: "Watch how the landscape changes drastically from snow-capped mountains to the warm and lush tropical rainforest.",
+
+                    itin_title: 'The Explorer\'s Path', itin_subtitle: 'Cross spectacular snow-capped mountains and descend into the tropical jungle to reach the lost citadel.',
+                    day1_label: 'Day 1', day1_title: 'Cusco - Mollepata - Humantay Lake - Soraypampa',
+                    day1_desc: 'We start by picking you up at your hotel very early. We travel to Mollepata for breakfast and then to Challacancha to start the trek. We will hike towards Soraypampa and in the afternoon ascend to the magical Humantay Lake, a turquoise water mirror at the foot of the glacier. We will spend the night in our campsite surrounded by mountains.',
+                    day2_label: 'Day 2', day2_title: 'Soraypampa - Salkantay Pass - Chaullay',
+                    day2_desc: 'The most challenging and rewarding day. We will ascend to the Salkantay Pass (4,600 m), the highest point of the trek, offering amazing views of the sacred mountain. Then, we will descend drastically leaving the snow behind to enter the tropical cloud forest until our campsite in Chaullay.',
+                    day3_label: 'Day 3', day3_title: 'Chaullay - Sahuayaco Beach - Santa Teresa',
+                    day3_desc: 'A day immersed in the high jungle. We will walk surrounded by lush vegetation, waterfalls, orchids, and coffee, banana, and avocado plantations. We will arrive at Sahuayaco Beach for lunch and then head to Santa Teresa, where we can relax in the famous Cocalmayo hot springs.',
+                    day4_label: 'Day 4', day4_title: 'Santa Teresa - Hydroelectric - Aguas Calientes',
+                    day4_desc: 'Optionally, you can do ziplining in the morning. Then we will walk to Hydroelectric. From there, we will follow the train tracks through a dense cloud forest, a flat and beautiful hike, until reaching the picturesque town of Aguas Calientes, at the foot of Machu Picchu. Night in a hotel.',
+                    day5_label: 'Day 5', day5_title: 'Aguas Calientes - Machu Picchu - Cusco',
+                    day5_desc: 'The big day! We will go up early to Machu Picchu to see the sunrise. You will have a 2-hour guided tour through the temples and terraces of this Wonder of the World. Then you will have free time. In the afternoon, we will take the train back to Ollantaytambo and a bus that will drop us off in Cusco.',
+                    pack_title: 'What to bring?', pack_1: 'Original Passport', pack_2: 'Trekking shoes', pack_3: 'Waterproof jacket/poncho',
+                    pack_4: 'Warm clothes (hat, gloves)', pack_5: 'Mosquito repellent', pack_6: 'Sunscreen and sunglasses', pack_7: 'Swimwear (hot springs)',
+                    inc_title: 'Package Includes', inc_1: 'Pre-trek briefing', inc_2: 'Transport Cusco - Challacancha', inc_3: 'Professional bilingual guide',
+                    inc_4: 'Horses and muleteers (for equipment)', inc_5: 'Meals (4B, 4L, 4D)', inc_6: 'Camping equipment (tents)', inc_7: '1 night hotel in Aguas Calientes',
+                    inc_8: 'Machu Picchu Entrance', inc_9: 'Return train and bus to Cusco',
+                    exc_title: 'Not Included', exc_1: 'Sleeping bag (can be rented)', exc_2: 'First breakfast and last lunch', exc_3: 'Huayna Picchu Mountain Entrance', exc_4: 'Downhill bus (Machu Picchu - Town)',
+                    gallery_title: 'Adventure Gallery', gallery_subtitle: 'Swipe to explore the Salkantay landscapes',
+                    faq_title: 'Frequently Asked Questions', faq_q1: 'How difficult is the Salkantay Trek?',
+                    faq_a1: 'It is a challenging trek, especially the second day climbing the Salkantay Pass (4,600m). It requires good physical condition and prior acclimatization in Cusco (at least 2 days before the trek).',
+                    faq_q2: 'How is the weather and temperature?',
+                    faq_a2: 'The first two days are cold, especially at night (it can drop to -5°C). From the third day, we descend into the cloud forest and the weather becomes warm, humid, and with mosquitoes.',
+                    faq_q3: 'Are horses included?',
+                    faq_a3: 'Yes, we include cargo horses that will carry the camping equipment, food, and up to 5 kg of your personal belongings (in a duffel bag we provide). You only walk with a small daypack.'
+                }
+            };
+
+            let currentLang = localStorage.getItem('preferredLang') || 'es';
+
+            // Función de traducción (Mismo código global que index.js para preservar iconos y HTML interno)
+            function applyTranslations(lang) {
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    const translation = translations[lang]?.[key];
+                    if (translation) {
+                        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                            if (el.type !== 'checkbox' && el.type !== 'hidden') el.placeholder = translation;
+                        } else if (el.tagName === 'SELECT') {
+                            const option = el.querySelector('option[value=""]');
+                            if (option) option.textContent = translation;
+                        } else if (el.tagName === 'IMG') {
+                            el.setAttribute('alt', translation);
+                        } else {
+                            let hasChildren = el.children.length > 0;
+                            if (hasChildren) {
+                                let textNodeUpdated = false;
+                                for (let node of el.childNodes) {
+                                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                                        if (!textNodeUpdated) { node.textContent = translation + ' '; textNodeUpdated = true; }
+                                        else { node.textContent = ''; }
+                                    }
+                                }
+                                if (!textNodeUpdated) el.insertAdjacentText('afterbegin', translation + ' ');
+                            } else {
+                                el.innerHTML = translation; // Usar innerHTML por los <br> en el footer
+                            }
+                        }
+                    }
+                });
+
+                currentLang = lang;
+                localStorage.setItem('preferredLang', lang);
+
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+                document.documentElement.lang = currentLang;
+            }
+
+            const langBtns = document.querySelectorAll('.lang-btn');
+            if (langBtns.length > 0) {
+                langBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const lang = btn.getAttribute('data-lang');
+                        applyTranslations(lang);
+                    });
+                });
+            }
+
+            // Aplicar el idioma inicialmente guardado
+            applyTranslations(currentLang);
+
+            // 6. Lógica Acordeón (FAQ)
+            window.toggleFAQ = function (element) {
+                const item = element.parentElement;
+                document.querySelectorAll('.faq-item').forEach(faq => {
+                    if (faq !== item) faq.classList.remove('active');
+                });
+                item.classList.toggle('active');
+            }
+        });
+    </script>
+</body>
+
+</html>
