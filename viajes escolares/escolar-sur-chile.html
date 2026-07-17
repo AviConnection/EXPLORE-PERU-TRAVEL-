@@ -1,0 +1,2677 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description"
+        content="Arequipa - Tacna - Arica - Santiago de Chile. Viaje de Promoción Escolar 2026. Incluye Morro de Arica, Cuevas de Anzota, Casa de la Respuesta, playas de Chile, Cerro San Cristóbal, Teleférico, Parque Bicentenario, Safari Rancagua y más.">
+    <title>Arequipa - Santiago de Chile | Viaje Escolar 2026 | Explore Peru Travel</title>
+
+    <link rel="icon" href="../tours_y_logos/logoprincipal.png" type="image/png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap">
+    </noscript>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        /* ============================================================
+           RUSTIC FUN DESIGN SYSTEM - EXPLORE PERU TRAVEL
+           ============================================================ */
+
+        :root {
+            --deep: #1f1812;
+            --forest: #3a2e24;
+            --forest-mid: #4f3f31;
+            --forest-light: #6b5442;
+            --cream: #faf5eb;
+            --cream-warm: #f3ebd8;
+            --cream-border: #e0d0b8;
+
+            --terracotta: #c05a3c;
+            --rust-mustard: #e2a02b;
+            --andes-green: #3e6b4a;
+            --inca-red: #a83a32;
+            --andes-sky: #4a8ca8;
+            --gold: #c29b45;
+
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-pill: 100px;
+            --shadow-solid-sm: 4px 4px 0 var(--cream-border);
+            --shadow-solid-md: 8px 8px 0 var(--forest);
+            --shadow-solid-gold: 8px 8px 0 var(--rust-mustard);
+
+            --transition: 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --nav-height-main: 82px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--cream);
+            color: var(--forest);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%233a2e24' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        .text-gradient {
+            background: linear-gradient(130deg, var(--rust-mustard) 0%, var(--terracotta) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* ─── SKELETON LOADER ─── */
+        .skeleton-loader {
+            position: fixed;
+            inset: 0;
+            background: var(--cream);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            transition: 0.5s ease;
+            pointer-events: none;
+        }
+
+        .skeleton-loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .skeleton-navbar {
+            height: var(--nav-height-main);
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        .skeleton-hero {
+            flex: 1;
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        @keyframes skeletonShimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* ─── NAVBAR (ISLA DINÁMICA) ─── */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1050;
+            transition: var(--transition);
+        }
+
+        .main-navbar {
+            height: var(--nav-height-main);
+            display: flex;
+            align-items: center;
+            background: rgba(250, 245, 235, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid var(--cream-border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .nav-flex {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            transition: all 0.4s ease;
+        }
+
+        .logo-img {
+            width: 230px;
+            height: auto;
+            transition: all 0.4s ease;
+        }
+
+        .main-header.scrolled .main-navbar {
+            height: 56px;
+            margin: 12px auto;
+            width: fit-content;
+            border-radius: 50px;
+            background: rgba(31, 24, 18, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(226, 160, 43, 0.3);
+            border: none;
+            padding: 0 12px;
+        }
+
+        .main-header.scrolled .logo-area {
+            display: none;
+        }
+
+        .main-header.scrolled .nav-flex {
+            justify-content: center;
+            padding: 0 10px;
+            width: auto;
+            gap: 8px;
+        }
+
+        .main-header.scrolled .nav-menu {
+            gap: 14px;
+        }
+
+        .main-header.scrolled .nav-menu a {
+            font-size: 0.65rem;
+            color: var(--cream);
+        }
+
+        .main-header.scrolled .nav-menu a:hover,
+        .main-header.scrolled .nav-menu li.current>a {
+            color: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .nav-menu a::after {
+            background: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .lang-selector {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: transparent;
+        }
+
+        .main-header.scrolled .lang-btn {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .main-header.scrolled .lang-btn.active {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            box-shadow: none;
+        }
+
+        .main-header.scrolled .hamburger span {
+            background: var(--cream);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: clamp(10px, 1.8vw, 22px);
+            align-items: center;
+        }
+
+        .nav-menu a {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: clamp(0.65rem, 1.3vw, 0.75rem);
+            letter-spacing: 1px;
+            color: var(--forest-mid);
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu li.current>a {
+            color: var(--terracotta);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu li.current>a::after {
+            width: 100%;
+        }
+
+        .menu-item-has-children {
+            position: relative;
+        }
+
+        .menu-item-has-children>a .fa-chevron-down {
+            transition: transform 0.3s ease;
+            font-size: 0.6rem;
+        }
+
+        .menu-item-has-children:hover>a .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 0;
+            min-width: 300px;
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 10px 0;
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            list-style: none;
+        }
+
+        .sub-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sub-menu::-webkit-scrollbar-thumb {
+            background-color: var(--terracotta);
+            border-radius: 10px;
+        }
+
+        .sub-menu::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        .main-header.scrolled .sub-menu {
+            background: var(--deep);
+            border-color: var(--rust-mustard);
+            box-shadow: 6px 6px 0 var(--rust-mustard);
+        }
+
+        .menu-item-has-children:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% + 6px);
+        }
+
+        .sub-menu li a {
+            display: block;
+            padding: 10px 22px;
+            font-size: 0.7rem;
+            color: var(--forest);
+            transition: all 0.25s ease;
+            white-space: normal;
+        }
+
+        .main-header.scrolled .sub-menu li a {
+            color: var(--cream);
+        }
+
+        .sub-menu li a::after {
+            display: none;
+        }
+
+        .sub-menu li a:hover {
+            background: rgba(192, 90, 60, 0.1);
+            color: var(--terracotta);
+            padding-left: 28px;
+        }
+
+        .main-header.scrolled .sub-menu li a:hover {
+            background: rgba(226, 160, 43, 0.15);
+            color: var(--rust-mustard);
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 3px;
+            background: var(--cream-warm);
+            padding: 4px;
+            border-radius: var(--radius-pill);
+            border: 2px solid var(--forest);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-weight: 800;
+            font-size: 0.65rem;
+            color: var(--forest-light);
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--forest);
+            color: white;
+            box-shadow: 2px 2px 0 var(--terracotta);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: var(--forest);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(31, 24, 18, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1055;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(320px, 85vw);
+            height: 100dvh;
+            background: var(--cream);
+            z-index: 1060;
+            padding: 70px 24px 30px;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow-y: auto;
+            border-left: 4px solid var(--forest);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            background: var(--forest);
+            color: white;
+            border: 2px solid var(--deep);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 3px 3px 0 var(--terracotta);
+        }
+
+        /* ─── MENÚ MÓVIL: SELECTOR DE IDIOMA ─── */
+        .mobile-lang-selector {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid var(--cream-border);
+            justify-content: center;
+        }
+
+        .mobile-lang-btn {
+            background: var(--cream-warm);
+            border: 2px solid var(--forest);
+            font-weight: 800;
+            font-size: 0.8rem;
+            color: var(--forest-light);
+            cursor: pointer;
+            padding: 8px 20px;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .mobile-lang-btn.active {
+            background: var(--forest);
+            color: white;
+            box-shadow: 2px 2px 0 var(--terracotta);
+        }
+
+        @media (max-width: 1050px) {
+
+            .nav-menu,
+            .lang-selector {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .main-navbar {
+                height: 65px;
+            }
+
+            .main-header.scrolled .main-navbar {
+                margin: 10px auto;
+                width: calc(100% - 24px);
+                height: 54px;
+                padding: 0 16px;
+            }
+
+            .main-header.scrolled .nav-flex {
+                justify-content: space-between;
+                padding: 0;
+                width: 100%;
+            }
+
+            .logo-img {
+                width: 180px;
+            }
+
+            .main-header.scrolled .logo-area {
+                display: block;
+            }
+
+            .main-header.scrolled .logo-img {
+                width: 120px;
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        /* ─── BOTONES GLOBALES ─── */
+        .btn-gold-solid {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid var(--deep);
+            box-shadow: 4px 4px 0 var(--deep);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-gold-solid:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--deep);
+            background: white;
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        /* ─── HERO CON VIDEO ─── */
+        .hero-tour {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--nav-height-main) + 60px) 20px 80px;
+            overflow: hidden;
+            background-color: var(--deep);
+        }
+
+        .hero-video-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+            filter: brightness(0.55) contrast(1.1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31, 24, 18, 0.4) 0%, rgba(31, 24, 18, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            max-width: 900px;
+            padding: 0;
+        }
+
+        .hero-pre {
+            display: inline-block;
+            background: rgba(226, 160, 43, 0.2);
+            border: 1px solid var(--rust-mustard);
+            color: var(--rust-mustard);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-title .highlight {
+            background: linear-gradient(130deg, var(--rust-mustard) 0%, var(--terracotta) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 35px;
+            font-weight: 400;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-price-tag {
+            display: inline-block;
+            background: var(--rust-mustard);
+            color: var(--deep);
+            padding: 8px 28px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 1.2rem;
+            border: 2px solid var(--deep);
+            box-shadow: 4px 4px 0 var(--deep);
+            margin-bottom: 20px;
+        }
+
+        .hero-price-tag small {
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .torn-paper {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 5;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L0,40 Q30,80 60,40 T120,40 T180,40 T240,40 T300,40 T360,40 T420,40 T480,40 T540,40 T600,40 T660,40 T720,40 T780,40 T840,40 T900,40 T960,40 T1020,40 T1080,40 T1140,40 T1200,40 L1200,120 Z' fill='%23faf5eb'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* ─── QUICK INFO ─── */
+        .quick-info-wrapper {
+            position: relative;
+            z-index: 10;
+            margin-top: -60px;
+            padding: 0 20px;
+        }
+
+        .quick-info-box {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+            max-width: 1100px;
+            margin: 0 auto;
+            border-radius: var(--radius-lg);
+            padding: 25px 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--forest);
+            position: relative;
+        }
+
+        .quick-info-box::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: -6px;
+            bottom: -6px;
+            border: 2px dashed var(--rust-mustard);
+            border-radius: var(--radius-lg);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @media (max-width: 900px) {
+            .quick-info-box {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: -40px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .quick-info-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .qi-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qi-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--cream);
+            border: 2px solid var(--forest);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--terracotta);
+            box-shadow: 3px 3px 0 var(--forest);
+            transform: rotate(-3deg);
+            transition: var(--transition);
+        }
+
+        .qi-item:hover .qi-icon {
+            transform: rotate(5deg) scale(1.1);
+            background: var(--rust-mustard);
+            color: var(--deep);
+        }
+
+        .qi-text h4 {
+            font-size: 0.8rem;
+            color: var(--forest-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .qi-text p {
+            font-size: 1.1rem;
+            color: var(--forest);
+            font-weight: 900;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* ─── WELCOME & BIG LOGO ─── */
+        .welcome-warm {
+            padding: 60px 0 20px;
+            background: var(--cream);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .big-logo-container {
+            margin: 0 auto 30px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .big-logo {
+            width: 500px;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+            transition: var(--transition);
+        }
+
+        .big-logo:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .welcome-text-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .welcome-text-wrapper p {
+            font-size: 1.1rem;
+            color: var(--forest-mid);
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* ─── HIGHLIGHTS ─── */
+        .section-highlights {
+            padding: 60px 0 40px;
+        }
+
+        .hl-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .hl-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hl-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hl-card {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .hl-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-solid-gold);
+        }
+
+        .hl-img {
+            height: 200px;
+            overflow: hidden;
+            border-bottom: 2px solid var(--forest);
+        }
+
+        .hl-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .hl-card:hover .hl-img img {
+            transform: scale(1.1);
+        }
+
+        .hl-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hl-body h3 {
+            font-size: 1.4rem;
+            color: var(--forest);
+            margin-bottom: 10px;
+        }
+
+        .hl-body p {
+            font-size: 0.9rem;
+            color: var(--forest-light);
+            font-weight: 600;
+        }
+
+        /* ─── ITINERARIO ─── */
+        .section-itinerary {
+            padding: 60px 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%23e2a02b' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E") var(--cream-warm);
+            border-top: 4px dashed var(--cream-border);
+            border-bottom: 4px dashed var(--cream-border);
+        }
+
+        .timeline-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-wrapper {
+                padding-left: 30px;
+            }
+        }
+
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 20px;
+            width: 4px;
+            background-image: linear-gradient(to bottom, var(--forest) 50%, transparent 50%);
+            background-size: 4px 20px;
+            background-repeat: repeat-y;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-wrapper::before {
+                left: 10px;
+            }
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-node {
+            position: absolute;
+            left: -48px;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background: var(--cream);
+            border: 3px solid var(--forest);
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-node {
+                left: -38px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .timeline-item:hover .timeline-node {
+            background: var(--rust-mustard);
+            transform: rotate(135deg) scale(1.1);
+        }
+
+        .timeline-node span {
+            transform: rotate(-45deg);
+            font-weight: 900;
+            font-size: 0.9rem;
+            color: var(--forest);
+        }
+
+        .timeline-item:hover .timeline-node span {
+            transform: rotate(-135deg);
+        }
+
+        .timeline-content {
+            background: white;
+            border: 2px solid var(--forest);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .timeline-content:hover {
+            box-shadow: var(--shadow-solid-md);
+            transform: translateY(-5px);
+            border-color: var(--terracotta);
+        }
+
+        .timeline-item:nth-child(1) .timeline-content {
+            border-top: 6px solid var(--andes-sky);
+        }
+
+        .timeline-item:nth-child(2) .timeline-content {
+            border-top: 6px solid var(--andes-green);
+        }
+
+        .timeline-item:nth-child(3) .timeline-content {
+            border-top: 6px solid var(--terracotta);
+        }
+
+        .timeline-item:nth-child(4) .timeline-content {
+            border-top: 6px solid var(--inca-red);
+        }
+
+        .timeline-item:nth-child(5) .timeline-content {
+            border-top: 6px solid var(--rust-mustard);
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .day-title {
+            font-size: 1.6rem;
+            color: var(--forest);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+        }
+
+        .day-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--forest);
+            border: 1px solid var(--forest-light);
+            text-transform: uppercase;
+        }
+
+        .day-desc {
+            font-size: 0.95rem;
+            color: var(--forest-light);
+            font-weight: 600;
+            line-height: 1.7;
+        }
+
+        /* ─── INCLUSIONES / EXCLUSIONES ─── */
+        .section-details {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 800px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .detail-box {
+            background: white;
+            border: 2px dashed var(--forest-light);
+            border-radius: var(--radius-md);
+            padding: 35px 30px;
+            position: relative;
+        }
+
+        .detail-box::before {
+            content: '📌';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+        }
+
+        .detail-title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--forest);
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .detail-list {
+            list-style: none;
+        }
+
+        .detail-list li {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--forest-mid);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .detail-list.inc li i {
+            color: var(--andes-green);
+            margin-top: 4px;
+        }
+
+        .detail-list.exc li i {
+            color: var(--inca-red);
+            margin-top: 4px;
+        }
+
+        /* ─── QUÉ LLEVAR ─── */
+        .section-bring {
+            padding: 40px 0 80px;
+        }
+
+        .bring-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        @media (max-width: 900px) {
+            .bring-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .bring-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bring-card {
+            background: #fffdf5;
+            padding: 25px 20px;
+            border: 1px solid #e0d0b8;
+            box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .bring-card:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+
+        .bring-card:nth-child(even) {
+            transform: rotate(2deg);
+            background: #fdf5ea;
+        }
+
+        .bring-card::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 50px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .bring-card:hover {
+            transform: translateY(-5px) rotate(0deg);
+            box-shadow: 8px 8px 0 var(--forest);
+            border-color: var(--forest);
+            z-index: 2;
+        }
+
+        .bring-icon {
+            font-size: 2.2rem;
+            color: var(--terracotta);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .bring-card h4 {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--forest);
+            font-weight: 800;
+        }
+
+        /* ─── GALERÍA SWIPER 3D ─── */
+        .section-gallery {
+            padding: 80px 0;
+            background: var(--deep);
+            color: white;
+            text-align: center;
+            border-bottom: 4px dashed var(--rust-mustard);
+        }
+
+        .gallery-title {
+            color: var(--cream);
+            margin-bottom: 40px;
+        }
+
+        .swiper {
+            width: 280px;
+            height: 380px;
+        }
+
+        @media (min-width: 600px) {
+            .swiper {
+                width: 320px;
+                height: 420px;
+            }
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background-color: #fff;
+            padding: 10px 10px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: sepia(0.2) contrast(1.1);
+        }
+
+        .polaroid-text {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: var(--forest);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        /* ─── TESTIMONIOS ─── */
+        .section-testimonials {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .testim-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .testim-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: #fffdf5;
+            padding: 30px 25px;
+            border: 2px solid var(--forest);
+            border-radius: 8px;
+            box-shadow: var(--shadow-solid-sm);
+            position: relative;
+            transition: var(--transition);
+            transform: rotate(-1.5deg);
+        }
+
+        .testimonial-card:nth-child(even) {
+            transform: rotate(1.5deg);
+            background: #fdf5ea;
+            box-shadow: 4px 4px 0 var(--rust-mustard);
+        }
+
+        .testimonial-card:nth-child(3) {
+            transform: rotate(-2deg);
+            box-shadow: 4px 4px 0 var(--terracotta);
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 60px;
+            height: 22px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px) rotate(0deg);
+            z-index: 2;
+            box-shadow: 8px 8px 0 var(--forest);
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            color: var(--rust-mustard);
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .testim-text {
+            font-size: 1rem;
+            color: var(--forest-mid);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .testim-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 2px dashed var(--cream-border);
+            padding-top: 20px;
+        }
+
+        .testim-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid var(--forest);
+            object-fit: cover;
+        }
+
+        .testim-info h5 {
+            font-size: 1.05rem;
+            color: var(--forest);
+            font-weight: 800;
+        }
+
+        .testim-info p {
+            font-size: 0.8rem;
+            color: var(--forest-light);
+            font-weight: 700;
+        }
+
+        .testim-rating {
+            color: var(--rust-mustard);
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        /* ─── CTA ─── */
+        .section-cta-bottom {
+            padding: 80px 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%233a2e24' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E") var(--cream);
+            text-align: center;
+            position: relative;
+        }
+
+        /* ─── FOOTER ─── */
+        .footer-futurista {
+            position: relative;
+            padding: 60px 0 25px;
+            overflow: hidden;
+            color: white;
+            background: #111;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .footer-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .footer-video-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer-overlay-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44, 36, 24, 0.95), rgba(58, 46, 36, 0.93));
+            z-index: 1;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .futurista-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1024px) {
+            .futurista-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .futurista-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .futurista-col {
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(184, 134, 11, 0.12);
+            transition: var(--transition);
+        }
+
+        .futurista-col:hover {
+            transform: translateY(-4px);
+            border-color: rgba(184, 134, 11, 0.3);
+        }
+
+        .footer-glow-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.12), rgba(184, 134, 11, 0.04));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .footer-glow-icon i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .futurista-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        .futurista-links,
+        .futurista-contact {
+            list-style: none;
+        }
+
+        .futurista-links li {
+            margin-bottom: 8px;
+        }
+
+        .futurista-links a {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.78rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+
+        .futurista-links a::before {
+            content: '›';
+            color: var(--gold);
+            opacity: 0;
+            transition: 0.2s;
+        }
+
+        .futurista-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .futurista-links a:hover::before {
+            opacity: 1;
+        }
+
+        .futurista-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 600;
+        }
+
+        .futurista-contact li i {
+            color: var(--gold);
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        .footer-phones {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .futurista-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 25px;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.4), transparent);
+        }
+
+        .divider-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(184, 134, 11, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .divider-icon i {
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        .futurista-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        @media (max-width: 640px) {
+            .futurista-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .futurista-copyright {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.45);
+            font-weight: 600;
+        }
+
+        .futurista-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .futurista-social a {
+            width: 34px;
+            height: 34px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            transition: var(--transition);
+            border: 1px solid rgba(184, 134, 11, 0.15);
+        }
+
+        .futurista-social a:hover {
+            color: var(--deep);
+            background: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            z-index: 1000;
+            border: 2px solid white;
+        }
+
+        .fab-whatsapp:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SKELETON LOADER -->
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-navbar"></div>
+        <div class="skeleton-hero"></div>
+    </div>
+
+    <!-- CABECERA -->
+    <header class="main-header" id="mainHeader">
+        <div class="main-navbar">
+            <div class="nav-flex">
+                <div class="logo-area">
+                    <a href="../index.html">
+                        <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel" class="logo-img"
+                            onerror="this.src='https://placehold.co/280x90?text=Explore+Peru'">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" data-key="home">INICIO</a></li>
+                    <li><a href="../nosotros.html" data-key="about">NOSOTROS</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="../tours.html" data-key="tours">TOURS <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../tours/Paquete Cusco Basico.html" data-key="navT1">Paquete Cusco Básico
+                                    (3D/2N)</a></li>
+                            <li><a href="../tours/Paquete Cusco Clásico.html" data-key="navT2">Paquete Cusco Clásico
+                                    (4D/3N)</a></li>
+                            <li><a href="../tours/Paquete Cusco Arqueologico.html" data-key="navT3">Paquete Cusco
+                                    Arqueológico (5D/4N)</a></li>
+                            <li><a href="../tours/Paquete Experiencia Cusco Total.html" data-key="navT4">Paquete
+                                    Experiencia Cusco Total (6D/5N)</a></li>
+                            <li><a href="../tours/Inka Jungle.html" data-key="navT5">Inka Jungle (4D/3N)</a></li>
+                            <li><a href="../tours/Paquete_Desafio_Andino_Salkantay_Trek.html" data-key="navT6">Salkantay
+                                    Trek (5D/4N)</a></li>
+                            <li><a href="../tours/Camino Inca Clasico.html" data-key="navT7">Camino Inca Clásico
+                                    (4D/3N)</a></li>
+                            <li><a href="../tours/Trekking Choquequirao.html" data-key="navT8">Trekking Choquequirao
+                                    Extremo (4D/3N)</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../tours-cortos.html" data-key="shortTours">TOURS CORTOS <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../tours cortos/City Tour Cusco.html" data-key="shortTour1">City Tour Cusco
+                                    (Medio Día)</a></li>
+                            <li><a href="../tours cortos/Tour Chinchero, Maras y Moray.html"
+                                    data-key="shortTour2">Chinchero, Maras y Moray</a></li>
+                            <li><a href="../tours cortos/Tour Valle Sur Cusco.html" data-key="shortTour3">Valle Sur
+                                    Cusco (Medio Día)</a></li>
+                            <li><a href="../tours cortos/Tour Valle Sagrado de los Incas.html"
+                                    data-key="shortTour4">Valle Sagrado (Full Day)</a></li>
+                        </ul>
+                    </li>
+                    <li class="current menu-item-has-children">
+                        <a href="../viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="escolar-imperial.html" data-key="school1">Ruta Imperial: Arequipa - Cusco -
+                                    Oxapampa | 6D/5N</a></li>
+                            <li><a href="escolar-sur-chile.html" data-key="school2">Cusco - Arica, Chile | 4D/3N</a>
+                            </li>
+                            <li><a href="escolar-norte-ecuador.html" data-key="school3">Ruta al Norte: Tumbes -
+                                    Guayaquil | 5D/4N</a></li>
+                            <li><a href="escolar-cusco-selva.html" data-key="school4">Cusco - Machu Picchu - Selva |
+                                    5D/4N</a></li>
+                            <li><a href="escolar-cusco-machupicchu.html" data-key="school5">Cusco - Machu Picchu (Tren)
+                                    | 2D/1N</a></li>
+                            <li><a href="escolar-lima-ica-paracas.html" data-key="school6">Lima - Ica - Huacachina |
+                                    3D/2N</a></li>
+                            <li><a href="escolar-arica-chile.html" data-key="school7">Arica - Chile | 4D/3N</a></li>
+                            <li><a href="escolar-norte-peruano.html" data-key="school8">Norte Peruano: Chiclayo -
+                                    Máncora | 6D/5N</a></li>
+                            <li><a href="escolar-lima-oxapampa.html" data-key="school9">Lima y Oxapampa | 5D/4N</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../aventuras.html" data-key="adventure">AVENTURA <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../aventuras/Aventura en Cuatrimotos.html" data-key="adv1">Cuatrimotos - Maras
+                                    y Moray</a></li>
+                            <li><a href="../aventuras/Vía Ferrata y Zipline.html" data-key="adv2">Vía Ferrata y
+                                    Zipline</a></li>
+                            <li><a href="../aventuras/Canotaje (Rafting).html" data-key="adv3">Rafting en el Río
+                                    Vilcanota</a></li>
+                            <li><a href="../aventuras/Bungee Jumping.html" data-key="adv4">Bungee Jumping y
+                                    Slingshot</a></li>
+                            <li><a href="../aventuras/Parapente sobre el valle sagrado.html" data-key="adv5">Parapente
+                                    sobre el Valle Sagrado</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contacto.html" data-key="contact">CONTACTO</a></li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO CON VIDEO -->
+        <section class="hero-tour">
+            <!-- Video de fondo -->
+            <video class="hero-video-bg" autoplay muted loop playsinline>
+                <source src="https://videos.pexels.com/video-files/2834499/2834499-uhd_2560_1440_25fps.mp4"
+                    type="video/mp4">
+                Tu navegador no soporta videos.
+            </video>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content" data-aos="zoom-in" data-aos-duration="1200">
+                <span class="hero-pre" data-key="chileHeroPre">🎓 VIAJE DE PROMOCIÓN 2026</span>
+                <h1 class="hero-title serif-font">
+                    <span data-key="chileHeroT1">✈️ Arequipa -</span> <br>
+                    <span class="highlight" data-key="chileHeroT2">Santiago de Chile</span>
+                </h1>
+                <p class="hero-subtitle" data-key="chileHeroSub">
+                    Un viaje internacional que te llevará desde la Ciudad Blanca de Arequipa hasta la vibrante capital
+                    chilena. Descubre el Morro de Arica, las playas de Chile, el Cerro San Cristóbal, el Teleférico y el
+                    emocionante Safari en Rancagua.
+                    <strong>¡Una aventura inolvidable en el país vecino!</strong>
+                </p>
+                <div class="hero-price-tag" data-key="chilePrice">
+                    🇵🇪 S/ 1,230 <small>por persona</small>
+                </div>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#itinerario" class="btn-gold-solid">
+                        <i class="fas fa-map"></i> <span data-key="btnIti">Ver Itinerario</span>
+                    </a>
+                    <a href="#cotizar" class="btn-gold-solid" style="background: var(--terracotta); color: white;">
+                        <i class="fas fa-whatsapp"></i> <span data-key="btnReserve">Cotizar Promoción</span>
+                    </a>
+                </div>
+            </div>
+            <div class="torn-paper"></div>
+        </section>
+
+        <!-- QUICK INFO -->
+        <div class="quick-info-wrapper">
+            <div class="quick-info-box" data-aos="fade-up">
+                <div class="qi-item">
+                    <div class="qi-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info1Title">Duración</h4>
+                        <p data-key="info1">5 Días / 4 Noches</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon" style="color: var(--andes-sky);"><i class="fas fa-passport"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info2Title">Tipo de Viaje</h4>
+                        <p data-key="info2">Internacional</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon"><i class="fas fa-plane"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info3Title">Transporte</h4>
+                        <p data-key="info3">Bus + Vuelos</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon"><i class="fas fa-users"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info4Title">Grupo</h4>
+                        <p data-key="info4">Mínimo 28 personas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WELCOME & BIG LOGO -->
+        <section class="welcome-warm">
+            <div class="container" data-aos="fade-up">
+                <div class="big-logo-container">
+                    <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel Gran Logo" class="big-logo"
+                        onerror="this.src='https://placehold.co/400x150?text=EXPLORE+PERU+TRAVEL'">
+                </div>
+                <div class="welcome-text-wrapper">
+                    <h2 class="section-title" style="margin-bottom: 20px;">
+                        <span data-key="chileWelcomeT1">🌎 ¡Cruza la frontera</span>
+                        <span class="text-gradient" data-key="chileWelcomeT2">y descubre Chile!</span>
+                    </h2>
+                    <p data-key="chileWelcomeP1">En <strong>Explore Peru Travel</strong> sabemos que el viaje de
+                        promoción escolar es el recuerdo más bonito de la juventud. Por eso hemos diseñado esta ruta
+                        internacional que te llevará desde la histórica Arequipa hasta la vibrante Santiago de Chile,
+                        pasando por la puerta de entrada al norte chileno: <strong>Arica</strong>.</p>
+                    <p data-key="chileWelcomeP2">Imagina recorrer las calles de Santiago, subir al Cerro San Cristóbal
+                        en teleférico, visitar el Parque Bicentenario y vivir la adrenalina de un safari en Rancagua.
+                        <strong>¡Prepárense para 5 días llenos de aventura, cultura y diversión en el país
+                            vecino!</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <section class="section-highlights">
+            <div class="container">
+                <div class="section-header" style="text-align:center; margin-bottom:50px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="chileHighTitle1">Lo mejor de este</span> <span
+                            class="text-gradient" data-key="chileHighTitle2">Gran Viaje</span></h2>
+                </div>
+                <div class="hl-grid">
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="hl-img">
+                            <img src="https://images.unsplash.com/photo-1520430394463-5ab6c8e8f5a9?q=80&w=800"
+                                alt="Morro de Arica">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="chileHigh1T">Morro de Arica</h3>
+                            <p data-key="chileHigh1D">El histórico morro que guarda la memoria de la Guerra del
+                                Pacífico.</p>
+                        </div>
+                    </div>
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="hl-img">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=800"
+                                alt="Playas de Chile">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="chileHigh2T">Playas de Chile</h3>
+                            <p data-key="chileHigh2D">Circuito de playas en Algarrobo y paseo en lancha en Pejerrey.</p>
+                        </div>
+                    </div>
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="hl-img">
+                            <img src="https://images.unsplash.com/photo-1545338410-2c6dd3d7a9e7?q=80&w=800"
+                                alt="Santiago de Chile">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="chileHigh3T">Santiago y Safari</h3>
+                            <p data-key="chileHigh3D">Cerro San Cristóbal, Teleférico, Parque Bicentenario y Safari en
+                                Rancagua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ITINERARIO -->
+        <section class="section-itinerary" id="itinerario">
+            <div class="container">
+                <div class="section-header" style="text-align:center; margin-bottom:50px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="itiTitle1">Itinerario de la</span> <span
+                            class="text-gradient" data-key="itiTitle2">Promoción</span></h2>
+                </div>
+
+                <div class="timeline-wrapper">
+                    <!-- Dia 1 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D1</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="chileDay1T">🚌 Arequipa - Tacna - Arica - Santiago de
+                                    Chile</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-bus"></i> Terrestre</span>
+                                    <span class="tag"><i class="fas fa-plane"></i> Vuelo</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="chileDay1D">El inicio de nuestro viaje se dará de forma
+                                terrestre. Una vez llegado a <strong>Tacna</strong> será el lugar donde tomaremos el
+                                desayuno para poder continuar nuestro viaje hacia <strong>Arica, Chile</strong>, donde
+                                tendremos un día de tour visitando el <strong>Morro de Arica</strong>, las
+                                <strong>Cuevas de Anzota</strong>, la <strong>Casa de la Respuesta</strong> donde se
+                                encuentra la bandera peruana izada y la <strong>Catedral de San Marcos</strong>. Todo
+                                esto ya después de haber pasado migraciones de ambos países. Luego nos iremos hacia el
+                                aeropuerto de Chacalluta, Chile, para tomar nuestro vuelo que nos llevará a la capital
+                                <strong>Santiago de Chile</strong>.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Dia 2 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D2</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="chileDay2T">🏖️ Circuito de Playas - Algarrobo -
+                                    Pejerrey
+                                    - Santiago</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-umbrella-beach"></i> Playa</span>
+                                    <span class="tag"><i class="fas fa-ship"></i> Lancha</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="chileDay2D">Haremos la visita a las playas de
+                                <strong>Canelo y Canelillo</strong> que se encuentran a una hora y media hacia
+                                <strong>Algarrobo</strong>, lugar donde disfrutaremos de las playas y tendremos el
+                                almuerzo. Luego iremos a la playa <strong>Pejerrey</strong> donde tomaremos un paseo en
+                                lancha y podremos ver la fauna como pingüinos. Luego retornaremos a la ciudad de
+                                Santiago para poder pasear por sus calles principales y conocer más de su cultura.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Dia 3 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D3</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="chileDay3T">🚠 Cerro San Cristóbal - Teleférico - Parque
+                                    Bicentenario - Parque Chino</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-cable-car"></i> Teleférico</span>
+                                    <span class="tag"><i class="fas fa-tree"></i> Parque</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="chileDay3D">Posterior a nuestro desayuno nos iremos a
+                                realizar nuestro tour iniciando con la visita del <strong>Cerro San Cristóbal</strong> y
+                                la <strong>Virgen Inmaculada</strong> que se halla en la cima de este cerro. Dependiendo
+                                de nuestra reserva podremos utilizar el funicular, teleférico o ambos servicios. Luego
+                                descenderemos para ir a pasear por el <strong>Parque Bicentenario</strong> antes de ir a
+                                almorzar. Después iremos al <strong>Parque Chino</strong>, un lugar con temática de la
+                                cultura china y su maravilla, la Muralla China, que fue obsequiada por el gobierno chino
+                                en el año 2006, que cuenta con distintas esculturas y estructuras representativas de la
+                                cultura china. Al finalizar nuestra visita cenaremos y retornaremos a Santiago.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dia 4 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D4</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="chileDay4T">🦁 Santiago - Rancagua - Safari - Metro Tren
+                                    - Estación Central</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-train"></i> Metro Tren</span>
+                                    <span class="tag"><i class="fas fa-lion"></i> Safari</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="chileDay4D">Tomaremos el desayuno en el restaurante designado
+                                para luego tomar la movilidad que nos llevará hacia la <strong>Estación Central</strong>
+                                donde subiremos al <strong>Metro Tren</strong> que nos llevará hasta
+                                <strong>Rancagua</strong>. Una vez ahí tomaremos los buses que nos llevarán al ingreso
+                                del zoo para poder realizar <strong>2 tours safari</strong> por dentro. Primero
+                                ingresaremos al área de los herbívoros teniendo un recorrido de más o menos 40 minutos,
+                                luego continuaremos con el safari de los animales carnívoros. Subiremos a una especie de
+                                camionetas enjauladas que nos llevará por el área de los leones y más, teniendo en
+                                cuenta
+                                que estos animales pueden subirse encima de la jaula y poder apreciarlos de mejor
+                                manera.
+                                Una vez terminado nuestro Full Day retornaremos a la ciudad de Santiago.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Dia 5 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D5</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="chileDay5T">🛬 Retorno a Arica - Tacna - Arequipa</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-plane"></i> Vuelo</span>
+                                    <span class="tag"><i class="fas fa-bus"></i> Retorno</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="chileDay5D">Nuestro vuelo de retorno será de madrugada debido
+                                a que los únicos horarios de vuelo son de madrugada y de media noche. Una vez
+                                aterrizado en <strong>Arica</strong> nos esperará la movilidad que nos llevará hacia
+                                <strong>Tacna</strong>, donde haremos un transbordo para coger la movilidad que nos
+                                llevará de retorno hacia <strong>Arequipa</strong>, donde finalizará nuestro tour por el
+                                sur. <strong>¡Fin del viaje de estudios!</strong>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INCLUSIONES / EXCLUSIONES -->
+        <section class="section-details">
+            <div class="container">
+                <div class="details-grid">
+                    <div class="detail-box" data-aos="fade-right">
+                        <h3 class="detail-title" data-key="incTitle">✅ ¿Qué Incluye?</h3>
+                        <ul class="detail-list inc">
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc1">Traslado terrestre Arequipa -
+                                    Tacna - Arica</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc2">Desayuno en Tacna</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc3">Tour en Arica: Morro de Arica,
+                                    Cuevas de Anzota, Casa de la Respuesta, Catedral de San Marcos</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc4">Trámites migratorios Perú -
+                                    Chile</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc5">Vuelo Arica - Santiago de Chile
+                                    (ida)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc6">Circuito de playas: Canelo,
+                                    Canelillo, Algarrobo</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc7">Paseo en lancha en playa
+                                    Pejerrey</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc8">Visita al Cerro San Cristóbal y
+                                    Virgen Inmaculada</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc9">Paseo en teleférico o funicular
+                                    (según reserva)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc10">Visita al Parque
+                                    Bicentenario</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc11">Visita al Parque Chino
+                                    (Muralla China)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc12">Full Day Safari en Rancagua: 2
+                                    tours (herbívoros y carnívoros)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc13">Transporte en Metro Tren
+                                    Santiago - Rancagua</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc14">Alimentación completa
+                                    (desayuno,
+                                    almuerzo, cena) durante todo el viaje</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc15">Alojamiento en hoteles
+                                    seleccionados</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc16">Vuelo de retorno Santiago de
+                                    Chile - Arica</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc17">Traslado terrestre Arica -
+                                    Tacna - Arequipa</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="chileInc18">Guía oficial de turismo</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="detail-box" data-aos="fade-left">
+                        <h3 class="detail-title" data-key="excTitle">📋 Condiciones Generales</h3>
+                        <ul class="detail-list exc">
+                            <li><i class="fas fa-times"></i> <span data-key="chileExc1">💰 Precios no incluyen
+                                    IGV</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="chileExc2">👥 Mínimo 28 pasajeros</span>
+                            </li>
+                            <li><i class="fas fa-times"></i> <span data-key="chileExc3">🛂 Pasaporte vigente (mínimo 6
+                                    meses de validez)</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="chileExc4">📝 Contrato notarial entre la
+                                    agencia y la promoción</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="chileExc5">⏰ Cancelaciones con 90 días de
+                                    anticipación tienen penalidades</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="chileExc6">🚫 Tarifas no
+                                    reembolsables</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="chileExc7">📄 Se requiere adelanto del 50%
+                                    para confirmar reserva</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="chileExc8">📅 Tarifas vigentes de marzo a
+                                    diciembre 2026</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="chileExc9">📌 No aplica en feriados, Semana
+                                    Santa, Fiestas Patrias</span></li>
+                        </ul>
+                        <div
+                            style="background: var(--cream-warm); padding: 15px; border-radius: var(--radius-md); margin: 20px 0; border: 2px solid var(--forest);">
+                            <p
+                                style="font-weight: 800; color: var(--terracotta); font-size: 1.2rem; text-align: center;">
+                                💵 Tarifa por persona:</p>
+                            <p style="text-align: center; font-size: 1.8rem; color: var(--forest); font-weight: 900;">S/
+                                1,230.00</p>
+                            <p style="text-align: center; font-size: 0.8rem; color: var(--forest-light);">Todo incluido
+                                | Sujeto a disponibilidad</p>
+                        </div>
+                        <a href="https://wa.me/51930164904?text=Hola%2C%20estoy%20interesado%20en%20el%20paquete%20Arequipa%20-%20Santiago%20de%20Chile%20(5D%2F4N)"
+                            target="_blank" class="btn-gold-solid"
+                            style="display: block; margin-top: 20px; background: var(--terracotta); color: white; text-align: center; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> <span data-key="btnCotizar">Cotizar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUÉ LLEVAR -->
+        <section class="section-bring">
+            <div class="container">
+                <div class="section-header" style="text-align:center; margin-bottom:50px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="bringTitle1">La Maleta del</span> <span
+                            class="text-gradient" data-key="bringTitle2">Viajero</span></h2>
+                </div>
+                <div class="bring-grid">
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="50">
+                        <div class="bring-icon"><i class="fas fa-passport"></i></div>
+                        <h4 data-key="chileBring1">Pasaporte vigente (mínimo 6 meses de validez)</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="bring-icon"><i class="fas fa-tshirt"></i></div>
+                        <h4 data-key="chileBring2">Ropa ligera para el día y casaca abrigadora para la noche</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="150">
+                        <div class="bring-icon"><i class="fas fa-swimmer"></i></div>
+                        <h4 data-key="chileBring3">Traje de baño y toalla para las playas de Chile</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="bring-icon"><i class="fas fa-sun"></i></div>
+                        <h4 data-key="chileBring4">Bloqueador solar, lentes oscuros, gorra y repelente</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA SWIPER -->
+        <section class="section-gallery">
+            <div class="container">
+                <h2 class="gallery-title serif-font"><span data-key="chileGalTitle">Postales del Viaje</span></h2>
+                <div class="swiper mySwiper" data-aos="zoom-in">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1520430394463-5ab6c8e8f5a9?q=80&w=600"
+                                alt="Morro de Arica">
+                            <div class="polaroid-text" data-key="chilePhoto1">Morro de Arica</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600"
+                                alt="Playas de Chile">
+                            <div class="polaroid-text" data-key="chilePhoto2">Playas de Algarrobo</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1545338410-2c6dd3d7a9e7?q=80&w=600"
+                                alt="Santiago de Chile">
+                            <div class="polaroid-text" data-key="chilePhoto3">Santiago de Chile</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1583853867769-d6c9b2afc667?q=80&w=600"
+                                alt="Teleférico">
+                            <div class="polaroid-text" data-key="chilePhoto4">Teleférico Santiago</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIOS -->
+        <section class="section-testimonials">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:40px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="testimTitle1">Lo que opinan</span> <span
+                            class="text-gradient" data-key="testimTitle2">nuestros viajeros</span></h2>
+                </div>
+                <div class="testim-grid">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testim-text" data-key="testim1">"El viaje a Santiago de Chile fue espectacular. El
+                            Morro de Arica, las playas de Algarrobo y el teleférico en el Cerro San Cristóbal fueron
+                            experiencias inolvidables. ¡Los chicos no dejaron de sonreír!"</p>
+                        <div class="testim-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150" alt="Docente"
+                                class="testim-avatar">
+                            <div class="testim-info">
+                                <h5>Rosa M.</h5>
+                                <p data-key="testim1Role">Docente / Arequipa</p>
+                                <div class="testim-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testim-text" data-key="testim2">"Excelente organización, los guías muy atentos y
+                            profesionales. El safari en Rancagua fue la experiencia favorita de todos. ¡100%
+                            recomendado!"</p>
+                        <div class="testim-author">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt="Profesor"
+                                class="testim-avatar">
+                            <div class="testim-info">
+                                <h5>Carlos G.</h5>
+                                <p data-key="testim2Role">Profesor / Arequipa</p>
+                                <div class="testim-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testim-text" data-key="testim3">"Un viaje que combinó cultura, naturaleza y aventura.
+                            Los estudiantes aprendieron sobre la historia peruana y chilena, disfrutaron de las playas y
+                            vivieron la emoción de cruzar la frontera. ¡Gracias por todo!"</p>
+                        <div class="testim-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150"
+                                alt="Estudiante" class="testim-avatar">
+                            <div class="testim-info">
+                                <h5>Lucía P.</h5>
+                                <p data-key="testim3Role">Estudiante / Lima</p>
+                                <div class="testim-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star-half-alt"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BOTTOM -->
+        <section class="section-cta-bottom" id="cotizar">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title"><span data-key="chileCta1">¿Listos para cruzar</span> <span
+                        class="text-gradient" data-key="chileCta2">la frontera hacia Chile?</span></h2>
+                <p style="margin-bottom: 25px; color: var(--forest-light); font-weight: 600;" data-key="chileCtaDesc">
+                    Contáctanos para enviarte la cotización exacta para tu salón y resolver todas tus dudas.
+                </p>
+                <a href="https://wa.me/51930164904" target="_blank" class="btn-gold-solid"
+                    style="background: var(--terracotta); color: white;">
+                    <i class="fab fa-whatsapp"></i> <span data-key="btnReserve">Cotizar Promoción</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-futurista">
+        <div class="footer-bg">
+            <video autoplay muted loop playsinline class="footer-video-bg">
+                <source src="../tours_y_logos/footer.mp4" type="video/mp4">
+            </video>
+            <div class="footer-overlay-gradient"></div>
+        </div>
+        <div class="container footer-container">
+            <div class="footer-grid futurista-grid">
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-compass"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerAboutTitle">QUIENES SOMOS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../nosotros.html" data-key="footerAboutUs">Sobre nosotros</a></li>
+                        <li><a href="../politicas-pago.html" data-key="footerConditions">Condiciones de venta</a></li>
+                        <li><a href="../politicas-pago.html" data-key="footerPayments">Formas de pago</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerMenuTitle">MENÚ PRINCIPAL</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../index.html" data-key="home">INICIO</a></li>
+                        <li><a href="../nosotros.html" data-key="about">NOSOTROS</a></li>
+                        <li><a href="../tours.html" data-key="tours">TOURS</a></li>
+                        <li><a href="../tours-cortos.html" data-key="shortTours">TOURS CORTOS</a></li>
+                        <li><a href="../viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES</a></li>
+                        <li><a href="../aventuras.html" data-key="adventure">AVENTURA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="policiesTitle">POLÍTICAS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../politicas-pago.html" data-key="policy1">Políticas y Condiciones de Pago</a></li>
+                        <li><a href="../proteccion-datos.html" data-key="policy2">Protección de Datos Personales</a>
+                        </li>
+                        <li><a href="../prevencion-esnna.html" data-key="policy3">Prevención de la ESNNA en turismo</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerContactTitle">CONTÁCTENOS</h3>
+                    <ul class="footer-contact-list futurista-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span data-key="footerAddress">Urbanización Tito
+                                Z-26<br>Wanchag - Cusco</span></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:exploreperutravel@gmail.com">exploreperutravel@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i>
+                            <div class="footer-phones"><span>+51 930 164 904</span><span>+51 984 764 403</span><span>+51
+                                    986 530 343</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider futurista-divider">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fas fa-star-of-life"></i></div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="footer-bottom futurista-bottom">
+                <p class="copyright futurista-copyright" data-key="footerCopyright">© 2026 EXPLORE PERU TRAVEL | Agencia
+                    de Viajes y Turismo</p>
+                <div class="footer-social futurista-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/51930164904" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB WHATSAPP -->
+    <a href="https://wa.me/51930164904" class="fab-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- LIBRERÍAS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // AOS
+            if (typeof AOS !== 'undefined') AOS.init({ duration: 800, once: true, offset: 40 });
+
+            // SKELETON
+            const skeletonLoader = document.getElementById('skeletonLoader');
+            if (skeletonLoader) {
+                const hideSkeleton = () => {
+                    if (!skeletonLoader.classList.contains('hide')) {
+                        skeletonLoader.classList.add('hide');
+                        setTimeout(() => { if (skeletonLoader.parentNode) skeletonLoader.remove(); }, 500);
+                    }
+                };
+                window.addEventListener('load', hideSkeleton);
+                setTimeout(hideSkeleton, 1200);
+            }
+
+            // HEADER SCROLL
+            const header = document.getElementById('mainHeader');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) header.classList.add('scrolled');
+                    else header.classList.remove('scrolled');
+                });
+            }
+
+            // MOBILE MENU
+            const hamburger = document.getElementById('hamburger');
+            if (hamburger && !document.querySelector('.mobile-menu')) {
+                const mobileMenuOverlay = document.createElement('div');
+                mobileMenuOverlay.className = 'mobile-menu-overlay';
+                const mobileMenu = document.createElement('div');
+                mobileMenu.className = 'mobile-menu';
+
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'mobile-menu-close';
+                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                mobileMenu.appendChild(closeBtn);
+
+                const navMenu = document.querySelector('.nav-menu');
+                const mobileNavList = document.createElement('ul');
+                mobileNavList.style.listStyle = 'none';
+                mobileNavList.style.marginTop = '20px';
+
+                if (navMenu) {
+                    const navLinks = navMenu.querySelectorAll('li');
+                    navLinks.forEach(li => {
+                        if (li.parentElement === navMenu) {
+                            const a = li.querySelector('a');
+                            if (a) {
+                                const liCopy = document.createElement('li');
+                                liCopy.style.marginBottom = '15px';
+                                const aCopy = document.createElement('a');
+                                aCopy.href = a.href;
+                                aCopy.innerHTML = a.innerHTML;
+                                aCopy.style.color = 'var(--forest)';
+                                aCopy.style.fontWeight = '800';
+                                aCopy.style.fontFamily = "'Nunito', sans-serif";
+                                aCopy.style.textDecoration = 'none';
+                                liCopy.appendChild(aCopy);
+                                mobileNavList.appendChild(liCopy);
+                            }
+                        }
+                    });
+                }
+                mobileMenu.appendChild(mobileNavList);
+
+                // Selector de idioma en móvil
+                const langSelectorMobile = document.createElement('div');
+                langSelectorMobile.className = 'mobile-lang-selector';
+
+                const langEsMobile = document.createElement('button');
+                langEsMobile.className = 'mobile-lang-btn active';
+                langEsMobile.setAttribute('data-lang', 'es');
+                langEsMobile.textContent = 'ES';
+                langSelectorMobile.appendChild(langEsMobile);
+
+                const langEnMobile = document.createElement('button');
+                langEnMobile.className = 'mobile-lang-btn';
+                langEnMobile.setAttribute('data-lang', 'en');
+                langEnMobile.textContent = 'EN';
+                langSelectorMobile.appendChild(langEnMobile);
+
+                mobileMenu.appendChild(langSelectorMobile);
+
+                document.body.appendChild(mobileMenuOverlay);
+                document.body.appendChild(mobileMenu);
+
+                function toggleMobileMenu() {
+                    hamburger.classList.toggle('open');
+                    mobileMenu.classList.toggle('open');
+                    mobileMenuOverlay.classList.toggle('open');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                }
+
+                hamburger.addEventListener('click', toggleMobileMenu);
+                closeBtn.addEventListener('click', toggleMobileMenu);
+                mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+
+                // Traducciones para móvil
+                const mobileLangBtns = langSelectorMobile.querySelectorAll('.mobile-lang-btn');
+                mobileLangBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const lang = btn.getAttribute('data-lang');
+                        mobileLangBtns.forEach(b => b.classList.toggle('active', b === btn));
+                        document.querySelectorAll('.lang-btn').forEach(b => {
+                            b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+                        });
+                        applyTranslations(lang);
+                        if (mobileMenu.classList.contains('open')) {
+                            toggleMobileMenu();
+                        }
+                    });
+                });
+            }
+
+            // SWIPER
+            if (typeof Swiper !== 'undefined') {
+                new Swiper(".mySwiper", {
+                    effect: "cards",
+                    grabCursor: true,
+                    loop: true,
+                    autoplay: { delay: 3000, disableOnInteraction: false }
+                });
+            }
+
+            // TRADUCCIONES
+            const translations = {
+                es: {
+                    contact: "CONTACTO", about: "NOSOTROS", home: "INICIO", tours: "TOURS", shortTours: "TOURS CORTOS", schoolTrips: "VIAJES ESCOLARES", adventure: "AVENTURA",
+                    navT1: "Paquete Cusco Básico (3D/2N)", navT2: "Paquete Cusco Clásico (4D/3N)", navT3: "Paquete Cusco Arqueológico (5D/4N)", navT4: "Paquete Experiencia Cusco Total (6D/5N)", navT5: "Inka Jungle (4D/3N)", navT6: "Salkantay Trek (5D/4N)", navT7: "Camino Inca Clásico (4D/3N)", navT8: "Trekking Choquequirao Extremo (4D/3N)",
+                    shortTour1: "City Tour Cusco (Medio Día)", shortTour2: "Chinchero, Maras y Moray", shortTour3: "Valle Sur Cusco (Medio Día)", shortTour4: "Valle Sagrado (Full Day)",
+                    school1: "Ruta Imperial: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "Cusco - Arica, Chile | 4D/3N", school3: "Ruta al Norte: Tumbes - Guayaquil | 5D/4N", school4: "Cusco - Machu Picchu - Selva | 5D/4N", school5: "Cusco - Machu Picchu (Tren) | 2D/1N", school6: "Lima - Ica - Huacachina | 3D/2N", school7: "Arica - Chile | 4D/3N", school8: "Norte Peruano: Chiclayo - Máncora | 6D/5N", school9: "Lima y Oxapampa | 5D/4N",
+                    adv1: "Cuatrimotos - Maras y Moray", adv2: "Vía Ferrata y Zipline", adv3: "Rafting en el Río Vilcanota", adv4: "Bungee Jumping y Slingshot", adv5: "Parapente sobre el Valle Sagrado",
+
+                    chileHeroPre: "🎓 VIAJE DE PROMOCIÓN 2026", chileHeroT1: "✈️ Arequipa -", chileHeroT2: "Santiago de Chile",
+                    chileHeroSub: "Un viaje internacional que te llevará desde la Ciudad Blanca de Arequipa hasta la vibrante capital chilena. Descubre el Morro de Arica, las playas de Chile, el Cerro San Cristóbal, el Teleférico y el emocionante Safari en Rancagua. <strong>¡Una aventura inolvidable en el país vecino!</strong>",
+                    chilePrice: "🇵🇪 S/ 1,230 por persona",
+                    btnIti: "Ver Itinerario", btnReserve: "Cotizar Promoción", btnCotizar: "Cotizar por WhatsApp",
+
+                    info1Title: "Duración", info1: "5 Días / 4 Noches", info2Title: "Tipo de Viaje", info2: "Internacional", info3Title: "Transporte", info3: "Bus + Vuelos", info4Title: "Grupo", info4: "Mínimo 28 personas",
+
+                    chileWelcomeT1: "🌎 ¡Cruza la frontera", chileWelcomeT2: "y descubre Chile!",
+                    chileWelcomeP1: "En <strong>Explore Peru Travel</strong> sabemos que el viaje de promoción escolar es el recuerdo más bonito de la juventud. Por eso hemos diseñado esta ruta internacional que te llevará desde la histórica Arequipa hasta la vibrante Santiago de Chile, pasando por la puerta de entrada al norte chileno: <strong>Arica</strong>.",
+                    chileWelcomeP2: "Imagina recorrer las calles de Santiago, subir al Cerro San Cristóbal en teleférico, visitar el Parque Bicentenario y vivir la adrenalina de un safari en Rancagua. <strong>¡Prepárense para 5 días llenos de aventura, cultura y diversión en el país vecino!</strong>",
+
+                    chileHighTitle1: "Lo mejor de este", chileHighTitle2: "Gran Viaje",
+                    chileHigh1T: "Morro de Arica", chileHigh1D: "El histórico morro que guarda la memoria de la Guerra del Pacífico.",
+                    chileHigh2T: "Playas de Chile", chileHigh2D: "Circuito de playas en Algarrobo y paseo en lancha en Pejerrey.",
+                    chileHigh3T: "Santiago y Safari", chileHigh3D: "Cerro San Cristóbal, Teleférico, Parque Bicentenario y Safari en Rancagua.",
+
+                    itiTitle1: "Itinerario de la", itiTitle2: "Promoción",
+                    chileDay1T: "🚌 Arequipa - Tacna - Arica - Santiago de Chile",
+                    chileDay1D: "El inicio de nuestro viaje se dará de forma terrestre. Una vez llegado a <strong>Tacna</strong> será el lugar donde tomaremos el desayuno para poder continuar nuestro viaje hacia <strong>Arica, Chile</strong>, donde tendremos un día de tour visitando el <strong>Morro de Arica</strong>, las <strong>Cuevas de Anzota</strong>, la <strong>Casa de la Respuesta</strong> donde se encuentra la bandera peruana izada y la <strong>Catedral de San Marcos</strong>. Todo esto ya después de haber pasado migraciones de ambos países. Luego nos iremos hacia el aeropuerto de Chacalluta, Chile, para tomar nuestro vuelo que nos llevará a la capital <strong>Santiago de Chile</strong>.",
+                    chileDay2T: "🏖️ Circuito de Playas - Algarrobo - Pejerrey - Santiago",
+                    chileDay2D: "Haremos la visita a las playas de <strong>Canelo y Canelillo</strong> que se encuentran a una hora y media hacia <strong>Algarrobo</strong>, lugar donde disfrutaremos de las playas y tendremos el almuerzo. Luego iremos a la playa <strong>Pejerrey</strong> donde tomaremos un paseo en lancha y podremos ver la fauna como pingüinos. Luego retornaremos a la ciudad de Santiago para poder pasear por sus calles principales y conocer más de su cultura.",
+                    chileDay3T: "🚠 Cerro San Cristóbal - Teleférico - Parque Bicentenario - Parque Chino",
+                    chileDay3D: "Posterior a nuestro desayuno nos iremos a realizar nuestro tour iniciando con la visita del <strong>Cerro San Cristóbal</strong> y la <strong>Virgen Inmaculada</strong> que se halla en la cima de este cerro. Dependiendo de nuestra reserva podremos utilizar el funicular, teleférico o ambos servicios. Luego descenderemos para ir a pasear por el <strong>Parque Bicentenario</strong> antes de ir a almorzar. Después iremos al <strong>Parque Chino</strong>, un lugar con temática de la cultura china y su maravilla, la Muralla China, que fue obsequiada por el gobierno chino en el año 2006, que cuenta con distintas esculturas y estructuras representativas de la cultura china. Al finalizar nuestra visita cenaremos y retornaremos a Santiago.",
+                    chileDay4T: "🦁 Santiago - Rancagua - Safari - Metro Tren - Estación Central",
+                    chileDay4D: "Tomaremos el desayuno en el restaurante designado para luego tomar la movilidad que nos llevará hacia la <strong>Estación Central</strong> donde subiremos al <strong>Metro Tren</strong> que nos llevará hasta <strong>Rancagua</strong>. Una vez ahí tomaremos los buses que nos llevarán al ingreso del zoo para poder realizar <strong>2 tours safari</strong> por dentro. Primero ingresaremos al área de los herbívoros teniendo un recorrido de más o menos 40 minutos, luego continuaremos con el safari de los animales carnívoros. Subiremos a una especie de camionetas enjauladas que nos llevará por el área de los leones y más, teniendo en cuenta que estos animales pueden subirse encima de la jaula y poder apreciarlos de mejor manera. Una vez terminado nuestro Full Day retornaremos a la ciudad de Santiago.",
+                    chileDay5T: "🛬 Retorno a Arica - Tacna - Arequipa",
+                    chileDay5D: "Nuestro vuelo de retorno será de madrugada debido a que los únicos horarios de vuelo son de madrugada y de media noche. Una vez aterrizado en <strong>Arica</strong> nos esperará la movilidad que nos llevará hacia <strong>Tacna</strong>, donde haremos un transbordo para coger la movilidad que nos llevará de retorno hacia <strong>Arequipa</strong>, donde finalizará nuestro tour por el sur. <strong>¡Fin del viaje de estudios!</strong>",
+
+                    incTitle: "✅ ¿Qué Incluye?", excTitle: "📋 Condiciones Generales",
+                    chileInc1: "Traslado terrestre Arequipa - Tacna - Arica",
+                    chileInc2: "Desayuno en Tacna",
+                    chileInc3: "Tour en Arica: Morro de Arica, Cuevas de Anzota, Casa de la Respuesta, Catedral de San Marcos",
+                    chileInc4: "Trámites migratorios Perú - Chile",
+                    chileInc5: "Vuelo Arica - Santiago de Chile (ida)",
+                    chileInc6: "Circuito de playas: Canelo, Canelillo, Algarrobo",
+                    chileInc7: "Paseo en lancha en playa Pejerrey",
+                    chileInc8: "Visita al Cerro San Cristóbal y Virgen Inmaculada",
+                    chileInc9: "Paseo en teleférico o funicular (según reserva)",
+                    chileInc10: "Visita al Parque Bicentenario",
+                    chileInc11: "Visita al Parque Chino (Muralla China)",
+                    chileInc12: "Full Day Safari en Rancagua: 2 tours (herbívoros y carnívoros)",
+                    chileInc13: "Transporte en Metro Tren Santiago - Rancagua",
+                    chileInc14: "Alimentación completa (desayuno, almuerzo, cena) durante todo el viaje",
+                    chileInc15: "Alojamiento en hoteles seleccionados",
+                    chileInc16: "Vuelo de retorno Santiago de Chile - Arica",
+                    chileInc17: "Traslado terrestre Arica - Tacna - Arequipa",
+                    chileInc18: "Guía oficial de turismo",
+                    chileExc1: "💰 Precios no incluyen IGV",
+                    chileExc2: "👥 Mínimo 28 pasajeros",
+                    chileExc3: "🛂 Pasaporte vigente (mínimo 6 meses de validez)",
+                    chileExc4: "📝 Contrato notarial entre la agencia y la promoción",
+                    chileExc5: "⏰ Cancelaciones con 90 días de anticipación tienen penalidades",
+                    chileExc6: "🚫 Tarifas no reembolsables",
+                    chileExc7: "📄 Se requiere adelanto del 50% para confirmar reserva",
+                    chileExc8: "📅 Tarifas vigentes de marzo a diciembre 2026",
+                    chileExc9: "📌 No aplica en feriados, Semana Santa, Fiestas Patrias",
+
+                    bringTitle1: "La Maleta del", bringTitle2: "Viajero",
+                    chileBring1: "Pasaporte vigente (mínimo 6 meses de validez)",
+                    chileBring2: "Ropa ligera para el día y casaca abrigadora para la noche",
+                    chileBring3: "Traje de baño y toalla para las playas de Chile",
+                    chileBring4: "Bloqueador solar, lentes oscuros, gorra y repelente",
+
+                    chileGalTitle: "Postales del Viaje", chilePhoto1: "Morro de Arica", chilePhoto2: "Playas de Algarrobo", chilePhoto3: "Santiago de Chile", chilePhoto4: "Teleférico Santiago",
+
+                    testimTitle1: "Lo que opinan", testimTitle2: "nuestros viajeros",
+                    testim1: "\"El viaje a Santiago de Chile fue espectacular. El Morro de Arica, las playas de Algarrobo y el teleférico en el Cerro San Cristóbal fueron experiencias inolvidables. ¡Los chicos no dejaron de sonreír!\"", testim1Role: "Docente / Arequipa",
+                    testim2: "\"Excelente organización, los guías muy atentos y profesionales. El safari en Rancagua fue la experiencia favorita de todos. ¡100% recomendado!\"", testim2Role: "Profesor / Arequipa",
+                    testim3: "\"Un viaje que combinó cultura, naturaleza y aventura. Los estudiantes aprendieron sobre la historia peruana y chilena, disfrutaron de las playas y vivieron la emoción de cruzar la frontera. ¡Gracias por todo!\"", testim3Role: "Estudiante / Lima",
+
+                    chileCta1: "¿Listos para cruzar", chileCta2: "la frontera hacia Chile?",
+                    chileCtaDesc: "Contáctanos para enviarte la cotización exacta para tu salón y resolver todas tus dudas.",
+
+                    footerAboutTitle: "QUIENES SOMOS", footerAboutUs: "Sobre nosotros", footerConditions: "Condiciones de venta", footerPayments: "Formas de pago",
+                    footerMenuTitle: "MENÚ PRINCIPAL", footerContactTitle: "CONTÁCTENOS",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Agencia de Viajes y Turismo",
+                    policiesTitle: "POLÍTICAS", policy1: "Políticas y Condiciones de Pago", policy2: "Protección de Datos Personales", policy3: "Prevención de la ESNNA en turismo"
+                },
+                en: {
+                    contact: "CONTACT", about: "ABOUT US", home: "HOME", tours: "TOURS", shortTours: "SHORT TOURS", schoolTrips: "SCHOOL TRIPS", adventure: "ADVENTURE",
+                    navT1: "Cusco Basic Package (3D/2N)", navT2: "Cusco Classic Package (4D/3N)", navT3: "Cusco Archaeological Package (5D/4N)", navT4: "Cusco Total Experience (6D/5N)", navT5: "Inka Jungle (4D/3N)", navT6: "Salkantay Trek (5D/4N)", navT7: "Classic Inca Trail (4D/3N)", navT8: "Extreme Choquequirao Trek (4D/3N)",
+                    shortTour1: "Cusco City Tour (Half Day)", shortTour2: "Chinchero, Maras & Moray", shortTour3: "Cusco South Valley (Half Day)", shortTour4: "Sacred Valley (Full Day)",
+                    school1: "Imperial Route: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "Cusco - Arica, Chile | 4D/3N", school3: "Northern Route: Tumbes - Guayaquil | 5D/4N", school4: "Cusco - Machu Picchu - Jungle | 5D/4N", school5: "Cusco - Machu Picchu (Train) | 2D/1N", school6: "Lima - Ica - Huacachina | 3D/2N", school7: "Arica - Chile | 4D/3N", school8: "Northern Peru: Chiclayo - Mancora | 6D/5N", school9: "Lima and Oxapampa | 5D/4N",
+                    adv1: "ATVs - Maras & Moray", adv2: "Via Ferrata and Zipline", adv3: "Vilcanota River Rafting", adv4: "Bungee Jumping and Slingshot", adv5: "Paragliding over Sacred Valley",
+
+                    chileHeroPre: "🎓 SCHOOL TRIP 2026", chileHeroT1: "✈️ Arequipa -", chileHeroT2: "Santiago de Chile",
+                    chileHeroSub: "An international trip that will take you from the White City of Arequipa to the vibrant Chilean capital. Discover the Morro de Arica, the beaches of Chile, Cerro San Cristóbal, the Cable Car and the exciting Safari in Rancagua. <strong>An unforgettable adventure in the neighboring country!</strong>",
+                    chilePrice: "🇵🇪 S/ 1,230 per person",
+                    btnIti: "View Itinerary", btnReserve: "Quote School Trip", btnCotizar: "Quote via WhatsApp",
+
+                    info1Title: "Duration", info1: "5 Days / 4 Nights", info2Title: "Trip Type", info2: "International", info3Title: "Transport", info3: "Bus + Flights", info4Title: "Group", info4: "Min. 28 people",
+
+                    chileWelcomeT1: "🌎 Cross the border", chileWelcomeT2: "and discover Chile!",
+                    chileWelcomeP1: "At <strong>Explore Peru Travel</strong> we know that the school graduation trip is the most beautiful memory of youth. That's why we have designed this international route that will take you from historic Arequipa to vibrant Santiago de Chile, passing through the gateway to northern Chile: <strong>Arica</strong>.",
+                    chileWelcomeP2: "Imagine walking the streets of Santiago, climbing Cerro San Cristóbal by cable car, visiting Bicentennial Park and experiencing the adrenaline of a safari in Rancagua. <strong>Get ready for 5 days full of adventure, culture and fun in the neighboring country!</strong>",
+
+                    chileHighTitle1: "The best of this", chileHighTitle2: "Great Trip",
+                    chileHigh1T: "Morro de Arica", chileHigh1D: "The historic hill that holds the memory of the Pacific War.",
+                    chileHigh2T: "Beaches of Chile", chileHigh2D: "Beach circuit in Algarrobo and boat ride in Pejerrey.",
+                    chileHigh3T: "Santiago and Safari", chileHigh3D: "Cerro San Cristóbal, Cable Car, Bicentennial Park and Safari in Rancagua.",
+
+                    itiTitle1: "Graduation", itiTitle2: "Itinerary",
+                    chileDay1T: "🚌 Arequipa - Tacna - Arica - Santiago de Chile",
+                    chileDay1D: "The start of our trip will be by land. Once we arrive in <strong>Tacna</strong> we will have breakfast to continue our journey to <strong>Arica, Chile</strong>, where we will have a day tour visiting the <strong>Morro de Arica</strong>, the <strong>Cuevas de Anzota</strong>, the <strong>Casa de la Respuesta</strong> where the Peruvian flag is raised and the <strong>San Marcos Cathedral</strong>. All this after having passed immigration of both countries. Then we will go to the Chacalluta airport in Chile to take our flight that will take us to the capital <strong>Santiago de Chile</strong>.",
+                    chileDay2T: "🏖️ Beach Circuit - Algarrobo - Pejerrey - Santiago",
+                    chileDay2D: "We will visit the beaches of <strong>Canelo and Canelillo</strong>, located an hour and a half away towards <strong>Algarrobo</strong>, where we will enjoy the beaches and have lunch. Then we will go to <strong>Pejerrey</strong> beach where we will take a boat ride and see wildlife such as penguins. Then we will return to Santiago to walk through its main streets and learn more about its culture.",
+                    chileDay3T: "🚠 Cerro San Cristóbal - Cable Car - Bicentennial Park - Chinese Park",
+                    chileDay3D: "After breakfast we will start our tour with a visit to <strong>Cerro San Cristóbal</strong> and the <strong>Inmaculada Virgen</strong> located at the top of this hill. Depending on our reservation we can use the funicular, cable car or both services. Then we will go down to walk through the <strong>Bicentennial Park</strong> before lunch. Then we will go to the <strong>Chinese Park</strong>, a place with a theme of Chinese culture and its wonder, the Great Wall of China, which was gifted by the Chinese government in 2006, featuring various sculptures and structures representative of Chinese culture. After our visit we will have dinner and return to Santiago.",
+                    chileDay4T: "🦁 Santiago - Rancagua - Safari - Metro Train - Central Station",
+                    chileDay4D: "We will have breakfast at the designated restaurant and then take the vehicle that will take us to the <strong>Central Station</strong> where we will board the <strong>Metro Train</strong> that will take us to <strong>Rancagua</strong>. Once there we will take the buses that will take us to the zoo entrance to do <strong>2 safari tours</strong>. First we will enter the herbivore area with a tour of about 40 minutes, then we will continue with the carnivore safari. We will board a kind of caged trucks that will take us through the lion area and more, keeping in mind that these animals can get on top of the cage and be appreciated better. Once our Full Day is finished we will return to Santiago.",
+                    chileDay5T: "🛬 Return to Arica - Tacna - Arequipa",
+                    chileDay5D: "Our return flight will be early morning since the only flight times are early morning and midnight. Once we land in <strong>Arica</strong> the vehicle will be waiting for us to take us to <strong>Tacna</strong>, where we will transfer to the vehicle that will take us back to <strong>Arequipa</strong>, where our southern tour will end. <strong>End of the study trip!</strong>",
+
+                    incTitle: "✅ What's Included?", excTitle: "📋 General Conditions",
+                    chileInc1: "Land transfer Arequipa - Tacna - Arica",
+                    chileInc2: "Breakfast in Tacna",
+                    chileInc3: "Tour in Arica: Morro de Arica, Cuevas de Anzota, Casa de la Respuesta, San Marcos Cathedral",
+                    chileInc4: "Peru - Chile immigration procedures",
+                    chileInc5: "Flight Arica - Santiago de Chile (outbound)",
+                    chileInc6: "Beach circuit: Canelo, Canelillo, Algarrobo",
+                    chileInc7: "Boat ride at Pejerrey beach",
+                    chileInc8: "Visit to Cerro San Cristóbal and Inmaculada Virgen",
+                    chileInc9: "Cable car or funicular ride (depending on reservation)",
+                    chileInc10: "Visit to Bicentennial Park",
+                    chileInc11: "Visit to Chinese Park (Great Wall of China)",
+                    chileInc12: "Full Day Safari in Rancagua: 2 tours (herbivores and carnivores)",
+                    chileInc13: "Metro Train transport Santiago - Rancagua",
+                    chileInc14: "Full meals (breakfast, lunch, dinner) throughout the trip",
+                    chileInc15: "Accommodation in selected hotels",
+                    chileInc16: "Return flight Santiago de Chile - Arica",
+                    chileInc17: "Land transfer Arica - Tacna - Arequipa",
+                    chileInc18: "Official tour guide",
+                    chileExc1: "💰 Prices do not include IGV",
+                    chileExc2: "👥 Minimum 28 passengers",
+                    chileExc3: "🛂 Valid passport (minimum 6 months validity)",
+                    chileExc4: "📝 Notarized contract between the agency and the graduation class",
+                    chileExc5: "⏰ Cancellations 90 days in advance have penalties",
+                    chileExc6: "🚫 Non-refundable rates",
+                    chileExc7: "📄 50% advance payment required to confirm reservation",
+                    chileExc8: "📅 Rates valid from March to December 2026",
+                    chileExc9: "📌 Not valid on holidays, Easter, Independence Day",
+
+                    bringTitle1: "The Traveler's", bringTitle2: "Suitcase",
+                    chileBring1: "Valid passport (minimum 6 months validity)",
+                    chileBring2: "Light clothing for the day and warm jacket for the night",
+                    chileBring3: "Swimsuit and towel for the beaches of Chile",
+                    chileBring4: "Sunblock, sunglasses, hat and insect repellent",
+
+                    chileGalTitle: "Trip Postcards", chilePhoto1: "Morro de Arica", chilePhoto2: "Algarrobo Beaches", chilePhoto3: "Santiago de Chile", chilePhoto4: "Santiago Cable Car",
+
+                    testimTitle1: "What our", testimTitle2: "travelers say",
+                    testim1: "\"The trip to Santiago de Chile was spectacular. The Morro de Arica, the beaches of Algarrobo and the cable car at Cerro San Cristóbal were unforgettable experiences. The kids couldn't stop smiling!\"", testim1Role: "Teacher / Arequipa",
+                    testim2: "\"Excellent organization, the guides were very attentive and professional. The safari in Rancagua was everyone's favorite. 100% recommended!\"", testim2Role: "Professor / Arequipa",
+                    testim3: "\"A trip that combined culture, nature and adventure. The students learned about Peruvian and Chilean history, enjoyed the beaches and experienced the excitement of crossing the border. Thank you for everything!\"", testim3Role: "Student / Lima",
+
+                    chileCta1: "Ready to cross", chileCta2: "the border to Chile?",
+                    chileCtaDesc: "Contact us to send you the exact quote for your class and answer all your questions.",
+
+                    footerAboutTitle: "ABOUT US", footerAboutUs: "About us", footerConditions: "Terms and conditions", footerPayments: "Payment methods",
+                    footerMenuTitle: "MAIN MENU", footerContactTitle: "CONTACT US",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Travel and Tourism Agency",
+                    policiesTitle: "POLICIES", policy1: "Payment Policies", policy2: "Data Protection", policy3: "Child Protection in Tourism"
+                }
+            };
+
+            let currentLang = localStorage.getItem('preferredLang') || 'es';
+
+            function applyTranslations(lang) {
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    const translation = translations[lang]?.[key];
+                    if (translation) {
+                        if (el.tagName !== 'INPUT' && el.tagName !== 'TEXTAREA' && el.tagName !== 'SELECT' && el.tagName !== 'IMG') {
+                            const hasIcon = el.querySelector('i') || el.querySelector('.fas') || el.querySelector('.fab') || el.querySelector('.far');
+                            if (hasIcon) {
+                                let textNodeUpdated = false;
+                                for (let node of el.childNodes) {
+                                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                                        if (!textNodeUpdated) {
+                                            node.textContent = translation + ' ';
+                                            textNodeUpdated = true;
+                                        } else {
+                                            node.textContent = '';
+                                        }
+                                    }
+                                }
+                                if (!textNodeUpdated) {
+                                    el.insertAdjacentText('afterbegin', translation + ' ');
+                                }
+                            } else {
+                                el.innerHTML = translation;
+                            }
+                        }
+                    }
+                });
+
+                currentLang = lang;
+                localStorage.setItem('preferredLang', lang);
+
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+                document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+            }
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const lang = btn.getAttribute('data-lang');
+                    document.querySelectorAll('.mobile-lang-btn').forEach(b => {
+                        b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+                    });
+                    applyTranslations(lang);
+                });
+            });
+
+            applyTranslations(currentLang);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,2605 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description"
+        content="Lima - Ica - Huacachina - Paracas. Viaje de Promoción Escolar 2026. Incluye Real Felipe, Islas Ballestas, Huacachina, dunas, sandboarding y Parque de las Leyendas.">
+    <title>Lima - Ica - Huacachina - Paracas | Viaje Escolar 2026 | Explore Peru Travel</title>
+
+    <link rel="icon" href="../tours_y_logos/logoprincipal.png" type="image/png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap">
+    </noscript>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        /* ============================================================
+           RUSTIC FUN DESIGN SYSTEM - EXPLORE PERU TRAVEL
+           ============================================================ */
+
+        :root {
+            --deep: #1f1812;
+            --forest: #3a2e24;
+            --forest-mid: #4f3f31;
+            --forest-light: #6b5442;
+            --cream: #faf5eb;
+            --cream-warm: #f3ebd8;
+            --cream-border: #e0d0b8;
+
+            --terracotta: #c05a3c;
+            --rust-mustard: #e2a02b;
+            --andes-green: #3e6b4a;
+            --inca-red: #a83a32;
+            --andes-sky: #4a8ca8;
+            --gold: #c29b45;
+
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-pill: 100px;
+            --shadow-solid-sm: 4px 4px 0 var(--cream-border);
+            --shadow-solid-md: 8px 8px 0 var(--forest);
+            --shadow-solid-gold: 8px 8px 0 var(--rust-mustard);
+
+            --transition: 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --nav-height-main: 82px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--cream);
+            color: var(--forest);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%233a2e24' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        .text-gradient {
+            background: linear-gradient(130deg, var(--rust-mustard) 0%, var(--terracotta) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* ─── SKELETON LOADER ─── */
+        .skeleton-loader {
+            position: fixed;
+            inset: 0;
+            background: var(--cream);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            transition: 0.5s ease;
+            pointer-events: none;
+        }
+
+        .skeleton-loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .skeleton-navbar {
+            height: var(--nav-height-main);
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        .skeleton-hero {
+            flex: 1;
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        @keyframes skeletonShimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* ─── NAVBAR (ISLA DINÁMICA) ─── */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1050;
+            transition: var(--transition);
+        }
+
+        .main-navbar {
+            height: var(--nav-height-main);
+            display: flex;
+            align-items: center;
+            background: rgba(250, 245, 235, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid var(--cream-border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .nav-flex {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            transition: all 0.4s ease;
+        }
+
+        .logo-img {
+            width: 230px;
+            height: auto;
+            transition: all 0.4s ease;
+        }
+
+        .main-header.scrolled .main-navbar {
+            height: 56px;
+            margin: 12px auto;
+            width: fit-content;
+            border-radius: 50px;
+            background: rgba(31, 24, 18, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(226, 160, 43, 0.3);
+            border: none;
+            padding: 0 12px;
+        }
+
+        .main-header.scrolled .logo-area {
+            display: none;
+        }
+
+        .main-header.scrolled .nav-flex {
+            justify-content: center;
+            padding: 0 10px;
+            width: auto;
+            gap: 8px;
+        }
+
+        .main-header.scrolled .nav-menu {
+            gap: 14px;
+        }
+
+        .main-header.scrolled .nav-menu a {
+            font-size: 0.65rem;
+            color: var(--cream);
+        }
+
+        .main-header.scrolled .nav-menu a:hover,
+        .main-header.scrolled .nav-menu li.current>a {
+            color: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .nav-menu a::after {
+            background: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .lang-selector {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: transparent;
+        }
+
+        .main-header.scrolled .lang-btn {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .main-header.scrolled .lang-btn.active {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            box-shadow: none;
+        }
+
+        .main-header.scrolled .hamburger span {
+            background: var(--cream);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: clamp(10px, 1.8vw, 22px);
+            align-items: center;
+        }
+
+        .nav-menu a {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: clamp(0.65rem, 1.3vw, 0.75rem);
+            letter-spacing: 1px;
+            color: var(--forest-mid);
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu li.current>a {
+            color: var(--terracotta);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu li.current>a::after {
+            width: 100%;
+        }
+
+        .menu-item-has-children {
+            position: relative;
+        }
+
+        .menu-item-has-children>a .fa-chevron-down {
+            transition: transform 0.3s ease;
+            font-size: 0.6rem;
+        }
+
+        .menu-item-has-children:hover>a .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 0;
+            min-width: 300px;
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 10px 0;
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            list-style: none;
+        }
+
+        .sub-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sub-menu::-webkit-scrollbar-thumb {
+            background-color: var(--terracotta);
+            border-radius: 10px;
+        }
+
+        .sub-menu::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        .main-header.scrolled .sub-menu {
+            background: var(--deep);
+            border-color: var(--rust-mustard);
+            box-shadow: 6px 6px 0 var(--rust-mustard);
+        }
+
+        .menu-item-has-children:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% + 6px);
+        }
+
+        .sub-menu li a {
+            display: block;
+            padding: 10px 22px;
+            font-size: 0.7rem;
+            color: var(--forest);
+            transition: all 0.25s ease;
+            white-space: normal;
+        }
+
+        .main-header.scrolled .sub-menu li a {
+            color: var(--cream);
+        }
+
+        .sub-menu li a::after {
+            display: none;
+        }
+
+        .sub-menu li a:hover {
+            background: rgba(192, 90, 60, 0.1);
+            color: var(--terracotta);
+            padding-left: 28px;
+        }
+
+        .main-header.scrolled .sub-menu li a:hover {
+            background: rgba(226, 160, 43, 0.15);
+            color: var(--rust-mustard);
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 3px;
+            background: var(--cream-warm);
+            padding: 4px;
+            border-radius: var(--radius-pill);
+            border: 2px solid var(--forest);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-weight: 800;
+            font-size: 0.65rem;
+            color: var(--forest-light);
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--forest);
+            color: white;
+            box-shadow: 2px 2px 0 var(--terracotta);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: var(--forest);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(31, 24, 18, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1055;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(320px, 85vw);
+            height: 100dvh;
+            background: var(--cream);
+            z-index: 1060;
+            padding: 70px 24px 30px;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow-y: auto;
+            border-left: 4px solid var(--forest);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            background: var(--forest);
+            color: white;
+            border: 2px solid var(--deep);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 3px 3px 0 var(--terracotta);
+        }
+
+        @media (max-width: 1050px) {
+
+            .nav-menu,
+            .lang-selector {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .main-navbar {
+                height: 65px;
+            }
+
+            .main-header.scrolled .main-navbar {
+                margin: 10px auto;
+                width: calc(100% - 24px);
+                height: 54px;
+                padding: 0 16px;
+            }
+
+            .main-header.scrolled .nav-flex {
+                justify-content: space-between;
+                padding: 0;
+                width: 100%;
+            }
+
+            .logo-img {
+                width: 180px;
+            }
+
+            .main-header.scrolled .logo-area {
+                display: block;
+            }
+
+            .main-header.scrolled .logo-img {
+                width: 120px;
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        /* ─── BOTONES GLOBALES ─── */
+        .btn-gold-solid {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid var(--deep);
+            box-shadow: 4px 4px 0 var(--deep);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-gold-solid:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--deep);
+            background: white;
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        /* ─── HERO ─── */
+        .hero-tour {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--nav-height-main) + 60px) 20px 80px;
+            overflow: hidden;
+            background-color: var(--deep);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-image: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.6) contrast(1.1);
+            transform: scale(1.05);
+            animation: panBg 30s infinite alternate linear;
+        }
+
+        @keyframes panBg {
+            0% {
+                transform: scale(1.05) translate(0, 0);
+            }
+
+            100% {
+                transform: scale(1.1) translate(-2%, 2%);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31, 24, 18, 0.3) 0%, rgba(31, 24, 18, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            max-width: 900px;
+            padding: 0;
+        }
+
+        .hero-pre {
+            display: inline-block;
+            background: rgba(226, 160, 43, 0.2);
+            border: 1px solid var(--rust-mustard);
+            color: var(--rust-mustard);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 35px;
+            font-weight: 400;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .torn-paper {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 5;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L0,40 Q30,80 60,40 T120,40 T180,40 T240,40 T300,40 T360,40 T420,40 T480,40 T540,40 T600,40 T660,40 T720,40 T780,40 T840,40 T900,40 T960,40 T1020,40 T1080,40 T1140,40 T1200,40 L1200,120 Z' fill='%23faf5eb'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* ─── QUICK INFO ─── */
+        .quick-info-wrapper {
+            position: relative;
+            z-index: 10;
+            margin-top: -60px;
+            padding: 0 20px;
+        }
+
+        .quick-info-box {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+            max-width: 1100px;
+            margin: 0 auto;
+            border-radius: var(--radius-lg);
+            padding: 25px 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--forest);
+            position: relative;
+        }
+
+        .quick-info-box::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: -6px;
+            bottom: -6px;
+            border: 2px dashed var(--rust-mustard);
+            border-radius: var(--radius-lg);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @media (max-width: 900px) {
+            .quick-info-box {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: -40px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .quick-info-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .qi-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qi-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--cream);
+            border: 2px solid var(--forest);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--terracotta);
+            box-shadow: 3px 3px 0 var(--forest);
+            transform: rotate(-3deg);
+            transition: var(--transition);
+        }
+
+        .qi-item:hover .qi-icon {
+            transform: rotate(5deg) scale(1.1);
+            background: var(--rust-mustard);
+            color: var(--deep);
+        }
+
+        .qi-text h4 {
+            font-size: 0.8rem;
+            color: var(--forest-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .qi-text p {
+            font-size: 1.1rem;
+            color: var(--forest);
+            font-weight: 900;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* ─── WELCOME & BIG LOGO ─── */
+        .welcome-warm {
+            padding: 60px 0 20px;
+            background: var(--cream);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .big-logo-container {
+            margin: 0 auto 30px;
+            display: inline-block;
+            position: relative;
+        }
+
+
+        .big-logo {
+            width: 500px;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+            transition: var(--transition);
+        }
+
+        .big-logo:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .welcome-text-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .welcome-text-wrapper p {
+            font-size: 1.1rem;
+            color: var(--forest-mid);
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* ─── HIGHLIGHTS ─── */
+        .section-highlights {
+            padding: 60px 0 40px;
+        }
+
+        .hl-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .hl-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hl-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hl-card {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .hl-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-solid-gold);
+        }
+
+        .hl-img {
+            height: 200px;
+            overflow: hidden;
+            border-bottom: 2px solid var(--forest);
+        }
+
+        .hl-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .hl-card:hover .hl-img img {
+            transform: scale(1.1);
+        }
+
+        .hl-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hl-body h3 {
+            font-size: 1.4rem;
+            color: var(--forest);
+            margin-bottom: 10px;
+        }
+
+        .hl-body p {
+            font-size: 0.9rem;
+            color: var(--forest-light);
+            font-weight: 600;
+        }
+
+        /* ─── COLLAGE DE IMÁGENES ─── */
+        .section-collage {
+            padding: 60px 0;
+            background: var(--cream-warm);
+            border-top: 4px dashed var(--cream-border);
+            border-bottom: 4px dashed var(--cream-border);
+        }
+
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            gap: 16px;
+        }
+
+        .collage-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 3px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .collage-item:hover {
+            transform: scale(1.03) rotate(-1deg);
+            box-shadow: var(--shadow-solid-gold);
+            z-index: 2;
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .collage-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .collage-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .collage-item:nth-child(2) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .collage-item:nth-child(3) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .collage-item:nth-child(4) {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .collage-item:nth-child(5) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .collage-item:nth-child(6) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        @media (max-width: 900px) {
+            .collage-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 160px);
+            }
+
+            .collage-item:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .collage-item:nth-child(2),
+            .collage-item:nth-child(3),
+            .collage-item:nth-child(4),
+            .collage-item:nth-child(5),
+            .collage-item:nth-child(6) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .collage-item:nth-child(4) {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .collage-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, 180px);
+            }
+
+            .collage-item {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+            }
+        }
+
+        /* ─── ITINERARIO ─── */
+        .section-itinerary {
+            padding: 60px 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%23e2a02b' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E") var(--cream-warm);
+            border-top: 4px dashed var(--cream-border);
+            border-bottom: 4px dashed var(--cream-border);
+        }
+
+        .timeline-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-wrapper {
+                padding-left: 30px;
+            }
+        }
+
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 20px;
+            width: 4px;
+            background-image: linear-gradient(to bottom, var(--forest) 50%, transparent 50%);
+            background-size: 4px 20px;
+            background-repeat: repeat-y;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-wrapper::before {
+                left: 10px;
+            }
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-node {
+            position: absolute;
+            left: -48px;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background: var(--cream);
+            border: 3px solid var(--forest);
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-node {
+                left: -38px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .timeline-item:hover .timeline-node {
+            background: var(--rust-mustard);
+            transform: rotate(135deg) scale(1.1);
+        }
+
+        .timeline-node span {
+            transform: rotate(-45deg);
+            font-weight: 900;
+            font-size: 0.9rem;
+            color: var(--forest);
+        }
+
+        .timeline-item:hover .timeline-node span {
+            transform: rotate(-135deg);
+        }
+
+        .timeline-content {
+            background: white;
+            border: 2px solid var(--forest);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .timeline-content:hover {
+            box-shadow: var(--shadow-solid-md);
+            transform: translateY(-5px);
+            border-color: var(--terracotta);
+        }
+
+        .timeline-item:nth-child(1) .timeline-content {
+            border-top: 6px solid var(--andes-sky);
+        }
+
+        .timeline-item:nth-child(2) .timeline-content {
+            border-top: 6px solid var(--andes-green);
+        }
+
+        .timeline-item:nth-child(3) .timeline-content {
+            border-top: 6px solid var(--terracotta);
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .day-title {
+            font-size: 1.6rem;
+            color: var(--forest);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+        }
+
+        .day-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--forest);
+            border: 1px solid var(--forest-light);
+            text-transform: uppercase;
+        }
+
+        .day-desc {
+            font-size: 0.95rem;
+            color: var(--forest-light);
+            font-weight: 600;
+            line-height: 1.7;
+        }
+
+        /* ─── INCLUSIONES / EXCLUSIONES ─── */
+        .section-details {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 800px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .detail-box {
+            background: white;
+            border: 2px dashed var(--forest-light);
+            border-radius: var(--radius-md);
+            padding: 35px 30px;
+            position: relative;
+        }
+
+        .detail-box::before {
+            content: '📌';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+        }
+
+        .detail-title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--forest);
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .detail-list {
+            list-style: none;
+        }
+
+        .detail-list li {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--forest-mid);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .detail-list.inc li i {
+            color: var(--andes-green);
+            margin-top: 4px;
+        }
+
+        .detail-list.exc li i {
+            color: var(--inca-red);
+            margin-top: 4px;
+        }
+
+        /* ─── QUÉ LLEVAR (POST-ITS) ─── */
+        .section-bring {
+            padding: 40px 0 80px;
+        }
+
+        .bring-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        @media (max-width: 900px) {
+            .bring-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .bring-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bring-card {
+            background: #fffdf5;
+            padding: 25px 20px;
+            border: 1px solid #e0d0b8;
+            box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .bring-card:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+
+        .bring-card:nth-child(even) {
+            transform: rotate(2deg);
+            background: #fdf5ea;
+        }
+
+        .bring-card::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 50px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .bring-card:hover {
+            transform: translateY(-5px) rotate(0deg);
+            box-shadow: 8px 8px 0 var(--forest);
+            border-color: var(--forest);
+            z-index: 2;
+        }
+
+        .bring-icon {
+            font-size: 2.2rem;
+            color: var(--terracotta);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .bring-card h4 {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--forest);
+            font-weight: 800;
+        }
+
+        /* ─── GALERÍA SWIPER 3D ─── */
+        .section-gallery {
+            padding: 80px 0;
+            background: var(--deep);
+            color: white;
+            text-align: center;
+            border-bottom: 4px dashed var(--rust-mustard);
+        }
+
+        .gallery-title {
+            color: var(--cream);
+            margin-bottom: 40px;
+        }
+
+        .swiper {
+            width: 280px;
+            height: 380px;
+        }
+
+        @media (min-width: 600px) {
+            .swiper {
+                width: 320px;
+                height: 420px;
+            }
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background-color: #fff;
+            padding: 10px 10px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: sepia(0.2) contrast(1.1);
+        }
+
+        .polaroid-text {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: var(--forest);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        /* ─── TESTIMONIOS ─── */
+        .section-testimonials {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .testim-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .testim-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: #fffdf5;
+            padding: 30px 25px;
+            border: 2px solid var(--forest);
+            border-radius: 8px;
+            box-shadow: var(--shadow-solid-sm);
+            position: relative;
+            transition: var(--transition);
+            transform: rotate(-1.5deg);
+        }
+
+        .testimonial-card:nth-child(even) {
+            transform: rotate(1.5deg);
+            background: #fdf5ea;
+            box-shadow: 4px 4px 0 var(--rust-mustard);
+        }
+
+        .testimonial-card:nth-child(3) {
+            transform: rotate(-2deg);
+            box-shadow: 4px 4px 0 var(--terracotta);
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 60px;
+            height: 22px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px) rotate(0deg);
+            z-index: 2;
+            box-shadow: 8px 8px 0 var(--forest);
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            color: var(--rust-mustard);
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .testim-text {
+            font-size: 1rem;
+            color: var(--forest-mid);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .testim-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 2px dashed var(--cream-border);
+            padding-top: 20px;
+        }
+
+        .testim-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid var(--forest);
+            object-fit: cover;
+        }
+
+        .testim-info h5 {
+            font-size: 1.05rem;
+            color: var(--forest);
+            font-weight: 800;
+        }
+
+        .testim-info p {
+            font-size: 0.8rem;
+            color: var(--forest-light);
+            font-weight: 700;
+        }
+
+        .testim-rating {
+            color: var(--rust-mustard);
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        /* ─── CTA ─── */
+        .section-cta-bottom {
+            padding: 80px 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%233a2e24' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E") var(--cream);
+            text-align: center;
+            position: relative;
+        }
+
+        /* ─── FOOTER ─── */
+        .footer-futurista {
+            position: relative;
+            padding: 60px 0 25px;
+            overflow: hidden;
+            color: white;
+            background: #111;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .footer-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .footer-video-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer-overlay-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44, 36, 24, 0.95), rgba(58, 46, 36, 0.93));
+            z-index: 1;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .futurista-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1024px) {
+            .futurista-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .futurista-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .futurista-col {
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(184, 134, 11, 0.12);
+            transition: var(--transition);
+        }
+
+        .futurista-col:hover {
+            transform: translateY(-4px);
+            border-color: rgba(184, 134, 11, 0.3);
+        }
+
+        .footer-glow-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.12), rgba(184, 134, 11, 0.04));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .footer-glow-icon i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .futurista-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        .futurista-links,
+        .futurista-contact {
+            list-style: none;
+        }
+
+        .futurista-links li {
+            margin-bottom: 8px;
+        }
+
+        .futurista-links a {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.78rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+
+        .futurista-links a::before {
+            content: '›';
+            color: var(--gold);
+            opacity: 0;
+            transition: 0.2s;
+        }
+
+        .futurista-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .futurista-links a:hover::before {
+            opacity: 1;
+        }
+
+        .futurista-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 600;
+        }
+
+        .futurista-contact li i {
+            color: var(--gold);
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        .footer-phones {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .futurista-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 25px;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.4), transparent);
+        }
+
+        .divider-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(184, 134, 11, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .divider-icon i {
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        .futurista-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        @media (max-width: 640px) {
+            .futurista-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .futurista-copyright {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.45);
+            font-weight: 600;
+        }
+
+        .futurista-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .futurista-social a {
+            width: 34px;
+            height: 34px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            transition: var(--transition);
+            border: 1px solid rgba(184, 134, 11, 0.15);
+        }
+
+        .futurista-social a:hover {
+            color: var(--deep);
+            background: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            z-index: 1000;
+            border: 2px solid white;
+        }
+
+        .fab-whatsapp:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SKELETON LOADER -->
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-navbar"></div>
+        <div class="skeleton-hero"></div>
+    </div>
+
+    <!-- CABECERA -->
+    <header class="main-header" id="mainHeader">
+        <div class="main-navbar">
+            <div class="nav-flex">
+                <div class="logo-area">
+                    <a href="../index.html">
+                        <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel" class="logo-img"
+                            onerror="this.src='https://placehold.co/280x90?text=Explore+Peru'">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" data-key="home">INICIO</a></li>
+                    <li><a href="../nosotros.html" data-key="about">NOSOTROS</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="../tours.html" data-key="tours">TOURS <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../tours/Paquete Cusco Basico.html" data-key="navT1">Paquete Cusco Básico
+                                    (3D/2N)</a></li>
+                            <li><a href="../tours/Paquete Cusco Clásico.html" data-key="navT2">Paquete Cusco Clásico
+                                    (4D/3N)</a></li>
+                            <li><a href="../tours/Paquete Cusco Arqueologico.html" data-key="navT3">Paquete Cusco
+                                    Arqueológico (5D/4N)</a></li>
+                            <li><a href="../tours/Paquete Experiencia Cusco Total.html" data-key="navT4">Paquete
+                                    Experiencia Cusco Total (6D/5N)</a></li>
+                            <li><a href="../tours/Inka Jungle.html" data-key="navT5">Inka Jungle (4D/3N)</a></li>
+                            <li><a href="../tours/Paquete_Desafio_Andino_Salkantay_Trek.html" data-key="navT6">Salkantay
+                                    Trek (5D/4N)</a></li>
+                            <li><a href="../tours/Camino Inca Clasico.html" data-key="navT7">Camino Inca Clásico
+                                    (4D/3N)</a></li>
+                            <li><a href="../tours/Trekking Choquequirao.html" data-key="navT8">Trekking Choquequirao
+                                    Extremo (4D/3N)</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../tours-cortos.html" data-key="shortTours">TOURS CORTOS <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../tours cortos/City Tour Cusco.html" data-key="shortTour1">City Tour Cusco
+                                    (Medio Día)</a></li>
+                            <li><a href="../tours cortos/Tour Chinchero, Maras y Moray.html"
+                                    data-key="shortTour2">Chinchero, Maras y Moray</a></li>
+                            <li><a href="../tours cortos/Tour Valle Sur Cusco.html" data-key="shortTour3">Valle Sur
+                                    Cusco (Medio Día)</a></li>
+                            <li><a href="../tours cortos/Tour Valle Sagrado de los Incas.html"
+                                    data-key="shortTour4">Valle Sagrado (Full Day)</a></li>
+                        </ul>
+                    </li>
+                    <li class="current menu-item-has-children">
+                        <a href="../viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="escolar-imperial.html" data-key="school1">Ruta Imperial: Arequipa - Cusco -
+                                    Oxapampa | 6D/5N</a></li>
+                            <li><a href="escolar-sur-chile.html" data-key="school2">Ruta al Sur: Chile - Santiago |
+                                    5D/4N</a></li>
+                            <li><a href="escolar-norte-ecuador.html" data-key="school3">Ruta al Norte: Tumbes -
+                                    Guayaquil | 5D/4N</a></li>
+                            <li><a href="escolar-cusco-selva.html" data-key="school4">Cusco - Machu Picchu - Selva |
+                                    5D/4N</a></li>
+                            <li><a href="escolar-cusco-machupicchu.html" data-key="school5">Cusco - Machu Picchu (Tren)
+                                    | 2D/1N</a></li>
+                            <li><a href="escolar-lima-ica-paracas.html" data-key="school6">Lima - Ica - Huacachina |
+                                    3D/2N</a></li>
+                            <li><a href="escolar-arica-chile.html" data-key="school7">Arica - Chile | 4D/3N</a></li>
+                            <li><a href="escolar-norte-peruano.html" data-key="school8">Norte Peruano: Chiclayo -
+                                    Máncora | 6D/5N</a></li>
+                            <li><a href="escolar-lima-oxapampa.html" data-key="school9">Lima y Oxapampa | 5D/4N</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../aventuras.html" data-key="adventure">AVENTURA <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../aventuras/Aventura en Cuatrimotos.html" data-key="adv1">Cuatrimotos - Maras
+                                    y Moray</a></li>
+                            <li><a href="../aventuras/Vía Ferrata y Zipline.html" data-key="adv2">Vía Ferrata y
+                                    Zipline</a></li>
+                            <li><a href="../aventuras/Canotaje (Rafting).html" data-key="adv3">Rafting en el Río
+                                    Vilcanota</a></li>
+                            <li><a href="../aventuras/Bungee Jumping.html" data-key="adv4">Bungee Jumping y
+                                    Slingshot</a></li>
+                            <li><a href="../aventuras/Parapente sobre el valle sagrado.html" data-key="adv5">Parapente
+                                    sobre el Valle Sagrado</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contacto.html" data-key="contact">CONTACTO</a></li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-tour">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content" data-aos="zoom-in" data-aos-duration="1200">
+                <span class="hero-pre" data-key="limaHeroPre">VIAJE DE PROMOCIÓN 2026</span>
+                <h1 class="hero-title serif-font">
+                    <span data-key="limaHeroT1">🏜️ Lima - Ica -</span> <br>
+                    <span class="text-gradient" data-key="limaHeroT2">Huacachina - Paracas</span>
+                </h1>
+                <p class="hero-subtitle" data-key="limaHeroSub">
+                    Un viaje diseñado para crear recuerdos inolvidables. Recorre la capital, las Islas Ballestas, el
+                    oasis de Huacachina y atrévete con el sandboarding.
+                </p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#itinerario" class="btn-gold-solid">
+                        <i class="fas fa-map"></i> <span data-key="btnIti">Ver Itinerario</span>
+                    </a>
+                    <a href="#cotizar" class="btn-gold-solid" style="background: var(--terracotta); color: white;">
+                        <i class="fas fa-whatsapp"></i> <span data-key="btnReserve">Cotizar Promoción</span>
+                    </a>
+                </div>
+            </div>
+            <div class="torn-paper"></div>
+        </section>
+
+        <!-- QUICK INFO -->
+        <div class="quick-info-wrapper">
+            <div class="quick-info-box" data-aos="fade-up">
+                <div class="qi-item">
+                    <div class="qi-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info1Title">Duración</h4>
+                        <p data-key="info1">3 Días / 2 Noches</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon" style="color: var(--andes-sky);"><i class="fas fa-ship"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info2Title">Tipo de Viaje</h4>
+                        <p data-key="info2">Costa y Aventura</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon"><i class="fas fa-plane"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info3Title">Transporte</h4>
+                        <p data-key="info3">Vuelos + Bus Privado</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon"><i class="fas fa-users"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info4Title">Grupo</h4>
+                        <p data-key="info4">Mínimo 28 personas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WELCOME & BIG LOGO -->
+        <section class="welcome-warm">
+            <div class="container" data-aos="fade-up">
+                <div class="big-logo-container">
+                    <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel Gran Logo" class="big-logo"
+                        onerror="this.src='https://placehold.co/400x150?text=EXPLORE+PERU+TRAVEL'">
+                </div>
+                <div class="welcome-text-wrapper">
+                    <h2 class="section-title" style="margin-bottom: 20px;"><span data-key="limaWelcomeT1">¡Descubre
+                            la</span> <span class="text-gradient" data-key="limaWelcomeT2">Costa y el Desierto!</span>
+                    </h2>
+                    <p data-key="limaWelcomeP1">En <strong>Explore Peru Travel</strong> sabemos que el viaje de
+                        promoción escolar es el recuerdo más bonito de la juventud. Por eso hemos diseñado este
+                        increíble recorrido por la costa peruana: desde la historia de Lima, la fauna marina de Paracas,
+                        hasta la adrenalina de las dunas de Huacachina. ¡Prepárense para 3 días llenos de aventura y
+                        diversión!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <section class="section-highlights">
+            <div class="container">
+                <div class="section-header" style="text-align:center; margin-bottom:50px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="limaHighTitle1">Lo mejor de este</span> <span
+                            class="text-gradient" data-key="limaHighTitle2">Gran Viaje</span></h2>
+                </div>
+                <div class="hl-grid">
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="hl-img">
+                            <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=800"
+                                alt="Lima Histórica">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="limaHigh1T">Lima Histórica</h3>
+                            <p data-key="limaHigh1D">Fortaleza Real Felipe, Plaza Mayor, Convento San Francisco y
+                                Catacumbas.</p>
+                        </div>
+                    </div>
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="hl-img">
+                            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=800"
+                                alt="Islas Ballestas">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="limaHigh2T">Islas Ballestas</h3>
+                            <p data-key="limaHigh2D">Paseo en lancha para avistar lobos marinos y pingüinos de Humboldt.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="hl-img">
+                            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=800"
+                                alt="Huacachina">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="limaHigh3T">Huacachina y Dunas</h3>
+                            <p data-key="limaHigh3D">Tubulares, sandboarding y el hermoso oasis en medio del desierto.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLAGE DE IMÁGENES -->
+        <section class="section-collage">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:40px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="collageTitle1">Postales de la</span> <span
+                            class="text-gradient" data-key="collageTitle2">Costa Peruana</span></h2>
+                </div>
+                <div class="collage-grid" data-aos="zoom-in">
+                    <div class="collage-item"><img
+                            src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600" alt="Lima">
+                    </div>
+                    <div class="collage-item"><img
+                            src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=600" alt="Paracas">
+                    </div>
+                    <div class="collage-item"><img
+                            src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=600"
+                            alt="Huacachina"></div>
+                    <div class="collage-item"><img
+                            src="https://images.unsplash.com/photo-1583719093627-e18f9cd050c5?q=80&w=600"
+                            alt="Sandboarding"></div>
+                    <div class="collage-item"><img
+                            src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?q=80&w=600" alt="Playa">
+                    </div>
+                    <div class="collage-item"><img
+                            src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?q=80&w=600"
+                            alt="Historia"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ITINERARIO -->
+        <section class="section-itinerary" id="itinerario">
+            <div class="container">
+                <div class="section-header" style="text-align:center; margin-bottom:50px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="itiTitle1">Itinerario de la</span> <span
+                            class="text-gradient" data-key="itiTitle2">Promoción</span></h2>
+                </div>
+
+                <div class="timeline-wrapper">
+                    <!-- Dia 1 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D1</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="limaDay1T">🏙️ Lima - Fortaleza Real Felipe - City Tour
+                                    - Parque de las Aguas</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-fort"></i> Historia</span>
+                                    <span class="tag"><i class="fas fa-water"></i> Aguas</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="limaDay1D">Llegada a Lima y traslado. Visita a la Fortaleza
+                                del Real Felipe del Callao. Recorrido por Alameda Chabuca Granda y el Convento de Santo
+                                Domingo. Plaza Mayor con Catedral, Municipalidad y Palacio de Gobierno. Visita al
+                                Convento de San Francisco y sus Catacumbas. Recorrido por el Barrio Chino y el Parque de
+                                las Aguas. Cena y alojamiento.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dia 2 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D2</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="limaDay2T">⛵ Paracas - Islas Ballestas - Ica -
+                                    Huacachina - Dunas</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-ship"></i> Ballestas</span>
+                                    <span class="tag"><i class="fas fa-dune"></i> Sandboarding</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="limaDay2D">Desayuno y traslado a Paracas. Paseo en lancha por
+                                las Islas Ballestas (2 horas) con avistamiento de fauna marina. Almuerzo y llegada a
+                                Ica. Recorrido por el Oasis de la Huacachina. ¡Aventura en tubulares por las dunas y
+                                práctica de sandboarding! Parada en Chincha para degustar dulces tradicionales. Retorno
+                                a Lima, cena y alojamiento.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dia 3 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D3</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="limaDay3T">🚢 Museo Naval - Submarino Abtao - Zoológico
+                                    - Vuelo</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-submarine"></i> Submarino</span>
+                                    <span class="tag"><i class="fas fa-zoo"></i> Zoológico</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="limaDay3D">Desayuno. Visita al Museo Naval del Callao e
+                                ingreso al Submarino Abtao. Visita al Zoológico Parque de las Leyendas (2 horas).
+                                Almuerzo y traslado al aeropuerto. Vuelo de retorno. ¡Fin del viaje de promoción!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INCLUSIONES / EXCLUSIONES -->
+        <section class="section-details">
+            <div class="container">
+                <div class="details-grid">
+                    <div class="detail-box" data-aos="fade-right">
+                        <h3 class="detail-title" data-key="incTitle">¿Qué Incluye?</h3>
+                        <ul class="detail-list inc">
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc1">Vuelo de ida y vuelta</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc2">Transporte privado para todo el
+                                    recorrido</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc3">Alojamiento en hoteles
+                                    seleccionados</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc4">Alimentación completa (desayuno,
+                                    almuerzo, cena)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc5">Tour por la Fortaleza del Real
+                                    Felipe</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc6">City Tour por Lima: Plaza Mayor,
+                                    Convento San Francisco, Catacumbas</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc7">Visita al Barrio Chino y Congreso
+                                    del Perú</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc8">Ingreso al Parque de las
+                                    Aguas</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc9">Full Day al sur: Paracas e Islas
+                                    Ballestas (paseo en lancha 2 horas)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc10">Tour por Ica: Oasis de la
+                                    Huacachina</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc11">Paseo en tubulares por las
+                                    dunas</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc12">Práctica de sandboarding</span>
+                            </li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc13">Visita a Chincha (degustación de
+                                    dulces)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc14">Visita al Museo Naval del Callao
+                                    (Submarino Abtao)</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc15">Ingreso al Zoológico Parque de
+                                    las Leyendas</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="limaInc16">Guía oficial de turismo</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="detail-box" data-aos="fade-left">
+                        <h3 class="detail-title" data-key="excTitle">Condiciones Generales</h3>
+                        <ul class="detail-list exc">
+                            <li><i class="fas fa-times"></i> <span data-key="limaExc1">Precios no incluyen IGV</span>
+                            </li>
+                            <li><i class="fas fa-times"></i> <span data-key="limaExc2">Mínimo 28 pasajeros</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="limaExc3">Contrato notarial</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="limaExc4">Cancelaciones con 90 días de
+                                    anticipación tienen penalidades</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="limaExc5">Se requiere adelanto no menor al
+                                    40%</span></li>
+                        </ul>
+                        <a href="https://wa.me/51930164904?text=Hola%2C%20estoy%20interesado%20en%20el%20paquete%20Lima%20-%20Ica%20-%20Huacachina%20-%20Paracas"
+                            target="_blank" class="btn-gold-solid"
+                            style="display: block; margin-top: 30px; background: var(--terracotta); color: white; text-align: center; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> <span data-key="btnCotizar">Cotizar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUÉ LLEVAR -->
+        <section class="section-bring">
+            <div class="container">
+                <div class="section-header" style="text-align:center; margin-bottom:50px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="bringTitle1">La Maleta del</span> <span
+                            class="text-gradient" data-key="bringTitle2">Viajero</span></h2>
+                </div>
+                <div class="bring-grid">
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="50">
+                        <div class="bring-icon"><i class="fas fa-id-card"></i></div>
+                        <h4 data-key="limaBring1">DNI Original (mayores de edad) o Carné de Extranjería</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="bring-icon"><i class="fas fa-tshirt"></i></div>
+                        <h4 data-key="limaBring2">Ropa ligera y cómoda para el día, casaca para la noche</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="150">
+                        <div class="bring-icon"><i class="fas fa-sun"></i></div>
+                        <h4 data-key="limaBring3">Bloqueador solar, lentes oscuros, gorra y repelente</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="bring-icon"><i class="fas fa-camera"></i></div>
+                        <h4 data-key="limaBring4">Cámara o celular para capturar momentos inolvidables</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA SWIPER -->
+        <section class="section-gallery">
+            <div class="container">
+                <h2 class="gallery-title serif-font"><span data-key="limaGalTitle">Postales de la Costa</span></h2>
+                <div class="swiper mySwiper" data-aos="zoom-in">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=600"
+                                alt="Huacachina">
+                            <div class="polaroid-text" data-key="limaPhoto1">Oasis de Huacachina</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?q=80&w=600"
+                                alt="Islas Ballestas">
+                            <div class="polaroid-text" data-key="limaPhoto2">Islas Ballestas</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1526392060635-9d6019884377?q=80&w=600"
+                                alt="Paracas">
+                            <div class="polaroid-text" data-key="limaPhoto3">Paracas</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://images.unsplash.com/photo-1583719093627-e18f9cd050c5?q=80&w=600"
+                                alt="Sandboarding">
+                            <div class="polaroid-text" data-key="limaPhoto4">Sandboarding</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIOS -->
+        <section class="section-testimonials">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:40px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="testimTitle1">Lo que opinan</span> <span
+                            class="text-gradient" data-key="testimTitle2">nuestros viajeros</span></h2>
+                </div>
+                <div class="testim-grid">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testim-text" data-key="testim1">"El viaje fue espectacular, los chicos disfrutaron
+                            muchísimo el sandboarding y las Islas Ballestas. La organización perfecta y los guías muy
+                            atentos. ¡Repetiremos!"</p>
+                        <div class="testim-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150" alt="Docente"
+                                class="testim-avatar">
+                            <div class="testim-info">
+                                <h5>Patricia M.</h5>
+                                <p data-key="testim1Role">Docente / Arequipa</p>
+                                <div class="testim-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testim-text" data-key="testim2">"La experiencia en Huacachina fue increíble, los
+                            tubulares y el sandboarding fueron lo máximo. El paseo en lancha por las Ballestas también
+                            fue inolvidable. ¡100% recomendado!"</p>
+                        <div class="testim-author">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt="Profesor"
+                                class="testim-avatar">
+                            <div class="testim-info">
+                                <h5>Jorge C.</h5>
+                                <p data-key="testim2Role">Profesor / Lima</p>
+                                <div class="testim-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testim-text" data-key="testim3">"Un viaje muy completo, aprendimos historia en Lima,
+                            disfrutamos la naturaleza en Paracas y la adrenalina en las dunas. ¡Los estudiantes no
+                            olvidarán este viaje!"</p>
+                        <div class="testim-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150"
+                                alt="Estudiante" class="testim-avatar">
+                            <div class="testim-info">
+                                <h5>Laura G.</h5>
+                                <p data-key="testim3Role">Estudiante / Cusco</p>
+                                <div class="testim-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star-half-alt"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BOTTOM -->
+        <section class="section-cta-bottom" id="cotizar">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title"><span data-key="limaCta1">¿Listos para la</span> <span class="text-gradient"
+                        data-key="limaCta2">aventura costera?</span></h2>
+                <p style="margin-bottom: 25px; color: var(--forest-light); font-weight: 600;" data-key="limaCtaDesc">
+                    Contáctanos para enviarte la cotización exacta para tu salón.
+                </p>
+                <a href="https://wa.me/51930164904" target="_blank" class="btn-gold-solid"
+                    style="background: var(--terracotta); color: white;">
+                    <i class="fab fa-whatsapp"></i> <span data-key="btnReserve">Cotizar Promoción</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-futurista">
+        <div class="footer-bg">
+            <video autoplay muted loop playsinline class="footer-video-bg">
+                <source src="../tours_y_logos/footer-bg.mp4" type="video/mp4">
+            </video>
+            <div class="footer-overlay-gradient"></div>
+        </div>
+        <div class="container footer-container">
+            <div class="footer-grid futurista-grid">
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-compass"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerAboutTitle">QUIENES SOMOS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../nosotros.html" data-key="footerAboutUs">Sobre nosotros</a></li>
+                        <li><a href="../politicas-pago.html" data-key="footerConditions">Condiciones de venta</a></li>
+                        <li><a href="../politicas-pago.html" data-key="footerPayments">Formas de pago</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerMenuTitle">MENÚ PRINCIPAL</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../index.html" data-key="home">INICIO</a></li>
+                        <li><a href="../nosotros.html" data-key="about">NOSOTROS</a></li>
+                        <li><a href="../tours.html" data-key="tours">TOURS</a></li>
+                        <li><a href="../tours-cortos.html" data-key="shortTours">TOURS CORTOS</a></li>
+                        <li><a href="../viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES</a></li>
+                        <li><a href="../aventuras.html" data-key="adventure">AVENTURA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="policiesTitle">POLÍTICAS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../politicas-pago.html" data-key="policy1">Políticas y Condiciones de Pago</a></li>
+                        <li><a href="../proteccion-datos.html" data-key="policy2">Protección de Datos Personales</a>
+                        </li>
+                        <li><a href="../prevencion-esnna.html" data-key="policy3">Prevención de la ESNNA en turismo</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerContactTitle">CONTÁCTENOS</h3>
+                    <ul class="footer-contact-list futurista-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span data-key="footerAddress">Urbanización Tito
+                                Z-26<br>Wanchag - Cusco</span></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:exploreperutravel@gmail.com">exploreperutravel@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i>
+                            <div class="footer-phones"><span>+51 930 164 904</span><span>+51 984 764 403</span><span>+51
+                                    986 530 343</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider futurista-divider">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fas fa-star-of-life"></i></div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="footer-bottom futurista-bottom">
+                <p class="copyright futurista-copyright" data-key="footerCopyright">© 2026 EXPLORE PERU TRAVEL | Agencia
+                    de Viajes y Turismo</p>
+                <div class="footer-social futurista-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/51930164904" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB WHATSAPP -->
+    <a href="https://wa.me/51930164904" class="fab-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- LIBRERÍAS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // AOS
+            if (typeof AOS !== 'undefined') AOS.init({ duration: 800, once: true, offset: 40 });
+
+            // SKELETON
+            const skeletonLoader = document.getElementById('skeletonLoader');
+            if (skeletonLoader) {
+                const hideSkeleton = () => {
+                    if (!skeletonLoader.classList.contains('hide')) {
+                        skeletonLoader.classList.add('hide');
+                        setTimeout(() => { if (skeletonLoader.parentNode) skeletonLoader.remove(); }, 500);
+                    }
+                };
+                window.addEventListener('load', hideSkeleton);
+                setTimeout(hideSkeleton, 1200);
+            }
+
+            // HEADER SCROLL
+            const header = document.getElementById('mainHeader');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) header.classList.add('scrolled');
+                    else header.classList.remove('scrolled');
+                });
+            }
+
+            // MOBILE MENU
+            const hamburger = document.getElementById('hamburger');
+            if (hamburger && !document.querySelector('.mobile-menu')) {
+                const mobileMenuOverlay = document.createElement('div');
+                mobileMenuOverlay.className = 'mobile-menu-overlay';
+                const mobileMenu = document.createElement('div');
+                mobileMenu.className = 'mobile-menu';
+
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'mobile-menu-close';
+                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                mobileMenu.appendChild(closeBtn);
+
+                const navMenu = document.querySelector('.nav-menu');
+                const mobileNavList = document.createElement('ul');
+                mobileNavList.style.listStyle = 'none';
+                mobileNavList.style.marginTop = '20px';
+
+                if (navMenu) {
+                    const navLinks = navMenu.querySelectorAll('li');
+                    navLinks.forEach(li => {
+                        if (li.parentElement === navMenu) {
+                            const a = li.querySelector('a');
+                            if (a) {
+                                const liCopy = document.createElement('li');
+                                liCopy.style.marginBottom = '15px';
+                                const aCopy = document.createElement('a');
+                                aCopy.href = a.href;
+                                aCopy.innerHTML = a.innerHTML;
+                                aCopy.style.color = 'var(--forest)';
+                                aCopy.style.fontWeight = '800';
+                                aCopy.style.fontFamily = "'Nunito', sans-serif";
+                                aCopy.style.textDecoration = 'none';
+                                liCopy.appendChild(aCopy);
+                                mobileNavList.appendChild(liCopy);
+                            }
+                        }
+                    });
+                }
+                mobileMenu.appendChild(mobileNavList);
+                document.body.appendChild(mobileMenuOverlay);
+                document.body.appendChild(mobileMenu);
+
+                function toggleMobileMenu() {
+                    hamburger.classList.toggle('open');
+                    mobileMenu.classList.toggle('open');
+                    mobileMenuOverlay.classList.toggle('open');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                }
+
+                hamburger.addEventListener('click', toggleMobileMenu);
+                closeBtn.addEventListener('click', toggleMobileMenu);
+                mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+            }
+
+            // SWIPER
+            if (typeof Swiper !== 'undefined') {
+                new Swiper(".mySwiper", {
+                    effect: "cards",
+                    grabCursor: true,
+                    loop: true,
+                    autoplay: { delay: 3000, disableOnInteraction: false }
+                });
+            }
+
+            // TRADUCCIONES
+            const translations = {
+                es: {
+                    contact: "CONTACTO", about: "NOSOTROS", home: "INICIO", tours: "TOURS", shortTours: "TOURS CORTOS", schoolTrips: "VIAJES ESCOLARES", adventure: "AVENTURA",
+                    navT1: "Paquete Cusco Básico (3D/2N)", navT2: "Paquete Cusco Clásico (4D/3N)", navT3: "Paquete Cusco Arqueológico (5D/4N)", navT4: "Paquete Experiencia Cusco Total (6D/5N)", navT5: "Inka Jungle (4D/3N)", navT6: "Salkantay Trek (5D/4N)", navT7: "Camino Inca Clásico (4D/3N)", navT8: "Trekking Choquequirao Extremo (4D/3N)",
+                    shortTour1: "City Tour Cusco (Medio Día)", shortTour2: "Chinchero, Maras y Moray", shortTour3: "Valle Sur Cusco (Medio Día)", shortTour4: "Valle Sagrado (Full Day)",
+                    school1: "Ruta Imperial: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "Ruta al Sur: Chile - Santiago | 5D/4N", school3: "Ruta al Norte: Tumbes - Guayaquil | 5D/4N", school4: "Cusco - Machu Picchu - Selva | 5D/4N", school5: "Cusco - Machu Picchu (Tren) | 2D/1N", school6: "Lima - Ica - Huacachina | 3D/2N", school7: "Arica - Chile | 4D/3N", school8: "Norte Peruano: Chiclayo - Máncora | 6D/5N", school9: "Lima y Oxapampa | 5D/4N",
+                    adv1: "Cuatrimotos - Maras y Moray", adv2: "Vía Ferrata y Zipline", adv3: "Rafting en el Río Vilcanota", adv4: "Bungee Jumping y Slingshot", adv5: "Parapente sobre el Valle Sagrado",
+
+                    limaHeroPre: "VIAJE DE PROMOCIÓN 2026", limaHeroT1: "🏜️ Lima - Ica -", limaHeroT2: "Huacachina - Paracas",
+                    limaHeroSub: "Un viaje diseñado para crear recuerdos inolvidables. Recorre la capital, las Islas Ballestas, el oasis de Huacachina y atrévete con el sandboarding.",
+                    btnIti: "Ver Itinerario", btnReserve: "Cotizar Promoción", btnCotizar: "Cotizar por WhatsApp",
+
+                    info1Title: "Duración", info1: "3 Días / 2 Noches", info2Title: "Tipo de Viaje", info2: "Costa y Aventura", info3Title: "Transporte", info3: "Vuelos + Bus Privado", info4Title: "Grupo", info4: "Mínimo 28 personas",
+
+                    limaWelcomeT1: "¡Descubre la", limaWelcomeT2: "Costa y el Desierto!",
+                    limaWelcomeP1: "En <strong>Explore Peru Travel</strong> sabemos que el viaje de promoción escolar es el recuerdo más bonito de la juventud. Por eso hemos diseñado este increíble recorrido por la costa peruana: desde la historia de Lima, la fauna marina de Paracas, hasta la adrenalina de las dunas de Huacachina. ¡Prepárense para 3 días llenos de aventura y diversión!",
+
+                    limaHighTitle1: "Lo mejor de este", limaHighTitle2: "Gran Viaje",
+                    limaHigh1T: "Lima Histórica", limaHigh1D: "Fortaleza Real Felipe, Plaza Mayor, Convento San Francisco y Catacumbas.",
+                    limaHigh2T: "Islas Ballestas", limaHigh2D: "Paseo en lancha para avistar lobos marinos y pingüinos de Humboldt.",
+                    limaHigh3T: "Huacachina y Dunas", limaHigh3D: "Tubulares, sandboarding y el hermoso oasis en medio del desierto.",
+
+                    collageTitle1: "Postales de la", collageTitle2: "Costa Peruana",
+
+                    itiTitle1: "Itinerario de la", itiTitle2: "Promoción",
+                    limaDay1T: "🏙️ Lima - Fortaleza Real Felipe - City Tour - Parque de las Aguas",
+                    limaDay1D: "Llegada a Lima y traslado. Visita a la Fortaleza del Real Felipe del Callao. Recorrido por Alameda Chabuca Granda y el Convento de Santo Domingo. Plaza Mayor con Catedral, Municipalidad y Palacio de Gobierno. Visita al Convento de San Francisco y sus Catacumbas. Recorrido por el Barrio Chino y el Parque de las Aguas. Cena y alojamiento.",
+                    limaDay2T: "⛵ Paracas - Islas Ballestas - Ica - Huacachina - Dunas",
+                    limaDay2D: "Desayuno y traslado a Paracas. Paseo en lancha por las Islas Ballestas (2 horas) con avistamiento de fauna marina. Almuerzo y llegada a Ica. Recorrido por el Oasis de la Huacachina. ¡Aventura en tubulares por las dunas y práctica de sandboarding! Parada en Chincha para degustar dulces tradicionales. Retorno a Lima, cena y alojamiento.",
+                    limaDay3T: "🚢 Museo Naval - Submarino Abtao - Zoológico - Vuelo",
+                    limaDay3D: "Desayuno. Visita al Museo Naval del Callao e ingreso al Submarino Abtao. Visita al Zoológico Parque de las Leyendas (2 horas). Almuerzo y traslado al aeropuerto. Vuelo de retorno. ¡Fin del viaje de promoción!",
+
+                    incTitle: "¿Qué Incluye?", excTitle: "Condiciones Generales",
+                    limaInc1: "Vuelo de ida y vuelta",
+                    limaInc2: "Transporte privado para todo el recorrido",
+                    limaInc3: "Alojamiento en hoteles seleccionados",
+                    limaInc4: "Alimentación completa (desayuno, almuerzo, cena)",
+                    limaInc5: "Tour por la Fortaleza del Real Felipe",
+                    limaInc6: "City Tour por Lima: Plaza Mayor, Convento San Francisco, Catacumbas",
+                    limaInc7: "Visita al Barrio Chino y Congreso del Perú",
+                    limaInc8: "Ingreso al Parque de las Aguas",
+                    limaInc9: "Full Day al sur: Paracas e Islas Ballestas (paseo en lancha 2 horas)",
+                    limaInc10: "Tour por Ica: Oasis de la Huacachina",
+                    limaInc11: "Paseo en tubulares por las dunas",
+                    limaInc12: "Práctica de sandboarding",
+                    limaInc13: "Visita a Chincha (degustación de dulces)",
+                    limaInc14: "Visita al Museo Naval del Callao (Submarino Abtao)",
+                    limaInc15: "Ingreso al Zoológico Parque de las Leyendas",
+                    limaInc16: "Guía oficial de turismo",
+                    limaExc1: "Precios no incluyen IGV",
+                    limaExc2: "Mínimo 28 pasajeros",
+                    limaExc3: "Contrato notarial",
+                    limaExc4: "Cancelaciones con 90 días de anticipación tienen penalidades",
+                    limaExc5: "Se requiere adelanto no menor al 40%",
+
+                    bringTitle1: "La Maleta del", bringTitle2: "Viajero",
+                    limaBring1: "DNI Original (mayores de edad) o Carné de Extranjería",
+                    limaBring2: "Ropa ligera y cómoda para el día, casaca para la noche",
+                    limaBring3: "Bloqueador solar, lentes oscuros, gorra y repelente",
+                    limaBring4: "Cámara o celular para capturar momentos inolvidables",
+
+                    limaGalTitle: "Postales de la Costa", limaPhoto1: "Oasis de Huacachina", limaPhoto2: "Islas Ballestas", limaPhoto3: "Paracas", limaPhoto4: "Sandboarding",
+
+                    testimTitle1: "Lo que opinan", testimTitle2: "nuestros viajeros",
+                    testim1: "\"El viaje fue espectacular, los chicos disfrutaron muchísimo el sandboarding y las Islas Ballestas. La organización perfecta y los guías muy atentos. ¡Repetiremos!\"", testim1Role: "Docente / Arequipa",
+                    testim2: "\"La experiencia en Huacachina fue increíble, los tubulares y el sandboarding fueron lo máximo. El paseo en lancha por las Ballestas también fue inolvidable. ¡100% recomendado!\"", testim2Role: "Profesor / Lima",
+                    testim3: "\"Un viaje muy completo, aprendimos historia en Lima, disfrutamos la naturaleza en Paracas y la adrenalina en las dunas. ¡Los estudiantes no olvidarán este viaje!\"", testim3Role: "Estudiante / Cusco",
+
+                    limaCta1: "¿Listos para la", limaCta2: "aventura costera?", limaCtaDesc: "Contáctanos para enviarte la cotización exacta para tu salón.",
+
+                    footerAboutTitle: "QUIENES SOMOS", footerAboutUs: "Sobre nosotros", footerConditions: "Condiciones de venta", footerPayments: "Formas de pago",
+                    footerMenuTitle: "MENÚ PRINCIPAL", footerContactTitle: "CONTÁCTENOS",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Agencia de Viajes y Turismo",
+                    policiesTitle: "POLÍTICAS", policy1: "Políticas y Condiciones de Pago", policy2: "Protección de Datos Personales", policy3: "Prevención de la ESNNA en turismo"
+                },
+                en: {
+                    contact: "CONTACT", about: "ABOUT US", home: "HOME", tours: "TOURS", shortTours: "SHORT TOURS", schoolTrips: "SCHOOL TRIPS", adventure: "ADVENTURE",
+                    navT1: "Cusco Basic Package (3D/2N)", navT2: "Cusco Classic Package (4D/3N)", navT3: "Cusco Archaeological Package (5D/4N)", navT4: "Cusco Total Experience (6D/5N)", navT5: "Inka Jungle (4D/3N)", navT6: "Salkantay Trek (5D/4N)", navT7: "Classic Inca Trail (4D/3N)", navT8: "Extreme Choquequirao Trek (4D/3N)",
+                    shortTour1: "Cusco City Tour (Half Day)", shortTour2: "Chinchero, Maras & Moray", shortTour3: "Cusco South Valley (Half Day)", shortTour4: "Sacred Valley (Full Day)",
+                    school1: "Imperial Route: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "Southern Route: Chile - Santiago | 5D/4N", school3: "Northern Route: Tumbes - Guayaquil | 5D/4N", school4: "Cusco - Machu Picchu - Jungle | 5D/4N", school5: "Cusco - Machu Picchu (Train) | 2D/1N", school6: "Lima - Ica - Huacachina | 3D/2N", school7: "Arica - Chile | 4D/3N", school8: "Northern Peru: Chiclayo - Mancora | 6D/5N", school9: "Lima and Oxapampa | 5D/4N",
+                    adv1: "ATVs - Maras & Moray", adv2: "Via Ferrata and Zipline", adv3: "Vilcanota River Rafting", adv4: "Bungee Jumping and Slingshot", adv5: "Paragliding over Sacred Valley",
+
+                    limaHeroPre: "SCHOOL TRIP 2026", limaHeroT1: "🏜️ Lima - Ica -", limaHeroT2: "Huacachina - Paracas",
+                    limaHeroSub: "A trip designed to create unforgettable memories. Explore the capital, the Ballestas Islands, the Huacachina oasis and dare to try sandboarding.",
+                    btnIti: "View Itinerary", btnReserve: "Quote School Trip", btnCotizar: "Quote via WhatsApp",
+
+                    info1Title: "Duration", info1: "3 Days / 2 Nights", info2Title: "Trip Type", info2: "Coast & Adventure", info3Title: "Transport", info3: "Flights + Private Bus", info4Title: "Group", info4: "Min. 28 people",
+
+                    limaWelcomeT1: "Discover the", limaWelcomeT2: "Coast and Desert!",
+                    limaWelcomeP1: "At <strong>Explore Peru Travel</strong> we know that the school graduation trip is the most beautiful memory of youth. That's why we have designed this incredible tour along the Peruvian coast: from the history of Lima, the marine fauna of Paracas, to the adrenaline of the Huacachina dunes. Get ready for 3 days full of adventure and fun!",
+
+                    limaHighTitle1: "The best of this", limaHighTitle2: "Great Trip",
+                    limaHigh1T: "Historic Lima", limaHigh1D: "Real Felipe Fortress, Plaza Mayor, San Francisco Convent and Catacombs.",
+                    limaHigh2T: "Ballestas Islands", limaHigh2D: "Boat tour to spot sea lions and Humboldt penguins.",
+                    limaHigh3T: "Huacachina and Dunes", limaHigh3D: "Buggy rides, sandboarding and the beautiful oasis in the middle of the desert.",
+
+                    collageTitle1: "Postcards from", collageTitle2: "the Peruvian Coast",
+
+                    itiTitle1: "Graduation", itiTitle2: "Itinerary",
+                    limaDay1T: "🏙️ Lima - Real Felipe Fortress - City Tour - Water Park",
+                    limaDay1D: "Arrival in Lima and transfer. Visit to the Real Felipe Fortress in Callao. Tour of Alameda Chabuca Granda and Santo Domingo Convent. Plaza Mayor with Cathedral, Municipality and Government Palace. Visit to San Francisco Convent and its Catacombs. Tour of Chinatown and the Water Park. Dinner and accommodation.",
+                    limaDay2T: "⛵ Paracas - Ballestas Islands - Ica - Huacachina - Dunes",
+                    limaDay2D: "Breakfast and transfer to Paracas. Boat tour of the Ballestas Islands (2 hours) with marine wildlife sightings. Lunch and arrival in Ica. Tour of the Huacachina Oasis. Adventure in buggies through the dunes and sandboarding practice! Stop in Chincha to taste traditional sweets. Return to Lima, dinner and accommodation.",
+                    limaDay3T: "🚢 Naval Museum - Abtao Submarine - Zoo - Flight",
+                    limaDay3D: "Breakfast. Visit to the Naval Museum of Callao and entrance to the Abtao Submarine. Visit to the Parque de las Leyendas Zoo (2 hours). Lunch and transfer to the airport. Return flight. End of graduation trip!",
+
+                    incTitle: "What's Included?", excTitle: "General Conditions",
+                    limaInc1: "Round-trip flight",
+                    limaInc2: "Private transport for the entire tour",
+                    limaInc3: "Accommodation in selected hotels",
+                    limaInc4: "Full meals (breakfast, lunch, dinner)",
+                    limaInc5: "Tour of the Real Felipe Fortress",
+                    limaInc6: "Lima City Tour: Plaza Mayor, San Francisco Convent, Catacombs",
+                    limaInc7: "Visit to Chinatown and the Congress of Peru",
+                    limaInc8: "Entrance to the Water Park",
+                    limaInc9: "Full Day to the south: Paracas and Ballestas Islands (2-hour boat ride)",
+                    limaInc10: "Tour of Ica: Huacachina Oasis",
+                    limaInc11: "Buggy ride through the dunes",
+                    limaInc12: "Sandboarding practice",
+                    limaInc13: "Visit to Chincha (tasting of traditional sweets)",
+                    limaInc14: "Visit to the Naval Museum of Callao (Abtao Submarine)",
+                    limaInc15: "Entrance to the Parque de las Leyendas Zoo",
+                    limaInc16: "Official tour guide",
+                    limaExc1: "Prices do not include IGV",
+                    limaExc2: "Minimum 28 passengers",
+                    limaExc3: "Notarized contract",
+                    limaExc4: "Cancellations 90 days in advance have penalties",
+                    limaExc5: "A deposit of at least 40% is required",
+
+                    bringTitle1: "The Traveler's", bringTitle2: "Suitcase",
+                    limaBring1: "Original ID (over 18) or Foreigner's Card",
+                    limaBring2: "Light and comfortable clothing for the day, jacket for the night",
+                    limaBring3: "Sunblock, sunglasses, hat and insect repellent",
+                    limaBring4: "Camera or cellphone to capture unforgettable moments",
+
+                    limaGalTitle: "Postcards from the Coast", limaPhoto1: "Huacachina Oasis", limaPhoto2: "Ballestas Islands", limaPhoto3: "Paracas", limaPhoto4: "Sandboarding",
+
+                    testimTitle1: "What our", testimTitle2: "travelers say",
+                    testim1: "\"The trip was spectacular, the kids really enjoyed the sandboarding and the Ballestas Islands. Perfect organization and very attentive guides. We will repeat!\"", testim1Role: "Teacher / Arequipa",
+                    testim2: "\"The experience in Huacachina was incredible, the buggies and sandboarding were the best. The boat ride through the Ballestas was also unforgettable. 100% recommended!\"", testim2Role: "Professor / Lima",
+                    testim3: "\"A very complete trip, we learned history in Lima, enjoyed nature in Paracas and adrenaline in the dunes. The students will never forget this trip!\"", testim3Role: "Student / Cusco",
+
+                    limaCta1: "Ready for the", limaCta2: "coastal adventure?", limaCtaDesc: "Contact us to send you the exact quote for your class.",
+
+                    footerAboutTitle: "ABOUT US", footerAboutUs: "About us", footerConditions: "Terms and conditions", footerPayments: "Payment methods",
+                    footerMenuTitle: "MAIN MENU", footerContactTitle: "CONTACT US",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Travel and Tourism Agency",
+                    policiesTitle: "POLICIES", policy1: "Payment Policies", policy2: "Data Protection", policy3: "Child Protection in Tourism"
+                }
+            };
+
+            let currentLang = localStorage.getItem('preferredLang') || 'es';
+
+            function applyTranslations(lang) {
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    const translation = translations[lang]?.[key];
+                    if (translation) {
+                        if (el.tagName !== 'INPUT' && el.tagName !== 'TEXTAREA' && el.tagName !== 'SELECT' && el.tagName !== 'IMG') {
+                            const hasIcon = el.querySelector('i') || el.querySelector('.fas') || el.querySelector('.fab') || el.querySelector('.far');
+                            if (hasIcon) {
+                                let textNodeUpdated = false;
+                                for (let node of el.childNodes) {
+                                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                                        if (!textNodeUpdated) {
+                                            node.textContent = translation + ' ';
+                                            textNodeUpdated = true;
+                                        } else {
+                                            node.textContent = '';
+                                        }
+                                    }
+                                }
+                                if (!textNodeUpdated) {
+                                    el.insertAdjacentText('afterbegin', translation + ' ');
+                                }
+                            } else {
+                                el.innerHTML = translation;
+                            }
+                        }
+                    }
+                });
+
+                currentLang = lang;
+                localStorage.setItem('preferredLang', lang);
+
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+            }
+
+            const langBtns = document.querySelectorAll('.lang-btn');
+            if (langBtns.length > 0) {
+                langBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const lang = btn.getAttribute('data-lang');
+                        applyTranslations(lang);
+                    });
+                });
+            }
+
+            applyTranslations(currentLang);
+        });
+    </script>
+</body>
+
+</html>

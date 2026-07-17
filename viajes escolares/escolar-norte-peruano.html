@@ -1,0 +1,2914 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <meta name="description"
+        content="Viaje Escolar Norte Peruano 2026: Chiclayo - Máncora - Ecuador. 6 días/5 noches con manglares de Tumbes, nado con tortugas, playas, Aquapark y Museo del Señor de Sipán. Todo incluido S/ 2,185.">
+    <title>🏝️ Norte Peruano: Chiclayo - Máncora - Ecuador | Viaje Escolar 2026 | Explore Peru Travel</title>
+
+    <link rel="icon" href="../tours_y_logos/logoprincipal.png" type="image/png">
+    <link rel="apple-touch-icon" href="../tours_y_logos/logoprincipal.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap">
+    </noscript>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* ============================================================
+           RUSTIC FUN DESIGN SYSTEM - TOUR DETALLE (NORTE PERUANO)
+           ============================================================ */
+
+        :root {
+            --deep: #1f1812;
+            --forest: #3a2e24;
+            --forest-mid: #4f3f31;
+            --forest-light: #6b5442;
+            --cream: #faf5eb;
+            --cream-warm: #f3ebd8;
+            --cream-border: #e0d0b8;
+
+            --terracotta: #c05a3c;
+            --rust-mustard: #e2a02b;
+            --andes-green: #3e6b4a;
+            --inca-red: #a83a32;
+            --andes-sky: #4a8ca8;
+            --gold: #c29b45;
+            --gold-pale: #f5e6b8;
+
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-pill: 100px;
+            --shadow-solid-sm: 4px 4px 0 var(--forest);
+            --shadow-solid-md: 8px 8px 0 var(--forest);
+            --shadow-solid-terra: 8px 8px 0 var(--terracotta);
+            --shadow-solid-gold: 8px 8px 0 var(--rust-mustard);
+
+            --ease-out: cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition: 0.35s var(--ease-out);
+            --nav-height-main: 82px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--cream);
+            color: var(--forest);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%233a2e24' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 28px;
+            width: 100%;
+        }
+
+        .text-gradient {
+            background: linear-gradient(130deg, var(--rust-mustard) 0%, var(--terracotta) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .pre-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--terracotta);
+            font-size: clamp(0.6rem, 2vw, 0.75rem);
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            background: rgba(226, 160, 43, 0.15);
+            padding: 4px 16px;
+            border-radius: var(--radius-pill);
+            border: 1px dashed var(--rust-mustard);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--forest);
+        }
+
+        /* ─── SKELETON LOADER ─── */
+        .skeleton-loader {
+            position: fixed;
+            inset: 0;
+            background: var(--cream);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            transition: 0.5s ease;
+            pointer-events: none;
+        }
+
+        .skeleton-loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .skeleton-navbar {
+            height: var(--nav-height-main);
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        .skeleton-hero {
+            flex: 1;
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        @keyframes skeletonShimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* ─── NAVBAR ─── */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1050;
+            transition: var(--transition);
+        }
+
+        .main-navbar {
+            height: var(--nav-height-main);
+            display: flex;
+            align-items: center;
+            background: rgba(250, 245, 235, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid var(--cream-border);
+            transition: all 0.4s var(--ease-out);
+        }
+
+        .nav-flex {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            transition: all 0.4s var(--ease-out);
+        }
+
+        .logo-img {
+            width: 230px;
+            height: auto;
+            transition: all 0.4s var(--ease-out);
+        }
+
+        .main-header.scrolled .main-navbar {
+            height: 52px;
+            margin: 12px auto;
+            width: fit-content;
+            border-radius: 50px;
+            background: var(--deep);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(226, 160, 43, 0.5);
+            border: none;
+            padding: 0 12px;
+        }
+
+        .main-header.scrolled .logo-area {
+            display: none;
+        }
+
+        .main-header.scrolled .nav-flex {
+            justify-content: center;
+            padding: 0;
+            width: auto;
+            gap: 10px;
+        }
+
+        .main-header.scrolled .nav-menu {
+            gap: 14px;
+        }
+
+        .main-header.scrolled .nav-menu a {
+            font-size: 0.65rem;
+            color: var(--cream);
+            letter-spacing: 1px;
+        }
+
+        .main-header.scrolled .nav-menu a:hover,
+        .main-header.scrolled .nav-menu li.current>a {
+            color: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .nav-menu a::after {
+            background: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .lang-selector {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: transparent;
+        }
+
+        .main-header.scrolled .lang-btn {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .main-header.scrolled .lang-btn.active {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            box-shadow: none;
+        }
+
+        .main-header.scrolled .hamburger span {
+            background: var(--cream);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: clamp(10px, 1.8vw, 22px);
+            align-items: center;
+        }
+
+        .nav-menu a {
+            font-weight: 800;
+            font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+            letter-spacing: 1px;
+            color: var(--forest-mid);
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s var(--ease-out);
+        }
+
+        .nav-menu a:hover,
+        .nav-menu li.current>a {
+            color: var(--terracotta);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu li.current>a::after {
+            width: 100%;
+        }
+
+        .menu-item-has-children {
+            position: relative;
+        }
+
+        .menu-item-has-children>a .fa-chevron-down {
+            transition: transform 0.3s ease;
+            font-size: 0.6rem;
+        }
+
+        .menu-item-has-children:hover>a .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 0;
+            min-width: 320px;
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            padding: 10px 0;
+            box-shadow: var(--shadow-solid-md);
+            border: 2px solid var(--forest);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.35s var(--ease-out);
+            z-index: 100;
+            list-style: none;
+        }
+
+        .main-header.scrolled .sub-menu {
+            background: var(--deep);
+            border-color: var(--rust-mustard);
+            box-shadow: 6px 6px 0 var(--rust-mustard);
+        }
+
+        .menu-item-has-children:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% + 8px);
+        }
+
+        .sub-menu li a {
+            display: block;
+            padding: 10px 22px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--forest);
+            transition: all 0.25s ease;
+            white-space: normal;
+        }
+
+        .main-header.scrolled .sub-menu li a {
+            color: var(--cream);
+        }
+
+        .sub-menu li a:hover {
+            background: rgba(192, 90, 60, 0.1);
+            color: var(--terracotta);
+            padding-left: 28px;
+        }
+
+        .main-header.scrolled .sub-menu li a:hover {
+            background: rgba(226, 160, 43, 0.15);
+            color: var(--rust-mustard);
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 3px;
+            background: var(--cream-warm);
+            padding: 4px;
+            border-radius: var(--radius-pill);
+            border: 2px solid var(--forest);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-weight: 800;
+            font-size: 0.65rem;
+            color: var(--forest-light);
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--forest);
+            color: white;
+            box-shadow: 2px 2px 0 var(--terracotta);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: var(--forest);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(31, 24, 18, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1055;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(320px, 85vw);
+            height: 100dvh;
+            background: var(--cream);
+            z-index: 1060;
+            padding: 70px 24px 30px;
+            transform: translateX(100%);
+            transition: transform 0.4s var(--ease-out);
+            overflow-y: auto;
+            border-left: 4px solid var(--forest);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            background: var(--forest);
+            color: white;
+            border: 2px solid var(--deep);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 3px 3px 0 var(--terracotta);
+        }
+
+        .mobile-lang-selector {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 2px solid var(--cream-border);
+            justify-content: center;
+        }
+
+        .mobile-lang-btn {
+            background: var(--cream-warm);
+            border: 2px solid var(--forest);
+            font-weight: 800;
+            font-size: 0.8rem;
+            color: var(--forest-light);
+            cursor: pointer;
+            padding: 8px 20px;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .mobile-lang-btn.active {
+            background: var(--forest);
+            color: white;
+            box-shadow: 2px 2px 0 var(--terracotta);
+        }
+
+        @media (max-width: 1050px) {
+
+            .nav-menu,
+            .lang-selector {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .main-navbar {
+                height: 65px;
+            }
+
+            .main-header.scrolled .main-navbar {
+                margin: 10px auto;
+                width: calc(100% - 24px);
+                height: 54px;
+                padding: 0 16px;
+            }
+
+            .main-header.scrolled .nav-flex {
+                justify-content: space-between;
+                padding: 0;
+                width: 100%;
+            }
+
+            .logo-img {
+                width: 180px;
+            }
+
+            .main-header.scrolled .logo-area {
+                display: block;
+            }
+
+            .main-header.scrolled .logo-img {
+                width: 120px;
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        /* ─── BOTONES ─── */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--rust-mustard);
+            color: var(--deep);
+            padding: 16px 36px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid var(--deep);
+            box-shadow: 4px 4px 0 var(--deep);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--deep);
+            background: white;
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        .btn-wa {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: white;
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            font-weight: 800;
+            font-size: 0.95rem;
+            border: 2px solid var(--deep);
+            box-shadow: 4px 4px 0 var(--deep);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-wa:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--deep);
+            background: #1ebe57;
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: transparent;
+            color: white;
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            font-weight: 800;
+            font-size: 0.9rem;
+            border: 2px solid var(--rust-mustard);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--deep);
+        }
+
+        /* ─── HERO ─── */
+        .hero-tour {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--nav-height-main) + 60px) 20px 80px;
+            overflow: hidden;
+            background-color: var(--deep);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.55) contrast(1.1);
+            transform: scale(1.05);
+            animation: panBg 30s infinite alternate linear;
+        }
+
+        @keyframes panBg {
+            0% {
+                transform: scale(1.05) translate(0, 0);
+            }
+
+            100% {
+                transform: scale(1.1) translate(-2%, 2%);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31, 24, 18, 0.3) 0%, rgba(31, 24, 18, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            max-width: 900px;
+            padding: 0;
+        }
+
+        .hero-pre {
+            display: inline-block;
+            background: rgba(226, 160, 43, 0.2);
+            border: 1px solid var(--rust-mustard);
+            color: var(--rust-mustard);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-title .highlight {
+            display: inline-block;
+            background: linear-gradient(130deg, var(--rust-mustard) 0%, var(--terracotta) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 35px;
+            font-weight: 400;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-price-tag {
+            display: inline-block;
+            background: var(--rust-mustard);
+            color: var(--deep);
+            padding: 8px 28px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 1.4rem;
+            border: 2px solid var(--deep);
+            box-shadow: 4px 4px 0 var(--deep);
+            margin-bottom: 25px;
+        }
+
+        .hero-price-tag small {
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons .btn-hero {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 36px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid var(--deep);
+            box-shadow: 4px 4px 0 var(--deep);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .hero-buttons .btn-hero-gold {
+            background: var(--rust-mustard);
+            color: var(--deep);
+        }
+
+        .hero-buttons .btn-hero-gold:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--deep);
+            background: white;
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        .hero-buttons .btn-hero-terra {
+            background: var(--terracotta);
+            color: white;
+        }
+
+        .hero-buttons .btn-hero-terra:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--deep);
+            background: white;
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        .torn-paper {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 5;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L0,40 Q30,80 60,40 T120,40 T180,40 T240,40 T300,40 T360,40 T420,40 T480,40 T540,40 T600,40 T660,40 T720,40 T780,40 T840,40 T900,40 T960,40 T1020,40 T1080,40 T1140,40 T1200,40 L1200,120 Z' fill='%23faf5eb'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        @media (max-width: 768px) {
+            .hero-tour {
+                padding: calc(var(--nav-height-main) + 30px) 15px 50px;
+                min-height: 80vh;
+            }
+
+            .hero-price-tag {
+                font-size: 1.1rem;
+                padding: 6px 20px;
+            }
+
+            .hero-title {
+                font-size: clamp(2.2rem, 8vw, 3.5rem);
+            }
+        }
+
+        /* ─── BIG LOGO & WELCOME ─── */
+        .welcome-warm {
+            padding: 50px 0 30px;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .big-logo-container {
+            margin: 0 auto 30px;
+            display: inline-block;
+            position: relative;
+        }
+
+        .big-logo {
+            width: 500px;
+            max-width: 80vw;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+            transition: var(--transition);
+        }
+
+        .big-logo:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .welcome-text-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .welcome-text-wrapper p {
+            font-size: 1.15rem;
+            color: var(--forest-mid);
+            line-height: 1.8;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .welcome-text-wrapper p strong {
+            color: var(--forest);
+            font-weight: 800;
+        }
+
+        /* ─── FEATURES GRID (RUSTIC) ─── */
+        .features-section {
+            padding: 40px 0 60px;
+            background: var(--cream-warm);
+            border-top: 4px dashed var(--cream-border);
+            border-bottom: 4px dashed var(--cream-border);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            text-align: center;
+            transition: var(--transition);
+            transform: rotate(0deg);
+        }
+
+        .feature-card:nth-child(even) {
+            transform: rotate(1.5deg);
+            box-shadow: 4px 4px 0 var(--rust-mustard);
+        }
+
+        .feature-card:nth-child(3) {
+            transform: rotate(-1.5deg);
+            box-shadow: 4px 4px 0 var(--andes-sky);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) rotate(0deg);
+            box-shadow: var(--shadow-solid-terra);
+            border-color: var(--terracotta);
+        }
+
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 15px;
+            background: rgba(226, 160, 43, 0.12);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--terracotta);
+            border: 2px dashed var(--rust-mustard);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover .feature-icon {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            transform: scale(1.1) rotate(-10deg);
+            border-style: solid;
+        }
+
+        .feature-card h4 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--forest);
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+            font-size: 0.85rem;
+            color: var(--forest-light);
+            font-weight: 600;
+        }
+
+        @media (max-width: 1024px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ─── ITINERARIO (TIMELINE RUSTIC) ─── */
+        .itinerario-section {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .timeline-rustic {
+            position: relative;
+            max-width: 1000px;
+            margin: 50px auto 0;
+            padding: 0 20px;
+        }
+
+        .timeline-rustic::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--rust-mustard), var(--terracotta), var(--rust-mustard));
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 24px;
+            height: 24px;
+            background: var(--rust-mustard);
+            border-radius: 50%;
+            border: 3px solid var(--cream);
+            box-shadow: 0 0 0 4px var(--terracotta), var(--shadow-solid-sm);
+            z-index: 2;
+        }
+
+        .timeline-content {
+            width: 45%;
+            background: white;
+            padding: 28px 30px;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-solid-terra);
+            border-color: var(--terracotta);
+        }
+
+        .timeline-day {
+            display: inline-block;
+            background: var(--terracotta);
+            color: white;
+            padding: 4px 16px;
+            border-radius: var(--radius-pill);
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            border: 2px solid var(--deep);
+            box-shadow: 2px 2px 0 var(--deep);
+        }
+
+        .timeline-content h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--forest);
+            margin-bottom: 12px;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .timeline-content li {
+            padding: 6px 0;
+            padding-left: 28px;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--forest-mid);
+            font-weight: 600;
+            border-bottom: 1px dashed var(--cream-border);
+        }
+
+        .timeline-content li:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-content li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--rust-mustard);
+            font-size: 1rem;
+        }
+
+        .timeline-content .emoji-big {
+            font-size: 1.4rem;
+            margin-right: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .timeline-rustic::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                flex-direction: column !important;
+                padding-left: 50px;
+            }
+
+            .timeline-content {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .timeline-dot {
+                left: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .timeline-content {
+                padding: 20px;
+            }
+
+            .timeline-content h3 {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ─── INCLUSIONES (POST-IT STYLE) ─── */
+        .inclusion-section {
+            padding: 80px 0;
+            background: var(--cream-warm);
+            border-top: 4px dashed var(--cream-border);
+            border-bottom: 4px dashed var(--cream-border);
+        }
+
+        .inclusion-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 35px;
+            margin-top: 40px;
+        }
+
+        .inclusion-card {
+            background: white;
+            padding: 35px;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+            transform: rotate(-1deg);
+        }
+
+        .inclusion-card:nth-child(even) {
+            transform: rotate(1.5deg);
+            box-shadow: 4px 4px 0 var(--rust-mustard);
+        }
+
+        .inclusion-card:hover {
+            transform: translateY(-5px) rotate(0deg);
+            box-shadow: var(--shadow-solid-terra);
+            border-color: var(--terracotta);
+        }
+
+        .inclusion-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--forest);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .inclusion-card h3 i {
+            color: var(--rust-mustard);
+        }
+
+        .inclusion-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .inclusion-card li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--forest-mid);
+            font-weight: 600;
+            border-bottom: 1px dashed var(--cream-border);
+        }
+
+        .inclusion-card li:last-child {
+            border-bottom: none;
+        }
+
+        .inclusion-card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--andes-green);
+            font-weight: 900;
+            font-size: 1.1rem;
+        }
+
+        .inclusion-card .btn-wa {
+            margin-top: 25px;
+            width: 100%;
+            justify-content: center;
+        }
+
+        @media (max-width: 900px) {
+            .inclusion-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .inclusion-card {
+                padding: 25px 20px;
+            }
+        }
+
+        /* ─── COLLAGE GALERÍA ─── */
+        .gallery-collage {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: auto;
+            gap: 18px;
+            margin-top: 40px;
+        }
+
+        .collage-item {
+            position: relative;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 3px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+            aspect-ratio: 1/1;
+        }
+
+        .collage-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+            aspect-ratio: auto;
+        }
+
+        .collage-item:nth-child(4) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .collage-item:nth-child(5) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .collage-item:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: var(--shadow-solid-gold);
+            border-color: var(--gold);
+            z-index: 2;
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-out);
+        }
+
+        .collage-item:hover img {
+            transform: scale(1.12) rotate(-1deg);
+        }
+
+        .collage-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(31, 24, 18, 0.9) 0%, transparent 60%);
+            display: flex;
+            align-items: flex-end;
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .collage-item:hover .collage-overlay {
+            opacity: 1;
+        }
+
+        .collage-overlay span {
+            color: white;
+            font-weight: 800;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 1024px) {
+            .collage-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .collage-item:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .collage-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .collage-item:nth-child(1) {
+                grid-column: span 1;
+                grid-row: span 1;
+                aspect-ratio: 1/1;
+            }
+
+            .collage-item {
+                aspect-ratio: 1/1;
+            }
+        }
+
+        /* ─── TESTIMONIAL (RUSTIC POST-IT) ─── */
+        .testimonial-single {
+            padding: 60px 0;
+            background: var(--cream-warm);
+            border-top: 4px dashed var(--cream-border);
+        }
+
+        .testimonial-card-rustic {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px 45px;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            transform: rotate(1deg);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .testimonial-card-rustic::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 60px;
+            height: 22px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card-rustic:hover {
+            transform: translateY(-8px) rotate(0deg);
+            box-shadow: var(--shadow-solid-terra);
+            border-color: var(--terracotta);
+        }
+
+        .testimonial-card-rustic .quote-icon {
+            font-size: 2.5rem;
+            color: var(--rust-mustard);
+            opacity: 0.4;
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card-rustic p {
+            font-size: 1.05rem;
+            font-style: italic;
+            color: var(--forest-mid);
+            font-weight: 600;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 2px dashed var(--cream-border);
+            padding-top: 20px;
+        }
+
+        .testimonial-author img {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid var(--forest);
+            object-fit: cover;
+        }
+
+        .testimonial-author h5 {
+            font-weight: 800;
+            color: var(--forest);
+        }
+
+        .testimonial-author p {
+            font-size: 0.8rem;
+            color: var(--forest-light);
+            font-weight: 700;
+            font-style: normal;
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 480px) {
+            .testimonial-card-rustic {
+                padding: 25px 20px;
+            }
+        }
+
+        /* ─── CTA FINAL ─── */
+        .cta-final-tour {
+            padding: 80px 0;
+            background: var(--forest);
+            text-align: center;
+            color: white;
+            position: relative;
+            border-top: 4px dashed var(--rust-mustard);
+            overflow: hidden;
+        }
+
+        .cta-final-tour::before {
+            content: '🏝️';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            font-size: 5rem;
+            opacity: 0.15;
+            transform: rotate(-15deg);
+            animation: floatEmoji 4s infinite alternate;
+        }
+
+        .cta-final-tour::after {
+            content: '🐢';
+            position: absolute;
+            bottom: 20px;
+            right: 10%;
+            font-size: 6rem;
+            opacity: 0.15;
+            transform: rotate(15deg);
+            animation: floatEmoji 5s infinite alternate-reverse;
+        }
+
+        @keyframes floatEmoji {
+            100% {
+                transform: translateY(-15px) rotate(0deg);
+            }
+        }
+
+        .cta-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .cta-sub {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (max-width: 480px) {
+            .cta-final-tour {
+                padding: 60px 0;
+            }
+
+            .cta-buttons .btn-primary,
+            .cta-buttons .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* ─── FOOTER PREMIUM ─── */
+        .footer-futurista {
+            position: relative;
+            padding: 60px 0 25px;
+            overflow: hidden;
+            color: white;
+            background: #111;
+        }
+
+        .footer-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .footer-video-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer-overlay-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44, 36, 24, 0.95), rgba(58, 46, 36, 0.93));
+            z-index: 1;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .futurista-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1024px) {
+            .futurista-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .futurista-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .futurista-col {
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(184, 134, 11, 0.12);
+            transition: var(--transition);
+        }
+
+        .futurista-col:hover {
+            transform: translateY(-4px);
+            border-color: rgba(184, 134, 11, 0.3);
+        }
+
+        .footer-glow-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.12), rgba(184, 134, 11, 0.04));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .footer-glow-icon i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .futurista-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        .futurista-links,
+        .futurista-contact {
+            list-style: none;
+        }
+
+        .futurista-links li {
+            margin-bottom: 8px;
+        }
+
+        .futurista-links a {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.78rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+
+        .futurista-links a::before {
+            content: '›';
+            color: var(--gold);
+            opacity: 0;
+            transition: 0.2s;
+        }
+
+        .futurista-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .futurista-links a:hover::before {
+            opacity: 1;
+        }
+
+        .futurista-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 600;
+        }
+
+        .futurista-contact li i {
+            color: var(--gold);
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        .footer-phones {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .futurista-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 25px;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.4), transparent);
+        }
+
+        .divider-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(184, 134, 11, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .divider-icon i {
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        .futurista-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        @media (max-width: 640px) {
+            .futurista-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .futurista-copyright {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.45);
+            font-weight: 600;
+        }
+
+        .futurista-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .futurista-social a {
+            width: 34px;
+            height: 34px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            transition: var(--transition);
+            border: 1px solid rgba(184, 134, 11, 0.15);
+        }
+
+        .futurista-social a:hover {
+            color: var(--deep);
+            background: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            z-index: 1000;
+            border: 2px solid white;
+        }
+
+        .fab-whatsapp:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SKELETON LOADER -->
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-navbar"></div>
+        <div class="skeleton-hero"></div>
+    </div>
+
+    <!-- CABECERA PRINCIPAL -->
+    <header class="main-header" id="mainHeader">
+        <div class="main-navbar">
+            <div class="nav-flex">
+                <div class="logo-area">
+                    <a href="../index.html">
+                        <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel" class="logo-img"
+                            onerror="this.src='https://placehold.co/280x90?text=Explore+Peru'">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" data-key="home">INICIO</a></li>
+                    <li><a href="../nosotros.html" data-key="about">NOSOTROS</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="../tours.html" data-key="tours">TOURS <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../tours/Paquete Cusco Basico.html" data-key="navT1">Paquete Cusco Básico
+                                    (3D/2N)</a></li>
+                            <li><a href="../tours/Paquete Cusco Clásico.html" data-key="navT2">Paquete Cusco Clásico
+                                    (4D/3N)</a></li>
+                            <li><a href="../tours/Paquete Cusco Arqueologico.html" data-key="navT3">Paquete Cusco
+                                    Arqueológico (5D/4N)</a></li>
+                            <li><a href="../tours/Paquete Experiencia Cusco Total.html" data-key="navT4">Paquete
+                                    Experiencia Cusco Total (6D/5N)</a></li>
+                            <li><a href="../tours/Inka Jungle.html" data-key="navT5">Inka Jungle (4D/3N)</a></li>
+                            <li><a href="../tours/Paquete_Desafio_Andino_Salkantay_Trek.html" data-key="navT6">Salkantay
+                                    Trek (5D/4N)</a></li>
+                            <li><a href="../tours/Camino Inca Clasico.html" data-key="navT7">Camino Inca Clásico
+                                    (4D/3N)</a></li>
+                            <li><a href="../tours/Trekking Choquequirao.html" data-key="navT8">Choquequirao Extremo
+                                    (4D/3N)</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../tours-cortos.html" data-key="shortTours">TOURS CORTOS <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../tours cortos/City Tour Cusco.html" data-key="shortTour1">City Tour Cusco
+                                    (Medio Día)</a></li>
+                            <li><a href="../tours cortos/Tour Chinchero, Maras y Moray.html"
+                                    data-key="shortTour2">Chinchero, Maras y Moray</a></li>
+                            <li><a href="../tours cortos/Tour Valle Sur Cusco.html" data-key="shortTour3">Valle Sur
+                                    Cusco (Medio Día)</a></li>
+                            <li><a href="../tours cortos/Tour Valle Sagrado de los Incas.html"
+                                    data-key="shortTour4">Valle Sagrado (Full Day)</a></li>
+                        </ul>
+                    </li>
+                    <li class="current menu-item-has-children">
+                        <a href="../viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="escolar-imperial.html" data-key="school1">Ruta Imperial: Arequipa - Cusco -
+                                    Oxapampa | 6D/5N</a></li>
+                            <li><a href="escolar-sur-chile.html" data-key="school2">Cusco - Arica, Chile | 4D/3N</a>
+                            </li>
+                            <li><a href="escolar-norte-ecuador.html" data-key="school3">Ruta al Norte: Tumbes -
+                                    Guayaquil | 5D/4N</a></li>
+                            <li><a href="escolar-cusco-selva.html" data-key="school4">Cusco - Machu Picchu - Selva |
+                                    5D/4N</a></li>
+                            <li><a href="escolar-cusco-machupicchu.html" data-key="school5">Cusco - Machu Picchu (Tren)
+                                    | 2D/1N</a></li>
+                            <li><a href="escolar-lima-ica-paracas.html" data-key="school6">Lima - Ica - Huacachina |
+                                    3D/2N</a></li>
+                            <li><a href="escolar-arica-chile.html" data-key="school7">Arica - Chile | 4D/3N</a></li>
+                            <li><a href="escolar-norte-peruano.html" data-key="school8">Norte Peruano: Chiclayo -
+                                    Máncora | 6D/5N</a></li>
+                            <li><a href="escolar-lima-oxapampa.html" data-key="school9">Lima y Oxapampa | 5D/4N</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../aventuras.html" data-key="adventure">AVENTURA <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../aventuras/Aventura en Cuatrimotos.html" data-key="adv1">Cuatrimotos - Maras
+                                    y Moray</a></li>
+                            <li><a href="../aventuras/Vía Ferrata y Zipline.html" data-key="adv2">Vía Ferrata y
+                                    Zipline</a></li>
+                            <li><a href="../aventuras/Canotaje (Rafting).html" data-key="adv3">Rafting en el Río
+                                    Vilcanota</a></li>
+                            <li><a href="../aventuras/Bungee Jumping.html" data-key="adv4">Bungee Jumping y
+                                    Slingshot</a></li>
+                            <li><a href="../aventuras/Parapente sobre el valle sagrado.html" data-key="adv5">Parapente
+                                    sobre el Valle Sagrado</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contacto.html" data-key="contact">CONTACTO</a></li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-tour">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content" data-aos="zoom-in" data-aos-duration="1200">
+                <span class="hero-pre" data-key="heroPre">🎓 PROMOCIÓN 2026</span>
+                <h1 class="hero-title serif-font">
+                    <span data-key="heroT1">Norte Peruano:</span><br>
+                    <span class="highlight" data-key="heroT2">Chiclayo - Máncora - Ecuador</span>
+                </h1>
+                <p class="hero-subtitle" data-key="heroSub">
+                    Un viaje increíble por el norte peruano y frontera con Ecuador. Manglares de Tumbes, playas
+                    paradisíacas, nado con tortugas, paseo en lancha, Aquapark y el fascinante Museo del Señor de Sipán.
+                    ¡Sol, arena y mucha historia te esperan!
+                </p>
+                <div class="hero-price-tag" data-key="heroPrice">
+                    S/ 2,185 <small>+ IGV</small>
+                </div>
+                <div class="hero-buttons">
+                    <a href="#itinerario" class="btn-hero btn-hero-gold">
+                        <i class="fas fa-map"></i> <span data-key="btnIti">Ver Itinerario</span>
+                    </a>
+                    <a href="#cotizar" class="btn-hero btn-hero-terra">
+                        <i class="fas fa-whatsapp"></i> <span data-key="btnReserve">Cotizar Promoción</span>
+                    </a>
+                </div>
+            </div>
+            <div class="torn-paper"></div>
+        </section>
+
+        <!-- QUICK INFO (mantenido igual) -->
+        <div class="quick-info-wrapper" style="position:relative; z-index:10; margin-top:-60px; padding:0 20px;">
+            <div class="quick-info-box"
+                style="background:rgba(255,255,255,0.92); backdrop-filter:blur(15px); max-width:1100px; margin:0 auto; border-radius:24px; padding:25px 30px; display:grid; grid-template-columns:repeat(4,1fr); gap:20px; box-shadow:0 20px 40px rgba(0,0,0,0.1); border:2px solid var(--forest); position:relative;">
+                <div class="qi-item" style="display:flex; align-items:center; gap:15px;">
+                    <div class="qi-icon"
+                        style="width:50px; height:50px; background:var(--cream); border:2px solid var(--forest); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; color:var(--terracotta); box-shadow:3px 3px 0 var(--forest); transform:rotate(-3deg); transition:var(--transition);">
+                        <i class="fas fa-calendar-alt"></i></div>
+                    <div class="qi-text">
+                        <h4 style="font-size:0.8rem; color:var(--forest-light); text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-bottom:2px;"
+                            data-key="info1Title">Duración</h4>
+                        <p style="font-size:1.1rem; color:var(--forest); font-weight:900; font-family:'Cormorant Garamond',serif;"
+                            data-key="info1">6 Días / 5 Noches</p>
+                    </div>
+                </div>
+                <div class="qi-item" style="display:flex; align-items:center; gap:15px;">
+                    <div class="qi-icon"
+                        style="width:50px; height:50px; background:var(--cream); border:2px solid var(--forest); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; color:var(--andes-sky); box-shadow:3px 3px 0 var(--forest); transform:rotate(-3deg); transition:var(--transition);">
+                        <i class="fas fa-plane"></i></div>
+                    <div class="qi-text">
+                        <h4 style="font-size:0.8rem; color:var(--forest-light); text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-bottom:2px;"
+                            data-key="info2Title">Transporte</h4>
+                        <p style="font-size:1.1rem; color:var(--forest); font-weight:900; font-family:'Cormorant Garamond',serif;"
+                            data-key="info2">Vuelos + Bus</p>
+                    </div>
+                </div>
+                <div class="qi-item" style="display:flex; align-items:center; gap:15px;">
+                    <div class="qi-icon"
+                        style="width:50px; height:50px; background:var(--cream); border:2px solid var(--forest); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; color:var(--terracotta); box-shadow:3px 3px 0 var(--forest); transform:rotate(-3deg); transition:var(--transition);">
+                        <i class="fas fa-utensils"></i></div>
+                    <div class="qi-text">
+                        <h4 style="font-size:0.8rem; color:var(--forest-light); text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-bottom:2px;"
+                            data-key="info3Title">Alimentación</h4>
+                        <p style="font-size:1.1rem; color:var(--forest); font-weight:900; font-family:'Cormorant Garamond',serif;"
+                            data-key="info3">Completa</p>
+                    </div>
+                </div>
+                <div class="qi-item" style="display:flex; align-items:center; gap:15px;">
+                    <div class="qi-icon"
+                        style="width:50px; height:50px; background:var(--cream); border:2px solid var(--forest); border-radius:12px; display:flex; align-items:center; justify-content:center; font-size:1.4rem; color:var(--terracotta); box-shadow:3px 3px 0 var(--forest); transform:rotate(-3deg); transition:var(--transition);">
+                        <i class="fas fa-users"></i></div>
+                    <div class="qi-text">
+                        <h4 style="font-size:0.8rem; color:var(--forest-light); text-transform:uppercase; letter-spacing:1px; font-weight:800; margin-bottom:2px;"
+                            data-key="info4Title">Grupo</h4>
+                        <p style="font-size:1.1rem; color:var(--forest); font-weight:900; font-family:'Cormorant Garamond',serif;"
+                            data-key="info4">Mínimo 28 personas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BIG LOGO & WELCOME -->
+        <section class="welcome-warm">
+            <div class="container" data-aos="fade-up">
+                <div class="big-logo-container">
+                    <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel" class="big-logo"
+                        onerror="this.src='https://placehold.co/400x150?text=EXPLORE+PERU+TRAVEL'">
+                </div>
+                <div class="welcome-text-wrapper">
+                    <h2 class="section-title" style="margin-bottom: 15px;">
+                        <span data-key="welcomeT1">🏝️ ¡Prepárate para</span>
+                        <span class="text-gradient" data-key="welcomeT2">el sol norteño!</span>
+                    </h2>
+                    <p data-key="welcomeP1">
+                        <strong>¡Hola, viajero!</strong> Hoy no comienza solo un viaje... comienza un recuerdo que los
+                        acompañará para toda su vida. Después de tantos años compartiendo aulas, risas, retos y
+                        aprendizajes, llega el momento de vivir una experiencia única: el viaje que marcará el cierre de
+                        una etapa y el inicio de nuevos caminos.
+                    </p>
+                    <p data-key="welcomeP2">
+                        Este no será solo un recorrido por nuevos lugares, sino un encuentro con las historias que han
+                        construido juntos, con la amistad que creció día a día y con los sueños que empiezan a tomar
+                        forma. Cada momento que vivan, cada paisaje que descubran y cada sonrisa que compartan se
+                        convertirá en un recuerdo imborrable.
+                    </p>
+                    <p data-key="welcomeP3">
+                        Imagina nadar con tortugas marinas en aguas cristalinas, recorrer los manglares de Tumbes en
+                        lancha, sentir la adrenalina en el Aquapark de Chiclayo y maravillarte con el legendario
+                        <strong>Señor de Sipán</strong>. ¡Y eso no es todo! También cruzaremos la frontera para conocer
+                        Ecuador y sus encantos. <strong>El viaje no es una despedida, es una celebración... de todo lo
+                            vivido y de todo lo que está por venir.</strong>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES HIGHLIGHT -->
+        <section class="features-section">
+            <div class="container">
+                <div style="text-align: center;" data-aos="fade-up">
+                    <span class="pre-title" data-key="featPre">EXPERIENCIAS ÚNICAS</span>
+                    <h2 class="section-title"><span data-key="featT1">Lo que</span> <span class="text-gradient"
+                            data-key="featT2">vivirás</span></h2>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="feature-icon"><i class="fas fa-water"></i></div>
+                        <h4 data-key="feat1T">Manglares de Tumbes</h4>
+                        <p data-key="feat1D">Ecosistema único y biodiversidad</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="feature-icon"><i class="fas fa-turtle"></i></div>
+                        <h4 data-key="feat2T">Nado con tortugas</h4>
+                        <p data-key="feat2D">Experiencia inolvidable en el mar</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="feature-icon"><i class="fas fa-horse"></i></div>
+                        <h4 data-key="feat3T">Paseo a caballo</h4>
+                        <p data-key="feat3D">Atardecer mágico en la playa</p>
+                    </div>
+                    <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="feature-icon"><i class="fas fa-landmark"></i></div>
+                        <h4 data-key="feat4T">Señor de Sipán</h4>
+                        <p data-key="feat4D">Historia Mochica fascinante</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ITINERARIO DETALLADO -->
+        <section class="itinerario-section" id="itinerario">
+            <div class="container">
+                <div style="text-align: center;" data-aos="fade-up">
+                    <span class="pre-title" data-key="itinPre">DÍA A DÍA</span>
+                    <h2 class="section-title"><span class="text-gradient" data-key="itinT1">Itinerario</span> <span
+                            data-key="itinT2">Detallado</span></h2>
+                </div>
+
+                <div class="timeline-rustic">
+                    <!-- Día 1 -->
+                    <div class="timeline-item" data-aos="fade-right" data-aos-delay="50">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-day" data-key="day1Label">DÍA 1</span>
+                            <h3><span class="emoji-big">✈️</span> <span data-key="day1Title">Cusco - Chiclayo -
+                                    Máncora</span></h3>
+                            <ul>
+                                <li data-key="day1_1">Encuentro con la delegación de viaje al norte</li>
+                                <li data-key="day1_2">Traslado al aeropuerto internacional Alejandro Velazco Astete</li>
+                                <li data-key="day1_3">Vuelo Cusco - Lima - Chiclayo (escala en Lima)</li>
+                                <li data-key="day1_4">Aterrizaje en Chiclayo, aeropuerto José A. Quiñones</li>
+                                <li data-key="day1_5">Traslado a Máncora con movilidad privada</li>
+                                <li data-key="day1_6">Primera noche de alojamiento en Máncora</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Día 2 -->
+                    <div class="timeline-item" data-aos="fade-left" data-aos-delay="100">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-day" data-key="day2Label">DÍA 2</span>
+                            <h3><span class="emoji-big">🌿</span> <span data-key="day2Title">Manglares de Tumbes - Islas
+                                    - Criadero de Cocodrilos - Frontera Ecuador</span></h3>
+                            <ul>
+                                <li data-key="day2_1">Desayuno en Máncora</li>
+                                <li data-key="day2_2">Recorrido por los Manglares de Tumbes (incluye impuesto y tasa de
+                                    embarque)</li>
+                                <li data-key="day2_3">Visita a playas de Punta Sal y Zorritos</li>
+                                <li data-key="day2_4">City Tour por Tumbes y su plaza mayor</li>
+                                <li data-key="day2_5">Llegada a Puerto Pizarro</li>
+                                <li data-key="day2_6">Tour guiado por las Islas: Los Pájaros, La Ballena, Isla del Amor
+                                </li>
+                                <li data-key="day2_7">Visita al Criadero de Cocodrilos (Zoo)</li>
+                                <li data-key="day2_8">Cruce fronterizo a Ecuador: Aguas Verdes y Huaquillas</li>
+                                <li data-key="day2_9">Retorno a Máncora</li>
+                                <li data-key="day2_10">Cena y alojamiento</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Día 3 -->
+                    <div class="timeline-item" data-aos="fade-right" data-aos-delay="150">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-day" data-key="day3Label">DÍA 3</span>
+                            <h3><span class="emoji-big">🏖️</span> <span data-key="day3Title">Playa Los Órganos - El
+                                    Ñuro - Nado con tortugas - Fiesta</span></h3>
+                            <ul>
+                                <li data-key="day3_1">Desayuno en Máncora</li>
+                                <li data-key="day3_2">Viaje a Playa Los Órganos (incluye chalecos salvavidas)</li>
+                                <li data-key="day3_3">Visita a El Ñuro</li>
+                                <li data-key="day3_4">Nado con tortugas (experiencia inolvidable)</li>
+                                <li data-key="day3_5">Paseo en lancha</li>
+                                <li data-key="day3_6">Actividad en bananos inflables de Máncora (Loag Reade)</li>
+                                <li data-key="day3_7">Paseo a caballo al atardecer (ticket incluido)</li>
+                                <li data-key="day3_8">Pequeña fiesta en discoteca para estudiantes</li>
+                                <li data-key="day3_9">Retorno a Chiclayo</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Día 4 -->
+                    <div class="timeline-item" data-aos="fade-left" data-aos-delay="200">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-day" data-key="day4Label">DÍA 4</span>
+                            <h3><span class="emoji-big">🏙️</span> <span data-key="day4Title">Chiclayo - City Tour -
+                                    Aquapark - Shopping</span></h3>
+                            <ul>
+                                <li data-key="day4_1">Amanecer en Chiclayo</li>
+                                <li data-key="day4_2">Desayuno en el hotel</li>
+                                <li data-key="day4_3">Instalación en el hotel y breve descanso</li>
+                                <li data-key="day4_4">City Tour por Chiclayo (fotos y recorrido)</li>
+                                <li data-key="day4_5">Almuerzo en restaurante local</li>
+                                <li data-key="day4_6">Visita al parque acuático Aquapark (Chiclayo)</li>
+                                <li data-key="day4_7">Cena en Chiclayo</li>
+                                <li data-key="day4_8">Retorno al hotel y descanso</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Día 5 -->
+                    <div class="timeline-item" data-aos="fade-right" data-aos-delay="250">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-day" data-key="day5Label">DÍA 5</span>
+                            <h3><span class="emoji-big">🏺</span> <span data-key="day5Title">Chiclayo - Tumbas Reales
+                                    del Señor de Sipán - Museo Yortuque - Playas</span></h3>
+                            <ul>
+                                <li data-key="day5_1">Desayuno en Chiclayo</li>
+                                <li data-key="day5_2">Visita a las Tumbas Reales del Señor de Sipán</li>
+                                <li data-key="day5_3">Visita al Museo Yortuque (esculturas al aire libre de más de 1
+                                    metro)</li>
+                                <li data-key="day5_4">Almuerzo en Chiclayo</li>
+                                <li data-key="day5_5">Visita a las playas de Chiclayo (Playa de Pimentel)</li>
+                                <li data-key="day5_6">Cena en Chiclayo</li>
+                                <li data-key="day5_7">Pernocte en Chiclayo (Hotel Tumi)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Día 6 -->
+                    <div class="timeline-item" data-aos="fade-left" data-aos-delay="300">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-day" data-key="day6Label">DÍA 6</span>
+                            <h3><span class="emoji-big">🛬</span> <span data-key="day6Title">Vuelo de retorno a
+                                    Cusco</span></h3>
+                            <ul>
+                                <li data-key="day6_1">Desayuno en Chiclayo</li>
+                                <li data-key="day6_2">Traslado al aeropuerto de Chiclayo, José Abelardo Quiñones</li>
+                                <li data-key="day6_3">Vuelo Chiclayo - Lima - Cusco</li>
+                                <li data-key="day6_4">🎉 Fin del viaje de promoción</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INCLUSIONES -->
+        <section class="inclusion-section">
+            <div class="container">
+                <div style="text-align: center;" data-aos="fade-up">
+                    <span class="pre-title" data-key="incPre">TODO INCLUIDO</span>
+                    <h2 class="section-title"><span data-key="incT1">Qué</span> <span class="text-gradient"
+                            data-key="incT2">incluye</span></h2>
+                </div>
+
+                <div class="inclusion-grid">
+                    <div class="inclusion-card" data-aos="fade-right">
+                        <h3><i class="fas fa-check-circle"></i> <span data-key="incIncludes">✅ ¿Qué incluye?</span></h3>
+                        <ul>
+                            <li data-key="inc1">Vuelo Cusco - Lima - Chiclayo (ida y vuelta)</li>
+                            <li data-key="inc2">Bus turístico privado a disposición del grupo</li>
+                            <li data-key="inc3">Alojamiento en Máncora y Chiclayo (Hotel Tumi)</li>
+                            <li data-key="inc4">Alimentación completa (desayuno, almuerzo, cena)</li>
+                            <li data-key="inc5">Ticket de entrada a los Manglares de Tumbes (incluye impuesto y tasa de
+                                embarque)</li>
+                            <li data-key="inc6">Ticket de ingreso al Muelle de los Órganos (incluye chalecos salvavidas)
+                            </li>
+                            <li data-key="inc7">Ticket de ingreso al Zoo de Criaderos de Cocodrilos</li>
+                            <li data-key="inc8">Ticket de paseo en caballo</li>
+                            <li data-key="inc9">Ticket de paseo en Banana de Loag Reade</li>
+                            <li data-key="inc10">Ticket de ingreso al Museo del Señor de Sipán</li>
+                            <li data-key="inc11">Ticket de ingreso al Museo Yortuque</li>
+                            <li data-key="inc12">Ticket de ingreso al centro recreacional Aquapark (Chiclayo)</li>
+                            <li data-key="inc13">Guía oficial de turismo en todos los lugares visitados</li>
+                            <li data-key="inc14">Acompañamiento de un transfer en todo el trayecto</li>
+                            <li data-key="inc15">Paseo en lancha</li>
+                            <li data-key="inc16">Ingreso a la frontera con Ecuador</li>
+                            <li data-key="inc17">Visita a Huaquillas (Ecuador)</li>
+                            <li data-key="inc18">Botiquín de primeros auxilios</li>
+                            <li data-key="inc19">Asistente de la agencia durante todo el viaje</li>
+                        </ul>
+                    </div>
+
+                    <div class="inclusion-card" data-aos="fade-left">
+                        <h3><i class="fas fa-info-circle"></i> <span data-key="incConditions">📋 Condiciones
+                                Generales</span></h3>
+                        <ul>
+                            <li data-key="cond1">💰 Precios no incluyen IGV</li>
+                            <li data-key="cond2">👥 Mínimo 28 pasajeros</li>
+                            <li data-key="cond3">📝 Contrato notarial entre la agencia y la promoción</li>
+                            <li data-key="cond4">🛂 Documentos de identidad al día (DNI o pasaporte)</li>
+                            <li data-key="cond5">⚠️ Cancelaciones con 90 días de anticipación tienen penalidades</li>
+                            <li data-key="cond6">🎫 Tarifas no reembolsables</li>
+                            <li data-key="cond7">🛏️ Habitaciones múltiples (dobles, triples y cuádruples)</li>
+                            <li data-key="cond8">📅 Tarifas vigentes de marzo a diciembre 2026</li>
+                            <li data-key="cond9">📄 Se requiere adelanto del 50% para confirmar reserva</li>
+                        </ul>
+                        <div
+                            style="background: var(--cream-warm); padding: 15px; border-radius: var(--radius-md); margin: 15px 0; border: 2px solid var(--forest);">
+                            <p
+                                style="font-weight: 800; color: var(--terracotta); font-size: 1.2rem; text-align: center;">
+                                💵 Tarifa por persona:</p>
+                            <p style="text-align: center; font-size: 1.8rem; color: var(--forest); font-weight: 900;">S/
+                                2,185.00</p>
+                            <p style="text-align: center; font-size: 0.8rem; color: var(--forest-light);">Todo incluido
+                                | Sujeto a disponibilidad</p>
+                        </div>
+                        <a href="https://wa.me/51930164904?text=Hola%2C%20estoy%20interesado%20en%20el%20paquete%20Norte%20Peruano%3A%20Chiclayo%20-%20M%C3%A1ncora%20-%20Ecuador%20para%20mi%20colegio"
+                            target="_blank" class="btn-wa">
+                            <i class="fab fa-whatsapp"></i> <span data-key="incBtn">Cotizar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLAGE GALERÍA -->
+        <section class="gallery-collage">
+            <div class="container">
+                <div style="text-align: center;" data-aos="fade-up">
+                    <span class="pre-title" data-key="galPre">GALERÍA</span>
+                    <h2 class="section-title"><span data-key="galT1">Momentos</span> <span class="text-gradient"
+                            data-key="galT2">Inolvidables</span></h2>
+                </div>
+
+                <div class="collage-grid">
+                    <div class="collage-item" data-aos="zoom-in" data-aos-delay="50">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80"
+                            alt="Playa de Máncora al atardecer" loading="lazy"
+                            onerror="this.src='https://placehold.co/800x600?text=Playa+M%C3%A1ncora'">
+                        <div class="collage-overlay"><span>🌅 Atardecer en Máncora</span></div>
+                    </div>
+
+                    <div class="collage-item" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1520430394463-5ab6c8e8f5a9?w=800&q=80"
+                            alt="Tortuga marina" loading="lazy"
+                            onerror="this.src='https://placehold.co/400x400?text=Tortuga'">
+                        <div class="collage-overlay"><span>🐢 Nado con tortugas</span></div>
+                    </div>
+
+                    <div class="collage-item" data-aos="zoom-in" data-aos-delay="150">
+                        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?w=800&q=80"
+                            alt="Manglares de Tumbes" loading="lazy"
+                            onerror="this.src='https://placehold.co/400x400?text=Manglares'">
+                        <div class="collage-overlay"><span>🌿 Manglares de Tumbes</span></div>
+                    </div>
+
+                    <div class="collage-item" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1545338410-2c6dd3d7a9e7?w=800&q=80"
+                            alt="Señor de Sipán" loading="lazy"
+                            onerror="this.src='https://placehold.co/400x400?text=Sip%C3%A1n'">
+                        <div class="collage-overlay"><span>🏺 Señor de Sipán</span></div>
+                    </div>
+
+                    <div class="collage-item" data-aos="zoom-in" data-aos-delay="250">
+                        <img src="https://images.unsplash.com/photo-1583719093627-e18f9cd050c5?w=800&q=80"
+                            alt="Aquapark Chiclayo" loading="lazy"
+                            onerror="this.src='https://placehold.co/400x400?text=Aquapark'">
+                        <div class="collage-overlay"><span>💦 Aquapark Chiclayo</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL -->
+        <section class="testimonial-single">
+            <div class="container" data-aos="fade-up">
+                <div class="testimonial-card-rustic">
+                    <i class="fas fa-quote-left quote-icon"></i>
+                    <p data-key="testimText">
+                        "El viaje al norte fue una experiencia increíble. Nadar con tortugas en el Ñuro, recorrer los
+                        manglares y conocer el Señor de Sipán fueron momentos únicos. Nuestros guías hicieron que todo
+                        fuera divertido y seguro. ¡Sin duda, el mejor viaje de promoción!"
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&q=80"
+                            alt="Estudiante testimonio" loading="lazy"
+                            onerror="this.src='https://placehold.co/100?text=J'">
+                        <div>
+                            <h5 data-key="testimName">Jorge A.</h5>
+                            <p data-key="testimRole">🎓 Estudiante - Promoción 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="cta-final-tour" id="cotizar">
+            <div class="container" data-aos="zoom-in">
+                <h2 class="cta-title">
+                    <span data-key="ctaT1">🏝️ ¿Listos para vivir</span>
+                    <span class="text-gradient" data-key="ctaT2">esta aventura norteña?</span>
+                </h2>
+                <p class="cta-sub" data-key="ctaSub">
+                    Cotiza ahora el viaje de promoción de tu colegio y asegura los mejores precios para tu grupo.
+                    ¡Nuestros asesores están listos para ayudarte!
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/51930164904?text=Hola%2C%20estoy%20interesado%20en%20el%20paquete%20Norte%20Peruano%3A%20Chiclayo%20-%20M%C3%A1ncora%20-%20Ecuador%20para%20mi%20colegio"
+                        target="_blank" class="btn-primary">
+                        <i class="fab fa-whatsapp"></i> <span data-key="ctaBtn1">Consultar ahora</span>
+                    </a>
+                    <a href="../viajes-escolares.html" class="btn-secondary">
+                        <i class="fas fa-arrow-left"></i> <span data-key="ctaBtn2">Ver todos los paquetes</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER PREMIUM -->
+    <footer class="footer-futurista">
+        <div class="footer-bg">
+            <video autoplay muted loop playsinline class="footer-video-bg">
+                <source src="../tours_y_logos/footer.mp4" type="video/mp4">
+            </video>
+            <div class="footer-overlay-gradient"></div>
+        </div>
+        <div class="container footer-container">
+            <div class="footer-grid futurista-grid">
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-compass"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerAboutTitle">QUIENES SOMOS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../nosotros.html" data-key="footerAboutUs">Sobre nosotros</a></li>
+                        <li><a href="../politicas-pago.html" data-key="footerConditions">Condiciones de venta</a></li>
+                        <li><a href="../politicas-pago.html" data-key="footerPayments">Formas de pago</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerMenuTitle">MENÚ PRINCIPAL</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../index.html" data-key="home">INICIO</a></li>
+                        <li><a href="../nosotros.html" data-key="about">NOSOTROS</a></li>
+                        <li><a href="../tours.html" data-key="tours">TOURS</a></li>
+                        <li><a href="../tours-cortos.html" data-key="shortTours">TOURS CORTOS</a></li>
+                        <li><a href="../viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES</a></li>
+                        <li><a href="../aventuras.html" data-key="adventure">AVENTURA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="policiesTitle">POLÍTICAS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../politicas-pago.html" data-key="policy1">Políticas y Condiciones de Pago</a></li>
+                        <li><a href="../proteccion-datos.html" data-key="policy2">Protección de Datos Personales</a>
+                        </li>
+                        <li><a href="../prevencion-esnna.html" data-key="policy3">Prevención de la ESNNA en turismo</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerContactTitle">CONTÁCTENOS</h3>
+                    <ul class="footer-contact-list futurista-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span data-key="footerAddress">Urbanización Tito
+                                Z-26<br>Wanchag - Cusco</span></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:exploreperutravel@gmail.com">exploreperutravel@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i>
+                            <div class="footer-phones"><span>+51 930 164 904</span><span>+51 984 764 403</span><span>+51
+                                    986 530 343</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider futurista-divider">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fas fa-star-of-life"></i></div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="footer-bottom futurista-bottom">
+                <p class="copyright futurista-copyright" data-key="footerCopyright">© 2026 EXPLORE PERU TRAVEL | Agencia
+                    de Viajes y Turismo</p>
+                <div class="footer-social futurista-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/51930164904" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB WHATSAPP -->
+    <a href="https://wa.me/51930164904" class="fab-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- LIBRERÍAS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- LÓGICA PRINCIPAL -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. AOS
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 800, once: true, offset: 50 });
+            }
+
+            // 2. SKELETON LOADER
+            const skeletonLoader = document.getElementById('skeletonLoader');
+            if (skeletonLoader) {
+                const hideSkeleton = () => {
+                    if (!skeletonLoader.classList.contains('hide')) {
+                        skeletonLoader.classList.add('hide');
+                        setTimeout(() => { if (skeletonLoader.parentNode) skeletonLoader.remove(); }, 500);
+                    }
+                };
+                window.addEventListener('load', hideSkeleton);
+                setTimeout(hideSkeleton, 1000);
+            }
+
+            // 3. SCROLL HEADER
+            const header = document.getElementById('mainHeader');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) header.classList.add('scrolled');
+                    else header.classList.remove('scrolled');
+                });
+            }
+
+            // 4. MENÚ MÓVIL CON SELECTOR DE IDIOMA
+            const hamburger = document.getElementById('hamburger');
+            if (hamburger && !document.querySelector('.mobile-menu')) {
+                const mobileMenuOverlay = document.createElement('div');
+                mobileMenuOverlay.className = 'mobile-menu-overlay';
+                const mobileMenu = document.createElement('div');
+                mobileMenu.className = 'mobile-menu';
+
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'mobile-menu-close';
+                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                mobileMenu.appendChild(closeBtn);
+
+                const navMenu = document.querySelector('.nav-menu');
+                const mobileNavList = document.createElement('ul');
+                mobileNavList.style.listStyle = 'none';
+                mobileNavList.style.marginTop = '20px';
+
+                if (navMenu) {
+                    navMenu.querySelectorAll('li').forEach(li => {
+                        if (li.parentElement === navMenu) {
+                            const a = li.querySelector('a');
+                            if (a) {
+                                const liCopy = document.createElement('li');
+                                liCopy.style.marginBottom = '15px';
+                                const aCopy = document.createElement('a');
+                                aCopy.href = a.href;
+                                aCopy.innerHTML = a.innerHTML;
+                                aCopy.style.color = 'var(--forest)';
+                                aCopy.style.fontWeight = '800';
+                                liCopy.appendChild(aCopy);
+                                mobileNavList.appendChild(liCopy);
+                            }
+                        }
+                    });
+                }
+                mobileMenu.appendChild(mobileNavList);
+
+                // Selector de idioma en móvil
+                const langSelectorMobile = document.createElement('div');
+                langSelectorMobile.className = 'mobile-lang-selector';
+
+                const langEsMobile = document.createElement('button');
+                langEsMobile.className = 'mobile-lang-btn active';
+                langEsMobile.setAttribute('data-lang', 'es');
+                langEsMobile.textContent = 'ES';
+                langSelectorMobile.appendChild(langEsMobile);
+
+                const langEnMobile = document.createElement('button');
+                langEnMobile.className = 'mobile-lang-btn';
+                langEnMobile.setAttribute('data-lang', 'en');
+                langEnMobile.textContent = 'EN';
+                langSelectorMobile.appendChild(langEnMobile);
+
+                mobileMenu.appendChild(langSelectorMobile);
+
+                document.body.appendChild(mobileMenuOverlay);
+                document.body.appendChild(mobileMenu);
+
+                function toggleMobileMenu() {
+                    hamburger.classList.toggle('open');
+                    mobileMenu.classList.toggle('open');
+                    mobileMenuOverlay.classList.toggle('open');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                }
+
+                hamburger.addEventListener('click', toggleMobileMenu);
+                closeBtn.addEventListener('click', toggleMobileMenu);
+                mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+
+                // Traducciones para móvil
+                const mobileLangBtns = langSelectorMobile.querySelectorAll('.mobile-lang-btn');
+                mobileLangBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const lang = btn.getAttribute('data-lang');
+                        mobileLangBtns.forEach(b => b.classList.toggle('active', b === btn));
+                        document.querySelectorAll('.lang-btn').forEach(b => {
+                            b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+                        });
+                        applyTranslations(lang);
+                        if (mobileMenu.classList.contains('open')) {
+                            toggleMobileMenu();
+                        }
+                    });
+                });
+            }
+
+            // 5. SISTEMA DE TRADUCCIÓN
+            const translations = {
+                es: {
+                    home: "INICIO",
+                    about: "NOSOTROS",
+                    tours: "TOURS",
+                    shortTours: "TOURS CORTOS",
+                    schoolTrips: "VIAJES ESCOLARES",
+                    adventure: "AVENTURA",
+                    contact: "CONTACTO",
+                    navT1: "Paquete Cusco Básico (3D/2N)",
+                    navT2: "Paquete Cusco Clásico (4D/3N)",
+                    navT3: "Paquete Cusco Arqueológico (5D/4N)",
+                    navT4: "Paquete Experiencia Cusco Total (6D/5N)",
+                    navT5: "Inka Jungle (4D/3N)",
+                    navT6: "Salkantay Trek (5D/4N)",
+                    navT7: "Camino Inca Clásico (4D/3N)",
+                    navT8: "Choquequirao Extremo (4D/3N)",
+                    shortTour1: "City Tour Cusco (Medio Día)",
+                    shortTour2: "Chinchero, Maras y Moray",
+                    shortTour3: "Valle Sur Cusco (Medio Día)",
+                    shortTour4: "Valle Sagrado (Full Day)",
+                    school1: "Ruta Imperial: Arequipa - Cusco - Oxapampa | 6D/5N",
+                    school2: "Cusco - Arica, Chile | 4D/3N",
+                    school3: "Ruta al Norte: Tumbes - Guayaquil | 5D/4N",
+                    school4: "Cusco - Machu Picchu - Selva | 5D/4N",
+                    school5: "Cusco - Machu Picchu (Tren) | 2D/1N",
+                    school6: "Lima - Ica - Huacachina | 3D/2N",
+                    school7: "Arica - Chile | 4D/3N",
+                    school8: "Norte Peruano: Chiclayo - Máncora | 6D/5N",
+                    school9: "Lima y Oxapampa | 5D/4N",
+                    adv1: "Cuatrimotos - Maras y Moray",
+                    adv2: "Vía Ferrata y Zipline",
+                    adv3: "Rafting en el Río Vilcanota",
+                    adv4: "Bungee Jumping y Slingshot",
+                    adv5: "Parapente sobre el Valle Sagrado",
+
+                    heroPre: "🎓 PROMOCIÓN 2026",
+                    heroPrice: "S/ 2,185 + IGV",
+                    heroT1: "Norte Peruano:",
+                    heroT2: "Chiclayo - Máncora - Ecuador",
+                    heroSub: "Un viaje increíble por el norte peruano y frontera con Ecuador. Manglares de Tumbes, playas paradisíacas, nado con tortugas, paseo en lancha, Aquapark y el fascinante Museo del Señor de Sipán. ¡Sol, arena y mucha historia te esperan!",
+                    btnIti: "Ver Itinerario",
+                    btnReserve: "Cotizar Promoción",
+
+                    welcomeT1: "🏝️ ¡Prepárate para",
+                    welcomeT2: "el sol norteño!",
+                    welcomeP1: "<strong>¡Hola, viajero!</strong> Hoy no comienza solo un viaje... comienza un recuerdo que los acompañará para toda su vida. Después de tantos años compartiendo aulas, risas, retos y aprendizajes, llega el momento de vivir una experiencia única: el viaje que marcará el cierre de una etapa y el inicio de nuevos caminos.",
+                    welcomeP2: "Este no será solo un recorrido por nuevos lugares, sino un encuentro con las historias que han construido juntos, con la amistad que creció día a día y con los sueños que empiezan a tomar forma. Cada momento que vivan, cada paisaje que descubran y cada sonrisa que compartan se convertirá en un recuerdo imborrable.",
+                    welcomeP3: "Imagina nadar con tortugas marinas en aguas cristalinas, recorrer los manglares de Tumbes en lancha, sentir la adrenalina en el Aquapark de Chiclayo y maravillarte con el legendario <strong>Señor de Sipán</strong>. ¡Y eso no es todo! También cruzaremos la frontera para conocer Ecuador y sus encantos. <strong>El viaje no es una despedida, es una celebración... de todo lo vivido y de todo lo que está por venir.</strong>",
+
+                    featPre: "EXPERIENCIAS ÚNICAS",
+                    featT1: "Lo que",
+                    featT2: "vivirás",
+                    feat1T: "Manglares de Tumbes",
+                    feat1D: "Ecosistema único y biodiversidad",
+                    feat2T: "Nado con tortugas",
+                    feat2D: "Experiencia inolvidable en el mar",
+                    feat3T: "Paseo a caballo",
+                    feat3D: "Atardecer mágico en la playa",
+                    feat4T: "Señor de Sipán",
+                    feat4D: "Historia Mochica fascinante",
+
+                    itinPre: "DÍA A DÍA",
+                    itinT1: "Itinerario",
+                    itinT2: "Detallado",
+                    day1Label: "DÍA 1",
+                    day1Title: "Cusco - Chiclayo - Máncora",
+                    day1_1: "Encuentro con la delegación de viaje al norte",
+                    day1_2: "Traslado al aeropuerto internacional Alejandro Velazco Astete",
+                    day1_3: "Vuelo Cusco - Lima - Chiclayo (escala en Lima)",
+                    day1_4: "Aterrizaje en Chiclayo, aeropuerto José A. Quiñones",
+                    day1_5: "Traslado a Máncora con movilidad privada",
+                    day1_6: "Primera noche de alojamiento en Máncora",
+                    day2Label: "DÍA 2",
+                    day2Title: "Manglares de Tumbes - Islas - Criadero de Cocodrilos - Frontera Ecuador",
+                    day2_1: "Desayuno en Máncora",
+                    day2_2: "Recorrido por los Manglares de Tumbes (incluye impuesto y tasa de embarque)",
+                    day2_3: "Visita a playas de Punta Sal y Zorritos",
+                    day2_4: "City Tour por Tumbes y su plaza mayor",
+                    day2_5: "Llegada a Puerto Pizarro",
+                    day2_6: "Tour guiado por las Islas: Los Pájaros, La Ballena, Isla del Amor",
+                    day2_7: "Visita al Criadero de Cocodrilos (Zoo)",
+                    day2_8: "Cruce fronterizo a Ecuador: Aguas Verdes y Huaquillas",
+                    day2_9: "Retorno a Máncora",
+                    day2_10: "Cena y alojamiento",
+                    day3Label: "DÍA 3",
+                    day3Title: "Playa Los Órganos - El Ñuro - Nado con tortugas - Fiesta",
+                    day3_1: "Desayuno en Máncora",
+                    day3_2: "Viaje a Playa Los Órganos (incluye chalecos salvavidas)",
+                    day3_3: "Visita a El Ñuro",
+                    day3_4: "Nado con tortugas (experiencia inolvidable)",
+                    day3_5: "Paseo en lancha",
+                    day3_6: "Actividad en bananos inflables de Máncora (Loag Reade)",
+                    day3_7: "Paseo a caballo al atardecer (ticket incluido)",
+                    day3_8: "Pequeña fiesta en discoteca para estudiantes",
+                    day3_9: "Retorno a Chiclayo",
+                    day4Label: "DÍA 4",
+                    day4Title: "Chiclayo - City Tour - Aquapark - Shopping",
+                    day4_1: "Amanecer en Chiclayo",
+                    day4_2: "Desayuno en el hotel",
+                    day4_3: "Instalación en el hotel y breve descanso",
+                    day4_4: "City Tour por Chiclayo (fotos y recorrido)",
+                    day4_5: "Almuerzo en restaurante local",
+                    day4_6: "Visita al parque acuático Aquapark (Chiclayo)",
+                    day4_7: "Cena en Chiclayo",
+                    day4_8: "Retorno al hotel y descanso",
+                    day5Label: "DÍA 5",
+                    day5Title: "Chiclayo - Tumbas Reales del Señor de Sipán - Museo Yortuque - Playas",
+                    day5_1: "Desayuno en Chiclayo",
+                    day5_2: "Visita a las Tumbas Reales del Señor de Sipán",
+                    day5_3: "Visita al Museo Yortuque (esculturas al aire libre de más de 1 metro)",
+                    day5_4: "Almuerzo en Chiclayo",
+                    day5_5: "Visita a las playas de Chiclayo (Playa de Pimentel)",
+                    day5_6: "Cena en Chiclayo",
+                    day5_7: "Pernocte en Chiclayo (Hotel Tumi)",
+                    day6Label: "DÍA 6",
+                    day6Title: "Vuelo de retorno a Cusco",
+                    day6_1: "Desayuno en Chiclayo",
+                    day6_2: "Traslado al aeropuerto de Chiclayo, José Abelardo Quiñones",
+                    day6_3: "Vuelo Chiclayo - Lima - Cusco",
+                    day6_4: "🎉 Fin del viaje de promoción",
+
+                    incPre: "TODO INCLUIDO",
+                    incT1: "Qué",
+                    incT2: "incluye",
+                    incIncludes: "✅ ¿Qué incluye?",
+                    inc1: "Vuelo Cusco - Lima - Chiclayo (ida y vuelta)",
+                    inc2: "Bus turístico privado a disposición del grupo",
+                    inc3: "Alojamiento en Máncora y Chiclayo (Hotel Tumi)",
+                    inc4: "Alimentación completa (desayuno, almuerzo, cena)",
+                    inc5: "Ticket de entrada a los Manglares de Tumbes (incluye impuesto y tasa de embarque)",
+                    inc6: "Ticket de ingreso al Muelle de los Órganos (incluye chalecos salvavidas)",
+                    inc7: "Ticket de ingreso al Zoo de Criaderos de Cocodrilos",
+                    inc8: "Ticket de paseo en caballo",
+                    inc9: "Ticket de paseo en Banana de Loag Reade",
+                    inc10: "Ticket de ingreso al Museo del Señor de Sipán",
+                    inc11: "Ticket de ingreso al Museo Yortuque",
+                    inc12: "Ticket de ingreso al centro recreacional Aquapark (Chiclayo)",
+                    inc13: "Guía oficial de turismo en todos los lugares visitados",
+                    inc14: "Acompañamiento de un transfer en todo el trayecto",
+                    inc15: "Paseo en lancha",
+                    inc16: "Ingreso a la frontera con Ecuador",
+                    inc17: "Visita a Huaquillas (Ecuador)",
+                    inc18: "Botiquín de primeros auxilios",
+                    inc19: "Asistente de la agencia durante todo el viaje",
+                    incConditions: "📋 Condiciones Generales",
+                    cond1: "💰 Precios no incluyen IGV",
+                    cond2: "👥 Mínimo 28 pasajeros",
+                    cond3: "📝 Contrato notarial entre la agencia y la promoción",
+                    cond4: "🛂 Documentos de identidad al día (DNI o pasaporte)",
+                    cond5: "⚠️ Cancelaciones con 90 días de anticipación tienen penalidades",
+                    cond6: "🎫 Tarifas no reembolsables",
+                    cond7: "🛏️ Habitaciones múltiples (dobles, triples y cuádruples)",
+                    cond8: "📅 Tarifas vigentes de marzo a diciembre 2026",
+                    cond9: "📄 Se requiere adelanto del 50% para confirmar reserva",
+                    incBtn: "Cotizar por WhatsApp",
+
+                    galPre: "GALERÍA",
+                    galT1: "Momentos",
+                    galT2: "Inolvidables",
+
+                    testimText: '"El viaje al norte fue una experiencia increíble. Nadar con tortugas en el Ñuro, recorrer los manglares y conocer el Señor de Sipán fueron momentos únicos. Nuestros guías hicieron que todo fuera divertido y seguro. ¡Sin duda, el mejor viaje de promoción!"',
+                    testimName: "Jorge A.",
+                    testimRole: "🎓 Estudiante - Promoción 2026",
+
+                    ctaT1: "🏝️ ¿Listos para vivir",
+                    ctaT2: "esta aventura norteña?",
+                    ctaSub: "Cotiza ahora el viaje de promoción de tu colegio y asegura los mejores precios para tu grupo. ¡Nuestros asesores están listos para ayudarte!",
+                    ctaBtn1: "Consultar ahora",
+                    ctaBtn2: "Ver todos los paquetes",
+
+                    footerAboutTitle: "QUIENES SOMOS",
+                    footerAboutUs: "Sobre nosotros",
+                    footerConditions: "Condiciones de venta",
+                    footerPayments: "Formas de pago",
+                    footerMenuTitle: "MENÚ PRINCIPAL",
+                    footerContactTitle: "CONTÁCTENOS",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Agencia de Viajes y Turismo",
+                    policiesTitle: "POLÍTICAS",
+                    policy1: "Políticas y Condiciones de Pago",
+                    policy2: "Protección de Datos Personales",
+                    policy3: "Prevención de la ESNNA en turismo"
+                },
+                en: {
+                    home: "HOME",
+                    about: "ABOUT US",
+                    tours: "TOURS",
+                    shortTours: "SHORT TOURS",
+                    schoolTrips: "SCHOOL TRIPS",
+                    adventure: "ADVENTURE",
+                    contact: "CONTACT",
+                    navT1: "Cusco Basic Package (3D/2N)",
+                    navT2: "Cusco Classic Package (4D/3N)",
+                    navT3: "Cusco Archaeological Package (5D/4N)",
+                    navT4: "Cusco Total Experience (6D/5N)",
+                    navT5: "Inka Jungle (4D/3N)",
+                    navT6: "Salkantay Trek (5D/4N)",
+                    navT7: "Classic Inca Trail (4D/3N)",
+                    navT8: "Choquequirao Extreme (4D/3N)",
+                    shortTour1: "Cusco City Tour (Half Day)",
+                    shortTour2: "Chinchero, Maras and Moray",
+                    shortTour3: "Cusco South Valley (Half Day)",
+                    shortTour4: "Sacred Valley (Full Day)",
+                    school1: "Imperial Route: Arequipa - Cusco - Oxapampa | 6D/5N",
+                    school2: "Cusco - Arica, Chile | 4D/3N",
+                    school3: "Northern Route: Tumbes - Guayaquil | 5D/4N",
+                    school4: "Cusco - Machu Picchu - Jungle | 5D/4N",
+                    school5: "Cusco - Machu Picchu (Train) | 2D/1N",
+                    school6: "Lima - Ica - Huacachina | 3D/2N",
+                    school7: "Arica - Chile | 4D/3N",
+                    school8: "Northern Peru: Chiclayo - Máncora | 6D/5N",
+                    school9: "Lima and Oxapampa | 5D/4N",
+                    adv1: "ATV - Maras and Moray",
+                    adv2: "Via Ferrata and Zipline",
+                    adv3: "White Water Rafting",
+                    adv4: "Bungee Jumping and Slingshot",
+                    adv5: "Paragliding over Sacred Valley",
+
+                    heroPre: "🎓 CLASS OF 2026",
+                    heroPrice: "S/ 2,185 + IGV",
+                    heroT1: "Northern Peru:",
+                    heroT2: "Chiclayo - Máncora - Ecuador",
+                    heroSub: "An incredible journey through northern Peru and the border with Ecuador. Tumbes mangroves, paradisiacal beaches, swimming with turtles, boat rides, Aquapark and the fascinating Lord of Sipán Museum. Sun, sand and plenty of history await you!",
+                    btnIti: "View Itinerary",
+                    btnReserve: "Quote School Trip",
+
+                    welcomeT1: "🏝️ Get ready for",
+                    welcomeT2: "the northern sun!",
+                    welcomeP1: "<strong>Hello, traveler!</strong> Today is not just the beginning of a trip... it's the beginning of a memory that will accompany you for a lifetime. After so many years sharing classrooms, laughter, challenges and learning, the time has come to live a unique experience: the trip that will mark the closing of a stage and the beginning of new paths.",
+                    welcomeP2: "This will not only be a journey through new places, but a meeting with the stories you have built together, with the friendship that grew day by day and with the dreams that are beginning to take shape. Every moment you live, every landscape you discover and every smile you share will become an unforgettable memory.",
+                    welcomeP3: "Imagine swimming with sea turtles in crystal clear waters, touring the Tumbes mangroves by boat, feeling the adrenaline at the Chiclayo Aquapark and marveling at the legendary <strong>Lord of Sipán</strong>. And that's not all! We will also cross the border to discover Ecuador and its charms. <strong>The trip is not a goodbye, it's a celebration... of everything lived and everything that is yet to come.</strong>",
+
+                    featPre: "UNIQUE EXPERIENCES",
+                    featT1: "What you'll",
+                    featT2: "experience",
+                    feat1T: "Tumbes Mangroves",
+                    feat1D: "Unique ecosystem and biodiversity",
+                    feat2T: "Swimming with turtles",
+                    feat2D: "Unforgettable experience in the sea",
+                    feat3T: "Horseback riding",
+                    feat3D: "Magical sunset on the beach",
+                    feat4T: "Lord of Sipán",
+                    feat4D: "Fascinating Mochica history",
+
+                    itinPre: "DAY BY DAY",
+                    itinT1: "Detailed",
+                    itinT2: "Itinerary",
+                    day1Label: "DAY 1",
+                    day1Title: "Cusco - Chiclayo - Máncora",
+                    day1_1: "Meeting with the travel delegation to the north",
+                    day1_2: "Transfer to Alejandro Velazco Astete International Airport",
+                    day1_3: "Flight Cusco - Lima - Chiclayo (layover in Lima)",
+                    day1_4: "Arrival in Chiclayo, José A. Quiñones airport",
+                    day1_5: "Transfer to Máncora with private vehicle",
+                    day1_6: "First night of accommodation in Máncora",
+                    day2Label: "DAY 2",
+                    day2Title: "Tumbes Mangroves - Islands - Crocodile Farm - Ecuador Border",
+                    day2_1: "Breakfast in Máncora",
+                    day2_2: "Tour through the Tumbes Mangroves (includes tax and boarding fee)",
+                    day2_3: "Visit to Punta Sal and Zorritos beaches",
+                    day2_4: "City Tour through Tumbes and its main square",
+                    day2_5: "Arrival at Puerto Pizarro",
+                    day2_6: "Guided tour of the Islands: Los Pájaros, La Ballena, Isla del Amor",
+                    day2_7: "Visit to the Crocodile Farm (Zoo)",
+                    day2_8: "Border crossing to Ecuador: Aguas Verdes and Huaquillas",
+                    day2_9: "Return to Máncora",
+                    day2_10: "Dinner and accommodation",
+                    day3Label: "DAY 3",
+                    day3Title: "Los Órganos Beach - El Ñuro - Swimming with turtles - Party",
+                    day3_1: "Breakfast in Máncora",
+                    day3_2: "Trip to Los Órganos Beach (includes life jackets)",
+                    day3_3: "Visit to El Ñuro",
+                    day3_4: "Swimming with turtles (unforgettable experience)",
+                    day3_5: "Boat ride",
+                    day3_6: "Activity on inflatable bananas in Máncora (Loag Reade)",
+                    day3_7: "Horseback riding at sunset (ticket included)",
+                    day3_8: "Small party at a nightclub for students",
+                    day3_9: "Return to Chiclayo",
+                    day4Label: "DAY 4",
+                    day4Title: "Chiclayo - City Tour - Aquapark - Shopping",
+                    day4_1: "Sunrise in Chiclayo",
+                    day4_2: "Breakfast at the hotel",
+                    day4_3: "Check-in at hotel and short rest",
+                    day4_4: "City Tour through Chiclayo (photos and tour)",
+                    day4_5: "Lunch at a local restaurant",
+                    day4_6: "Visit to Aquapark water park (Chiclayo)",
+                    day4_7: "Dinner in Chiclayo",
+                    day4_8: "Return to hotel and rest",
+                    day5Label: "DAY 5",
+                    day5Title: "Chiclayo - Royal Tombs of the Lord of Sipán - Yortuque Museum - Beaches",
+                    day5_1: "Breakfast in Chiclayo",
+                    day5_2: "Visit to the Royal Tombs of the Lord of Sipán",
+                    day5_3: "Visit to the Yortuque Museum (outdoor sculptures over 1 meter tall)",
+                    day5_4: "Lunch in Chiclayo",
+                    day5_5: "Visit to the beaches of Chiclayo (Pimentel Beach)",
+                    day5_6: "Dinner in Chiclayo",
+                    day5_7: "Overnight in Chiclayo (Hotel Tumi)",
+                    day6Label: "DAY 6",
+                    day6Title: "Return flight to Cusco",
+                    day6_1: "Breakfast in Chiclayo",
+                    day6_2: "Transfer to Chiclayo airport, José Abelardo Quiñones",
+                    day6_3: "Flight Chiclayo - Lima - Cusco",
+                    day6_4: "🎉 End of graduation trip",
+
+                    incPre: "ALL INCLUDED",
+                    incT1: "What's",
+                    incT2: "included",
+                    incIncludes: "✅ What's included?",
+                    inc1: "Flight Cusco - Lima - Chiclayo (round trip)",
+                    inc2: "Private tourist bus available for the group",
+                    inc3: "Accommodation in Máncora and Chiclayo (Hotel Tumi)",
+                    inc4: "Full meals (breakfast, lunch, dinner)",
+                    inc5: "Entry ticket to the Tumbes Mangroves (includes tax and boarding fee)",
+                    inc6: "Entry ticket to Los Órganos Pier (includes life jackets)",
+                    inc7: "Entry ticket to the Crocodile Farm Zoo",
+                    inc8: "Horseback riding ticket",
+                    inc9: "Ticket for Loag Reade Banana ride",
+                    inc10: "Entry ticket to the Lord of Sipán Museum",
+                    inc11: "Entry ticket to the Yortuque Museum",
+                    inc12: "Entry ticket to Aquapark recreation center (Chiclayo)",
+                    inc13: "Official tourism guide in all places visited",
+                    inc14: "Transfer assistant throughout the entire journey",
+                    inc15: "Boat ride",
+                    inc16: "Entry to the border with Ecuador",
+                    inc17: "Visit to Huaquillas (Ecuador)",
+                    inc18: "First aid kit",
+                    inc19: "Agency assistant throughout the trip",
+                    incConditions: "📋 General Conditions",
+                    cond1: "💰 Prices do not include IGV",
+                    cond2: "👥 Minimum 28 passengers",
+                    cond3: "📝 Notarial contract between the agency and the graduation class",
+                    cond4: "🛂 Up-to-date identification documents (ID or passport)",
+                    cond5: "⚠️ Cancellations with 90 days notice have penalties",
+                    cond6: "🎫 Non-refundable rates",
+                    cond7: "🛏️ Multiple rooms (double, triple and quadruple)",
+                    cond8: "📅 Rates valid from March to December 2026",
+                    cond9: "📄 A 50% advance payment is required to confirm reservation",
+                    incBtn: "Quote via WhatsApp",
+
+                    galPre: "GALLERY",
+                    galT1: "Unforgettable",
+                    galT2: "Moments",
+
+                    testimText: '"The trip to the north was an incredible experience. Swimming with turtles in El Ñuro, touring the mangroves and discovering the Lord of Sipán were unique moments. Our guides made everything fun and safe. Without a doubt, the best graduation trip!"',
+                    testimName: "Jorge A.",
+                    testimRole: "🎓 Student - Class of 2026",
+
+                    ctaT1: "🏝️ Ready to live",
+                    ctaT2: "this northern adventure?",
+                    ctaSub: "Quote your school's graduation trip now and secure the best prices for your group. Our advisors are ready to help you!",
+                    ctaBtn1: "Inquire now",
+                    ctaBtn2: "View all packages",
+
+                    footerAboutTitle: "ABOUT US",
+                    footerAboutUs: "About us",
+                    footerConditions: "Terms and conditions",
+                    footerPayments: "Payment methods",
+                    footerMenuTitle: "MAIN MENU",
+                    footerContactTitle: "CONTACT US",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Travel and Tourism Agency",
+                    policiesTitle: "POLICIES",
+                    policy1: "Payment Policies",
+                    policy2: "Data Protection",
+                    policy3: "Child Protection in Tourism"
+                }
+            };
+
+            let currentLang = localStorage.getItem('preferredLang') || 'es';
+
+            function applyTranslations(lang) {
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    const translation = translations[lang]?.[key];
+                    if (translation) {
+                        if (el.tagName !== 'INPUT' && el.tagName !== 'TEXTAREA' && el.tagName !== 'SELECT' && el.tagName !== 'IMG') {
+                            const hasIcon = el.querySelector('i') || el.querySelector('.fas') || el.querySelector('.fab') || el.querySelector('.far');
+
+                            if (hasIcon) {
+                                let textNodeUpdated = false;
+                                for (let node of el.childNodes) {
+                                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                                        if (!textNodeUpdated) {
+                                            node.textContent = translation + ' ';
+                                            textNodeUpdated = true;
+                                        } else {
+                                            node.textContent = '';
+                                        }
+                                    }
+                                }
+                                if (!textNodeUpdated) {
+                                    el.insertAdjacentText('afterbegin', translation + ' ');
+                                }
+                            } else if (translation.includes('<') && translation.includes('>')) {
+                                el.innerHTML = translation;
+                            } else {
+                                el.textContent = translation;
+                            }
+                        } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                            el.placeholder = translation;
+                        } else if (el.tagName === 'SELECT') {
+                            const option = el.querySelector(`option[data-key="${key}"]`);
+                            if (option) option.textContent = translation;
+                        }
+                    }
+                });
+
+                currentLang = lang;
+                localStorage.setItem('preferredLang', lang);
+
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+                document.querySelectorAll('.mobile-lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+            }
+
+            const langBtns = document.querySelectorAll('.lang-btn');
+            if (langBtns.length > 0) {
+                langBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const lang = btn.getAttribute('data-lang');
+                        document.querySelectorAll('.mobile-lang-btn').forEach(b => {
+                            b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+                        });
+                        applyTranslations(lang);
+                    });
+                });
+            }
+
+            applyTranslations(currentLang);
+
+            console.log('✅ Explore Peru Travel - Tour Norte Peruano cargado correctamente.');
+        });
+    </script>
+
+</body>
+
+</html>
