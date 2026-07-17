@@ -1,0 +1,2086 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description"
+        content="Explora nuestros paquetes turísticos en Cusco, Machu Picchu y expediciones de trekking. Viajes diseñados con el corazón por Explore Peru Travel.">
+    <title>Tours y Paquetes | Explore Peru Travel</title>
+
+    <link rel="icon" href="tours_y_logos/logoprincipal.png" type="image/png">
+    <link rel="apple-touch-icon" href="tours_y_logos/logoprincipal.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap">
+    </noscript>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* ============================================================
+           EXPLORE PERU TRAVEL — RUSTIC FUN DESIGN SYSTEM (TOURS)
+           ============================================================ */
+
+        :root {
+            /* Paleta Base Rústica */
+            --deep: #1f1812;
+            --forest: #3a2e24;
+            --forest-mid: #4f3f31;
+            --forest-light: #6b5442;
+            --cream: #faf5eb;
+            --cream-warm: #f3ebd8;
+            --cream-border: #e0d0b8;
+
+            /* Paleta Andina Vibrante (Rustic Fun) */
+            --terracotta: #c05a3c;
+            --rust-mustard: #e2a02b;
+            --andes-green: #3e6b4a;
+            --inca-red: #a83a32;
+            --andes-sky: #4a8ca8;
+            --gold: #c29b45;
+            --gold-pale: #f5e6b8;
+
+            /* Geometría y Sombras Sólidas (Neo-Brutalismo) */
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-pill: 100px;
+            --shadow-solid-sm: 4px 4px 0 var(--forest);
+            --shadow-solid-md: 8px 8px 0 var(--forest);
+            --shadow-solid-gold: 8px 8px 0 var(--rust-mustard);
+            --shadow-solid-terra: 8px 8px 0 var(--terracotta);
+
+            --ease-out: cubic-bezier(0.25, 0.8, 0.25, 1);
+            --transition: 0.35s var(--ease-out);
+            --nav-height-main: 82px;
+            --nav-total: var(--nav-height-main);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--cream);
+            color: var(--forest);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Topografía sutil de fondo */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%233a2e24' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 28px;
+            width: 100%;
+        }
+
+        .text-gradient {
+            background: linear-gradient(130deg, var(--rust-mustard) 0%, var(--terracotta) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .pre-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--terracotta);
+            font-size: clamp(0.6rem, 2vw, 0.75rem);
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            background: rgba(226, 160, 43, 0.15);
+            padding: 4px 16px;
+            border-radius: var(--radius-pill);
+            border: 1px dashed var(--rust-mustard);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--forest);
+        }
+
+        /* ─── SKELETON LOADER ─── */
+        .skeleton-loader {
+            position: fixed;
+            inset: 0;
+            background: var(--cream);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            transition: 0.5s ease;
+            pointer-events: none;
+        }
+
+        .skeleton-loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .skeleton-navbar {
+            height: var(--nav-height-main);
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        .skeleton-hero {
+            flex: 1;
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        @keyframes skeletonShimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* ─── NAVBAR (COMPACTA Y SIN BLANCOS) ─── */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1050;
+            transition: var(--transition);
+        }
+
+        .main-navbar {
+            height: var(--nav-height-main);
+            display: flex;
+            align-items: center;
+            background: rgba(250, 245, 235, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid var(--cream-border);
+            transition: all 0.4s var(--ease-out);
+        }
+
+        .nav-flex {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            transition: all 0.4s var(--ease-out);
+        }
+
+        .logo-img {
+            width: 230px;
+            height: auto;
+            transition: all 0.4s var(--ease-out);
+        }
+
+        /* Isla Dinámica Flotante (Ultra Compacta) */
+        .main-header.scrolled .main-navbar {
+            height: 52px;
+            margin: 12px auto;
+            width: fit-content;
+            border-radius: 50px;
+            background: var(--deep);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 0 2px rgba(226, 160, 43, 0.5);
+            border: none;
+            padding: 0 12px;
+        }
+
+        .main-header.scrolled .logo-area {
+            display: none;
+        }
+
+        .main-header.scrolled .nav-flex {
+            justify-content: center;
+            padding: 0;
+            width: auto;
+            gap: 10px;
+        }
+
+        .main-header.scrolled .nav-menu {
+            gap: 14px;
+        }
+
+        .main-header.scrolled .nav-menu a {
+            font-size: 0.65rem;
+            color: var(--cream);
+            letter-spacing: 1px;
+        }
+
+        .main-header.scrolled .nav-menu a:hover,
+        .main-header.scrolled .nav-menu li.current>a {
+            color: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .nav-menu a::after {
+            background: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .lang-selector {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: transparent;
+        }
+
+        .main-header.scrolled .lang-btn {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .main-header.scrolled .lang-btn.active {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            box-shadow: none;
+        }
+
+        .main-header.scrolled .hamburger span {
+            background: var(--cream);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: clamp(10px, 1.8vw, 22px);
+            align-items: center;
+        }
+
+        .nav-menu a {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: clamp(0.65rem, 1.5vw, 0.75rem);
+            letter-spacing: 1px;
+            color: var(--forest-mid);
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s var(--ease-out);
+        }
+
+        .nav-menu a:hover,
+        .nav-menu li.current>a {
+            color: var(--terracotta);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu li.current>a::after {
+            width: 100%;
+        }
+
+        /* SUBMENU */
+        .menu-item-has-children {
+            position: relative;
+        }
+
+        .menu-item-has-children>a .fa-chevron-down {
+            transition: transform 0.3s ease;
+            font-size: 0.6rem;
+        }
+
+        .menu-item-has-children:hover>a .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 0;
+            min-width: 320px;
+            background: var(--cream);
+            border-radius: var(--radius-md);
+            padding: 10px 0;
+            box-shadow: var(--shadow-solid-md);
+            border: 2px solid var(--forest);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.35s var(--ease-out);
+            z-index: 100;
+            list-style: none;
+        }
+
+        .main-header.scrolled .sub-menu {
+            background: var(--deep);
+            border-color: var(--rust-mustard);
+            box-shadow: 6px 6px 0 var(--rust-mustard);
+        }
+
+        .menu-item-has-children:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% + 8px);
+        }
+
+        .sub-menu li {
+            margin-bottom: 0;
+        }
+
+        .sub-menu li a {
+            display: block;
+            padding: 10px 22px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--forest);
+            transition: all 0.25s ease;
+            white-space: normal;
+        }
+
+        .main-header.scrolled .sub-menu li a {
+            color: var(--cream);
+        }
+
+        .sub-menu li a:hover {
+            background: rgba(192, 90, 60, 0.1);
+            color: var(--terracotta);
+            padding-left: 28px;
+        }
+
+        .main-header.scrolled .sub-menu li a:hover {
+            background: rgba(226, 160, 43, 0.15);
+            color: var(--rust-mustard);
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 3px;
+            background: var(--cream-warm);
+            padding: 4px;
+            border-radius: var(--radius-pill);
+            border: 2px solid var(--forest);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-weight: 800;
+            font-size: 0.65rem;
+            color: var(--forest-light);
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--forest);
+            color: white;
+            box-shadow: 2px 2px 0 var(--terracotta);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: var(--forest);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(31, 24, 18, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1055;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(320px, 85vw);
+            height: 100dvh;
+            background: var(--cream);
+            z-index: 1060;
+            padding: 70px 24px 30px;
+            transform: translateX(100%);
+            transition: transform 0.4s var(--ease-out);
+            overflow-y: auto;
+            border-left: 4px solid var(--forest);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            background: var(--forest);
+            color: white;
+            border: 2px solid var(--deep);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 3px 3px 0 var(--terracotta);
+        }
+
+        /* Punto de quiebre para el menú móvil */
+        @media (max-width: 1050px) {
+
+            .nav-menu,
+            .lang-selector {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .main-navbar {
+                height: 65px;
+            }
+
+            .main-header.scrolled .main-navbar {
+                margin: 10px auto;
+                width: calc(100% - 24px);
+                height: 54px;
+                padding: 0 16px;
+            }
+
+            .main-header.scrolled .nav-flex {
+                justify-content: space-between;
+                padding: 0;
+                width: 100%;
+            }
+
+            .logo-img {
+                width: 180px;
+            }
+
+            .main-header.scrolled .logo-area {
+                display: block;
+            }
+
+            .main-header.scrolled .logo-img {
+                width: 120px;
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        /* ─── BOTONES GLOBALES ─── */
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--rust-mustard);
+            color: var(--deep);
+            padding: 16px 36px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border: 2px solid var(--deep);
+            box-shadow: 4px 4px 0 var(--deep);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--deep);
+            background: white;
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        /* ────── HERO RUSTIC FUN (BOXED CON VIDEO) ────── */
+        .hero-premium-boxed {
+            background-color: var(--cream);
+            padding: calc(var(--nav-total) + 25px) 25px 50px;
+            position: relative;
+        }
+
+        .hero-boxed-inner {
+            position: relative;
+            height: 55vh;
+            min-height: 450px;
+            max-width: 1400px;
+            margin: 0 auto;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 4px solid var(--forest);
+            box-shadow: 12px 12px 0 var(--terracotta);
+        }
+
+        .hero-boxed-video {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.65) contrast(1.1);
+        }
+
+        .hero-boxed-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31, 24, 18, 0.4) 0%, rgba(31, 24, 18, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-boxed-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 30px;
+        }
+
+        .hero-boxed-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: var(--rust-mustard);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid var(--deep);
+            color: var(--deep);
+            font-size: 1.6rem;
+            box-shadow: 6px 6px 0 var(--deep);
+            transform: rotate(-5deg);
+            animation: floatIcon 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes floatIcon {
+            100% {
+                transform: translateY(-8px) rotate(5deg) scale(1.05);
+            }
+        }
+
+        .hero-boxed-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 6vw, 5rem);
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            font-weight: 800;
+            text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-boxed-subtitle {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+            font-weight: 500;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .hero-premium-boxed {
+                padding: calc(var(--nav-total) + 15px) 15px 30px;
+            }
+
+            .hero-boxed-inner {
+                min-height: 350px;
+                border-radius: var(--radius-md);
+                border-width: 3px;
+                box-shadow: 8px 8px 0 var(--terracotta);
+            }
+        }
+
+        /* ────── BIG LOGO & WARM WELCOME ────── */
+        .welcome-warm {
+            padding: 40px 0 20px;
+            background: var(--cream);
+            text-align: center;
+        }
+
+        .big-logo-container {
+            margin: 0 auto 30px;
+            display: inline-block;
+            position: relative;
+        }
+
+
+        .big-logo {
+            width: 500px;
+            max-width: 80vw;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+            transition: var(--transition);
+        }
+
+        .big-logo:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .welcome-text-wrapper {
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        .welcome-text-wrapper p {
+            font-size: 1.15rem;
+            color: var(--forest-mid);
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        /* ────── INTERFAZ DINÁMICA DE TOURS (RUSTIC MASONRY) ────── */
+        .section-tours-list {
+            padding: 40px 0 80px;
+            background: var(--cream);
+            position: relative;
+        }
+
+        .tours-dynamic-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 50px;
+            margin-top: 40px;
+        }
+
+        .tour-dynamic-card {
+            display: flex;
+            gap: 0;
+            background: white;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 3px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+            align-items: stretch;
+            position: relative;
+        }
+
+        .tour-dynamic-card:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: var(--shadow-solid-terra);
+        }
+
+        .tour-dynamic-card:nth-child(even):hover {
+            box-shadow: var(--shadow-solid-gold);
+        }
+
+        .tour-dynamic-card:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .dynamic-image-wrapper {
+            flex: 0 0 45%;
+            position: relative;
+            overflow: hidden;
+            min-height: 340px;
+            border-right: 3px solid var(--forest);
+        }
+
+        .tour-dynamic-card:nth-child(even) .dynamic-image-wrapper {
+            border-right: none;
+            border-left: 3px solid var(--forest);
+        }
+
+        .dynamic-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s var(--ease-out);
+        }
+
+        .tour-dynamic-card:hover .dynamic-image-wrapper img {
+            transform: scale(1.12) rotate(-1deg);
+        }
+
+        .dynamic-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #fff;
+            padding: 6px 16px;
+            border-radius: var(--radius-md);
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--forest);
+            border: 2px solid var(--forest);
+            box-shadow: 4px 4px 0 var(--rust-mustard);
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transform: rotate(-2deg);
+            transition: var(--transition);
+        }
+
+        .dynamic-badge i {
+            color: var(--terracotta);
+        }
+
+        .tour-dynamic-card:nth-child(even) .dynamic-badge {
+            left: auto;
+            right: 20px;
+            transform: rotate(2deg);
+            box-shadow: 4px 4px 0 var(--andes-green);
+        }
+
+        .dynamic-body {
+            flex: 0 0 55%;
+            padding: 35px 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: var(--cream-warm);
+        }
+
+        .dynamic-meta {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+
+        .dynamic-meta span {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--forest);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(226, 160, 43, 0.15);
+            padding: 6px 14px;
+            border-radius: var(--radius-pill);
+            border: 2px dashed var(--rust-mustard);
+        }
+
+        .dynamic-meta i {
+            color: var(--terracotta);
+        }
+
+        .dynamic-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.8rem, 2.8vw, 2.4rem);
+            font-weight: 800;
+            color: var(--forest);
+            margin-bottom: 12px;
+            line-height: 1.1;
+        }
+
+        .dynamic-desc {
+            font-size: 0.95rem;
+            color: var(--forest-light);
+            font-weight: 600;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .dynamic-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 15px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--cream-border);
+        }
+
+        .dynamic-feature {
+            font-size: 0.85rem;
+            color: var(--forest-mid);
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dynamic-feature i {
+            color: var(--andes-green);
+            font-size: 1.1rem;
+        }
+
+        .dynamic-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--terracotta);
+            color: white;
+            padding: 14px 28px;
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            width: max-content;
+            border: 2px solid var(--forest);
+            box-shadow: 4px 4px 0 var(--forest);
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .dynamic-btn:hover {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--forest);
+        }
+
+        @media (max-width: 1024px) {
+            .dynamic-body {
+                padding: 25px 25px;
+            }
+
+            .dynamic-image-wrapper {
+                flex: 0 0 40%;
+            }
+
+            .dynamic-body {
+                flex: 0 0 60%;
+            }
+        }
+
+        @media (max-width: 900px) {
+
+            .tour-dynamic-card,
+            .tour-dynamic-card:nth-child(even) {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .dynamic-image-wrapper {
+                flex: none;
+                height: 260px;
+                min-height: auto;
+                width: 100%;
+                border-right: none;
+                border-bottom: 3px solid var(--forest);
+            }
+
+            .tour-dynamic-card:nth-child(even) .dynamic-image-wrapper {
+                border-left: none;
+                border-bottom: 3px solid var(--forest);
+            }
+
+            .dynamic-body {
+                flex: none;
+                padding: 30px 20px;
+                width: 100%;
+            }
+
+            .tour-dynamic-card:nth-child(even) .dynamic-badge {
+                left: 20px;
+                right: auto;
+            }
+
+            .dynamic-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dynamic-image-wrapper {
+                height: 200px;
+            }
+
+            .dynamic-features {
+                grid-template-columns: 1fr;
+            }
+
+            .tours-dynamic-grid {
+                gap: 30px;
+            }
+        }
+
+        /* ────── CTA FINAL ────── */
+        .section-tours-cta {
+            padding: 80px 0;
+            background: var(--forest);
+            text-align: center;
+            color: white;
+            position: relative;
+            border-top: 4px dashed var(--rust-mustard);
+            overflow: hidden;
+        }
+
+        .section-tours-cta::before {
+            content: '🎒';
+            position: absolute;
+            top: 20px;
+            left: 10%;
+            font-size: 5rem;
+            opacity: 0.2;
+            transform: rotate(-15deg);
+            animation: floatEmoji 4s infinite alternate;
+        }
+
+        .section-tours-cta::after {
+            content: '📸';
+            position: absolute;
+            bottom: 20px;
+            right: 10%;
+            font-size: 6rem;
+            opacity: 0.2;
+            transform: rotate(15deg);
+            animation: floatEmoji 5s infinite alternate-reverse;
+        }
+
+        @keyframes floatEmoji {
+            100% {
+                transform: translateY(-15px) rotate(0deg);
+            }
+        }
+
+        .cta-tours-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-cta-gold {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            padding: 16px 38px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 1rem;
+            letter-spacing: 1.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: var(--transition);
+            border: 2px solid var(--deep);
+            box-shadow: 6px 6px 0 var(--deep);
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+        }
+
+        .btn-cta-gold:hover {
+            background: white;
+            color: var(--terracotta);
+            transform: translate(-3px, -3px);
+            box-shadow: 9px 9px 0 var(--deep);
+            border-color: var(--terracotta);
+        }
+
+        @media (max-width: 480px) {
+            .section-tours-cta {
+                padding: 60px 0;
+            }
+
+            .btn-cta-gold {
+                width: 90%;
+                justify-content: center;
+                padding: 14px 20px;
+                font-size: 0.85rem;
+            }
+        }
+
+        /* ────── FOOTER PREMIUM ────── */
+        .footer-futurista {
+            position: relative;
+            padding: 60px 0 25px;
+            overflow: hidden;
+            color: white;
+            background: #111;
+        }
+
+        .footer-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .footer-video-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer-overlay-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44, 36, 24, 0.95), rgba(58, 46, 36, 0.93));
+            z-index: 1;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .futurista-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1024px) {
+            .futurista-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .futurista-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .futurista-col {
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(184, 134, 11, 0.12);
+            transition: var(--transition);
+        }
+
+        .futurista-col:hover {
+            transform: translateY(-3px);
+            border-color: rgba(184, 134, 11, 0.25);
+        }
+
+        .footer-glow-icon {
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.12), rgba(184, 134, 11, 0.04));
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            border: 1px solid rgba(184, 134, 11, 0.15);
+        }
+
+        .footer-glow-icon i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .futurista-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 14px;
+            letter-spacing: 2px;
+        }
+
+        .futurista-links,
+        .futurista-contact {
+            list-style: none;
+        }
+
+        .futurista-links li {
+            margin-bottom: 6px;
+        }
+
+        .futurista-links a {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: 600;
+        }
+
+        .futurista-links a::before {
+            content: '›';
+            color: var(--gold);
+            opacity: 0;
+            transition: 0.2s;
+        }
+
+        .futurista-links a:hover {
+            color: var(--gold);
+            transform: translateX(4px);
+        }
+
+        .futurista-links a:hover::before {
+            opacity: 1;
+        }
+
+        .futurista-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+        }
+
+        .futurista-contact li i {
+            color: var(--gold);
+            font-size: 0.8rem;
+            margin-top: 2px;
+        }
+
+        .footer-phones {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .futurista-divider {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 24px 0 20px;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.3), transparent);
+        }
+
+        .divider-icon {
+            width: 28px;
+            height: 28px;
+            background: rgba(184, 134, 11, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(184, 134, 11, 0.15);
+        }
+
+        .divider-icon i {
+            color: var(--gold);
+            font-size: 0.7rem;
+        }
+
+        .futurista-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        @media (max-width: 640px) {
+            .futurista-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .futurista-copyright {
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 600;
+        }
+
+        .futurista-social {
+            display: flex;
+            gap: 8px;
+        }
+
+        .futurista-social a {
+            width: 32px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8rem;
+            transition: var(--transition);
+            border: 1px solid rgba(184, 134, 11, 0.1);
+        }
+
+        .futurista-social a:hover {
+            color: var(--forest);
+            background: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            z-index: 1000;
+            border: 2px solid white;
+        }
+
+        .fab-whatsapp:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        @media (max-width: 480px) {
+            .fab-whatsapp {
+                width: 48px;
+                height: 48px;
+                font-size: 24px;
+                bottom: 16px;
+                right: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SKELETON LOADER -->
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-navbar"></div>
+        <div class="skeleton-hero"></div>
+    </div>
+
+    <!-- CABECERA PRINCIPAL (Isla Dinámica) -->
+    <header class="main-header" id="mainHeader">
+        <div class="main-navbar">
+            <div class="nav-flex">
+                <div class="logo-area">
+                    <a href="index.html">
+                        <img src="tours_y_logos/logo.png" alt="Explore Peru Travel" class="logo-img"
+                            onerror="this.src='https://placehold.co/280x90?text=Explore+Peru'">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" data-key="home">INICIO</a></li>
+                    <li><a href="nosotros.html" data-key="about">NOSOTROS</a></li>
+                    <li class="current menu-item-has-children">
+                        <a href="tours.html" data-key="tours">TOURS <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="tours/Paquete Cusco Basico.html" data-key="navT1">Paquete Cusco Básico (3 Días
+                                    / 2 Noches)</a></li>
+                            <li><a href="tours/Paquete Cusco Clásico.html" data-key="navT2">Paquete Cusco Clásico (4
+                                    Días / 3 Noches)</a></li>
+                            <li><a href="tours/Paquete Cusco Arqueologico.html" data-key="navT3">Paquete Cusco
+                                    Arqueológico (5 Días / 4 Noches)</a></li>
+                            <li><a href="tours/Paquete Experiencia Cusco Total.html" data-key="navT4">Paquete
+                                    Experiencia Cusco Total (6 Días / 5 Noches)</a></li>
+                            <li><a href="tours/Inka Jungle.html" data-key="navT5">Paquete Aventura Extrema: Inka Jungle
+                                    (4 Días / 3 Noches)</a></li>
+                            <li><a href="tours/Paquete_Desafio_Andino_Salkantay_Trek.html" data-key="navT6">Paquete
+                                    Desafío Andino: Salkantay Trek (5 Días / 4 Noches)</a></li>
+                            <li><a href="tours/Camino Inca Clasico.html" data-key="navT7">Camino Inca Clásico a Machu
+                                    Picchu (4 Días / 3 Noches)</a></li>
+                            <li><a href="tours/Trekking Choquequirao.html" data-key="navT8">Trekking Choquequirao
+                                    Extremo (4 Días / 3 Noches)</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="tours-cortos.html" data-key="shortTours">TOURS CORTOS <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="tours cortos/City Tour Cusco.html" data-key="shortTour1">City Tour Cusco (Medio
+                                    Día)</a></li>
+                            <li><a href="tours cortos/Tour Chinchero, Maras y Moray.html" data-key="shortTour2">Tour
+                                    Chinchero, Maras y Moray</a></li>
+                            <li><a href="tours cortos/Tour Valle Sur Cusco.html" data-key="shortTour3">Tour Valle Sur
+                                    Cusco (Medio Día)</a></li>
+                            <li><a href="tours cortos/Tour Valle Sagrado de los Incas.html" data-key="shortTour4">Tour
+                                    Valle Sagrado (Full Day)</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="viajes escolares/escolar-imperial.html" data-key="school1">🏔️ Ruta Imperial:
+                                    Arequipa - Cusco - Oxapampa | 6D/5N</a></li>
+                            <li><a href="viajes escolares/escolar-sur-chile.html" data-key="school2">🇨🇱 Ruta al Sur:
+                                    Chile - Santiago | 5D/4N</a></li>
+                            <li><a href="viajes escolares/escolar-norte-ecuador.html" data-key="school3">🇪🇨 Ruta al
+                                    Norte: Tumbes - Guayaquil | 5D/4N</a></li>
+                            <li><a href="viajes escolares/escolar-cusco-selva.html" data-key="school4">🏔️ Cusco - Machu
+                                    Picchu - Selva Cusqueña | 5D/4N</a></li>
+                            <li><a href="viajes escolares/escolar-cusco-machupicchu.html" data-key="school5">🚂 Cusco -
+                                    Machu Picchu (Tren Turístico) | 2D/1N</a></li>
+                            <li><a href="viajes escolares/escolar-lima-ica-paracas.html" data-key="school6">🏜️ Lima -
+                                    Ica - Huacachina - Paracas | 3D/2N</a></li>
+                            <li><a href="viajes escolares/escolar-arica-chile.html" data-key="school7">🌊 Arica - Chile
+                                    (Puno - Arequipa - Tacna) | 4D/3N</a></li>
+                            <li><a href="viajes escolares/escolar-norte-peruano.html" data-key="school8">🏝️ Norte
+                                    Peruano: Chiclayo - Máncora - Ecuador | 6D/5N</a></li>
+                            <li><a href="viajes escolares/escolar-lima-oxapampa.html" data-key="school9">🌿 Lima y
+                                    Oxapampa Aventura | 5D/4N</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="aventuras.html" data-key="adventure">AVENTURA <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="aventuras/Aventura en Cuatrimotos.html" data-key="adv1">Aventura en Cuatrimotos
+                                    - Maras y Moray</a></li>
+                            <li><a href="aventuras/Vía Ferrata y Zipline.html" data-key="adv2">Vía Ferrata y Zipline en
+                                    el Valle Sagrado</a></li>
+                            <li><a href="aventuras/Canotaje (Rafting).html" data-key="adv3">Canotaje (Rafting) en el Río
+                                    Vilcanota</a></li>
+                            <li><a href="aventuras/Bungee Jumping.html" data-key="adv4">Bungee Jumping y Slingshot</a>
+                            </li>
+                            <li><a href="aventuras/Parapente sobre el valle sagrado.html" data-key="adv5">Parapente
+                                    sobre el Valle Sagrado</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contacto.html" data-key="contact">CONTACTO</a></li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO RUSTIC FUN (BOXED CON VIDEO) -->
+        <section class="hero-premium-boxed">
+            <div class="hero-boxed-inner" data-aos="zoom-in" data-aos-duration="1200">
+                <video class="hero-boxed-video" autoplay muted loop playsinline>
+                    <source src="tours_y_logos/tours.mp4" type="video/mp4">
+                </video>
+                <div class="hero-boxed-overlay"></div>
+
+                <div class="hero-boxed-content">
+                    <div class="hero-boxed-icon"><i class="fas fa-map"></i></div>
+                    <span class="pre-title"
+                        style="color: var(--gold-pale); border-color: var(--gold-pale); background: rgba(255,255,255,0.1);"
+                        data-key="heroPre">VIVE LA AVENTURA</span>
+                    <h1 class="hero-boxed-title" data-key="heroTitle">
+                        Nuestros Paquetes
+                    </h1>
+                    <p class="hero-boxed-subtitle" data-key="heroSub">Sabemos que planear un viaje puede ser abrumador.
+                        Por eso hemos diseñado estas rutas pensando en ti, reuniendo lo mejor de la cultura Inca, la
+                        naturaleza y la adrenalina.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WARM WELCOME & BIG LOGO -->
+        <section class="welcome-warm">
+            <div class="container" data-aos="fade-up">
+                <div class="big-logo-container">
+                    <img src="tours_y_logos/logo.png" alt="Explore Peru Travel Gran Logo" class="big-logo"
+                        onerror="this.src='https://placehold.co/400x150?text=EXPLORE+PERU+TRAVEL'">
+                </div>
+                <div class="welcome-text-wrapper">
+                    <p data-key="welcomeP1">¡Te damos la bienvenida a nuestro catálogo de experiencias! Ya sea que
+                        busques caminar por antiguos senderos incas, desafiar las alturas en la montaña o disfrutar de
+                        un recorrido cultural relajado con la familia, <strong>Explore Peru Travel</strong> tiene el
+                        itinerario perfecto esperando por ti.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERFAZ DINÁMICA: ZIGZAG MASONRY RÚSTICO -->
+        <section class="section-tours-list">
+            <div class="container">
+
+                <div class="tours-dynamic-grid">
+
+                    <!-- TOUR 1: Básico -->
+                    <div class="tour-dynamic-card" data-aos="fade-up" data-aos-offset="100">
+                        <a href="tours/Paquete Cusco Basico.html" class="dynamic-image-wrapper">
+                            <span class="dynamic-badge"><i class="fas fa-star"></i> <span data-key="badgeBasic">Ideal
+                                    para empezar</span></span>
+                            <img src="tours_y_logos/Paquete Cusco Básico.jpg" alt="Cusco Básico" loading="lazy">
+                        </a>
+                        <div class="dynamic-body">
+                            <div class="dynamic-meta">
+                                <span><i class="fas fa-clock"></i> <span data-key="dur3D">3 Días / 2
+                                        Noches</span></span>
+                                <span><i class="fas fa-map-marker-alt"></i> <span>Cusco & Machu Picchu</span></span>
+                            </div>
+                            <h3 class="dynamic-title" data-key="t1Title">Paquete Cusco Básico</h3>
+                            <p class="dynamic-desc" data-key="t1Desc">La opción perfecta si tienes poco tiempo pero
+                                quieres vivir lo esencial del Imperio Inca. Explora las encantadoras calles de la ciudad
+                                del Cusco, sus ruinas aledañas y culmina tu viaje maravillándote con el amanecer en la
+                                mágica ciudadela de Machu Picchu.</p>
+
+                            <div class="dynamic-features">
+                                <div class="dynamic-feature"><i class="fas fa-hotel"></i> <span
+                                        data-key="featHotel">Hoteles Incluidos</span></div>
+                                <div class="dynamic-feature"><i class="fas fa-ticket-alt"></i> <span
+                                        data-key="featTickets">Entradas y Tren</span></div>
+                            </div>
+
+                            <a href="tours/Paquete Cusco Basico.html" class="dynamic-btn">
+                                <span data-key="btnViewDetail">Descubrir el Tour</span> <i
+                                    class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- TOUR 2: Clásico -->
+                    <div class="tour-dynamic-card" data-aos="fade-up" data-aos-offset="100">
+                        <a href="tours/Paquete Cusco Clásico.html" class="dynamic-image-wrapper">
+                            <span class="dynamic-badge"><i class="fas fa-fire"></i> <span data-key="badgeBest">Más
+                                    Vendido</span></span>
+                            <img src="tours_y_logos/Paquete Cusco Clásico.jpg" alt="Cusco Clásico" loading="lazy">
+                        </a>
+                        <div class="dynamic-body">
+                            <div class="dynamic-meta">
+                                <span><i class="fas fa-clock"></i> <span data-key="dur4D">4 Días / 3
+                                        Noches</span></span>
+                                <span><i class="fas fa-map-marker-alt"></i> <span>Valle Sagrado & Mapi</span></span>
+                            </div>
+                            <h3 class="dynamic-title" data-key="t2Title">Paquete Cusco Clásico</h3>
+                            <p class="dynamic-desc" data-key="t2Desc">Nuestro itinerario más popular. Te llevaremos a
+                                través de la historia: desde la vibrante ciudad de Cusco, descendiendo hacia el clima
+                                cálido y los pueblos ancestrales del Valle Sagrado, hasta finalmente conquistar una de
+                                las Siete Maravillas del Mundo Moderno.</p>
+
+                            <div class="dynamic-features">
+                                <div class="dynamic-feature"><i class="fas fa-utensils"></i> <span
+                                        data-key="featBuffet">Almuerzo Buffet</span></div>
+                                <div class="dynamic-feature"><i class="fas fa-user-tie"></i> <span
+                                        data-key="featGuide">Guías Certificados</span></div>
+                            </div>
+
+                            <a href="tours/Paquete Cusco Clásico.html" class="dynamic-btn">
+                                <span data-key="btnViewDetail">Descubrir el Tour</span> <i
+                                    class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- TOUR 3: Arqueológico -->
+                    <div class="tour-dynamic-card" data-aos="fade-up" data-aos-offset="100">
+                        <a href="tours/Paquete Cusco Arqueologico.html" class="dynamic-image-wrapper">
+                            <span class="dynamic-badge"><i class="fas fa-landmark"></i> <span
+                                    data-key="badgeCulture">Cultural</span></span>
+                            <img src="tours_y_logos/Paquete Cusco Arqueológico.jpg" alt="Cusco Arqueológico"
+                                loading="lazy">
+                        </a>
+                        <div class="dynamic-body">
+                            <div class="dynamic-meta">
+                                <span><i class="fas fa-clock"></i> <span data-key="dur5D">5 Días / 4
+                                        Noches</span></span>
+                                <span><i class="fas fa-map-marker-alt"></i> <span>Maras, Moray & Mapi</span></span>
+                            </div>
+                            <h3 class="dynamic-title" data-key="t3Title">Paquete Cusco Arqueológico</h3>
+                            <p class="dynamic-desc" data-key="t3Desc">Para los amantes de la historia viva. Sumérgete en
+                                la profunda ingeniería agrícola y arquitectónica de los incas. Visitaremos los
+                                espectaculares andenes circulares de Moray, las milenarias Salineras de Maras, el
+                                majestuoso Valle Sagrado y por supuesto, Machu Picchu.</p>
+
+                            <div class="dynamic-features">
+                                <div class="dynamic-feature"><i class="fas fa-bus-alt"></i> <span
+                                        data-key="featTransport">Transporte Privado</span></div>
+                                <div class="dynamic-feature"><i class="fas fa-camera"></i> <span
+                                        data-key="featPhotos">Vistas Únicas</span></div>
+                            </div>
+
+                            <a href="tours/Paquete Cusco Arqueologico.html" class="dynamic-btn">
+                                <span data-key="btnViewDetail">Descubrir el Tour</span> <i
+                                    class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- TOUR 4: Total -->
+                    <div class="tour-dynamic-card" data-aos="fade-up" data-aos-offset="100">
+                        <a href="tours/Paquete Experiencia Cusco Total.html" class="dynamic-image-wrapper">
+                            <span class="dynamic-badge"><i class="fas fa-crown"></i> <span
+                                    data-key="badgeTotal">Experiencia Completa</span></span>
+                            <img src="tours_y_logos/Paquete Experiencia Cusco Total.jpg" alt="Cusco Total"
+                                loading="lazy">
+                        </a>
+                        <div class="dynamic-body">
+                            <div class="dynamic-meta">
+                                <span><i class="fas fa-clock"></i> <span data-key="dur6D">6 Días / 5
+                                        Noches</span></span>
+                                <span><i class="fas fa-map-marker-alt"></i> <span>Montaña de Colores</span></span>
+                            </div>
+                            <h3 class="dynamic-title" data-key="t4Title">Experiencia Cusco Total</h3>
+                            <p class="dynamic-desc" data-key="t4Desc">Si quieres verlo absolutamente todo, este es tu
+                                paquete. Exploraremos la ciudad de Cusco, el enigmático Valle Sur, Maras y Moray, el
+                                Valle Sagrado, Machu Picchu y coronaremos la aventura ascendiendo hacia la espectacular
+                                Montaña de 7 Colores (Vinicunca).</p>
+
+                            <div class="dynamic-features">
+                                <div class="dynamic-feature"><i class="fas fa-mountain"></i> <span
+                                        data-key="featMountain">Ruta de Montaña</span></div>
+                                <div class="dynamic-feature"><i class="fas fa-hotel"></i> <span
+                                        data-key="featHotel">Hoteles Incluidos</span></div>
+                            </div>
+
+                            <a href="tours/Paquete Experiencia Cusco Total.html" class="dynamic-btn">
+                                <span data-key="btnViewDetail">Descubrir el Tour</span> <i
+                                    class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- TOUR 5: Inka Jungle -->
+                    <div class="tour-dynamic-card" data-aos="fade-up" data-aos-offset="100">
+                        <a href="tours/Inka Jungle.html" class="dynamic-image-wrapper">
+                            <span class="dynamic-badge"><i class="fas fa-biking"></i> <span
+                                    data-key="badgeExtreme">Aventura Pura</span></span>
+                            <img src="tours_y_logos/Paquete Aventura Inka Jungle.jpg" alt="Inka Jungle" loading="lazy">
+                        </a>
+                        <div class="dynamic-body">
+                            <div class="dynamic-meta">
+                                <span><i class="fas fa-clock"></i> <span data-key="dur4D">4 Días / 3
+                                        Noches</span></span>
+                                <span><i class="fas fa-map-marker-alt"></i> <span>Selva Tropical</span></span>
+                            </div>
+                            <h3 class="dynamic-title" data-key="t5Title">Inka Jungle a Machu Picchu</h3>
+                            <p class="dynamic-desc" data-key="t5Desc">La alternativa más emocionante para llegar a la
+                                ciudadela. Combina descenso en bicicleta de montaña, rafting en ríos de la selva,
+                                caminatas rodeadas de exuberante vegetación y momentos de relajo en aguas termales
+                                naturales.</p>
+
+                            <div class="dynamic-features">
+                                <div class="dynamic-feature"><i class="fas fa-bicycle"></i> <span
+                                        data-key="featBikes">Bicicletas & Rafting</span></div>
+                                <div class="dynamic-feature"><i class="fas fa-swimming-pool"></i> <span
+                                        data-key="featHotSprings">Aguas Termales</span></div>
+                            </div>
+
+                            <a href="tours/Inka Jungle.html" class="dynamic-btn">
+                                <span data-key="btnViewDetail">Descubrir el Tour</span> <i
+                                    class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- TOUR 6: Salkantay -->
+                    <div class="tour-dynamic-card" data-aos="fade-up" data-aos-offset="100">
+                        <a href="tours/Paquete_Desafio_Andino_Salkantay_Trek.html" class="dynamic-image-wrapper">
+                            <span class="dynamic-badge"><i class="fas fa-hiking"></i> <span
+                                    data-key="badgeTrek">Trekking Épico</span></span>
+                            <img src="tours_y_logos/Paquete Desafío Andino Salkantay Trek.jpg" alt="Salkantay Trek"
+                                loading="lazy">
+                        </a>
+                        <div class="dynamic-body">
+                            <div class="dynamic-meta">
+                                <span><i class="fas fa-clock"></i> <span data-key="dur5D">5 Días / 4
+                                        Noches</span></span>
+                                <span><i class="fas fa-map-marker-alt"></i> <span>Humantay & Salkantay</span></span>
+                            </div>
+                            <h3 class="dynamic-title" data-key="t6Title">Salkantay Trek: Desafío Andino</h3>
+                            <p class="dynamic-desc" data-key="t6Desc">Nombrada entre las 25 mejores rutas de senderismo
+                                del mundo. Atrévete a cruzar el paso del imponente nevado Salkantay, maravíllate con las
+                                aguas turquesas de la Laguna Humantay y desciende hacia la cálida ceja de selva rumbo a
+                                Machu Picchu.</p>
+
+                            <div class="dynamic-features">
+                                <div class="dynamic-feature"><i class="fas fa-campground"></i> <span
+                                        data-key="featCamp">Campamentos Seguros</span></div>
+                                <div class="dynamic-feature"><i class="fas fa-horse"></i> <span
+                                        data-key="featMules">Arrieros y Mulas</span></div>
+                            </div>
+
+                            <a href="tours/Paquete_Desafio_Andino_Salkantay_Trek.html" class="dynamic-btn">
+                                <span data-key="btnViewDetail">Descubrir el Tour</span> <i
+                                    class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- TOUR 7: Camino Inca -->
+                    <div class="tour-dynamic-card" data-aos="fade-up" data-aos-offset="100">
+                        <a href="tours/Camino Inca Clasico.html" class="dynamic-image-wrapper">
+                            <span class="dynamic-badge"><i class="fas fa-route"></i> <span
+                                    data-key="badgeClassicTrek">Ruta Histórica</span></span>
+                            <img src="tours_y_logos/Paquete Camino Inca Clásico.jpg" alt="Camino Inca Clásico"
+                                loading="lazy">
+                        </a>
+                        <div class="dynamic-body">
+                            <div class="dynamic-meta">
+                                <span><i class="fas fa-clock"></i> <span data-key="dur4D">4 Días / 3
+                                        Noches</span></span>
+                                <span><i class="fas fa-map-marker-alt"></i> <span>Camino Ancestral</span></span>
+                            </div>
+                            <h3 class="dynamic-title" data-key="t7Title">Camino Inca Clásico</h3>
+                            <p class="dynamic-desc" data-key="t7Desc">La peregrinación más famosa de Sudamérica. Recorre
+                                los mismos senderos de piedra que usaban los incas, pasando por misteriosas ruinas
+                                ocultas en la niebla y entrando a Machu Picchu triunfalmente por la mítica Puerta del
+                                Sol (Inti Punku).</p>
+
+                            <div class="dynamic-features">
+                                <div class="dynamic-feature"><i class="fas fa-ticket-alt"></i> <span
+                                        data-key="featPermits">Permisos Incluidos</span></div>
+                                <div class="dynamic-feature"><i class="fas fa-utensils"></i> <span
+                                        data-key="featChef">Chef de Ruta</span></div>
+                            </div>
+
+                            <a href="tours/Camino Inca Clasico.html" class="dynamic-btn">
+                                <span data-key="btnViewDetail">Descubrir el Tour</span> <i
+                                    class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- TOUR 8: Choquequirao -->
+                    <div class="tour-dynamic-card" data-aos="fade-up" data-aos-offset="100">
+                        <a href="tours/Trekking Choquequirao.html" class="dynamic-image-wrapper">
+                            <span class="dynamic-badge"><i class="fas fa-fire"></i> <span data-key="badgeExt">Dificultad
+                                    Extrema</span></span>
+                            <img src="tours_y_logos/Trekking Choquequirao Extremo.jpg" alt="Choquequirao"
+                                loading="lazy">
+                        </a>
+                        <div class="dynamic-body">
+                            <div class="dynamic-meta">
+                                <span><i class="fas fa-clock"></i> <span data-key="dur4D">4 Días / 3
+                                        Noches</span></span>
+                                <span><i class="fas fa-map-marker-alt"></i> <span>Cañón del Apurímac</span></span>
+                            </div>
+                            <h3 class="dynamic-title" data-key="t8Title">Trekking Choquequirao</h3>
+                            <p class="dynamic-desc" data-key="t8Desc">¿Buscas un reto fuera de este mundo? Conquista la
+                                "Ciudad Hermana Sagrada" de Machu Picchu. Una expedición intensa y solitaria
+                                descendiendo al profundo Cañón del Apurímac y escalando montañas para descubrir ruinas
+                                increíbles sin multitudes.</p>
+
+                            <div class="dynamic-features">
+                                <div class="dynamic-feature"><i class="fas fa-campground"></i> <span
+                                        data-key="featEquip">Equipamiento Completo</span></div>
+                                <div class="dynamic-feature"><i class="fas fa-mountain"></i> <span
+                                        data-key="featGuideAdv">Guía Especializado</span></div>
+                            </div>
+
+                            <a href="tours/Trekking Choquequirao.html" class="dynamic-btn">
+                                <span data-key="btnViewDetail">Descubrir el Tour</span> <i
+                                    class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL RUSTIC FUN -->
+        <section class="section-tours-cta">
+            <div class="container" data-aos="zoom-in">
+                <h2 class="cta-tours-title">
+                    <span data-key="ctaTourT1">¿Buscas algo totalmente</span> <span class="text-gradient"
+                        data-key="ctaTourT2">a tu medida?</span>
+                </h2>
+                <p style="margin-bottom: 35px; color: rgba(255,255,255,0.9); font-size: 1.1rem; font-weight: 500;"
+                    data-key="ctaTourDesc">Nuestros especialistas están listos para combinar rutas, ajustar tiempos y
+                    crear el itinerario de tus sueños de principio a fin.</p>
+                <a href="https://wa.me/51930164904" target="_blank" class="btn-cta-gold">
+                    <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> <span data-key="ctaTourBtn">Armar mi
+                        viaje ideal</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER PREMIUM -->
+    <footer class="footer-futurista">
+        <div class="footer-bg">
+            <video autoplay muted loop playsinline class="footer-video-bg">
+                <source src="tours_y_logos/footer.mp4" type="video/mp4">
+            </video>
+            <div class="footer-overlay-gradient"></div>
+        </div>
+        <div class="container footer-container">
+            <div class="footer-grid futurista-grid">
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-compass"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerAboutTitle">QUIENES SOMOS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="nosotros.html" data-key="footerAboutUs">Sobre nosotros</a></li>
+                        <li><a href="politicas-pago.html" data-key="footerConditions">Condiciones de venta</a></li>
+                        <li><a href="politicas-pago.html" data-key="footerPayments">Formas de pago</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerMenuTitle">MENÚ PRINCIPAL</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="index.html" data-key="home">INICIO</a></li>
+                        <li><a href="nosotros.html" data-key="about">NOSOTROS</a></li>
+                        <li><a href="tours.html" data-key="tours">TOURS</a></li>
+                        <li><a href="tours-cortos.html" data-key="shortTours">TOURS CORTOS</a></li>
+                        <li><a href="viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES</a></li>
+                        <li><a href="aventuras.html" data-key="adventure">AVENTURA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="policiesTitle">POLÍTICAS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="politicas-pago.html" data-key="policy1">Políticas y Condiciones de Pago</a></li>
+                        <li><a href="proteccion-datos.html" data-key="policy2">Protección de Datos Personales</a></li>
+                        <li><a href="prevencion-esnna.html" data-key="policy3">Prevención de la ESNNA en turismo</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerContactTitle">CONTÁCTENOS</h3>
+                    <ul class="footer-contact-list futurista-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span data-key="footerAddress">Urbanización Tito
+                                Z-26<br>Wanchag - Cusco</span></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:exploreperutravel@gmail.com">exploreperutravel@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i>
+                            <div class="footer-phones"><span>+51 930 164 904</span><span>+51 984 764 403</span><span>+51
+                                    986 530 343</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider futurista-divider">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fas fa-star-of-life"></i></div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="footer-bottom futurista-bottom">
+                <p class="copyright futurista-copyright" data-key="footerCopyright">© 2026 EXPLORE PERU TRAVEL | Agencia
+                    de Viajes y Turismo</p>
+                <div class="footer-social futurista-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/51930164904" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB WHATSAPP -->
+    <a href="https://wa.me/51930164904" class="fab-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- LIBRERÍA DE ANIMACIONES AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- LÓGICA JAVASCRIPT GLOBAL Y TRADUCCIONES -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // 1. INICIALIZAR ANIMACIONES AOS
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 800, once: true, offset: 50 });
+            }
+
+            // 2. SKELETON LOADER CON FAIL-SAFE
+            const skeletonLoader = document.getElementById('skeletonLoader');
+            if (skeletonLoader) {
+                const hideSkeleton = () => {
+                    if (!skeletonLoader.classList.contains('hide')) {
+                        skeletonLoader.classList.add('hide');
+                        setTimeout(() => { if (skeletonLoader.parentNode) skeletonLoader.remove(); }, 500);
+                    }
+                };
+                window.addEventListener('load', hideSkeleton);
+                setTimeout(hideSkeleton, 1000);
+            }
+
+            // 3. ISLA DINÁMICA SCROLL
+            const header = document.getElementById('mainHeader');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) header.classList.add('scrolled');
+                    else header.classList.remove('scrolled');
+                });
+            }
+
+            // 4. MENÚ MÓVIL
+            const hamburger = document.getElementById('hamburger');
+            if (hamburger && !document.querySelector('.mobile-menu')) {
+                const mobileMenuOverlay = document.createElement('div');
+                mobileMenuOverlay.className = 'mobile-menu-overlay';
+                const mobileMenu = document.createElement('div');
+                mobileMenu.className = 'mobile-menu';
+
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'mobile-menu-close';
+                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                mobileMenu.appendChild(closeBtn);
+
+                const navMenu = document.querySelector('.nav-menu');
+                const mobileNavList = document.createElement('ul');
+                mobileNavList.className = 'mobile-nav-list';
+                mobileNavList.style.listStyle = 'none';
+                mobileNavList.style.marginTop = '20px';
+
+                if (navMenu) {
+                    navMenu.querySelectorAll('li').forEach(li => {
+                        if (li.parentElement === navMenu) {
+                            const a = li.querySelector('a');
+                            if (a) {
+                                const liCopy = document.createElement('li');
+                                liCopy.style.marginBottom = '15px';
+                                const aCopy = document.createElement('a');
+                                aCopy.href = a.href;
+                                aCopy.innerHTML = a.innerHTML;
+                                aCopy.style.color = 'var(--forest)';
+                                aCopy.style.fontWeight = '800';
+                                liCopy.appendChild(aCopy);
+                                mobileNavList.appendChild(liCopy);
+                            }
+                        }
+                    });
+                }
+                mobileMenu.appendChild(mobileNavList);
+
+                document.body.appendChild(mobileMenuOverlay);
+                document.body.appendChild(mobileMenu);
+
+                function toggleMobileMenu() {
+                    hamburger.classList.toggle('open');
+                    mobileMenu.classList.toggle('open');
+                    mobileMenuOverlay.classList.toggle('open');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                }
+
+                hamburger.addEventListener('click', toggleMobileMenu);
+                closeBtn.addEventListener('click', toggleMobileMenu);
+                mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+            }
+
+            // 5. SISTEMA DE TRADUCCIÓN BILINGÜE
+            const translations = {
+                es: {
+                    contact: "CONTACTO", about: "NOSOTROS", home: "INICIO", tours: "TOURS", shortTours: "TOURS CORTOS",
+                    schoolTrips: "VIAJES ESCOLARES", adventure: "AVENTURA",
+
+                    navT1: "Paquete Cusco Básico (3 Días / 2 Noches)", navT2: "Paquete Cusco Clásico (4 Días / 3 Noches)", navT3: "Paquete Cusco Arqueológico (5 Días / 4 Noches)", navT4: "Paquete Experiencia Cusco Total (6 Días / 5 Noches)", navT5: "Paquete Aventura Extrema: Inka Jungle (4 Días / 3 Noches)", navT6: "Paquete Desafío Andino: Salkantay Trek (5 Días / 4 Noches)", navT7: "Camino Inca Clásico a Machu Picchu (4 Días / 3 Noches)", navT8: "Trekking Choquequirao Extremo (4 Días / 3 Noches)",
+                    shortTour1: "City Tour Cusco (Medio Día)", shortTour2: "Tour Chinchero, Maras y Moray", shortTour3: "Tour Valle Sur Cusco (Medio Día)", shortTour4: "Tour Valle Sagrado (Full Day)",
+                    school1: "🏔️ Ruta Imperial: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "🇨🇱 Ruta al Sur: Chile - Santiago | 5D/4N", school3: "🇪🇨 Ruta al Norte: Tumbes - Guayaquil | 5D/4N", school4: "🏔️ Cusco - Machu Picchu - Selva Cusqueña | 5D/4N", school5: "🚂 Cusco - Machu Picchu (Tren Turístico) | 2D/1N", school6: "🏜️ Lima - Ica - Huacachina - Paracas | 3D/2N", school7: "🌊 Arica - Chile (Puno - Arequipa - Tacna) | 4D/3N", school8: "🏝️ Norte Peruano: Chiclayo - Máncora - Ecuador | 6D/5N", school9: "🌿 Lima y Oxapampa Aventura | 5D/4N",
+                    adv1: "Aventura en Cuatrimotos - Maras y Moray", adv2: "Vía Ferrata y Zipline en el Valle Sagrado", adv3: "Canotaje (Rafting) en el Río Vilcanota", adv4: "Bungee Jumping y Slingshot", adv5: "Parapente sobre el Valle Sagrado",
+
+                    heroPre: "VIVE LA AVENTURA", heroTitle: "Nuestros Paquetes",
+                    heroSub: "Sabemos que planear un viaje puede ser abrumador. Por eso hemos diseñado estas rutas pensando en ti, reuniendo lo mejor de la cultura Inca, la naturaleza y la adrenalina.",
+                    welcomeP1: "¡Te damos la bienvenida a nuestro catálogo de experiencias! Ya sea que busques caminar por antiguos senderos incas, desafiar las alturas en la montaña o disfrutar de un recorrido cultural relajado con la familia, <strong>Explore Peru Travel</strong> tiene el itinerario perfecto esperando por ti.",
+
+                    shortGridPre: "CATÁLOGO DE EXPERIENCIAS", shortGridT1: "Itinerarios", shortGridT2: "Imprescindibles",
+                    badgeBasic: "Ideal para empezar", badgeBest: "Más Vendido", badgeCulture: "Cultural", badgeTotal: "Experiencia Completa", badgeExtreme: "Aventura Pura", badgeTrek: "Trekking Épico", badgeClassicTrek: "Ruta Histórica", badgeExt: "Dificultad Extrema",
+
+                    dur3D: "3 Días / 2 Noches", dur4D: "4 Días / 3 Noches", dur5D: "5 Días / 4 Noches", dur6D: "6 Días / 5 Noches",
+
+                    t1Title: "Paquete Cusco Básico", t1Desc: "La opción perfecta si tienes poco tiempo pero quieres vivir lo esencial del Imperio Inca. Explora las encantadoras calles de la ciudad del Cusco, sus ruinas aledañas y culmina tu viaje maravillándote con el amanecer en la mágica ciudadela de Machu Picchu.",
+                    t2Title: "Paquete Cusco Clásico", t2Desc: "Nuestro itinerario más popular. Te llevaremos a través de la historia: desde la vibrante ciudad de Cusco, descendiendo hacia el clima cálido y los pueblos ancestrales del Valle Sagrado, hasta finalmente conquistar una de las Siete Maravillas del Mundo Moderno.",
+                    t3Title: "Paquete Cusco Arqueológico", t3Desc: "Para los amantes de la historia viva. Sumérgete en la profunda ingeniería agrícola y arquitectónica de los incas. Visitaremos los espectaculares andenes circulares de Moray, las milenarias Salineras de Maras, el majestuoso Valle Sagrado y por supuesto, Machu Picchu.",
+                    t4Title: "Experiencia Cusco Total", t4Desc: "Si quieres verlo absolutamente todo, este es tu paquete. Exploraremos la ciudad de Cusco, el enigmático Valle Sur, Maras y Moray, el Valle Sagrado, Machu Picchu y coronaremos la aventura ascendiendo hacia la espectacular Montaña de 7 Colores (Vinicunca).",
+                    t5Title: "Inka Jungle a Machu Picchu", t5Desc: "La alternativa más emocionante para llegar a la ciudadela. Combina descenso en bicicleta de montaña, rafting en ríos de la selva, caminatas rodeadas de exuberante vegetación y momentos de relajo en aguas termales naturales.",
+                    t6Title: "Salkantay Trek: Desafío Andino", t6Desc: "Nombrada entre las 25 mejores rutas de senderismo del mundo. Atrévete a cruzar el paso del imponente nevado Salkantay, maravíllate con las aguas turquesas de la Laguna Humantay y desciende hacia la cálida ceja de selva rumbo a Machu Picchu.",
+                    t7Title: "Camino Inca Clásico", t7Desc: "La peregrinación más famosa de Sudamérica. Recorre los mismos senderos de piedra que usaban los incas, pasando por misteriosas ruinas ocultas en la niebla y entrando a Machu Picchu triunfalmente por la mítica Puerta del Sol (Inti Punku).",
+                    t8Title: "Trekking Choquequirao", t8Desc: "¿Buscas un reto fuera de este mundo? Conquista la \"Ciudad Hermana Sagrada\" de Machu Picchu. Una expedición intensa y solitaria descendiendo al profundo Cañón del Apurímac y escalando montañas para descubrir ruinas increíbles sin multitudes.",
+
+                    featHotel: "Hoteles Incluidos", featTickets: "Entradas y Tren", featBuffet: "Almuerzo Buffet", featGuide: "Guías Certificados", featTransport: "Transporte Privado", featPhotos: "Vistas Únicas", featMountain: "Ruta de Montaña", featBikes: "Bicicletas & Rafting", featHotSprings: "Aguas Termales", featCamp: "Campamentos Seguros", featMules: "Arrieros y Mulas", featPermits: "Permisos Incluidos", featChef: "Chef de Ruta", featEquip: "Equipamiento Completo", featGuideAdv: "Guía Especializado",
+
+                    btnViewDetail: "Descubrir el Tour",
+                    ctaTourT1: "¿Buscas algo totalmente", ctaTourT2: "a tu medida?",
+                    ctaTourDesc: "Nuestros especialistas están listos para combinar rutas, ajustar tiempos y crear el itinerario de tus sueños de principio a fin.",
+                    ctaTourBtn: "Armar mi viaje ideal",
+
+                    footerAboutTitle: "QUIENES SOMOS", footerAboutUs: "Sobre nosotros", footerConditions: "Condiciones de venta", footerPayments: "Formas de pago",
+                    footerMenuTitle: "MENÚ PRINCIPAL", footerContactTitle: "CONTÁCTENOS",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Agencia de Viajes y Turismo",
+                    policiesTitle: "POLÍTICAS", policy1: "Políticas y Condiciones de Pago", policy2: "Protección de Datos Personales", policy3: "Prevención de la ESNNA en turismo"
+                },
+                en: {
+                    contact: "CONTACT", about: "ABOUT US", home: "HOME", tours: "TOURS", shortTours: "SHORT TOURS",
+                    schoolTrips: "SCHOOL TRIPS", adventure: "ADVENTURE",
+
+                    navT1: "Cusco Basic Package (3 Days / 2 Nights)", navT2: "Cusco Classic Package (4 Days / 3 Nights)", navT3: "Cusco Archaeological Package (5 Days / 4 Nights)", navT4: "Cusco Total Experience (6 Days / 5 Nights)", navT5: "Extreme Adventure: Inka Jungle (4 Days / 3 Nights)", navT6: "Andean Challenge: Salkantay Trek (5 Days / 4 Nights)", navT7: "Classic Inca Trail to Machu Picchu (4 Days / 3 Nights)", navT8: "Extreme Choquequirao Trek (4 Days / 3 Nights)",
+                    shortTour1: "Cusco City Tour (Half Day)", shortTour2: "Chinchero, Maras & Moray Tour", shortTour3: "Cusco South Valley Tour (Half Day)", shortTour4: "Sacred Valley Tour (Full Day)",
+                    school1: "🏔️ Imperial Route: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "🇨🇱 Southern Route: Chile - Santiago | 5D/4N", school3: "🇪🇨 Northern Route: Tumbes - Guayaquil | 5D/4N", school4: "🏔️ Cusco - Machu Picchu - Cusco Jungle | 5D/4N", school5: "🚂 Cusco - Machu Picchu (Tourist Train) | 2D/1N", school6: "🏜️ Lima - Ica - Huacachina - Paracas | 3D/2N", school7: "🌊 Arica - Chile (Puno - Arequipa - Tacna) | 4D/3N", school8: "🏝️ Northern Peru: Chiclayo - Máncora - Ecuador | 6D/5N", school9: "🌿 Lima and Oxapampa Adventure | 5D/4N",
+                    adv1: "ATV Adventure - Maras and Moray", adv2: "Via Ferrata and Zipline in Sacred Valley", adv3: "White Water Rafting", adv4: "Bungee Jumping and Slingshot", adv5: "Paragliding over Sacred Valley",
+
+                    heroPre: "LIVE THE ADVENTURE", heroTitle: "Our Packages",
+                    heroSub: "We know that planning a trip can be overwhelming. That's why we have designed these routes with you in mind, bringing together the best of Inca culture, nature, and adrenaline.",
+                    welcomeP1: "Welcome to our catalog of experiences! Whether you are looking to hike ancient Inca trails, challenge the heights in the mountains, or enjoy a relaxed cultural tour with the family, <strong>Explore Peru Travel</strong> has the perfect itinerary waiting for you.",
+
+                    shortGridPre: "CATALOG OF EXPERIENCES", shortGridT1: "Essential", shortGridT2: "Itineraries",
+                    badgeBasic: "Ideal to start", badgeBest: "Best Seller", badgeCulture: "Cultural", badgeTotal: "Complete Experience", badgeExtreme: "Pure Adventure", badgeTrek: "Epic Trekking", badgeClassicTrek: "Historical Route", badgeExt: "Extreme Difficulty",
+
+                    dur3D: "3 Days / 2 Nights", dur4D: "4 Days / 3 Nights", dur5D: "5 Days / 4 Nights", dur6D: "6 Days / 5 Nights",
+
+                    t1Title: "Basic Cusco Package", t1Desc: "The perfect option if you are short on time but want to experience the essentials of the Inca Empire. Explore the charming streets of Cusco city, its surrounding ruins, and culminate your trip by marveling at the sunrise in the magical citadel of Machu Picchu.",
+                    t2Title: "Classic Cusco Package", t2Desc: "Our most popular itinerary. We will take you through history: from the vibrant city of Cusco, descending into the warm climate and ancestral villages of the Sacred Valley, to finally conquering one of the Seven Wonders of the Modern World.",
+                    t3Title: "Archaeological Cusco Package", t3Desc: "For lovers of living history. Immerse yourself in the profound agricultural and architectural engineering of the Incas. We will visit the spectacular circular terraces of Moray, the millenary Salt Mines of Maras, the majestic Sacred Valley, and of course, Machu Picchu.",
+                    t4Title: "Total Cusco Experience", t4Desc: "If you want to see absolutely everything, this is your package. We will explore the city of Cusco, the enigmatic South Valley, Maras and Moray, the Sacred Valley, Machu Picchu, and crown the adventure by ascending to the spectacular Rainbow Mountain (Vinicunca).",
+                    t5Title: "Inka Jungle to Machu Picchu", t5Desc: "The most exciting alternative to reach the citadel. It combines mountain biking descent, white water rafting in jungle rivers, hiking surrounded by lush vegetation, and moments of relaxation in natural hot springs.",
+                    t6Title: "Salkantay Trek: Andean Challenge", t6Desc: "Named among the 25 best hiking trails in the world. Dare to cross the pass of the imposing snow-capped Salkantay, marvel at the turquoise waters of Humantay Lake, and descend into the warm high jungle towards Machu Picchu.",
+                    t7Title: "Classic Inca Trail", t7Desc: "The most famous pilgrimage in South America. Walk the same stone paths used by the Incas, passing through mysterious ruins hidden in the mist and triumphantly entering Machu Picchu through the mythical Sun Gate (Inti Punku).",
+                    t8Title: "Choquequirao Trek", t8Desc: "Looking for a challenge out of this world? Conquer the \"Sacred Sister City\" of Machu Picchu. An intense and solitary expedition descending into the deep Apurimac Canyon and climbing mountains to discover incredible ruins without the crowds.",
+
+                    featHotel: "Hotels Included", featTickets: "Tickets & Train", featBuffet: "Buffet Lunch", featGuide: "Certified Guides", featTransport: "Private Transport", featPhotos: "Unique Views", featMountain: "Mountain Route", featBikes: "Bikes & Rafting", featHotSprings: "Hot Springs", featCamp: "Safe Campsites", featMules: "Horsemen & Mules", featPermits: "Permits Included", featChef: "Trail Chef", featEquip: "Full Equipment", featGuideAdv: "Expert Guide",
+
+                    btnViewDetail: "Discover Tour",
+                    ctaTourT1: "Looking for something", ctaTourT2: "tailor-made?",
+                    ctaTourDesc: "Our specialists are ready to combine routes, adjust times, and create the itinerary of your dreams from start to finish.",
+                    ctaTourBtn: "Build my ideal trip",
+
+                    footerAboutTitle: "ABOUT US", footerAboutUs: "About us", footerConditions: "Terms and conditions", footerPayments: "Payment methods",
+                    footerMenuTitle: "MAIN MENU", footerContactTitle: "CONTACT US",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Travel and Tourism Agency",
+                    policiesTitle: "POLICIES", policy1: "Payment Policies", policy2: "Data Protection", policy3: "Child Protection in Tourism"
+                }
+            };
+
+            let currentLang = localStorage.getItem('preferredLang') || 'es';
+
+            function applyTranslations(lang) {
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    const translation = translations[lang]?.[key];
+
+                    if (translation) {
+                        if (el.tagName !== 'INPUT' && el.tagName !== 'TEXTAREA' && el.tagName !== 'SELECT' && el.tagName !== 'IMG') {
+                            const hasIcon = el.querySelector('i') || el.querySelector('.fas') || el.querySelector('.fab') || el.querySelector('.far');
+
+                            if (hasIcon) {
+                                let textNodeUpdated = false;
+                                for (let node of el.childNodes) {
+                                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                                        if (!textNodeUpdated) {
+                                            node.textContent = translation + ' ';
+                                            textNodeUpdated = true;
+                                        } else {
+                                            node.textContent = '';
+                                        }
+                                    }
+                                }
+                                if (!textNodeUpdated) {
+                                    el.insertAdjacentText('afterbegin', translation + ' ');
+                                }
+                            } else if (translation.includes('<') && translation.includes('>')) {
+                                el.innerHTML = translation;
+                            } else {
+                                el.textContent = translation;
+                            }
+                        } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                            el.placeholder = translation;
+                        } else if (el.tagName === 'SELECT') {
+                            const option = el.querySelector(`option[data-key="${key}"]`);
+                            if (option) option.textContent = translation;
+                        }
+                    }
+                });
+
+                currentLang = lang;
+                localStorage.setItem('preferredLang', lang);
+
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+            }
+
+            const langBtns = document.querySelectorAll('.lang-btn');
+            if (langBtns.length > 0) {
+                langBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const lang = btn.getAttribute('data-lang');
+                        applyTranslations(lang);
+                    });
+                });
+            }
+
+            applyTranslations(currentLang);
+        });
+    </script>
+</body>
+
+</html>

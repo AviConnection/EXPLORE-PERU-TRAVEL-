@@ -1,0 +1,2329 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Viajes Escolares 2026 | Explore Peru Travel</title>
+    <meta name="description"
+        content="Viajes de Promoción y Escolares 2026. Paquetes educativos detallados y seguros a Cusco, Machu Picchu, Oxapampa, Chile, Ecuador y más. Cotiza ahora.">
+
+    <link rel="icon" href="tours_y_logos/logoprincipal.png" type="image/png">
+    <link rel="apple-touch-icon" href="tours_y_logos/logoprincipal.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap">
+    </noscript>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+        /* ============================================================
+           EXPLORE PERU TRAVEL — RUSTIC FUN DESIGN SYSTEM
+           ============================================================ */
+
+        :root {
+            --deep: #1f1812;
+            --forest: #3a2e24;
+            --forest-mid: #4f3f31;
+            --forest-light: #6b5442;
+            --cream: #faf5eb;
+            --cream-warm: #f3ebd8;
+            --cream-border: #e0d0b8;
+
+            --terracotta: #c05a3c;
+            --rust-mustard: #e2a02b;
+            --andes-green: #3e6b4a;
+            --inca-red: #a83a32;
+            --andes-sky: #4a8ca8;
+            --gold: #c29b45;
+            --gold-pale: #f5e6b8;
+
+            --radius-sm: 12px;
+            --radius-md: 20px;
+            --radius-lg: 28px;
+            --radius-pill: 100px;
+            --shadow-solid-sm: 4px 4px 0 var(--cream-border);
+            --shadow-solid-md: 8px 8px 0 var(--forest);
+            --shadow-solid-gold: 8px 8px 0 var(--rust-mustard);
+            --shadow-solid-terra: 8px 8px 0 var(--terracotta);
+
+            --transition: 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --nav-height-main: 82px;
+            --nav-total: var(--nav-height-main);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--cream);
+            color: var(--forest);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%233a2e24' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1350px;
+            margin: 0 auto;
+            padding: 0 28px;
+            width: 100%;
+        }
+
+        .text-gradient {
+            background: linear-gradient(130deg, var(--rust-mustard) 0%, var(--terracotta) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .pre-title {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--terracotta);
+            font-size: clamp(0.6rem, 2vw, 0.75rem);
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            background: rgba(226, 160, 43, 0.15);
+            padding: 4px 16px;
+            border-radius: var(--radius-pill);
+            border: 1px dashed var(--rust-mustard);
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--forest);
+        }
+
+        /* ─── SKELETON LOADER ─── */
+        .skeleton-loader {
+            position: fixed;
+            inset: 0;
+            background: var(--cream);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            transition: 0.5s ease;
+            pointer-events: none;
+        }
+
+        .skeleton-loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .skeleton-navbar {
+            height: var(--nav-height-main);
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        .skeleton-hero {
+            flex: 1;
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        @keyframes skeletonShimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* ─── NAVBAR (ISLA DINÁMICA COMPACTA) ─── */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1050;
+            transition: var(--transition);
+        }
+
+        .main-navbar {
+            height: var(--nav-height-main);
+            display: flex;
+            align-items: center;
+            background: rgba(250, 245, 235, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid var(--cream-border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .nav-flex {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            transition: all 0.4s ease;
+        }
+
+        .logo-img {
+            width: 230px;
+            height: auto;
+            transition: all 0.4s ease;
+        }
+
+        .main-header.scrolled .main-navbar {
+            height: 52px;
+            margin: 12px auto;
+            width: fit-content;
+            border-radius: 50px;
+            background: var(--deep);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(226, 160, 43, 0.3);
+            border: none;
+            padding: 0 12px;
+        }
+
+        .main-header.scrolled .logo-area {
+            display: none;
+        }
+
+        .main-header.scrolled .nav-flex {
+            justify-content: center;
+            padding: 0 10px;
+            width: auto;
+            gap: 8px;
+        }
+
+        .main-header.scrolled .nav-menu {
+            gap: 14px;
+        }
+
+        .main-header.scrolled .nav-menu a {
+            font-size: 0.65rem;
+            color: var(--cream);
+        }
+
+        .main-header.scrolled .nav-menu a:hover,
+        .main-header.scrolled .nav-menu li.current>a {
+            color: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .nav-menu a::after {
+            background: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .lang-selector {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: transparent;
+        }
+
+        .main-header.scrolled .lang-btn {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .main-header.scrolled .lang-btn.active {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            box-shadow: none;
+        }
+
+        .main-header.scrolled .hamburger span {
+            background: var(--cream);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: clamp(10px, 1.8vw, 22px);
+            align-items: center;
+        }
+
+        .nav-menu a {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: clamp(0.65rem, 1.3vw, 0.75rem);
+            letter-spacing: 1px;
+            color: var(--forest-mid);
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu li.current>a {
+            color: var(--terracotta);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu li.current>a::after {
+            width: 100%;
+        }
+
+        .menu-item-has-children {
+            position: relative;
+        }
+
+        .menu-item-has-children>a .fa-chevron-down {
+            transition: transform 0.3s ease;
+            font-size: 0.6rem;
+        }
+
+        .menu-item-has-children:hover>a .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 0;
+            min-width: 300px;
+            max-height: 75vh;
+            overflow-y: auto;
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 10px 0;
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            list-style: none;
+        }
+
+        .sub-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sub-menu::-webkit-scrollbar-thumb {
+            background-color: var(--terracotta);
+            border-radius: 10px;
+        }
+
+        .main-header.scrolled .sub-menu {
+            background: var(--deep);
+            border-color: var(--rust-mustard);
+            box-shadow: 6px 6px 0 var(--rust-mustard);
+        }
+
+        .menu-item-has-children:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% + 6px);
+        }
+
+        .sub-menu li a {
+            display: block;
+            padding: 10px 22px;
+            font-size: 0.7rem;
+            color: var(--forest);
+            transition: all 0.25s ease;
+            white-space: normal;
+        }
+
+        .main-header.scrolled .sub-menu li a {
+            color: var(--cream);
+        }
+
+        .sub-menu li a::after {
+            display: none;
+        }
+
+        .sub-menu li a:hover {
+            background: rgba(192, 90, 60, 0.1);
+            color: var(--terracotta);
+            padding-left: 28px;
+        }
+
+        .main-header.scrolled .sub-menu li a:hover {
+            background: rgba(226, 160, 43, 0.15);
+            color: var(--rust-mustard);
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 3px;
+            background: var(--cream-warm);
+            padding: 4px;
+            border-radius: var(--radius-pill);
+            border: 2px solid var(--forest);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-weight: 800;
+            font-size: 0.65rem;
+            color: var(--forest-light);
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--forest);
+            color: white;
+            box-shadow: 2px 2px 0 var(--terracotta);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: var(--forest);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(31, 24, 18, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1055;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(320px, 85vw);
+            height: 100dvh;
+            background: var(--cream);
+            z-index: 1060;
+            padding: 70px 24px 30px;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow-y: auto;
+            border-left: 4px solid var(--forest);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            background: var(--forest);
+            color: white;
+            border: 2px solid var(--deep);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 3px 3px 0 var(--terracotta);
+        }
+
+        @media (max-width: 1050px) {
+
+            .nav-menu,
+            .lang-selector {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .main-navbar {
+                height: 65px;
+            }
+
+            .main-header.scrolled .main-navbar {
+                margin: 10px auto;
+                width: calc(100% - 24px);
+                height: 54px;
+                padding: 0 16px;
+            }
+
+            .main-header.scrolled .nav-flex {
+                justify-content: space-between;
+                padding: 0;
+                width: 100%;
+            }
+
+            .logo-img {
+                width: 180px;
+            }
+
+            .main-header.scrolled .logo-area {
+                display: block;
+            }
+
+            .main-header.scrolled .logo-img {
+                width: 120px;
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        /* ────── HERO CON VIDEO ────── */
+        .hero-minimal {
+            position: relative;
+            height: 75vh;
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: var(--nav-height-main);
+            overflow: hidden;
+            background-color: var(--deep);
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.65) contrast(1.1);
+            transform: scale(1.02);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(180deg, rgba(31, 24, 18, 0.4) 0%, rgba(31, 24, 18, 0.85) 100%);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-pre {
+            display: inline-block;
+            background: rgba(226, 160, 43, 0.2);
+            border: 1px solid var(--rust-mustard);
+            color: var(--rust-mustard);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            font-weight: 800;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 0;
+            font-weight: 400;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .torn-paper {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 5;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L0,40 Q30,80 60,40 T120,40 T180,40 T240,40 T300,40 T360,40 T420,40 T480,40 T540,40 T600,40 T660,40 T720,40 T780,40 T840,40 T900,40 T960,40 T1020,40 T1080,40 T1140,40 T1200,40 L1200,120 Z' fill='%23faf5eb'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* ────── BIG LOGO & WARM WELCOME ────── */
+        .welcome-warm {
+            padding: 60px 0 30px;
+            background: var(--cream);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .big-logo {
+            width: 500px;
+            max-width: 90vw;
+            margin: 0 auto 35px;
+            position: relative;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+            transition: var(--transition);
+        }
+
+        .big-logo:hover {
+            transform: scale(1.02);
+        }
+
+        .welcome-text-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .welcome-text-wrapper p {
+            font-size: 1.15rem;
+            color: var(--forest-mid);
+            line-height: 1.8;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        /* ─── TRUST BADGES (ESTILO POST-IT) ─── */
+        .section-trust {
+            position: relative;
+            z-index: 5;
+            padding-bottom: 60px;
+            background: var(--cream);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        @media (max-width: 960px) {
+            .trust-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+        }
+
+        .trust-card {
+            background: var(--cream-warm);
+            border-radius: 8px;
+            padding: 28px 20px 24px;
+            text-align: center;
+            border: 2px dashed var(--forest-light);
+            box-shadow: 4px 4px 0 var(--rust-mustard);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            transform: rotate(-1.5deg);
+        }
+
+        .trust-card:nth-child(even) {
+            transform: rotate(1.5deg);
+        }
+
+        .trust-card::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 15px;
+            background: rgba(255, 255, 255, 0.6);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+        }
+
+        .trust-card:hover {
+            transform: translateY(-8px) scale(1.02) rotate(0deg);
+            box-shadow: 8px 8px 0 var(--terracotta);
+            background: white;
+            border-style: solid;
+            border-color: var(--forest);
+        }
+
+        .trust-icon {
+            width: 65px;
+            height: 65px;
+            background: var(--cream);
+            border: 2px solid var(--forest);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            transition: var(--transition);
+            box-shadow: 3px 3px 0 var(--forest);
+            color: var(--terracotta);
+        }
+
+        .trust-card:hover .trust-icon {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        .trust-card h4 {
+            font-size: 1.05rem;
+            color: var(--forest);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .trust-card p {
+            font-size: 0.85rem;
+            color: #6b5b4a;
+            line-height: 1.5;
+            font-weight: 600;
+        }
+
+        /* ─── GRID DE PAQUETES (RUSTIC FUN CARDS) ─── */
+        .section-school-tours {
+            padding: 40px 0 80px;
+            background: var(--cream);
+            border-top: 4px dashed var(--cream-border);
+        }
+
+        .school-tours-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 1024px) {
+            .school-tours-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .school-tours-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .tour-premium-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            border: 3px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tour-premium-card:hover {
+            transform: translate(-5px, -5px);
+            box-shadow: var(--shadow-solid-terra);
+            border-color: var(--terracotta);
+        }
+
+        .tour-premium-card:nth-child(even):hover {
+            box-shadow: var(--shadow-solid-gold);
+            border-color: var(--gold);
+        }
+
+        .tour-premium-image {
+            position: relative;
+            height: 260px;
+            overflow: hidden;
+            background: var(--cream-warm);
+            border-bottom: 3px solid var(--forest);
+        }
+
+        .tour-premium-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .tour-premium-card:hover .tour-premium-image img {
+            transform: scale(1.12) rotate(-1deg);
+        }
+
+        .tour-badge-top {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            background: #fff;
+            padding: 6px 14px;
+            border: 2px solid var(--forest);
+            border-radius: 8px;
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--forest);
+            box-shadow: 3px 3px 0 var(--rust-mustard);
+            z-index: 2;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            transform: rotate(-2deg);
+        }
+
+        .tour-badge-top.internacional {
+            background: var(--terracotta);
+            color: white;
+            box-shadow: 3px 3px 0 var(--forest);
+        }
+
+        .tour-badge-right {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: var(--rust-mustard);
+            color: var(--deep);
+            padding: 5px 12px;
+            border-radius: 8px;
+            border: 2px solid var(--deep);
+            font-size: 0.75rem;
+            font-weight: 900;
+            z-index: 2;
+            box-shadow: 3px 3px 0 var(--deep);
+            transform: rotate(2deg);
+        }
+
+        .tour-premium-body {
+            padding: 30px 25px 25px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .tour-premium-meta {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .tour-premium-meta span {
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--forest);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(226, 160, 43, 0.15);
+            padding: 6px 14px;
+            border-radius: var(--radius-pill);
+            border: 2px dashed var(--rust-mustard);
+        }
+
+        .tour-premium-meta i {
+            color: var(--terracotta);
+        }
+
+        .tour-premium-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--forest);
+            margin-bottom: 15px;
+            line-height: 1.15;
+            transition: color 0.3s;
+        }
+
+        .tour-premium-card:hover .tour-premium-title {
+            color: var(--terracotta);
+        }
+
+        .tour-premium-desc {
+            font-size: 0.95rem;
+            color: var(--forest-light);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            flex: 1;
+            font-weight: 600;
+        }
+
+        .tour-features-list {
+            list-style: none;
+            margin-bottom: 25px;
+            background: rgba(255, 255, 255, 0.5);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--cream-border);
+            display: grid;
+            gap: 10px;
+        }
+
+        .tour-features-list li {
+            font-size: 0.85rem;
+            font-weight: 800;
+            color: var(--forest-mid);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tour-features-list li i {
+            color: var(--andes-green);
+            font-size: 1.1rem;
+        }
+
+        .tour-premium-footer {
+            margin-top: auto;
+        }
+
+        .tour-premium-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--terracotta);
+            color: white;
+            padding: 14px 20px;
+            border-radius: var(--radius-pill);
+            font-size: 0.85rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            width: 100%;
+            text-transform: uppercase;
+            border: 2px solid var(--forest);
+            box-shadow: 4px 4px 0 var(--forest);
+            cursor: pointer;
+        }
+
+        .tour-premium-btn:hover {
+            background: var(--rust-mustard);
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--forest);
+            color: var(--deep);
+        }
+
+        .tour-premium-btn .btn-emoji {
+            font-size: 1.2rem;
+        }
+
+        /* ────── COLLAGE DE IMÁGENES ────── */
+        .collage-section {
+            padding: 80px 0;
+            background: var(--cream-warm);
+            border-top: 4px dashed var(--cream-border);
+            border-bottom: 4px dashed var(--cream-border);
+        }
+
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: 250px;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .collage-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            position: relative;
+            border: 3px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+            background: var(--cream);
+        }
+
+        .collage-item:hover {
+            transform: translate(-4px, -4px);
+            box-shadow: var(--shadow-solid-gold);
+            z-index: 2;
+            border-color: var(--gold);
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .collage-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .item-large {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .item-wide {
+            grid-column: span 2;
+        }
+
+        .item-tall {
+            grid-row: span 2;
+        }
+
+        @media (max-width: 900px) {
+            .collage-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-auto-rows: 200px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .collage-grid {
+                grid-template-columns: 1fr;
+                grid-auto-rows: 250px;
+            }
+
+            .collage-item {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+            }
+        }
+
+        /* ─── CTA FINAL RUSTIC FUN ─── */
+        .section-cta-final {
+            padding: 80px 0;
+            background: var(--forest);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+            border-top: 4px dashed var(--rust-mustard);
+        }
+
+        .section-cta-final::before {
+            content: '🎓';
+            position: absolute;
+            top: 10px;
+            right: 10%;
+            font-size: 5rem;
+            opacity: 0.15;
+            transform: rotate(15deg);
+            animation: floatEmoji 4s infinite alternate;
+        }
+
+        .section-cta-final::after {
+            content: '🏕️';
+            position: absolute;
+            bottom: 10px;
+            left: 10%;
+            font-size: 6rem;
+            opacity: 0.15;
+            transform: rotate(-15deg);
+            animation: floatEmoji 5s infinite alternate-reverse;
+        }
+
+        @keyframes floatEmoji {
+            100% {
+                transform: translateY(-15px) rotate(0deg);
+            }
+        }
+
+        .cta-final-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-cta-gold {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            padding: 16px 42px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 1.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            transition: var(--transition);
+            border: 2px solid var(--deep);
+            box-shadow: 6px 6px 0 var(--deep);
+            cursor: pointer;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+        }
+
+        .btn-cta-gold:hover {
+            background: white;
+            color: var(--terracotta);
+            transform: translate(-4px, -4px);
+            box-shadow: 10px 10px 0 var(--deep);
+            border-color: var(--terracotta);
+        }
+
+        @media (max-width: 480px) {
+            .section-cta-final {
+                padding: 60px 0;
+            }
+
+            .btn-cta-gold {
+                padding: 14px 24px;
+                font-size: 0.9rem;
+                width: 90%;
+                justify-content: center;
+            }
+        }
+
+        /* ─── FOOTER ─── */
+        .footer-futurista {
+            position: relative;
+            padding: 60px 0 25px;
+            overflow: hidden;
+            color: white;
+            background: #111;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .footer-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .footer-video-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer-overlay-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44, 36, 24, 0.95), rgba(58, 46, 36, 0.93));
+            z-index: 1;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .futurista-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1024px) {
+            .futurista-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .futurista-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .futurista-col {
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(184, 134, 11, 0.12);
+            transition: var(--transition);
+        }
+
+        .futurista-col:hover {
+            transform: translateY(-4px);
+            border-color: rgba(184, 134, 11, 0.3);
+        }
+
+        .footer-glow-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.12), rgba(184, 134, 11, 0.04));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .footer-glow-icon i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .futurista-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        .futurista-links,
+        .futurista-contact {
+            list-style: none;
+        }
+
+        .futurista-links li {
+            margin-bottom: 8px;
+        }
+
+        .futurista-links a {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.78rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+
+        .futurista-links a::before {
+            content: '›';
+            color: var(--gold);
+            opacity: 0;
+            transition: 0.2s;
+        }
+
+        .futurista-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .futurista-links a:hover::before {
+            opacity: 1;
+        }
+
+        .futurista-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 600;
+        }
+
+        .futurista-contact li i {
+            color: var(--gold);
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        .footer-phones {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .futurista-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 25px;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.4), transparent);
+        }
+
+        .divider-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(184, 134, 11, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .divider-icon i {
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        .futurista-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        @media (max-width: 640px) {
+            .futurista-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .futurista-copyright {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.45);
+            font-weight: 600;
+        }
+
+        .futurista-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .futurista-social a {
+            width: 34px;
+            height: 34px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            transition: var(--transition);
+            border: 1px solid rgba(184, 134, 11, 0.15);
+        }
+
+        .futurista-social a:hover {
+            color: var(--deep);
+            background: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            z-index: 1000;
+            border: 2px solid white;
+        }
+
+        .fab-whatsapp:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SKELETON LOADER -->
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-navbar"></div>
+        <div class="skeleton-hero"></div>
+    </div>
+
+    <!-- CABECERA -->
+    <header class="main-header" id="mainHeader">
+        <div class="main-navbar">
+            <div class="nav-flex">
+                <div class="logo-area">
+                    <a href="index.html">
+                        <img src="tours_y_logos/logo.png" alt="Explore Peru Travel" class="logo-img"
+                            onerror="this.src='https://placehold.co/280x90?text=Explore+Peru'">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" data-key="home">INICIO</a></li>
+                    <li><a href="nosotros.html" data-key="about">NOSOTROS</a></li>
+                    <li class="menu-item-has-children">
+                        <a href="tours.html" data-key="tours">TOURS <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="tours/Paquete Cusco Basico.html" data-key="navT1">Paquete Cusco Básico
+                                    (3D/2N)</a></li>
+                            <li><a href="tours/Paquete Cusco Clásico.html" data-key="navT2">Paquete Cusco Clásico
+                                    (4D/3N)</a></li>
+                            <li><a href="tours/Paquete Cusco Arqueologico.html" data-key="navT3">Paquete Cusco
+                                    Arqueológico (5D/4N)</a></li>
+                            <li><a href="tours/Paquete Experiencia Cusco Total.html" data-key="navT4">Paquete
+                                    Experiencia Cusco Total (6D/5N)</a></li>
+                            <li><a href="tours/Inka Jungle.html" data-key="navT5">Inka Jungle (4D/3N)</a></li>
+                            <li><a href="tours/Paquete_Desafio_Andino_Salkantay_Trek.html" data-key="navT6">Salkantay
+                                    Trek (5D/4N)</a></li>
+                            <li><a href="tours/Camino Inca Clasico.html" data-key="navT7">Camino Inca Clásico
+                                    (4D/3N)</a></li>
+                            <li><a href="tours/Trekking Choquequirao.html" data-key="navT8">Trekking Choquequirao
+                                    Extremo (4D/3N)</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="tours-cortos.html" data-key="shortTours">TOURS CORTOS <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="tours cortos/City Tour Cusco.html" data-key="shortTour1">City Tour Cusco (Medio
+                                    Día)</a></li>
+                            <li><a href="tours cortos/Tour Chinchero, Maras y Moray.html"
+                                    data-key="shortTour2">Chinchero, Maras y Moray</a></li>
+                            <li><a href="tours cortos/Tour Valle Sur Cusco.html" data-key="shortTour3">Valle Sur Cusco
+                                    (Medio Día)</a></li>
+                            <li><a href="tours cortos/Tour Valle Sagrado de los Incas.html" data-key="shortTour4">Valle
+                                    Sagrado (Full Day)</a></li>
+                        </ul>
+                    </li>
+                    <li class="current menu-item-has-children">
+                        <a href="viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="viajes escolares/escolar-imperial.html" data-key="school1">Ruta Imperial:
+                                    Arequipa - Cusco - Oxapampa | 6D/5N</a></li>
+                            <li><a href="viajes escolares/escolar-sur-chile.html" data-key="school2">Ruta al Sur: Chile
+                                    - Santiago | 5D/4N</a></li>
+                            <li><a href="viajes escolares/escolar-norte-ecuador.html" data-key="school3">Ruta al Norte:
+                                    Tumbes - Guayaquil | 5D/4N</a></li>
+                            <li><a href="viajes escolares/escolar-cusco-selva.html" data-key="school4">Cusco - Machu
+                                    Picchu - Selva | 5D/4N</a></li>
+                            <li><a href="viajes escolares/escolar-cusco-machupicchu.html" data-key="school5">Cusco -
+                                    Machu Picchu (Tren) | 2D/1N</a></li>
+                            <li><a href="viajes escolares/escolar-lima-ica-paracas.html" data-key="school6">Lima - Ica -
+                                    Huacachina | 3D/2N</a></li>
+                            <li><a href="viajes escolares/escolar-arica-chile.html" data-key="school7">Arica - Chile |
+                                    4D/3N</a></li>
+                            <li><a href="viajes escolares/escolar-norte-peruano.html" data-key="school8">Norte Peruano:
+                                    Chiclayo - Máncora | 6D/5N</a></li>
+                            <li><a href="viajes escolares/escolar-lima-oxapampa.html" data-key="school9">Lima y Oxapampa
+                                    | 5D/4N</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="aventuras.html" data-key="adventure">AVENTURA <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="aventuras/Aventura en Cuatrimotos.html" data-key="adv1">Cuatrimotos - Maras y
+                                    Moray</a></li>
+                            <li><a href="aventuras/Vía Ferrata y Zipline.html" data-key="adv2">Vía Ferrata y Zipline</a>
+                            </li>
+                            <li><a href="aventuras/Canotaje (Rafting).html" data-key="adv3">Rafting en el Río
+                                    Vilcanota</a></li>
+                            <li><a href="aventuras/Bungee Jumping.html" data-key="adv4">Bungee Jumping y Slingshot</a>
+                            </li>
+                            <li><a href="aventuras/Parapente sobre el valle sagrado.html" data-key="adv5">Parapente
+                                    sobre el Valle Sagrado</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contacto.html" data-key="contact">CONTACTO</a></li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO CON VIDEO -->
+        <section class="hero-minimal">
+            <video class="hero-bg-video" autoplay muted loop playsinline>
+                <source src="tours_y_logos/viajesescolares.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content" data-aos="zoom-in" data-aos-duration="1200">
+                <span class="hero-pre" data-key="heroPre">🎓 PROMOCIÓN 2026</span>
+                <h1 class="hero-title" data-key="heroTitle">
+                    Viajes Escolares
+                </h1>
+                <p class="hero-subtitle" data-key="heroSub">Experiencias educativas, seguras y memorables para celebrar
+                    el fin de etapa. ¡El mejor viaje de promoción te espera con nosotros!</p>
+            </div>
+            <div class="torn-paper"></div>
+        </section>
+
+        <!-- WARM WELCOME & BIG LOGO -->
+        <section class="welcome-warm">
+            <div class="container" data-aos="fade-up">
+                <img src="tours_y_logos/logo.png" alt="Explore Peru Travel Gran Logo" class="big-logo"
+                    onerror="this.src='https://placehold.co/500x150?text=EXPLORE+PERU+TRAVEL'">
+
+                <div class="welcome-text-wrapper">
+                    <p data-key="schoolWelcomeP1">¡Hola! Sabemos que el viaje de promoción es uno de los momentos más
+                        esperados e inolvidables en la vida de todo estudiante. Por eso, en <strong>Explore Peru
+                            Travel</strong> nos tomamos muy en serio la tarea de organizar una experiencia que combine
+                        diversión absoluta para los chicos y tranquilidad total para los padres y profesores.</p>
+                    <p data-key="schoolWelcomeP2">Nos encargamos de absolutamente toda la logística: desde buses
+                        privados de última generación y hoteles seguros, hasta las mejores rutas culturales y de
+                        aventura guiadas por profesionales. Ustedes solo empacan las maletas y se preparan para crear
+                        recuerdos que durarán toda la vida.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TRUST BADGES (Rustic Fun) -->
+        <section class="section-trust">
+            <div class="container">
+                <div class="trust-grid">
+                    <div class="trust-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="trust-icon"><i class="fas fa-shield-alt"></i></div>
+                        <h4 data-key="trustT1">Seguridad 24/7</h4>
+                        <p data-key="trustD1">Monitoreo constante y protocolos estrictos para la tranquilidad de padres
+                            y docentes.</p>
+                    </div>
+                    <div class="trust-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="trust-icon"><i class="fas fa-clipboard-check"></i></div>
+                        <h4 data-key="trustT2">Coordinación Total</h4>
+                        <p data-key="trustD2">Nos encargamos de transportes, hoteles, comidas y entradas. ¡Sin
+                            preocupaciones!</p>
+                    </div>
+                    <div class="trust-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="trust-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                        <h4 data-key="trustT3">Guías Especializados</h4>
+                        <p data-key="trustD3">Expertos en manejo de grupos juveniles, enfocados en educación y
+                            diversión.</p>
+                    </div>
+                    <div class="trust-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="trust-icon"><i class="fas fa-award"></i></div>
+                        <h4 data-key="trustT4">Trayectoria</h4>
+                        <p data-key="trustD4">Más de 10 años organizando viajes escolares con altos estándares de
+                            calidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRID DE PAQUETES (Rustic Fun) -->
+        <section class="section-school-tours">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 50px;" data-aos="fade-up">
+                    <span class="pre-title" data-key="gridPre">CATÁLOGO DE PROMOCIONES</span>
+                    <h2 class="section-title">
+                        <span data-key="gridTitle1">Paquetes para</span>
+                        <span class="text-gradient" data-key="gridTitle2">Promociones</span>
+                    </h2>
+                    <p style="color: var(--forest-light); max-width: 700px; margin: 0 auto; font-weight: 600; font-size: 1.1rem;"
+                        data-key="gridSub">
+                        Selecciona el destino que mejor se adapte a tu grupo. ¡Todos incluyen guía, transporte,
+                        alojamiento y entradas!
+                    </p>
+                </div>
+
+                <div class="school-tours-grid">
+
+                    <!-- 1. Ruta Imperial -->
+                    <div class="tour-premium-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="tour-premium-image">
+                            <span class="tour-badge-top" data-key="badgeNac">🇵🇪 Nacional</span>
+                            <span class="tour-badge-right">6D / 5N</span>
+                            <img src="tours_y_logos/Ruta Imperial Arequipa - Cusco - Oxapampa.jpg" alt="Ruta Imperial"
+                                loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Ruta+Imperial'">
+                        </div>
+                        <div class="tour-premium-body">
+                            <div class="tour-premium-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> <span data-key="loc1">Arequipa - Cusco -
+                                        Oxapampa</span></span>
+                            </div>
+                            <h3 class="tour-premium-title" data-key="sp1Title">Ruta Imperial</h3>
+                            <p class="tour-premium-desc" data-key="sp1Desc">Un viaje épico cruzando los Andes, diseñado
+                                para promociones que buscan una mezcla perfecta de historia y naturaleza. Conoce la
+                                hermosa Ciudad Blanca de Arequipa, maravíllate recorriendo las milenarias ruinas de
+                                Machu Picchu en Cusco, y finaliza conectando con la exótica selva central en Oxapampa.
+                                Una expedición completa que enriquecerá culturalmente a los estudiantes mientras se
+                                divierten al máximo.</p>
+                            <ul class="tour-features-list">
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp1F1">City Tour guiado en 3
+                                        ciudades</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp1F2">Tren a Machu Picchu
+                                        incluido</span></li>
+                            </ul>
+                            <div class="tour-premium-footer">
+                                <a href="viajes escolares/escolar-imperial.html" class="tour-premium-btn">
+                                    <i class="fas fa-arrow-right"></i> <span data-key="btnConsult">Ver Detalles del
+                                        Viaje</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. Ruta al Sur (Chile) -->
+                    <div class="tour-premium-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tour-premium-image">
+                            <span class="tour-badge-top internacional" data-key="badgeInt">🌎 Internacional</span>
+                            <span class="tour-badge-right">5D / 4N</span>
+                            <img src="tours_y_logos/Ruta al Sur Chile - Santiago.jpg" alt="Santiago de Chile"
+                                loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Chile'">
+                        </div>
+                        <div class="tour-premium-body">
+                            <div class="tour-premium-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> <span data-key="loc2">Chile - Santiago -
+                                        Viña del Mar</span></span>
+                            </div>
+                            <h3 class="tour-premium-title" data-key="sp2Title">Ruta al Sur: Chile</h3>
+                            <p class="tour-premium-desc" data-key="sp2Desc">Cruza fronteras con tus compañeros para
+                                vivir una experiencia internacional inolvidable. Este viaje los llevará a conocer la
+                                moderna capital de Santiago, caminar por los cerros coloridos y bohemios de Valparaíso,
+                                y disfrutar de espectaculares tardes de sol en las playas de Viña del Mar. Un recorrido
+                                seguro, lleno de cultura sudamericana y diversión en el extranjero.</p>
+                            <ul class="tour-features-list">
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp2F1">Trámites migratorios
+                                        asistidos</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp2F2">Tour a Viñedos y
+                                        Playas</span></li>
+                            </ul>
+                            <div class="tour-premium-footer">
+                                <a href="viajes escolares/escolar-sur-chile.html" class="tour-premium-btn">
+                                    <i class="fas fa-arrow-right"></i> <span data-key="btnConsult">Ver Detalles del
+                                        Viaje</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. Ruta al Norte (Ecuador) -->
+                    <div class="tour-premium-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="tour-premium-image">
+                            <span class="tour-badge-top internacional" data-key="badgeInt">🌎 Internacional</span>
+                            <span class="tour-badge-right">5D / 4N</span>
+                            <img src="tours_y_logos/Ruta al Norte Tumbes - Guayaquil.jpg" alt="Guayaquil Ecuador"
+                                loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Ecuador'">
+                        </div>
+                        <div class="tour-premium-body">
+                            <div class="tour-premium-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> <span data-key="loc3">Tumbes - Salinas -
+                                        Guayaquil</span></span>
+                            </div>
+                            <h3 class="tour-premium-title" data-key="sp3Title">Ruta al Norte: Ecuador</h3>
+                            <p class="tour-premium-desc" data-key="sp3Desc">Sol, playa y cultura en un solo paquete.
+                                Disfruta del eterno verano en las playas del norte peruano en Tumbes, y cruza la
+                                frontera hacia Ecuador para descubrir los hermosos paisajes de Salinas y el vibrante
+                                Malecón 2000 en Guayaquil. El viaje perfecto para los grupos que buscan relajarse frente
+                                al mar tras un duro año escolar.</p>
+                            <ul class="tour-features-list">
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp3F1">Trámites de frontera
+                                        incluidos</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp3F2">Tarde de playa y
+                                        piscina</span></li>
+                            </ul>
+                            <div class="tour-premium-footer">
+                                <a href="viajes escolares/escolar-norte-ecuador.html" class="tour-premium-btn">
+                                    <i class="fas fa-arrow-right"></i> <span data-key="btnConsult">Ver Detalles del
+                                        Viaje</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Cusco + Selva -->
+                    <div class="tour-premium-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="tour-premium-image">
+                            <span class="tour-badge-top" data-key="badgeNac">🇵🇪 Nacional</span>
+                            <span class="tour-badge-right">5D / 4N</span>
+                            <img src="tours_y_logos/Cusco - Machu Picchu - Selva Cusqueña.jpg" alt="Selva de Cusco"
+                                loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Cusco+Selva'">
+                        </div>
+                        <div class="tour-premium-body">
+                            <div class="tour-premium-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> <span data-key="loc4">Cusco - Machu Picchu -
+                                        Selva</span></span>
+                            </div>
+                            <h3 class="tour-premium-title" data-key="sp4Title">Cusco y Selva Tropical</h3>
+                            <p class="tour-premium-desc" data-key="sp4Desc">El contraste perfecto de climas y paisajes.
+                                Los estudiantes recorrerán la rica historia del Valle Sagrado, conquistarán la maravilla
+                                de Machu Picchu y luego se adentrarán en la exuberante ceja de selva cusqueña. Conocerán
+                                una flora y fauna totalmente diferente, combinando cultura incaica con el contacto puro
+                                con la naturaleza amazónica.</p>
+                            <ul class="tour-features-list">
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp4F1">Noche de fogata en la
+                                        selva</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp4F2">Todos los tickets de
+                                        ingreso</span></li>
+                            </ul>
+                            <div class="tour-premium-footer">
+                                <a href="viajes escolares/escolar-cusco-selva.html" class="tour-premium-btn">
+                                    <i class="fas fa-arrow-right"></i> <span data-key="btnConsult">Ver Detalles del
+                                        Viaje</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 5. Cusco Flash (Tren) -->
+                    <div class="tour-premium-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tour-premium-image">
+                            <span class="tour-badge-top" data-key="badgeNac">🇵🇪 Nacional</span>
+                            <span class="tour-badge-right">2D / 1N</span>
+                            <img src="tours_y_logos/Cusco - Machu Picchu (Tren Turístico).jpg" alt="Tren Machu Picchu"
+                                loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Tren+Machu+Picchu'">
+                        </div>
+                        <div class="tour-premium-body">
+                            <div class="tour-premium-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> <span data-key="loc5">Cusco - Aguas
+                                        Calientes</span></span>
+                            </div>
+                            <h3 class="tour-premium-title" data-key="sp5Title">Machu Picchu Express</h3>
+                            <p class="tour-premium-desc" data-key="sp5Desc">Ideal para grupos escolares que disponen de
+                                poco tiempo pero no quieren perderse la magia. Disfrutarán de un viaje escénico en tren
+                                turístico a través del Valle Sagrado hasta llegar a Aguas Calientes. Al día siguiente,
+                                tendrán una visita guiada privada explorando cada rincón de la maravilla del mundo,
+                                garantizando seguridad y aprendizaje al 100%.</p>
+                            <ul class="tour-features-list">
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp5F1">Tickets de Tren
+                                        Panorámico</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp5F2">Guía Privado para el
+                                        colegio</span></li>
+                            </ul>
+                            <div class="tour-premium-footer">
+                                <a href="viajes escolares/escolar-cusco-machupicchu.html" class="tour-premium-btn">
+                                    <i class="fas fa-arrow-right"></i> <span data-key="btnConsult">Ver Detalles del
+                                        Viaje</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 6. Ica Paracas -->
+                    <div class="tour-premium-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="tour-premium-image">
+                            <span class="tour-badge-top" data-key="badgeNac">🇵🇪 Nacional</span>
+                            <span class="tour-badge-right">3D / 2N</span>
+                            <img src="tours_y_logos/Lima - Ica - Huacachina - Paracas.jpg" alt="Huacachina Ica"
+                                loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Huacachina'">
+                        </div>
+                        <div class="tour-premium-body">
+                            <div class="tour-premium-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> <span data-key="loc6">Lima - Ica -
+                                        Huacachina - Paracas</span></span>
+                            </div>
+                            <h3 class="tour-premium-title" data-key="sp6Title">Aventura en el Desierto</h3>
+                            <p class="tour-premium-desc" data-key="sp6Desc">Para las promociones que aman la adrenalina
+                                y la playa. Disfrutarán de un emocionante paseo en lancha para observar lobos marinos y
+                                pingüinos en las Islas Ballestas. Luego, la aventura se trasladará a las dunas de la
+                                Huacachina, donde la velocidad de los tubulares (buggies) y el sandboard asegurarán
+                                muchísimas risas y fotos espectaculares.</p>
+                            <ul class="tour-features-list">
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp6F1">Paseo en Buggies y
+                                        Sandboard</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp6F2">Tour en Lancha Islas
+                                        Ballestas</span></li>
+                            </ul>
+                            <div class="tour-premium-footer">
+                                <a href="viajes escolares/escolar-lima-ica-paracas.html" class="tour-premium-btn">
+                                    <i class="fas fa-arrow-right"></i> <span data-key="btnConsult">Ver Detalles del
+                                        Viaje</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 7. Arica Chile -->
+                    <div class="tour-premium-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="tour-premium-image">
+                            <span class="tour-badge-top internacional" data-key="badgeInt">🌎 Internacional</span>
+                            <span class="tour-badge-right">4D / 3N</span>
+                            <img src="tours_y_logos/Arica - Chile (Puno - Arequipa - Tacna).jpg" alt="Arica Chile"
+                                loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Arica+Chile'">
+                        </div>
+                        <div class="tour-premium-body">
+                            <div class="tour-premium-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> <span data-key="loc7">Puno - Arequipa -
+                                        Tacna - Arica</span></span>
+                            </div>
+                            <h3 class="tour-premium-title" data-key="sp7Title">Tacna y Arica (Frontera)</h3>
+                            <p class="tour-premium-desc" data-key="sp7Desc">Un recorrido cultural y comercial desde el
+                                sur del Perú cruzando a la histórica ciudad de Arica en Chile. Los estudiantes conocerán
+                                el majestuoso Lago Titicaca, la arquitectura de Arequipa y luego cruzarán la frontera.
+                                Conocerán el histórico Morro de Arica, disfrutarán de sus balnearios y terminarán con un
+                                tour de compras por Tacna.</p>
+                            <ul class="tour-features-list">
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp7F1">Transporte Fronterizo
+                                        Privado</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp7F2">Paseos Históricos
+                                        Guiados</span></li>
+                            </ul>
+                            <div class="tour-premium-footer">
+                                <a href="viajes escolares/escolar-arica-chile.html" class="tour-premium-btn">
+                                    <i class="fas fa-arrow-right"></i> <span data-key="btnConsult">Ver Detalles del
+                                        Viaje</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 8. Norte Peruano -->
+                    <div class="tour-premium-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="tour-premium-image">
+                            <span class="tour-badge-top" data-key="badgeNac">🇵🇪 Nacional</span>
+                            <span class="tour-badge-right">6D / 5N</span>
+                            <img src="tours_y_logos/Norte Peruano Chiclayo - Máncora - Ecuador.jpg" alt="Mancora Playa"
+                                loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Mancora'">
+                        </div>
+                        <div class="tour-premium-body">
+                            <div class="tour-premium-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> <span data-key="loc8">Chiclayo - Piura -
+                                        Máncora</span></span>
+                            </div>
+                            <h3 class="tour-premium-title" data-key="sp8Title">Ruta del Sol</h3>
+                            <p class="tour-premium-desc" data-key="sp8Desc">El viaje soñado para desconectarse. Combina
+                                el impresionante misterio de la cultura Moche visitando el Museo Tumbas Reales de Sipán
+                                en Chiclayo, con días enteros de sol, arena y mar en los paradisíacos balnearios de
+                                Máncora y Punta Sal. Hoteles con piscina, fogatas nocturnas en la playa y excelente
+                                comida marina garantizada.</p>
+                            <ul class="tour-features-list">
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp8F1">Visita al Señor de
+                                        Sipán</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp8F2">Hotel con Piscina frente
+                                        al mar</span></li>
+                            </ul>
+                            <div class="tour-premium-footer">
+                                <a href="viajes escolares/escolar-norte-peruano.html" class="tour-premium-btn">
+                                    <i class="fas fa-arrow-right"></i> <span data-key="btnConsult">Ver Detalles del
+                                        Viaje</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 9. Oxapampa -->
+                    <div class="tour-premium-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="tour-premium-image">
+                            <span class="tour-badge-top" data-key="badgeNac">🇵🇪 Nacional</span>
+                            <span class="tour-badge-right">5D / 4N</span>
+                            <img src="tours_y_logos/Lima y Oxapampa Aventura.jpg" alt="Oxapampa" loading="lazy"
+                                onerror="this.src='https://placehold.co/600x400?text=Oxapampa'">
+                        </div>
+                        <div class="tour-premium-body">
+                            <div class="tour-premium-meta">
+                                <span><i class="fas fa-map-marker-alt"></i> <span data-key="loc9">Lima - Tarma -
+                                        Oxapampa</span></span>
+                            </div>
+                            <h3 class="tour-premium-title" data-key="sp9Title">Paraíso Verde: Oxapampa</h3>
+                            <p class="tour-premium-desc" data-key="sp9Desc">Adéntrate en la selva central peruana en un
+                                viaje lleno de aventura y naturaleza exuberante. Los estudiantes conocerán la singular
+                                colonia austro-alemana, disfrutarán de su increíble gastronomía, realizarán caminatas
+                                hacia cascadas escondidas y aprenderán sobre la cultura viva en un entorno de paz,
+                                seguridad y diversión garantizada.</p>
+                            <ul class="tour-features-list">
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp9F1">Caminata a
+                                        Cascadas</span></li>
+                                <li><i class="fas fa-check-circle"></i> <span data-key="sp9F2">Degustación de quesos y
+                                        cafés</span></li>
+                            </ul>
+                            <div class="tour-premium-footer">
+                                <a href="viajes escolares/escolar-lima-oxapampa.html" class="tour-premium-btn">
+                                    <i class="fas fa-arrow-right"></i> <span data-key="btnConsult">Ver Detalles del
+                                        Viaje</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLAGE DE IMÁGENES -->
+        <section class="collage-section">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 20px;" data-aos="fade-up">
+                    <span class="pre-title" data-key="collagePre">EXPERIENCIAS REALES</span>
+                    <h2 class="section-title"><span data-key="collageT1">Recuerdos</span> <span class="text-gradient"
+                            data-key="collageT2">Inolvidables</span></h2>
+                    <p style="color: var(--forest-light); font-weight:600; font-size: 1.1rem; max-width: 600px; margin: 0 auto;"
+                        data-key="collageSub">Momentos reales de nuestras promociones disfrutando al máximo su viaje de
+                        fin de año con total seguridad.</p>
+                </div>
+
+                <div class="collage-grid">
+                    <div class="collage-item item-large" data-aos="zoom-in">
+                        <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
+                            <source src="tours_y_logos/cusco4.mp4" type="video/mp4">
+                            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?q=80&w=800"
+                                alt="Grupo de estudiantes">
+                        </video>
+                    </div>
+
+                    <div class="collage-item item-wide" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="tours_y_logos/viajes a la playa.jpg" alt="Viaje a la playa">
+                    </div>
+
+                    <div class="collage-item" data-aos="zoom-in" data-aos-delay="200">
+                        <img src="tours_y_logos/amigos en cusco.jpg" alt="Amigos en Machu Picchu">
+                    </div>
+
+                    <div class="collage-item" data-aos="zoom-in" data-aos-delay="300">
+                        <img src="tours_y_logos/huacachina noche.jpg" alt="Tren panorámico">
+                    </div>
+
+                    <div class="collage-item item-wide" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="tours_y_logos/guayaquil.jpg" alt="Cusco ruinas">
+                    </div>
+
+                    <div class="collage-item item-tall" data-aos="zoom-in" data-aos-delay="200">
+                        <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
+                            <source src="tours_y_logos/promocion escolar.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <div class="collage-item item-tall" data-aos="zoom-in" data-aos-delay="200">
+                        <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
+                            <source src="tours_y_logos/promocion escolar 2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+
+                    <!-- NUEVA IMAGEN CON EL MISMO ANCHO (1 columna) -->
+                    <div class="collage-item item-wide" data-aos="zoom-in" data-aos-delay="100">
+                        <img src="tours_y_logos/arica.jpg" alt="Cusco ruinas">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL RUSTIC FUN -->
+        <section class="section-cta-final">
+            <div class="container" data-aos="zoom-in">
+                <h2 class="cta-final-title">
+                    <span data-key="ctaT1">¿Listos para su </span>
+                    <span class="text-gradient" data-key="ctaT2"
+                        style="background: linear-gradient(130deg, var(--rust-mustard), #fff); -webkit-background-clip: text;">viaje
+                        de promoción?</span>
+                </h2>
+                <p style="margin-bottom: 30px; color: rgba(255,255,255,0.9); max-width: 650px; margin-left: auto; margin-right: auto; font-size: 1.15rem; font-weight: 500;"
+                    data-key="ctaSub">
+                    Contáctanos ahora y recibe una cotización personalizada sin compromiso. ¡Nuestro equipo de asesores
+                    está listo para ayudar a tu salón!
+                </p>
+                <a href="https://wa.me/51930164904" target="_blank" class="btn-cta-gold">
+                    <i class="fab fa-whatsapp" style="font-size: 1.3rem;"></i> <span data-key="ctaBtn">Solicitar
+                        Cotización Exacta</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER PREMIUM -->
+    <footer class="footer-futurista">
+        <div class="footer-bg">
+            <video autoplay muted loop playsinline class="footer-video-bg">
+                <source src="tours_y_logos/footer.mp4" type="video/mp4">
+            </video>
+            <div class="footer-overlay-gradient"></div>
+        </div>
+        <div class="container footer-container">
+            <div class="footer-grid futurista-grid">
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-compass"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerAboutTitle">QUIENES SOMOS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="nosotros.html" data-key="footerAboutUs">Sobre nosotros</a></li>
+                        <li><a href="politicas-pago.html" data-key="footerConditions">Condiciones de venta</a></li>
+                        <li><a href="politicas-pago.html" data-key="footerPayments">Formas de pago</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerMenuTitle">MENÚ PRINCIPAL</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="index.html" data-key="home">INICIO</a></li>
+                        <li><a href="nosotros.html" data-key="about">NOSOTROS</a></li>
+                        <li><a href="tours.html" data-key="tours">TOURS</a></li>
+                        <li><a href="tours-cortos.html" data-key="shortTours">TOURS CORTOS</a></li>
+                        <li><a href="viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES</a></li>
+                        <li><a href="aventuras.html" data-key="adventure">AVENTURA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="policiesTitle">POLÍTICAS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="politicas-pago.html" data-key="policy1">Políticas y Condiciones de Pago</a></li>
+                        <li><a href="proteccion-datos.html" data-key="policy2">Protección de Datos Personales</a></li>
+                        <li><a href="prevencion-esnna.html" data-key="policy3">Prevención de la ESNNA en turismo</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerContactTitle">CONTÁCTENOS</h3>
+                    <ul class="footer-contact-list futurista-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span data-key="footerAddress">Urbanización Tito
+                                Z-26<br>Wanchag - Cusco</span></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:exploreperutravel@gmail.com">exploreperutravel@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i>
+                            <div class="footer-phones"><span>+51 930 164 904</span><span>+51 984 764 403</span><span>+51
+                                    986 530 343</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider futurista-divider">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fas fa-star-of-life"></i></div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="footer-bottom futurista-bottom">
+                <p class="copyright futurista-copyright" data-key="footerCopyright">© 2026 EXPLORE PERU TRAVEL | Agencia
+                    de Viajes y Turismo</p>
+                <div class="footer-social futurista-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/51930164904" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB WHATSAPP -->
+    <a href="https://wa.me/51930164904" class="fab-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- LIBRERÍAS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- LÓGICA JAVASCRIPT GLOBAL Y TRADUCCIONES -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            if (typeof AOS !== 'undefined') {
+                AOS.init({ duration: 800, once: true, offset: 50 });
+            }
+
+            const skeletonLoader = document.getElementById('skeletonLoader');
+            if (skeletonLoader) {
+                const hideSkeleton = () => {
+                    if (!skeletonLoader.classList.contains('hide')) {
+                        skeletonLoader.classList.add('hide');
+                        setTimeout(() => { if (skeletonLoader.parentNode) skeletonLoader.remove(); }, 500);
+                    }
+                };
+                window.addEventListener('load', hideSkeleton);
+                setTimeout(hideSkeleton, 1000);
+            }
+
+            const header = document.getElementById('mainHeader');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) header.classList.add('scrolled');
+                    else header.classList.remove('scrolled');
+                });
+            }
+
+            const hamburger = document.getElementById('hamburger');
+            if (hamburger && !document.querySelector('.mobile-menu')) {
+                const mobileMenuOverlay = document.createElement('div');
+                mobileMenuOverlay.className = 'mobile-menu-overlay';
+                const mobileMenu = document.createElement('div');
+                mobileMenu.className = 'mobile-menu';
+
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'mobile-menu-close';
+                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                mobileMenu.appendChild(closeBtn);
+
+                const navMenu = document.querySelector('.nav-menu');
+                const mobileNavList = document.createElement('ul');
+                mobileNavList.className = 'mobile-nav-list';
+                mobileNavList.style.listStyle = 'none';
+                mobileNavList.style.marginTop = '20px';
+
+                if (navMenu) {
+                    navMenu.querySelectorAll('li').forEach(li => {
+                        if (li.parentElement === navMenu) {
+                            const a = li.querySelector('a');
+                            if (a) {
+                                const liCopy = document.createElement('li');
+                                liCopy.style.marginBottom = '15px';
+                                const aCopy = document.createElement('a');
+                                aCopy.href = a.href;
+                                aCopy.innerHTML = a.innerHTML;
+                                aCopy.style.color = 'var(--forest)';
+                                aCopy.style.fontWeight = '800';
+                                aCopy.style.fontFamily = "'Nunito', sans-serif";
+                                aCopy.style.textDecoration = 'none';
+                                liCopy.appendChild(aCopy);
+                                mobileNavList.appendChild(liCopy);
+                            }
+                        }
+                    });
+                }
+                mobileMenu.appendChild(mobileNavList);
+
+                document.body.appendChild(mobileMenuOverlay);
+                document.body.appendChild(mobileMenu);
+
+                function toggleMobileMenu() {
+                    hamburger.classList.toggle('open');
+                    mobileMenu.classList.toggle('open');
+                    mobileMenuOverlay.classList.toggle('open');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                }
+
+                hamburger.addEventListener('click', toggleMobileMenu);
+                closeBtn.addEventListener('click', toggleMobileMenu);
+                mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+            }
+
+            // SISTEMA DE TRADUCCIÓN BILINGÜE
+            const translations = {
+                es: {
+                    contact: "CONTACTO", about: "NOSOTROS", home: "INICIO", tours: "TOURS", shortTours: "TOURS CORTOS",
+                    schoolTrips: "VIAJES ESCOLARES", adventure: "AVENTURA",
+
+                    navT1: "Paquete Cusco Básico (3 Días / 2 Noches)", navT2: "Paquete Cusco Clásico (4 Días / 3 Noches)", navT3: "Paquete Cusco Arqueológico (5 Días / 4 Noches)", navT4: "Paquete Experiencia Cusco Total (6 Días / 5 Noches)", navT5: "Paquete Aventura Extrema: Inka Jungle (4 Días / 3 Noches)", navT6: "Paquete Desafío Andino: Salkantay Trek (5 Días / 4 Noches)", navT7: "Camino Inca Clásico a Machu Picchu (4 Días / 3 Noches)", navT8: "Trekking Choquequirao Extremo (4 Días / 3 Noches)",
+                    shortTour1: "City Tour Cusco (Medio Día)", shortTour2: "Tour Chinchero, Maras y Moray", shortTour3: "Tour Valle Sur Cusco (Medio Día)", shortTour4: "Tour Valle Sagrado (Full Day)",
+                    school1: "🏔️ Ruta Imperial: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "🇨🇱 Ruta al Sur: Chile - Santiago | 5D/4N", school3: "🇪🇨 Ruta al Norte: Tumbes - Guayaquil | 5D/4N", school4: "🏔️ Cusco - Machu Picchu - Selva Cusqueña | 5D/4N", school5: "🚂 Cusco - Machu Picchu (Tren Turístico) | 2D/1N", school6: "🏜️ Lima - Ica - Huacachina - Paracas | 3D/2N", school7: "🌊 Arica - Chile (Puno - Arequipa - Tacna) | 4D/3N", school8: "🏝️ Norte Peruano: Chiclayo - Máncora - Ecuador | 6D/5N", school9: "🌿 Lima y Oxapampa Aventura | 5D/4N",
+                    adv1: "Aventura en Cuatrimotos - Maras y Moray", adv2: "Vía Ferrata y Zipline en el Valle Sagrado", adv3: "Canotaje (Rafting) en el Río Vilcanota", adv4: "Bungee Jumping y Slingshot", adv5: "Parapente sobre el Valle Sagrado",
+
+                    heroPre: "🎓 PROMOCIÓN 2026", heroTitle: "Viajes Escolares",
+                    heroSub: "Experiencias educativas, seguras y memorables para celebrar el fin de etapa. ¡El mejor viaje de promoción te espera con nosotros!",
+
+                    schoolWelcomeP1: "¡Hola! Sabemos que el viaje de promoción es uno de los momentos más esperados e inolvidables en la vida de todo estudiante. Por eso, en <strong>Explore Peru Travel</strong> nos tomamos muy en serio la tarea de organizar una experiencia que combine diversión absoluta para los chicos y tranquilidad total para los padres y profesores.",
+                    schoolWelcomeP2: "Nos encargamos de absolutamente toda la logística: desde buses privados de última generación y hoteles seguros, hasta las mejores rutas culturales y de aventura guiadas por profesionales. Ustedes solo empacan las maletas y se preparan para crear recuerdos que durarán toda la vida.",
+
+                    trustT1: "Seguridad 24/7", trustD1: "Monitoreo constante y protocolos estrictos para la tranquilidad de padres y docentes.",
+                    trustT2: "Coordinación Total", trustD2: "Nos encargamos de transportes, hoteles, comidas y entradas. ¡Sin preocupaciones!",
+                    trustT3: "Guías Especializados", trustD3: "Expertos en manejo de grupos juveniles, enfocados en educación y diversión.",
+                    trustT4: "Trayectoria", trustD4: "Más de 10 años organizando viajes escolares con altos estándares de calidad.",
+
+                    gridPre: "CATÁLOGO DE PROMOCIONES", gridTitle1: "Paquetes para", gridTitle2: "Promociones",
+                    gridSub: "Selecciona el destino que mejor se adapte a tu grupo. ¡Todos incluyen guía, transporte, alojamiento y entradas!",
+
+                    badgeNac: "🇵🇪 Nacional", badgeInt: "🌎 Internacional",
+
+                    loc1: "Arequipa - Cusco - Oxapampa", sp1Title: "Ruta Imperial", sp1Desc: "Un viaje épico cruzando los Andes, diseñado para promociones que buscan una mezcla perfecta de historia y naturaleza. Conoce la hermosa Ciudad Blanca de Arequipa, maravíllate recorriendo las milenarias ruinas de Machu Picchu en Cusco, y finaliza conectando con la exótica selva central en Oxapampa. Una expedición completa que enriquecerá culturalmente a los estudiantes mientras se divierten al máximo.", sp1F1: "City Tour guiado en 3 ciudades", sp1F2: "Tren a Machu Picchu incluido",
+
+                    loc2: "Chile - Santiago - Viña del Mar", sp2Title: "Ruta al Sur: Chile", sp2Desc: "Cruza fronteras con tus compañeros para vivir una experiencia internacional inolvidable. Este viaje los llevará a conocer la moderna capital de Santiago, caminar por los cerros coloridos y bohemios de Valparaíso, y disfrutar de espectaculares tardes de sol en las playas de Viña del Mar. Un recorrido seguro, lleno de cultura sudamericana y diversión en el extranjero.", sp2F1: "Trámites migratorios asistidos", sp2F2: "Tour a Viñedos y Playas",
+
+                    loc3: "Tumbes - Salinas - Guayaquil", sp3Title: "Ruta al Norte: Ecuador", sp3Desc: "Sol, playa y cultura en un solo paquete. Disfruta del eterno verano en las playas del norte peruano en Tumbes, y cruza la frontera hacia Ecuador para descubrir los hermosos paisajes de Salinas y el vibrante Malecón 2000 en Guayaquil. El viaje perfecto para los grupos que buscan relajarse frente al mar tras un duro año escolar.", sp3F1: "Trámites de frontera incluidos", sp3F2: "Tarde de playa y piscina",
+
+                    loc4: "Cusco - Machu Picchu - Selva", sp4Title: "Cusco y Selva Tropical", sp4Desc: "El contraste perfecto de climas y paisajes. Los estudiantes recorrerán la rica historia del Valle Sagrado, conquistarán la maravilla de Machu Picchu y luego se adentrarán en la exuberante ceja de selva cusqueña. Conocerán una flora y fauna totalmente diferente, combinando cultura incaica con el contacto puro con la naturaleza amazónica.", sp4F1: "Noche de fogata en la selva", sp4F2: "Todos los tickets de ingreso",
+
+                    loc5: "Cusco - Aguas Calientes", sp5Title: "Machu Picchu Express", sp5Desc: "Ideal para grupos escolares que disponen de poco tiempo pero no quieren perderse la magia. Disfrutarán de un viaje escénico en tren turístico a través del Valle Sagrado hasta llegar a Aguas Calientes. Al día siguiente, tendrán una visita guiada privada explorando cada rincón de la maravilla del mundo, garantizando seguridad y aprendizaje al 100%.", sp5F1: "Tickets de Tren Panorámico", sp5F2: "Guía Privado para el colegio",
+
+                    loc6: "Lima - Ica - Huacachina - Paracas", sp6Title: "Aventura en el Desierto", sp6Desc: "Para las promociones que aman la adrenalina y la playa. Disfrutarán de un emocionante paseo en lancha para observar lobos marinos y pingüinos en las Islas Ballestas. Luego, la aventura se trasladará a las dunas de la Huacachina, donde la velocidad de los tubulares (buggies) y el sandboard asegurarán muchísimas risas y fotos espectaculares.", sp6F1: "Paseo en Buggies y Sandboard", sp6F2: "Tour en Lancha Islas Ballestas",
+
+                    loc7: "Puno - Arequipa - Tacna - Arica", sp7Title: "Tacna y Arica (Frontera)", sp7Desc: "Un recorrido cultural y comercial desde el sur del Perú cruzando a la histórica ciudad de Arica en Chile. Los estudiantes conocerán el majestuoso Lago Titicaca, la arquitectura de Arequipa y luego cruzarán la frontera. Conocerán el histórico Morro de Arica, disfrutarán de sus balnearios y terminarán con un tour de compras por Tacna.", sp7F1: "Transporte Fronterizo Privado", sp7F2: "Paseos Históricos Guiados",
+
+                    loc8: "Chiclayo - Piura - Máncora", sp8Title: "Ruta del Sol", sp8Desc: "El viaje soñado para desconectarse. Combina el impresionante misterio de la cultura Moche visitando el Museo Tumbas Reales de Sipán en Chiclayo, con días enteros de sol, arena y mar en los paradisíacos balnearios de Máncora y Punta Sal. Hoteles con piscina, fogatas nocturnas en la playa y excelente comida marina garantizada.", sp8F1: "Visita al Señor de Sipán", sp8F2: "Hotel con Piscina frente al mar",
+
+                    loc9: "Lima - Tarma - Oxapampa", sp9Title: "Paraíso Verde: Oxapampa", sp9Desc: "Adéntrate en la selva central peruana en un viaje lleno de aventura y naturaleza exuberante. Los estudiantes conocerán la singular colonia austro-alemana, disfrutarán de su increíble gastronomía, realizarán caminatas hacia cascadas escondidas y aprenderán sobre la cultura viva en un entorno de paz, seguridad y diversión garantizada.", sp9F1: "Caminata a Cascadas", sp9F2: "Degustación de quesos y cafés",
+
+                    btnConsult: "Ver Detalles del Viaje",
+
+                    collagePre: "EXPERIENCIAS REALES", collageT1: "Recuerdos", collageT2: "Inolvidables", collageSub: "Momentos reales de nuestras promociones disfrutando al máximo su viaje de fin de año con total seguridad.",
+
+                    ctaT1: "¿Listos para su ", ctaT2: "viaje de promoción?",
+                    ctaSub: "Contáctanos ahora y recibe una cotización personalizada sin compromiso. ¡Nuestro equipo de asesores está listo para ayudar a tu salón!",
+                    ctaBtn: "Solicitar Cotización Exacta",
+
+                    footerAboutTitle: "QUIENES SOMOS", footerAboutUs: "Sobre nosotros", footerConditions: "Condiciones de venta", footerPayments: "Formas de pago",
+                    footerMenuTitle: "MENÚ PRINCIPAL", footerContactTitle: "CONTÁCTENOS",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Agencia de Viajes y Turismo",
+                    policiesTitle: "POLÍTICAS", policy1: "Políticas y Condiciones de Pago", policy2: "Protección de Datos Personales", policy3: "Prevención de la ESNNA en turismo"
+                },
+                en: {
+                    contact: "CONTACT", about: "ABOUT US", home: "HOME", tours: "TOURS", shortTours: "SHORT TOURS", schoolTrips: "SCHOOL TRIPS", adventure: "ADVENTURE",
+                    navT1: "Cusco Basic Package (3 Days / 2 Nights)", navT2: "Cusco Classic Package (4 Days / 3 Nights)", navT3: "Cusco Archaeological Package (5 Days / 4 Nights)", navT4: "Cusco Total Experience (6 Days / 5 Nights)", navT5: "Extreme Adventure: Inka Jungle (4 Days / 3 Nights)", navT6: "Andean Challenge: Salkantay Trek (5 Days / 4 Nights)", navT7: "Classic Inca Trail to Machu Picchu (4 Days / 3 Nights)", navT8: "Extreme Choquequirao Trek (4 Days / 3 Nights)",
+                    shortTour1: "Cusco City Tour (Half Day)", shortTour2: "Chinchero, Maras & Moray Tour", shortTour3: "Cusco South Valley Tour (Half Day)", shortTour4: "Sacred Valley Tour (Full Day)",
+                    school1: "🏔️ Imperial Route: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "🇨🇱 Southern Route: Chile - Santiago | 5D/4N", school3: "🇪🇨 Northern Route: Tumbes - Guayaquil | 5D/4N", school4: "🏔️ Cusco - Machu Picchu - Cusco Jungle | 5D/4N", school5: "🚂 Cusco - Machu Picchu (Tourist Train) | 2D/1N", school6: "🏜️ Lima - Ica - Huacachina - Paracas | 3D/2N", school7: "🌊 Arica - Chile (Puno - Arequipa - Tacna) | 4D/3N", school8: "🏝️ Northern Peru: Chiclayo - Máncora - Ecuador | 6D/5N", school9: "🌿 Lima and Oxapampa Adventure | 5D/4N",
+                    adv1: "ATV Adventure - Maras and Moray", adv2: "Via Ferrata and Zipline in Sacred Valley", adv3: "White Water Rafting", adv4: "Bungee Jumping and Slingshot", adv5: "Paragliding over Sacred Valley",
+
+                    heroPre: "🎓 CLASS OF 2026", heroTitle: "School Trips",
+                    heroSub: "Safe, educational, and memorable experiences to celebrate graduation. The best school trip awaits you with us!",
+
+                    schoolWelcomeP1: "Hello! We know that the school graduation trip is one of the most anticipated and unforgettable moments in every student's life. That is why at <strong>Explore Peru Travel</strong> we take very seriously the task of organizing an experience that combines absolute fun for the kids and total peace of mind for parents and teachers.",
+                    schoolWelcomeP2: "We handle absolutely all the logistics: from modern private buses and safe hotels to the best cultural and adventure routes guided by professionals. You just pack your bags and get ready to create memories that will last a lifetime.",
+
+                    trustT1: "24/7 Security", trustD1: "Constant monitoring and strict protocols for parents' and teachers' peace of mind.",
+                    trustT2: "Total Coordination", trustD2: "We handle transportation, hotels, meals, and tickets. Zero worries!",
+                    trustT3: "Specialized Guides", trustD3: "Expert staff in handling youth groups, focused on education and fun.",
+                    trustT4: "Experience", trustD4: "Over 10 years organizing school trips with high quality standards.",
+
+                    gridPre: "GRADUATION CATALOG", gridTitle1: "Packages for", gridTitle2: "Graduations",
+                    gridSub: "Choose the destination that best fits your group. All include guide, transport, accommodation, and entrance tickets!",
+
+                    badgeNac: "🇵🇪 National", badgeInt: "🌎 International",
+
+                    loc1: "Arequipa - Cusco - Oxapampa", sp1Title: "Imperial Route", sp1Desc: "An epic journey across the Andes, designed for grad classes looking for a perfect blend of history and nature. Visit the beautiful White City of Arequipa, marvel at the ancient ruins of Machu Picchu in Cusco, and finish by connecting with the exotic central jungle in Oxapampa. A complete expedition that will culturally enrich students while they have maximum fun.", sp1F1: "Guided City Tour in 3 cities", sp1F2: "Machu Picchu Train included",
+
+                    loc2: "Chile - Santiago - Viña del Mar", sp2Title: "Southern Route: Chile", sp2Desc: "Cross borders with your classmates for an unforgettable international experience. This trip will take you to know the modern capital of Santiago, walk through the colorful and bohemian hills of Valparaíso, and enjoy spectacular sunny afternoons on the beaches of Viña del Mar. A safe tour, full of South American culture and fun abroad.", sp2F1: "Assisted immigration procedures", sp2F2: "Vineyards and Beaches Tour",
+
+                    loc3: "Tumbes - Salinas - Guayaquil", sp3Title: "Northern Route: Ecuador", sp3Desc: "Sun, beach, and culture in a single package. Enjoy the endless summer on the beaches of northern Peru in Tumbes, and cross the border to Ecuador to discover the beautiful landscapes of Salinas and the vibrant Malecón 2000 in Guayaquil. The perfect trip for groups looking to relax by the sea after a hard school year.", sp3F1: "Border procedures included", sp3F2: "Beach and pool afternoon",
+
+                    loc4: "Cusco - Machu Picchu - Jungle", sp4Title: "Cusco and Tropical Jungle", sp4Desc: "The perfect contrast of climates and landscapes. Students will tour the rich history of the Sacred Valley, conquer the wonder of Machu Picchu, and then enter the lush Cusquenian high jungle. They will experience completely different flora and fauna, combining Inca culture with pure contact with Amazonian nature.", sp4F1: "Bonfire night in the jungle", sp4F2: "All entrance tickets included",
+
+                    loc5: "Cusco - Aguas Calientes", sp5Title: "Machu Picchu Express", sp5Desc: "Ideal for school groups with limited time who don't want to miss out on the magic. You will enjoy a scenic ride on a tourist train through the Sacred Valley until you reach Aguas Calientes. The next day, you will have a private guided tour exploring every corner of the wonder of the world, guaranteeing safety and 100% learning.", sp5F1: "Panoramic Train Tickets", sp5F2: "Private Guide for the school",
+
+                    loc6: "Lima - Ica - Huacachina - Paracas", sp6Title: "Desert Adventure", sp6Desc: "For grad classes that love adrenaline and the beach. You will enjoy an exciting boat ride to observe sea lions and penguins in the Ballestas Islands. Then, the adventure moves to the Huacachina dunes, where the speed of the buggies and sandboarding will ensure lots of laughs and spectacular photos.", sp6F1: "Buggies and Sandboarding", sp6F2: "Ballestas Islands Boat Tour",
+
+                    loc7: "Puno - Arequipa - Tacna - Arica", sp7Title: "Tacna and Arica (Border)", sp7Desc: "A cultural and commercial tour from southern Peru crossing to the historic city of Arica in Chile. Students will see the majestic Lake Titicaca, the architecture of Arequipa, and then cross the border. They will visit the historic Morro de Arica, enjoy its beaches, and finish with a shopping tour in Tacna.", sp7F1: "Private Border Transport", sp7F2: "Guided Historical Walks",
+
+                    loc8: "Chiclayo - Piura - Máncora", sp8Title: "Sun Route", sp8Desc: "The dream trip to disconnect. It combines the impressive mystery of the Moche culture by visiting the Royal Tombs of Sipán Museum in Chiclayo, with entire days of sun, sand, and sea in the paradisiacal resorts of Máncora and Punta Sal. Hotels with pools, night bonfires on the beach, and excellent seafood guaranteed.", sp8F1: "Visit to the Lord of Sipán", sp8F2: "Oceanfront Hotel with Pool",
+
+                    loc9: "Lima - Tarma - Oxapampa", sp9Title: "Green Paradise: Oxapampa", sp9Desc: "Delve into the Peruvian central jungle on a trip full of adventure and lush nature. Students will discover the unique Austro-German colony, enjoy its incredible gastronomy, hike to hidden waterfalls, and learn about the living culture in an environment of peace, safety, and guaranteed fun.", sp9F1: "Hike to Waterfalls", sp9F2: "Cheese and Coffee Tasting",
+
+                    btnConsult: "View Trip Details",
+
+                    collagePre: "REAL EXPERIENCES", collageT1: "Unforgettable", collageT2: "Memories", collageSub: "Real moments of our grad classes enjoying their end-of-year trip to the fullest with total safety.",
+
+                    ctaT1: "Ready for your ", ctaT2: "graduation trip?",
+                    ctaSub: "Contact us now and receive a personalized quote with no commitment. Our advisory team is ready to help your class!",
+                    ctaBtn: "Request Exact Quote",
+
+                    footerAboutTitle: "ABOUT US", footerAboutUs: "About us", footerConditions: "Terms and conditions", footerPayments: "Payment methods",
+                    footerMenuTitle: "MAIN MENU", footerContactTitle: "CONTACT US",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Travel and Tourism Agency",
+                    policiesTitle: "POLICIES", policy1: "Payment Policies", policy2: "Data Protection", policy3: "Child Protection in Tourism"
+                }
+            };
+
+            let currentLang = localStorage.getItem('preferredLang') || 'es';
+
+            function applyTranslations(lang) {
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    const translation = translations[lang]?.[key];
+
+                    if (translation) {
+                        if (el.tagName !== 'INPUT' && el.tagName !== 'TEXTAREA' && el.tagName !== 'SELECT' && el.tagName !== 'IMG') {
+                            const icon = el.querySelector('i') || el.querySelector('.fas') || el.querySelector('.fab') || el.querySelector('.far');
+
+                            if (icon) {
+                                const isFirst = el.firstElementChild === icon;
+                                el.innerHTML = isFirst ? icon.outerHTML + ' ' + translation : translation + ' ' + icon.outerHTML;
+                            } else {
+                                el.innerHTML = translation;
+                            }
+                        } else if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                            el.placeholder = translation;
+                        } else if (el.tagName === 'SELECT') {
+                            const option = el.querySelector(`option[data-key="${key}"]`);
+                            if (option) option.textContent = translation;
+                        }
+                    }
+                });
+
+                window.currentLang = lang;
+                localStorage.setItem('preferredLang', lang);
+
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+            }
+
+            const langBtns = document.querySelectorAll('.lang-btn');
+            if (langBtns.length > 0) {
+                langBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const lang = btn.getAttribute('data-lang');
+                        applyTranslations(lang);
+                    });
+                });
+            }
+
+            applyTranslations(currentLang);
+        });
+    </script>
+</body>
+
+</html>
