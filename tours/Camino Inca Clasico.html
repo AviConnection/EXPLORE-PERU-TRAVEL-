@@ -1,0 +1,2906 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description"
+        content="Camino Inca Clásico 4 días/3 noches. La ruta legendaria hacia Machu Picchu. Trekking por senderos incas, ruinas exclusivas y la Puerta del Sol.">
+    <title>Camino Inca Clásico 4D/3N | Explore Peru Travel</title>
+
+    <link rel="icon" href="../tours_y_logos/logoprincipal.png" type="image/png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap">
+    </noscript>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        /* ============================================================
+           RUSTIC FUN DESIGN SYSTEM - CAMINO INCA CLÁSICO
+           ============================================================ */
+
+        :root {
+            --deep: #1f1812;
+            --forest: #3a2e24;
+            --forest-mid: #4f3f31;
+            --forest-light: #6b5442;
+            --cream: #faf5eb;
+            --cream-warm: #f3ebd8;
+            --cream-border: #e0d0b8;
+
+            --terracotta: #c05a3c;
+            --rust-mustard: #e2a02b;
+            --andes-green: #3e6b4a;
+            --inca-red: #a83a32;
+            --andes-sky: #4a8ca8;
+            --gold: #c29b45;
+
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-pill: 100px;
+            --shadow-solid-sm: 4px 4px 0 var(--cream-border);
+            --shadow-solid-md: 8px 8px 0 var(--forest);
+            --shadow-solid-gold: 8px 8px 0 var(--rust-mustard);
+
+            --transition: 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --nav-height-main: 82px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--cream);
+            color: var(--forest);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%233a2e24' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        .text-gradient {
+            background: linear-gradient(130deg, var(--rust-mustard) 0%, var(--terracotta) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* ─── SKELETON LOADER ─── */
+        .skeleton-loader {
+            position: fixed;
+            inset: 0;
+            background: var(--cream);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            transition: 0.5s ease;
+            pointer-events: none;
+        }
+
+        .skeleton-loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .skeleton-navbar {
+            height: var(--nav-height-main);
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        .skeleton-hero {
+            flex: 1;
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        @keyframes skeletonShimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* ─── NAVBAR (ISLA DINÁMICA) ─── */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1050;
+            transition: var(--transition);
+        }
+
+        .main-navbar {
+            height: var(--nav-height-main);
+            display: flex;
+            align-items: center;
+            background: rgba(250, 245, 235, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid var(--cream-border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .nav-flex {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            transition: all 0.4s ease;
+        }
+
+        .logo-img {
+            width: 230px;
+            height: auto;
+            transition: all 0.4s ease;
+        }
+
+        .main-header.scrolled .main-navbar {
+            height: 56px;
+            margin: 12px auto;
+            width: fit-content;
+            border-radius: 50px;
+            background: rgba(31, 24, 18, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(226, 160, 43, 0.3);
+            border: none;
+            padding: 0 12px;
+        }
+
+        .main-header.scrolled .logo-area {
+            display: none;
+        }
+
+        .main-header.scrolled .nav-flex {
+            justify-content: center;
+            padding: 0 10px;
+            width: auto;
+            gap: 8px;
+        }
+
+        .main-header.scrolled .nav-menu {
+            gap: 14px;
+        }
+
+        .main-header.scrolled .nav-menu a {
+            font-size: 0.65rem;
+            color: var(--cream);
+        }
+
+        .main-header.scrolled .nav-menu a:hover,
+        .main-header.scrolled .nav-menu li.current>a {
+            color: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .nav-menu a::after {
+            background: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .lang-selector {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: transparent;
+        }
+
+        .main-header.scrolled .lang-btn {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .main-header.scrolled .lang-btn.active {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            box-shadow: none;
+        }
+
+        .main-header.scrolled .hamburger span {
+            background: var(--cream);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: clamp(10px, 1.8vw, 22px);
+            align-items: center;
+        }
+
+        .nav-menu a {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: clamp(0.65rem, 1.3vw, 0.75rem);
+            letter-spacing: 1px;
+            color: var(--forest-mid);
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu li.current>a {
+            color: var(--terracotta);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu li.current>a::after {
+            width: 100%;
+        }
+
+        .menu-item-has-children {
+            position: relative;
+        }
+
+        .menu-item-has-children>a .fa-chevron-down {
+            transition: transform 0.3s ease;
+            font-size: 0.6rem;
+        }
+
+        .menu-item-has-children:hover>a .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 0;
+            min-width: 300px;
+            max-height: 70vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 10px 0;
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            list-style: none;
+        }
+
+        .sub-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sub-menu::-webkit-scrollbar-thumb {
+            background-color: var(--terracotta);
+            border-radius: 10px;
+        }
+
+        .sub-menu::-webkit-scrollbar-track {
+            background-color: transparent;
+        }
+
+        .main-header.scrolled .sub-menu {
+            background: var(--deep);
+            border-color: var(--rust-mustard);
+            box-shadow: 6px 6px 0 var(--rust-mustard);
+        }
+
+        .menu-item-has-children:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% + 6px);
+        }
+
+        .sub-menu li a {
+            display: block;
+            padding: 10px 22px;
+            font-size: 0.7rem;
+            color: var(--forest);
+            transition: all 0.25s ease;
+            white-space: normal;
+        }
+
+        .main-header.scrolled .sub-menu li a {
+            color: var(--cream);
+        }
+
+        .sub-menu li a::after {
+            display: none;
+        }
+
+        .sub-menu li a:hover {
+            background: rgba(192, 90, 60, 0.1);
+            color: var(--terracotta);
+            padding-left: 28px;
+        }
+
+        .main-header.scrolled .sub-menu li a:hover {
+            background: rgba(226, 160, 43, 0.15);
+            color: var(--rust-mustard);
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 3px;
+            background: var(--cream-warm);
+            padding: 4px;
+            border-radius: var(--radius-pill);
+            border: 2px solid var(--forest);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-weight: 800;
+            font-size: 0.65rem;
+            color: var(--forest-light);
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--forest);
+            color: white;
+            box-shadow: 2px 2px 0 var(--terracotta);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: var(--forest);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(31, 24, 18, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1055;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(320px, 85vw);
+            height: 100dvh;
+            background: var(--cream);
+            z-index: 1060;
+            padding: 70px 24px 30px;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow-y: auto;
+            border-left: 4px solid var(--forest);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            background: var(--forest);
+            color: white;
+            border: 2px solid var(--deep);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 3px 3px 0 var(--terracotta);
+        }
+
+        @media (max-width: 1050px) {
+
+            .nav-menu,
+            .lang-selector {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .main-navbar {
+                height: 65px;
+            }
+
+            .main-header.scrolled .main-navbar {
+                margin: 10px auto;
+                width: calc(100% - 24px);
+                height: 54px;
+                padding: 0 16px;
+            }
+
+            .main-header.scrolled .nav-flex {
+                justify-content: space-between;
+                padding: 0;
+                width: 100%;
+            }
+
+            .logo-img {
+                width: 180px;
+            }
+
+            .main-header.scrolled .logo-area {
+                display: block;
+            }
+
+            .main-header.scrolled .logo-img {
+                width: 120px;
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        /* ─── BOTONES GLOBALES ─── */
+        .btn-gold-solid {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid var(--deep);
+            box-shadow: 4px 4px 0 var(--deep);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-gold-solid:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--deep);
+            background: white;
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        .btn-trail {
+            background: linear-gradient(135deg, #6c3483 0%, #8e44ad 50%, #af7ac5 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid var(--deep);
+            box-shadow: 4px 4px 0 var(--deep);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-trail:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--deep);
+            background: white;
+            color: #8e44ad;
+            border-color: #8e44ad;
+        }
+
+        /* ─── HERO ─── */
+        .hero-tour {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--nav-height-main) + 60px) 20px 80px;
+            overflow: hidden;
+            background-color: var(--deep);
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            background-image: url('https://images.unsplash.com/photo-1587595431973-160d0d94add1?q=80&w=1920');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.6) contrast(1.1);
+            transform: scale(1.05);
+            animation: panBg 30s infinite alternate linear;
+        }
+
+        @keyframes panBg {
+            0% {
+                transform: scale(1.05) translate(0, 0);
+            }
+
+            100% {
+                transform: scale(1.1) translate(-2%, 2%);
+            }
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31, 24, 18, 0.3) 0%, rgba(31, 24, 18, 0.85) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            max-width: 900px;
+            padding: 0;
+        }
+
+        .hero-pre {
+            display: inline-block;
+            background: rgba(226, 160, 43, 0.2);
+            border: 1px solid var(--rust-mustard);
+            color: var(--rust-mustard);
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 700px;
+            margin: 0 auto 35px;
+            font-weight: 400;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .torn-paper {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 5;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L0,40 Q30,80 60,40 T120,40 T180,40 T240,40 T300,40 T360,40 T420,40 T480,40 T540,40 T600,40 T660,40 T720,40 T780,40 T840,40 T900,40 T960,40 T1020,40 T1080,40 T1140,40 T1200,40 L1200,120 Z' fill='%23faf5eb'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* ─── QUICK INFO ─── */
+        .quick-info-wrapper {
+            position: relative;
+            z-index: 10;
+            margin-top: -60px;
+            padding: 0 20px;
+        }
+
+        .quick-info-box {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+            max-width: 1100px;
+            margin: 0 auto;
+            border-radius: var(--radius-lg);
+            padding: 25px 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--forest);
+            position: relative;
+        }
+
+        .quick-info-box::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: -6px;
+            bottom: -6px;
+            border: 2px dashed var(--rust-mustard);
+            border-radius: var(--radius-lg);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @media (max-width: 900px) {
+            .quick-info-box {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: -40px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .quick-info-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .qi-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qi-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--cream);
+            border: 2px solid var(--forest);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--terracotta);
+            box-shadow: 3px 3px 0 var(--forest);
+            transform: rotate(-3deg);
+            transition: var(--transition);
+        }
+
+        .qi-item:hover .qi-icon {
+            transform: rotate(5deg) scale(1.1);
+            background: #8e44ad;
+            color: white;
+        }
+
+        .qi-text h4 {
+            font-size: 0.8rem;
+            color: var(--forest-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .qi-text p {
+            font-size: 1.1rem;
+            color: var(--forest);
+            font-weight: 900;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* ─── WELCOME & BIG LOGO (SIN CÍRCULO, 500PX) ─── */
+        .welcome-warm {
+            padding: 60px 0 20px;
+            background: var(--cream);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .big-logo-container {
+            margin: 0 auto 30px;
+            display: inline-block;
+            position: relative;
+        }
+
+        /* 🔥 ELIMINADO: el círculo que rodeaba al logo */
+
+        .big-logo {
+            width: 500px;
+            max-width: 90vw;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+            transition: var(--transition);
+        }
+
+        .big-logo:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .welcome-text-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .welcome-text-wrapper p {
+            font-size: 1.1rem;
+            color: var(--forest-mid);
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* ─── HIGHLIGHTS ─── */
+        .section-highlights {
+            padding: 60px 0 40px;
+        }
+
+        .hl-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .hl-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hl-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hl-card {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .hl-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-solid-gold);
+        }
+
+        .hl-img {
+            height: 200px;
+            overflow: hidden;
+            border-bottom: 2px solid var(--forest);
+        }
+
+        .hl-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .hl-card:hover .hl-img img {
+            transform: scale(1.1);
+        }
+
+        .hl-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hl-body h3 {
+            font-size: 1.4rem;
+            color: var(--forest);
+            margin-bottom: 10px;
+        }
+
+        .hl-body p {
+            font-size: 0.9rem;
+            color: var(--forest-light);
+            font-weight: 600;
+        }
+
+        /* ─── COLLAGE DE IMÁGENES ─── */
+        .section-collage {
+            padding: 60px 0;
+            background: var(--cream-warm);
+            border-top: 4px dashed var(--cream-border);
+            border-bottom: 4px dashed var(--cream-border);
+        }
+
+        .collage-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            gap: 16px;
+        }
+
+        .collage-item {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 3px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .collage-item:hover {
+            transform: scale(1.03) rotate(-1deg);
+            box-shadow: var(--shadow-solid-gold);
+            z-index: 2;
+        }
+
+        .collage-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .collage-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .collage-item:nth-child(1) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+
+        .collage-item:nth-child(2) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .collage-item:nth-child(3) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .collage-item:nth-child(4) {
+            grid-column: span 2;
+            grid-row: span 1;
+        }
+
+        .collage-item:nth-child(5) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .collage-item:nth-child(6) {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        @media (max-width: 900px) {
+            .collage-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(4, 160px);
+            }
+
+            .collage-item:nth-child(1) {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+
+            .collage-item:nth-child(2),
+            .collage-item:nth-child(3),
+            .collage-item:nth-child(4),
+            .collage-item:nth-child(5),
+            .collage-item:nth-child(6) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+
+            .collage-item:nth-child(4) {
+                grid-column: span 2;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .collage-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: repeat(6, 180px);
+            }
+
+            .collage-item {
+                grid-column: span 1 !important;
+                grid-row: span 1 !important;
+            }
+        }
+
+        /* ─── SECCIÓN DE DETALLES ─── */
+        .section-details {
+            padding: 60px 0;
+            background: var(--cream);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+
+        .details-image {
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            border: 3px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+        }
+
+        .details-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .details-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .details-content h3 {
+            font-size: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--forest);
+            margin-bottom: 15px;
+        }
+
+        .details-content h3 .highlight {
+            color: #8e44ad;
+        }
+
+        .details-content p {
+            font-size: 1rem;
+            color: var(--forest-light);
+            line-height: 1.7;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .details-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .details-features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .details-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 12px 16px;
+            border-radius: var(--radius-sm);
+            border: 2px solid var(--cream-border);
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--forest-mid);
+            box-shadow: 3px 3px 0 var(--cream-border);
+        }
+
+        .details-feature i {
+            color: #8e44ad;
+            font-size: 1.2rem;
+        }
+
+        /* ─── ITINERARIO ─── */
+        .section-itinerary {
+            padding: 60px 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%23e2a02b' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E") var(--cream-warm);
+            border-top: 4px dashed var(--cream-border);
+            border-bottom: 4px dashed var(--cream-border);
+        }
+
+        .timeline-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-wrapper {
+                padding-left: 30px;
+            }
+        }
+
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 20px;
+            width: 4px;
+            background-image: linear-gradient(to bottom, var(--forest) 50%, transparent 50%);
+            background-size: 4px 20px;
+            background-repeat: repeat-y;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-wrapper::before {
+                left: 10px;
+            }
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-node {
+            position: absolute;
+            left: -48px;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background: var(--cream);
+            border: 3px solid var(--forest);
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-node {
+                left: -38px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .timeline-item:hover .timeline-node {
+            background: var(--rust-mustard);
+            transform: rotate(135deg) scale(1.1);
+        }
+
+        .timeline-node span {
+            transform: rotate(-45deg);
+            font-weight: 900;
+            font-size: 0.9rem;
+            color: var(--forest);
+        }
+
+        .timeline-item:hover .timeline-node span {
+            transform: rotate(-135deg);
+        }
+
+        .timeline-content {
+            background: white;
+            border: 2px solid var(--forest);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .timeline-content:hover {
+            box-shadow: var(--shadow-solid-md);
+            transform: translateY(-5px);
+            border-color: var(--terracotta);
+        }
+
+        .timeline-item:nth-child(1) .timeline-content {
+            border-top: 6px solid #8e44ad;
+        }
+
+        .timeline-item:nth-child(2) .timeline-content {
+            border-top: 6px solid var(--andes-sky);
+        }
+
+        .timeline-item:nth-child(3) .timeline-content {
+            border-top: 6px solid var(--terracotta);
+        }
+
+        .timeline-item:nth-child(4) .timeline-content {
+            border-top: 6px solid var(--rust-mustard);
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .day-title {
+            font-size: 1.6rem;
+            color: var(--forest);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+        }
+
+        .day-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--forest);
+            border: 1px solid var(--forest-light);
+            text-transform: uppercase;
+        }
+
+        .day-desc {
+            font-size: 0.95rem;
+            color: var(--forest-light);
+            font-weight: 600;
+            line-height: 1.7;
+        }
+
+        /* ─── INCLUSIONES / EXCLUSIONES ─── */
+        .section-details-includes {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 800px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .detail-box {
+            background: white;
+            border: 2px dashed var(--forest-light);
+            border-radius: var(--radius-md);
+            padding: 35px 30px;
+            position: relative;
+        }
+
+        .detail-box::before {
+            content: '📌';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+        }
+
+        .detail-title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--forest);
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .detail-list {
+            list-style: none;
+        }
+
+        .detail-list li {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--forest-mid);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .detail-list.inc li i {
+            color: var(--andes-green);
+            margin-top: 4px;
+        }
+
+        .detail-list.exc li i {
+            color: var(--inca-red);
+            margin-top: 4px;
+        }
+
+        /* ─── QUÉ LLEVAR (POST-ITS) ─── */
+        .section-bring {
+            padding: 40px 0 80px;
+        }
+
+        .bring-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        @media (max-width: 900px) {
+            .bring-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .bring-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bring-card {
+            background: #fffdf5;
+            padding: 25px 20px;
+            border: 1px solid #e0d0b8;
+            box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .bring-card:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+
+        .bring-card:nth-child(even) {
+            transform: rotate(2deg);
+            background: #fdf5ea;
+        }
+
+        .bring-card::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 50px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .bring-card:hover {
+            transform: translateY(-5px) rotate(0deg);
+            box-shadow: 8px 8px 0 var(--forest);
+            border-color: var(--forest);
+            z-index: 2;
+        }
+
+        .bring-icon {
+            font-size: 2.2rem;
+            color: var(--terracotta);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .bring-card h4 {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--forest);
+            font-weight: 800;
+        }
+
+        /* ─── GALERÍA SWIPER 3D ─── */
+        .section-gallery {
+            padding: 80px 0;
+            background: var(--deep);
+            color: white;
+            text-align: center;
+            border-bottom: 4px dashed var(--rust-mustard);
+        }
+
+        .gallery-title {
+            color: var(--cream);
+            margin-bottom: 40px;
+        }
+
+        .swiper {
+            width: 280px;
+            height: 380px;
+        }
+
+        @media (min-width: 600px) {
+            .swiper {
+                width: 320px;
+                height: 420px;
+            }
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background-color: #fff;
+            padding: 10px 10px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #ccc;
+            position: relative;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: sepia(0.2) contrast(1.1);
+        }
+
+        .polaroid-text {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: var(--forest);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        /* ─── TESTIMONIOS ─── */
+        .section-testimonials {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .testim-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .testim-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-card {
+            background: #fffdf5;
+            padding: 30px 25px;
+            border: 2px solid var(--forest);
+            border-radius: 8px;
+            box-shadow: var(--shadow-solid-sm);
+            position: relative;
+            transition: var(--transition);
+            transform: rotate(-1.5deg);
+        }
+
+        .testimonial-card:nth-child(even) {
+            transform: rotate(1.5deg);
+            background: #fdf5ea;
+            box-shadow: 4px 4px 0 var(--rust-mustard);
+        }
+
+        .testimonial-card:nth-child(3) {
+            transform: rotate(-2deg);
+            box-shadow: 4px 4px 0 #8e44ad;
+        }
+
+        .testimonial-card::before {
+            content: '';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 60px;
+            height: 22px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-10px) rotate(0deg);
+            z-index: 2;
+            box-shadow: 8px 8px 0 var(--forest);
+        }
+
+        .quote-icon {
+            font-size: 2.5rem;
+            color: var(--rust-mustard);
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+
+        .testim-text {
+            font-size: 1rem;
+            color: var(--forest-mid);
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        .testim-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-top: 2px dashed var(--cream-border);
+            padding-top: 20px;
+        }
+
+        .testim-avatar {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            border: 2px solid var(--forest);
+            object-fit: cover;
+        }
+
+        .testim-info h5 {
+            font-size: 1.05rem;
+            color: var(--forest);
+            font-weight: 800;
+        }
+
+        .testim-info p {
+            font-size: 0.8rem;
+            color: var(--forest-light);
+            font-weight: 700;
+        }
+
+        .testim-rating {
+            color: var(--rust-mustard);
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        /* ─── PREGUNTAS FRECUENTES ─── */
+        .section-faq {
+            padding: 60px 0 80px;
+            background: var(--cream-warm);
+            border-top: 4px dashed var(--cream-border);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 40px auto 0;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 15px;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--cream-border);
+            box-shadow: var(--shadow-solid-sm);
+        }
+
+        .faq-question {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: none;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: var(--forest);
+            cursor: pointer;
+            text-align: left;
+            padding: 20px;
+            font-family: 'Nunito', sans-serif;
+            transition: color 0.3s;
+        }
+
+        .faq-question:hover {
+            color: #8e44ad;
+        }
+
+        .faq-question i {
+            font-size: 1.2rem;
+            color: var(--rust-mustard);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: #8e44ad;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .faq-answer p {
+            padding: 0 20px 20px 20px;
+            font-size: 1rem;
+            color: var(--forest-light);
+            line-height: 1.6;
+            font-weight: 600;
+        }
+
+        /* ─── CTA ─── */
+        .section-cta-bottom {
+            padding: 80px 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%233a2e24' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E") var(--cream);
+            text-align: center;
+            position: relative;
+        }
+
+        /* ─── FOOTER ─── */
+        .footer-futurista {
+            position: relative;
+            padding: 60px 0 25px;
+            overflow: hidden;
+            color: white;
+            background: #111;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .footer-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .footer-video-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer-overlay-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44, 36, 24, 0.95), rgba(58, 46, 36, 0.93));
+            z-index: 1;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .futurista-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1024px) {
+            .futurista-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .futurista-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .futurista-col {
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(184, 134, 11, 0.12);
+            transition: var(--transition);
+        }
+
+        .futurista-col:hover {
+            transform: translateY(-4px);
+            border-color: rgba(184, 134, 11, 0.3);
+        }
+
+        .footer-glow-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.12), rgba(184, 134, 11, 0.04));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .footer-glow-icon i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .futurista-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        .futurista-links,
+        .futurista-contact {
+            list-style: none;
+        }
+
+        .futurista-links li {
+            margin-bottom: 8px;
+        }
+
+        .futurista-links a {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.78rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+
+        .futurista-links a::before {
+            content: '›';
+            color: var(--gold);
+            opacity: 0;
+            transition: 0.2s;
+        }
+
+        .futurista-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .futurista-links a:hover::before {
+            opacity: 1;
+        }
+
+        .futurista-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 600;
+        }
+
+        .futurista-contact li i {
+            color: var(--gold);
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        .footer-phones {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .futurista-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 25px;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.4), transparent);
+        }
+
+        .divider-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(184, 134, 11, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .divider-icon i {
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        .futurista-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        @media (max-width: 640px) {
+            .futurista-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .futurista-copyright {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.45);
+            font-weight: 600;
+        }
+
+        .futurista-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .futurista-social a {
+            width: 34px;
+            height: 34px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            transition: var(--transition);
+            border: 1px solid rgba(184, 134, 11, 0.15);
+        }
+
+        .futurista-social a:hover {
+            color: var(--deep);
+            background: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            z-index: 1000;
+            border: 2px solid white;
+        }
+
+        .fab-whatsapp:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SKELETON LOADER -->
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-navbar"></div>
+        <div class="skeleton-hero"></div>
+    </div>
+
+    <!-- CABECERA -->
+    <header class="main-header" id="mainHeader">
+        <div class="main-navbar">
+            <div class="nav-flex">
+                <div class="logo-area">
+                    <a href="../index.html">
+                        <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel" class="logo-img"
+                            onerror="this.src='https://placehold.co/280x90?text=Explore+Peru'">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html" data-key="home">INICIO</a></li>
+                    <li><a href="../nosotros.html" data-key="about">NOSOTROS</a></li>
+                    <li class="current menu-item-has-children">
+                        <a href="../tours.html" data-key="tours">TOURS <i class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="Paquete Cusco Basico.html" data-key="navT1">Paquete Cusco Básico (3D/2N)</a>
+                            </li>
+                            <li><a href="Paquete Cusco Clásico.html" data-key="navT2">Paquete Cusco Clásico (4D/3N)</a>
+                            </li>
+                            <li><a href="Paquete Cusco Arqueologico.html" data-key="navT3">Paquete Cusco Arqueológico
+                                    (5D/4N)</a></li>
+                            <li><a href="Paquete Experiencia Cusco Total.html" data-key="navT4">Paquete Experiencia
+                                    Cusco Total (6D/5N)</a></li>
+                            <li><a href="Inka Jungle.html" data-key="navT5">Inka Jungle (4D/3N)</a></li>
+                            <li><a href="Paquete_Desafio_Andino_Salkantay_Trek.html" data-key="navT6">Salkantay Trek
+                                    (5D/4N)</a></li>
+                            <li><a href="Camino Inca Clasico.html" data-key="navT7">Camino Inca Clásico (4D/3N)</a></li>
+                            <li><a href="Trekking Choquequirao.html" data-key="navT8">Trekking Choquequirao Extremo
+                                    (4D/3N)</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../tours-cortos.html" data-key="shortTours">TOURS CORTOS <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../tours cortos/City Tour Cusco.html" data-key="shortTour1">City Tour Cusco
+                                    (Medio Día)</a></li>
+                            <li><a href="../tours cortos/Tour Chinchero, Maras y Moray.html"
+                                    data-key="shortTour2">Chinchero, Maras y Moray</a></li>
+                            <li><a href="../tours cortos/Tour Valle Sur Cusco.html" data-key="shortTour3">Valle Sur
+                                    Cusco (Medio Día)</a></li>
+                            <li><a href="../tours cortos/Tour Valle Sagrado de los Incas.html"
+                                    data-key="shortTour4">Valle Sagrado (Full Day)</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../viajes escolares/escolar-imperial.html" data-key="school1">Ruta Imperial:
+                                    Arequipa - Cusco - Oxapampa | 6D/5N</a></li>
+                            <li><a href="../viajes escolares/escolar-sur-chile.html" data-key="school2">Ruta al Sur:
+                                    Chile - Santiago | 5D/4N</a></li>
+                            <li><a href="../viajes escolares/escolar-norte-ecuador.html" data-key="school3">Ruta al
+                                    Norte: Tumbes - Guayaquil | 5D/4N</a></li>
+                            <li><a href="../viajes escolares/escolar-cusco-selva.html" data-key="school4">Cusco - Machu
+                                    Picchu - Selva | 5D/4N</a></li>
+                            <li><a href="../viajes escolares/escolar-cusco-machupicchu.html" data-key="school5">Cusco -
+                                    Machu Picchu (Tren) | 2D/1N</a></li>
+                            <li><a href="../viajes escolares/escolar-lima-ica-paracas.html" data-key="school6">Lima -
+                                    Ica - Huacachina | 3D/2N</a></li>
+                            <li><a href="../viajes escolares/escolar-arica-chile.html" data-key="school7">Arica - Chile
+                                    | 4D/3N</a></li>
+                            <li><a href="../viajes escolares/escolar-norte-peruano.html" data-key="school8">Norte
+                                    Peruano: Chiclayo - Máncora | 6D/5N</a></li>
+                            <li><a href="../viajes escolares/escolar-lima-oxapampa.html" data-key="school9">Lima y
+                                    Oxapampa | 5D/4N</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../aventuras.html" data-key="adventure">AVENTURA <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../aventuras/Aventura en Cuatrimotos.html" data-key="adv1">Cuatrimotos - Maras
+                                    y Moray</a></li>
+                            <li><a href="../aventuras/Vía Ferrata y Zipline.html" data-key="adv2">Vía Ferrata y
+                                    Zipline</a></li>
+                            <li><a href="../aventuras/Canotaje (Rafting).html" data-key="adv3">Rafting en el Río
+                                    Vilcanota</a></li>
+                            <li><a href="../aventuras/Bungee Jumping.html" data-key="adv4">Bungee Jumping y
+                                    Slingshot</a></li>
+                            <li><a href="../aventuras/Parapente sobre el valle sagrado.html" data-key="adv5">Parapente
+                                    sobre el Valle Sagrado</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contacto.html" data-key="contact">CONTACTO</a></li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-tour">
+            <div class="hero-bg"></div>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content" data-aos="zoom-in" data-aos-duration="1200">
+                <span class="hero-pre" data-key="incaHeroPre">🌟 LA RUTA LEGENDARIA</span>
+                <h1 class="hero-title serif-font">
+                    <span data-key="incaHeroT1">Camino Inca</span> <br>
+                    <span class="text-gradient" data-key="incaHeroT2">Clásico</span>
+                </h1>
+                <p class="hero-subtitle" data-key="incaHeroSub">
+                    Sigue los pasos de la realeza andina a través de las nubes y la historia hacia la ciudadela de Machu
+                    Picchu. 4 días de trekking por senderos ancestrales, ruinas exclusivas y paisajes de ensueño.
+                </p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#itinerario" class="btn-gold-solid">
+                        <i class="fas fa-map"></i> <span data-key="btnIti">Ver Itinerario</span>
+                    </a>
+                    <a href="#cotizar" class="btn-trail">
+                        <i class="fas fa-whatsapp"></i> <span data-key="btnReserve">Reservar Ahora</span>
+                    </a>
+                </div>
+            </div>
+            <div class="torn-paper"></div>
+        </section>
+
+        <!-- QUICK INFO -->
+        <div class="quick-info-wrapper">
+            <div class="quick-info-box" data-aos="fade-up">
+                <div class="qi-item">
+                    <div class="qi-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info1Title">Duración</h4>
+                        <p data-key="info1">4 Días / 3 Noches</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon" style="color: #8e44ad;"><i class="fas fa-hiking"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info2Title">Tipo</h4>
+                        <p data-key="info2">Trekking Cultural</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info3Title">Ubicación</h4>
+                        <p data-key="info3">Cusco - Machu Picchu</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon"><i class="fas fa-users"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info4Title">Grupo</h4>
+                        <p data-key="info4">Mínimo 2 Personas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WELCOME & BIG LOGO (SIN CÍRCULO, 500PX) -->
+        <section class="welcome-warm">
+            <div class="container" data-aos="fade-up">
+                <div class="big-logo-container">
+                    <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel Gran Logo" class="big-logo"
+                        onerror="this.src='https://placehold.co/500x150?text=EXPLORE+PERU+TRAVEL'">
+                </div>
+                <div class="welcome-text-wrapper">
+                    <h2 class="section-title" style="margin-bottom: 20px;"><span data-key="incaWelcomeT1">¡La
+                            ruta</span> <span class="text-gradient" data-key="incaWelcomeT2">legendaria te
+                            espera!</span></h2>
+                    <p data-key="incaWelcomeP1">En <strong>Explore Peru Travel</strong> sabemos que el Camino Inca
+                        Clásico es una experiencia única en la vida. Durante 4 días, caminarás por los mismos senderos
+                        de piedra que recorrieron los emperadores incas, atravesando bosques nubosos, pasos de alta
+                        montaña y ruinas arqueológicas que solo este camino puede revelar. La recompensa final: el
+                        amanecer en Machu Picchu desde la Puerta del Sol. Nosotros nos encargamos de los permisos, los
+                        guías y la logística; tú solo preocúpate de disfrutar el paisaje.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <section class="section-highlights">
+            <div class="container">
+                <div class="section-header" style="text-align:center; margin-bottom:50px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="incaHighTitle1">Lo mejor de este</span> <span
+                            class="text-gradient" data-key="incaHighTitle2">Camino</span></h2>
+                </div>
+                <div class="hl-grid">
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="hl-img">
+                            <img src="../tours_y_logos/Llactapata, Phuyupatamarca y Wiñay Wayna,.jpg"
+                                alt="Montañas andinas">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="incaHigh1T">Ruinas Exclusivas</h3>
+                            <p data-key="incaHigh1D">Llactapata, Phuyupatamarca y Wiñay Wayna, solo accesibles por este
+                                camino.</p>
+                        </div>
+                    </div>
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="hl-img">
+                            <img src="../tours_y_logos/Paso Warmiwañusca.jpeg" alt="Bosque nuboso">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="incaHigh2T">Paso Warmiwañusca</h3>
+                            <p data-key="incaHigh2D">El punto más alto a 4,215 msnm, con vistas espectaculares.</p>
+                        </div>
+                    </div>
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="hl-img">
+                            <img src="../tours_y_logos/Puerta del Sol.jpeg" alt="Machu Picchu">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="incaHigh3T">Puerta del Sol</h3>
+                            <p data-key="incaHigh3D">El amanecer triunfal sobre Machu Picchu, la recompensa final.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COLLAGE DE IMÁGENES -->
+        <section class="section-collage">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:40px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="collageTitle1">Postales del</span> <span
+                            class="text-gradient" data-key="collageTitle2">Camino</span></h2>
+                </div>
+                <div class="collage-grid" data-aos="zoom-in">
+                    <div class="collage-item">
+                        <video autoplay muted loop playsinline style="width:100%; height:100%; object-fit:cover;">
+                            <source src="../tours_y_logos/camino inca video collage.mp4" type="video/mp4">
+                            <!-- Fallback: si el video no se reproduce, muestra la imagen -->
+                            <img src="https://images.unsplash.com/photo-1587595431973-160d0d94add1?q=80&w=600"
+                                alt="Machu Picchu">
+                        </video>
+                    </div>
+                    <div class="collage-item"><img src="../tours_y_logos/montañas.jpg" alt="Montañas"></div>
+                    <div class="collage-item"><img src="../tours_y_logos/ruinas.jpg" alt="Ruinas">
+                    </div>
+                    <div class="collage-item"><img src="../tours_y_logos/bosque nuboso.jpg" alt="Bosque nuboso"></div>
+                    <div class="collage-item"><img src="../tours_y_logos/tren collage.jpg" alt="Tren">
+                    </div>
+                    <div class="collage-item"><img src="../tours_y_logos/Aislamiento y Naturaleza.jpeg"
+                            alt="Naturaleza"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE DETALLES -->
+        <section class="section-details" id="itinerario">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:40px;" data-aos="fade-up">
+                    <span class="pre-title" data-key="detailsPre">LA RUTA</span>
+                    <h2 class="section-title"><span data-key="detailsT1">Tu Itinerario</span> <span
+                            class="text-gradient" data-key="detailsT2">del Camino</span></h2>
+                </div>
+                <div class="details-grid">
+                    <div class="details-image" data-aos="fade-right">
+                        <img src="../tours_y_logos/Camino Inca 4 Días 2.jpg" alt="Camino Inca">
+                    </div>
+                    <div class="details-content" data-aos="fade-left">
+                        <h3 data-key="detailsTitle">La <span class="highlight">ruta</span> de los incas</h3>
+                        <p data-key="detailsDesc">El Camino Inca Clásico es la ruta de senderismo más famosa de
+                            Sudamérica. Durante 4 días, caminarás 43 kilómetros a través de la cordillera de los Andes,
+                            cruzando bosques nubosos y pasos de alta montaña, para llegar finalmente a la ciudadela de
+                            Machu Picchu a través de la Puerta del Sol. Esta ruta te lleva a través de una increíble
+                            variedad de ecosistemas y te permite visitar ruinas incas que no son accesibles por otros
+                            medios.</p>
+                        <div class="details-features">
+                            <div class="details-feature"><i class="fas fa-route"></i> <span data-key="feat1">43
+                                    km</span></div>
+                            <div class="details-feature"><i class="fas fa-mountain"></i> <span data-key="feat2">4,215
+                                    msnm</span></div>
+                            <div class="details-feature"><i class="fas fa-monument"></i> <span data-key="feat3">6
+                                    Ruinas</span></div>
+                            <div class="details-feature"><i class="fas fa-landmark"></i> <span data-key="feat4">Machu
+                                    Picchu</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ITINERARIO COMPLETO -->
+        <section class="section-itinerary">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:50px;" data-aos="fade-up">
+                    <span class="pre-title" data-key="itiPre">DÍA A DÍA</span>
+                    <h2 class="section-title"><span data-key="itiTitle1">Itinerario</span> <span class="text-gradient"
+                            data-key="itiTitle2">Detallado</span></h2>
+                </div>
+
+                <div class="timeline-wrapper">
+                    <!-- Dia 1 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D1</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="incaDay1T">🚶 Cusco - Km 82 - Wayllabamba</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-bus"></i> Transporte</span>
+                                    <span class="tag"><i class="fas fa-hiking"></i> Trekking</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="incaDay1D">Recojo en tu hotel y traslado en bus al Km 82,
+                                punto de inicio del Camino Inca. Después del control oficial, comenzamos el trekking
+                                bordeando el río Urubamba. Visitaremos las ruinas de Llactapata, un importante centro
+                                administrativo inca. Caminata moderada de aproximadamente 5 horas hasta el campamento de
+                                Wayllabamba, donde pasaremos la primera noche.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dia 2 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D2</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="incaDay2T">⛰️ Wayllabamba - Warmiwañusca - Pacaymayo
+                                </h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-mountain"></i> Paso</span>
+                                    <span class="tag"><i class="fas fa-campground"></i> Campamento</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="incaDay2D">El día más desafiante. Después del desayuno,
+                                comenzamos el ascenso empinado hacia el Abra de Warmiwañusca, el punto más alto del
+                                Camino Inca a 4,215 msnm. La subida es exigente pero la vista desde la cima es
+                                espectacular. Descenderemos por escalinatas de piedra hasta el valle de Pacaymayo, donde
+                                instalaremos el campamento. En el camino, podremos avistar flora y fauna andina.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dia 3 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D3</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="incaDay3T">🌿 Pacaymayo - Phuyupatamarca - Wiñay Wayna
+                                </h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-cloud"></i> Bosque</span>
+                                    <span class="tag"><i class="fas fa-monument"></i> Ruinas</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="incaDay3D">Comenzamos cruzando el segundo y tercer paso
+                                montañoso, entrando al místico bosque nuboso. Visitaremos las ruinas de Runkurakay,
+                                Sayacmarca y Phuyupatamarca, conocida como "el pueblo sobre las nubes" por sus vistas
+                                espectaculares. Descenderemos hasta Wiñay Wayna, donde pasaremos la última noche en
+                                campamento, con las mejores vistas del valle.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dia 4 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>D4</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="incaDay4T">🏛️ Wiñay Wayna - Inti Punku - Machu Picchu -
+                                    Cusco</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-sun"></i> Amanecer</span>
+                                    <span class="tag"><i class="fas fa-train"></i> Tren</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="incaDay4D">Salida muy temprano con linternas frontales para
+                                llegar a la Puerta del Sol (Inti Punku) justo al amanecer. Desde aquí, tendremos la
+                                primera y más espectacular vista de Machu Picchu iluminada por los primeros rayos del
+                                sol. Tour guiado de 2 horas por la ciudadela, visitando el Templo del Sol, la
+                                Intihuatana y el Templo de las Tres Ventanas. Tiempo libre para fotos y exploración.
+                                Descenso a Aguas Calientes, almuerzo y tren de retorno a Ollantaytambo, luego bus a
+                                Cusco. Fin de la aventura.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INCLUSIONES / EXCLUSIONES -->
+        <section class="section-details-includes">
+            <div class="container">
+                <div class="details-grid">
+                    <div class="detail-box" data-aos="fade-right">
+                        <h3 class="detail-title" data-key="incTitle">¿Qué Incluye?</h3>
+                        <ul class="detail-list inc">
+                            <li><i class="fas fa-check"></i> <span data-key="incaInc1">Briefing previo al viaje (1-2
+                                    días antes).</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="incaInc2">Permiso oficial del Camino
+                                    Inca.</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="incaInc3">Transporte Cusco - Km 82
+                                    (ida).</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="incaInc4">Guía profesional bilingüe.</span>
+                            </li>
+                            <li><i class="fas fa-check"></i> <span data-key="incaInc5">Porteadores (equipo de campamento
+                                    y comida).</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="incaInc6">Alimentación durante el trekking
+                                    (3 desayunos, 3 almuerzos, 3 cenas).</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="incaInc7">Equipo de campamento (carpas,
+                                    colchonetas).</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="incaInc8">Entrada a Machu Picchu.</span>
+                            </li>
+                            <li><i class="fas fa-check"></i> <span data-key="incaInc9">Tren de retorno a Ollantaytambo y
+                                    bus a Cusco.</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="incaInc10">Botiquín de primeros auxilios y
+                                    oxígeno.</span></li>
+                        </ul>
+                    </div>
+                    <div class="detail-box" data-aos="fade-left">
+                        <h3 class="detail-title" data-key="excTitle">Condiciones Generales</h3>
+                        <ul class="detail-list exc">
+                            <li><i class="fas fa-times"></i> <span data-key="incaExc1">Precios no incluyen IGV.</span>
+                            </li>
+                            <li><i class="fas fa-times"></i> <span data-key="incaExc2">Mínimo 2 personas.</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="incaExc3">Reserva con 5-6 meses de
+                                    anticipación.</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="incaExc4">Cancelaciones con 30 días de
+                                    anticipación sin penalidad.</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="incaExc5">Cupos limitados (500
+                                    personas/día).</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="incaExc6">Seguro de viaje
+                                    recomendado.</span></li>
+                        </ul>
+                        <a href="https://wa.me/51930164904?text=Hola%2C%20estoy%20interesado%20en%20el%20Camino%20Inca%20Cl%C3%A1sico%20(4D%2F3N)%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n"
+                            target="_blank" class="btn-trail"
+                            style="display: block; margin-top: 30px; text-align: center; justify-content: center;">
+                            <i class="fab fa-whatsapp"></i> <span data-key="btnCotizar">Cotizar por WhatsApp</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUÉ LLEVAR -->
+        <section class="section-bring">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:50px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="bringTitle1">La Maleta del</span> <span
+                            class="text-gradient" data-key="bringTitle2">Viajero</span></h2>
+                </div>
+                <div class="bring-grid">
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="50">
+                        <div class="bring-icon"><i class="fas fa-passport"></i></div>
+                        <h4 data-key="incaBring1">Pasaporte Original</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="bring-icon"><i class="fas fa-shoe-prints"></i></div>
+                        <h4 data-key="incaBring2">Zapatos de Trekking</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="150">
+                        <div class="bring-icon"><i class="fas fa-cloud-showers-heavy"></i></div>
+                        <h4 data-key="incaBring3">Poncho de Lluvia</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="bring-icon"><i class="fas fa-headlamp"></i></div>
+                        <h4 data-key="incaBring4">Linterna Frontal</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="250">
+                        <div class="bring-icon"><i class="fas fa-bug"></i></div>
+                        <h4 data-key="incaBring5">Repelente (15% DEET)</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="300">
+                        <div class="bring-icon"><i class="fas fa-bed"></i></div>
+                        <h4 data-key="incaBring6">Bolsa de Dormir</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="350">
+                        <div class="bring-icon"><i class="fas fa-bottle-water"></i></div>
+                        <h4 data-key="incaBring7">Cantimplora</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="400">
+                        <div class="bring-icon"><i class="fas fa-sun"></i></div>
+                        <h4 data-key="incaBring8">Bloqueador Solar</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- TESTIMONIOS -->
+        <section class="section-testimonials">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:40px;" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="testimTitle1">Lo que opinan</span> <span
+                            class="text-gradient" data-key="testimTitle2">nuestros viajeros</span></h2>
+                </div>
+                <div class="testim-grid">
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testim-text" data-key="testim1">"El Camino Inca fue una experiencia transformadora.
+                            Caminar por los mismos senderos que los incas, ver el amanecer en la Puerta del Sol y llegar
+                            a Machu Picchu... no hay palabras para describirlo. Nuestro guía, los porteadores y la
+                            organización de Explore Peru Travel hicieron que todo fuera perfecto. ¡100% recomendado!"
+                        </p>
+                        <div class="testim-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150"
+                                alt="Alejandro" class="testim-avatar">
+                            <div class="testim-info">
+                                <h5>Alejandro R.</h5>
+                                <p data-key="testim1Role">Viajero / España</p>
+                                <div class="testim-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testim-text" data-key="testim2">"La caminata es exigente pero la recompensa vale cada
+                            paso. El paso Warmiwañusca es duro, pero la vista desde la cima es espectacular. Los guías
+                            muy profesionales y la comida caliente en el campamento fue un gran detalle. ¡Sin duda, lo
+                            mejor de nuestro viaje a Perú!"</p>
+                        <div class="testim-author">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150" alt="María"
+                                class="testim-avatar">
+                            <div class="testim-info">
+                                <h5>María F.</h5>
+                                <p data-key="testim2Role">Viajera / Argentina</p>
+                                <div class="testim-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testim-text" data-key="testim3">"La organización fue impecable desde el primer día. El
+                            guía era muy conocedor y nos explicó la historia de cada ruina. Los campamentos eran cómodos
+                            y la comida deliciosa. Llegar a la Puerta del Sol al amanecer fue uno de los momentos más
+                            hermosos de mi vida. ¡Gracias Explore Peru Travel!"</p>
+                        <div class="testim-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150" alt="Laura"
+                                class="testim-avatar">
+                            <div class="testim-info">
+                                <h5>Laura G.</h5>
+                                <p data-key="testim3Role">Viajera / Chile</p>
+                                <div class="testim-rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star"></i><i class="fas fa-star"></i><i
+                                        class="fas fa-star-half-alt"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PREGUNTAS FRECUENTES -->
+        <section class="section-faq">
+            <div class="container">
+                <div style="text-align:center; margin-bottom:40px;" data-aos="fade-up">
+                    <span class="pre-title" data-key="faqPre">DUDAS FRECUENTES</span>
+                    <h2 class="section-title" data-key="faqTitle">Preguntas Frecuentes</h2>
+                </div>
+                <div class="faq-container">
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                        <button class="faq-question"><span data-key="faqQ1">¿Con cuánta anticipación debo reservar el
+                                Camino Inca?</span> <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer">
+                            <p data-key="faqA1">Debido a que el Gobierno Peruano limita el acceso a 500 personas por día
+                                (incluyendo guías y porteadores), es estrictamente necesario reservar con al menos 5 o 6
+                                meses de anticipación, especialmente para la temporada alta (mayo a septiembre).</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                        <button class="faq-question"><span data-key="faqQ2">¿Hay baños a lo largo del sendero?</span> <i
+                                class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer">
+                            <p data-key="faqA2">Sí, existen baños construidos por el Ministerio de Cultura en los
+                                campamentos y en algunos puntos de almuerzo. Sin embargo, no siempre están en las
+                                mejores condiciones. Recomendamos llevar siempre tu propio papel higiénico y alcohol en
+                                gel.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                        <button class="faq-question"><span data-key="faqQ3">¿Qué pasa si no hay espacios disponibles
+                                para mis fechas?</span> <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer">
+                            <p data-key="faqA3">Si el Camino Inca Clásico está agotado, te recomendamos fuertemente
+                                tomar rutas alternativas igual de espectaculares, como el Salkantay Trek (5 días) o el
+                                Inca Jungle Trek, los cuales siempre tienen disponibilidad y también terminan en Machu
+                                Picchu.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+                        <button class="faq-question"><span data-key="faqQ4">¿Puedo contratar un porteador extra para mis
+                                cosas?</span> <i class="fas fa-chevron-down"></i></button>
+                        <div class="faq-answer">
+                            <p data-key="faqA4">Sí, puedes contratar un porteador adicional para llevar tu mochila
+                                personal (hasta 7 kg). El costo adicional es de aproximadamente $70 USD por todo el
+                                trekking. Recomendamos hacerlo con anticipación.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BOTTOM -->
+        <section class="section-cta-bottom" id="cotizar">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title"><span data-key="incaCta1">¿Listos para la</span> <span class="text-gradient"
+                        data-key="incaCta2">ruta legendaria?</span></h2>
+                <p style="margin-bottom: 25px; color: var(--forest-light); font-weight: 600;" data-key="incaCtaDesc">
+                    No dejes pasar la oportunidad de vivir esta experiencia única. Reserva ahora y asegura tu lugar en
+                    el Camino Inca Clásico.
+                </p>
+                <a href="https://wa.me/51930164904" target="_blank" class="btn-trail">
+                    <i class="fab fa-whatsapp"></i> <span data-key="btnReserve">Reservar Ahora</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-futurista">
+        <div class="footer-bg">
+            <video autoplay muted loop playsinline class="footer-video-bg">
+                <source src="../tours_y_logos/footer.mp4" type="video/mp4">
+            </video>
+            <div class="footer-overlay-gradient"></div>
+        </div>
+        <div class="container footer-container">
+            <div class="footer-grid futurista-grid">
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-compass"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerAboutTitle">QUIENES SOMOS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../nosotros.html" data-key="footerAboutUs">Sobre nosotros</a></li>
+                        <li><a href="../politicas-pago.html" data-key="footerConditions">Condiciones de venta</a></li>
+                        <li><a href="../politicas-pago.html" data-key="footerPayments">Formas de pago</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerMenuTitle">MENÚ PRINCIPAL</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../index.html" data-key="home">INICIO</a></li>
+                        <li><a href="../nosotros.html" data-key="about">NOSOTROS</a></li>
+                        <li><a href="../tours.html" data-key="tours">TOURS</a></li>
+                        <li><a href="../tours-cortos.html" data-key="shortTours">TOURS CORTOS</a></li>
+                        <li><a href="../viajes-escolares.html" data-key="schoolTrips">VIAJES ESCOLARES</a></li>
+                        <li><a href="../aventuras.html" data-key="adventure">AVENTURA</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="policiesTitle">POLÍTICAS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../politicas-pago.html" data-key="policy1">Políticas y Condiciones de Pago</a></li>
+                        <li><a href="../proteccion-datos.html" data-key="policy2">Protección de Datos Personales</a>
+                        </li>
+                        <li><a href="../prevencion-esnna.html" data-key="policy3">Prevención de la ESNNA en turismo</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerContactTitle">CONTÁCTENOS</h3>
+                    <ul class="footer-contact-list futurista-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span data-key="footerAddress">Urbanización Tito
+                                Z-26<br>Wanchag - Cusco</span></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:exploreperutravel@gmail.com">exploreperutravel@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i>
+                            <div class="footer-phones"><span>+51 930 164 904</span><span>+51 984 764 403</span><span>+51
+                                    986 530 343</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider futurista-divider">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fas fa-star-of-life"></i></div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="footer-bottom futurista-bottom">
+                <p class="copyright futurista-copyright" data-key="footerCopyright">© 2026 EXPLORE PERU TRAVEL | Agencia
+                    de Viajes y Turismo</p>
+                <div class="footer-social futurista-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/51930164904" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB WHATSAPP -->
+    <a href="https://wa.me/51930164904" class="fab-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- LIBRERÍAS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // AOS
+            if (typeof AOS !== 'undefined') AOS.init({ duration: 800, once: true, offset: 40 });
+
+            // SKELETON
+            const skeletonLoader = document.getElementById('skeletonLoader');
+            if (skeletonLoader) {
+                const hideSkeleton = () => {
+                    if (!skeletonLoader.classList.contains('hide')) {
+                        skeletonLoader.classList.add('hide');
+                        setTimeout(() => { if (skeletonLoader.parentNode) skeletonLoader.remove(); }, 500);
+                    }
+                };
+                window.addEventListener('load', hideSkeleton);
+                setTimeout(hideSkeleton, 1200);
+            }
+
+            // HEADER SCROLL
+            const header = document.getElementById('mainHeader');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) header.classList.add('scrolled');
+                    else header.classList.remove('scrolled');
+                });
+            }
+
+            // MOBILE MENU
+            const hamburger = document.getElementById('hamburger');
+            if (hamburger && !document.querySelector('.mobile-menu')) {
+                const mobileMenuOverlay = document.createElement('div');
+                mobileMenuOverlay.className = 'mobile-menu-overlay';
+                const mobileMenu = document.createElement('div');
+                mobileMenu.className = 'mobile-menu';
+
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'mobile-menu-close';
+                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                mobileMenu.appendChild(closeBtn);
+
+                const navMenu = document.querySelector('.nav-menu');
+                const mobileNavList = document.createElement('ul');
+                mobileNavList.style.listStyle = 'none';
+                mobileNavList.style.marginTop = '20px';
+
+                if (navMenu) {
+                    const navLinks = navMenu.querySelectorAll('li');
+                    navLinks.forEach(li => {
+                        if (li.parentElement === navMenu) {
+                            const a = li.querySelector('a');
+                            if (a) {
+                                const liCopy = document.createElement('li');
+                                liCopy.style.marginBottom = '15px';
+                                const aCopy = document.createElement('a');
+                                aCopy.href = a.href;
+                                aCopy.innerHTML = a.innerHTML;
+                                aCopy.style.color = 'var(--forest)';
+                                aCopy.style.fontWeight = '800';
+                                aCopy.style.fontFamily = "'Nunito', sans-serif";
+                                aCopy.style.textDecoration = 'none';
+                                liCopy.appendChild(aCopy);
+                                mobileNavList.appendChild(liCopy);
+                            }
+                        }
+                    });
+                }
+                mobileMenu.appendChild(mobileNavList);
+                document.body.appendChild(mobileMenuOverlay);
+                document.body.appendChild(mobileMenu);
+
+                function toggleMobileMenu() {
+                    hamburger.classList.toggle('open');
+                    mobileMenu.classList.toggle('open');
+                    mobileMenuOverlay.classList.toggle('open');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                }
+
+                hamburger.addEventListener('click', toggleMobileMenu);
+                closeBtn.addEventListener('click', toggleMobileMenu);
+                mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+            }
+
+            // SWIPER
+            if (typeof Swiper !== 'undefined') {
+                new Swiper(".mySwiper", {
+                    effect: "cards",
+                    grabCursor: true,
+                    loop: true,
+                    autoplay: { delay: 3000, disableOnInteraction: false }
+                });
+            }
+
+            // FAQ
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    faqItems.forEach(faq => {
+                        faq.classList.remove('active');
+                        faq.querySelector('.faq-answer').style.maxHeight = null;
+                    });
+                    if (!isActive) {
+                        item.classList.add('active');
+                        const answer = item.querySelector('.faq-answer');
+                        answer.style.maxHeight = answer.scrollHeight + "px";
+                    }
+                });
+            });
+
+            // TRADUCCIONES
+            const translations = {
+                es: {
+                    contact: "CONTACTO", about: "NOSOTROS", home: "INICIO", tours: "TOURS", shortTours: "TOURS CORTOS", schoolTrips: "VIAJES ESCOLARES", adventure: "AVENTURA",
+                    navT1: "Paquete Cusco Básico (3D/2N)", navT2: "Paquete Cusco Clásico (4D/3N)", navT3: "Paquete Cusco Arqueológico (5D/4N)", navT4: "Paquete Experiencia Cusco Total (6D/5N)", navT5: "Inka Jungle (4D/3N)", navT6: "Salkantay Trek (5D/4N)", navT7: "Camino Inca Clásico (4D/3N)", navT8: "Trekking Choquequirao Extremo (4D/3N)",
+                    shortTour1: "City Tour Cusco (Medio Día)", shortTour2: "Chinchero, Maras y Moray", shortTour3: "Valle Sur Cusco (Medio Día)", shortTour4: "Valle Sagrado (Full Day)",
+                    school1: "Ruta Imperial: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "Ruta al Sur: Chile - Santiago | 5D/4N", school3: "Ruta al Norte: Tumbes - Guayaquil | 5D/4N", school4: "Cusco - Machu Picchu - Selva | 5D/4N", school5: "Cusco - Machu Picchu (Tren) | 2D/1N", school6: "Lima - Ica - Huacachina | 3D/2N", school7: "Arica - Chile | 4D/3N", school8: "Norte Peruano: Chiclayo - Máncora | 6D/5N", school9: "Lima y Oxapampa | 5D/4N",
+                    adv1: "Cuatrimotos - Maras y Moray", adv2: "Vía Ferrata y Zipline", adv3: "Rafting en el Río Vilcanota", adv4: "Bungee Jumping y Slingshot", adv5: "Parapente sobre el Valle Sagrado",
+
+                    incaHeroPre: "🌟 LA RUTA LEGENDARIA", incaHeroT1: "Camino Inca", incaHeroT2: "Clásico",
+                    incaHeroSub: "Sigue los pasos de la realeza andina a través de las nubes y la historia hacia la ciudadela de Machu Picchu. 4 días de trekking por senderos ancestrales, ruinas exclusivas y paisajes de ensueño.",
+                    btnIti: "Ver Itinerario", btnReserve: "Reservar Ahora", btnCotizar: "Cotizar por WhatsApp",
+
+                    info1Title: "Duración", info1: "4 Días / 3 Noches", info2Title: "Tipo", info2: "Trekking Cultural", info3Title: "Ubicación", info3: "Cusco - Machu Picchu", info4Title: "Grupo", info4: "Mínimo 2 Personas",
+
+                    incaWelcomeT1: "¡La ruta", incaWelcomeT2: "legendaria te espera!",
+                    incaWelcomeP1: "En <strong>Explore Peru Travel</strong> sabemos que el Camino Inca Clásico es una experiencia única en la vida. Durante 4 días, caminarás por los mismos senderos de piedra que recorrieron los emperadores incas, atravesando bosques nubosos, pasos de alta montaña y ruinas arqueológicas que solo este camino puede revelar. La recompensa final: el amanecer en Machu Picchu desde la Puerta del Sol. Nosotros nos encargamos de los permisos, los guías y la logística; tú solo preocúpate de disfrutar el paisaje.",
+
+                    incaHighTitle1: "Lo mejor de este", incaHighTitle2: "Camino",
+                    incaHigh1T: "Ruinas Exclusivas", incaHigh1D: "Llactapata, Phuyupatamarca y Wiñay Wayna, solo accesibles por este camino.",
+                    incaHigh2T: "Paso Warmiwañusca", incaHigh2D: "El punto más alto a 4,215 msnm, con vistas espectaculares.",
+                    incaHigh3T: "Puerta del Sol", incaHigh3D: "El amanecer triunfal sobre Machu Picchu, la recompensa final.",
+
+                    collageTitle1: "Postales del", collageTitle2: "Camino",
+
+                    detailsPre: "LA RUTA", detailsT1: "Tu Itinerario", detailsT2: "del Camino",
+                    detailsTitle: "La <span class='highlight'>ruta</span> de los incas",
+                    detailsDesc: "El Camino Inca Clásico es la ruta de senderismo más famosa de Sudamérica. Durante 4 días, caminarás 43 kilómetros a través de la cordillera de los Andes, cruzando bosques nubosos y pasos de alta montaña, para llegar finalmente a la ciudadela de Machu Picchu a través de la Puerta del Sol. Esta ruta te lleva a través de una increíble variedad de ecosistemas y te permite visitar ruinas incas que no son accesibles por otros medios.",
+                    feat1: "43 km", feat2: "4,215 msnm", feat3: "6 Ruinas", feat4: "Machu Picchu",
+
+                    itiPre: "DÍA A DÍA", itiTitle1: "Itinerario", itiTitle2: "Detallado",
+                    incaDay1T: "🚶 Cusco - Km 82 - Wayllabamba",
+                    incaDay1D: "Recojo en tu hotel y traslado en bus al Km 82, punto de inicio del Camino Inca. Después del control oficial, comenzamos el trekking bordeando el río Urubamba. Visitaremos las ruinas de Llactapata, un importante centro administrativo inca. Caminata moderada de aproximadamente 5 horas hasta el campamento de Wayllabamba, donde pasaremos la primera noche.",
+                    incaDay2T: "⛰️ Wayllabamba - Warmiwañusca - Pacaymayo",
+                    incaDay2D: "El día más desafiante. Después del desayuno, comenzamos el ascenso empinado hacia el Abra de Warmiwañusca, el punto más alto del Camino Inca a 4,215 msnm. La subida es exigente pero la vista desde la cima es espectacular. Descenderemos por escalinatas de piedra hasta el valle de Pacaymayo, donde instalaremos el campamento. En el camino, podremos avistar flora y fauna andina.",
+                    incaDay3T: "🌿 Pacaymayo - Phuyupatamarca - Wiñay Wayna",
+                    incaDay3D: "Comenzamos cruzando el segundo y tercer paso montañoso, entrando al místico bosque nuboso. Visitaremos las ruinas de Runkurakay, Sayacmarca y Phuyupatamarca, conocida como 'el pueblo sobre las nubes' por sus vistas espectaculares. Descenderemos hasta Wiñay Wayna, donde pasaremos la última noche en campamento, con las mejores vistas del valle.",
+                    incaDay4T: "🏛️ Wiñay Wayna - Inti Punku - Machu Picchu - Cusco",
+                    incaDay4D: "Salida muy temprano con linternas frontales para llegar a la Puerta del Sol (Inti Punku) justo al amanecer. Desde aquí, tendremos la primera y más espectacular vista de Machu Picchu iluminada por los primeros rayos del sol. Tour guiado de 2 horas por la ciudadela, visitando el Templo del Sol, la Intihuatana y el Templo de las Tres Ventanas. Tiempo libre para fotos y exploración. Descenso a Aguas Calientes, almuerzo y tren de retorno a Ollantaytambo, luego bus a Cusco. Fin de la aventura.",
+
+                    incTitle: "¿Qué Incluye?", excTitle: "Condiciones Generales",
+                    incaInc1: "Briefing previo al viaje (1-2 días antes).",
+                    incaInc2: "Permiso oficial del Camino Inca.",
+                    incaInc3: "Transporte Cusco - Km 82 (ida).",
+                    incaInc4: "Guía profesional bilingüe.",
+                    incaInc5: "Porteadores (equipo de campamento y comida).",
+                    incaInc6: "Alimentación durante el trekking (3 desayunos, 3 almuerzos, 3 cenas).",
+                    incaInc7: "Equipo de campamento (carpas, colchonetas).",
+                    incaInc8: "Entrada a Machu Picchu.",
+                    incaInc9: "Tren de retorno a Ollantaytambo y bus a Cusco.",
+                    incaInc10: "Botiquín de primeros auxilios y oxígeno.",
+                    incaExc1: "Precios no incluyen IGV.",
+                    incaExc2: "Mínimo 2 personas.",
+                    incaExc3: "Reserva con 5-6 meses de anticipación.",
+                    incaExc4: "Cancelaciones con 30 días de anticipación sin penalidad.",
+                    incaExc5: "Cupos limitados (500 personas/día).",
+                    incaExc6: "Seguro de viaje recomendado.",
+
+                    bringTitle1: "La Maleta del", bringTitle2: "Viajero",
+                    incaBring1: "Pasaporte Original", incaBring2: "Zapatos de Trekking", incaBring3: "Poncho de Lluvia", incaBring4: "Linterna Frontal", incaBring5: "Repelente (15% DEET)", incaBring6: "Bolsa de Dormir", incaBring7: "Cantimplora", incaBring8: "Bloqueador Solar",
+
+                    incaGalTitle: "Postales del Camino", incaPhoto1: "Machu Picchu", incaPhoto2: "Cumbres Andinas", incaPhoto3: "Ruinas Incas", incaPhoto4: "Bosque Nuboso",
+
+                    testimTitle1: "Lo que opinan", testimTitle2: "nuestros viajeros",
+                    testim1: "\"El Camino Inca fue una experiencia transformadora. Caminar por los mismos senderos que los incas, ver el amanecer en la Puerta del Sol y llegar a Machu Picchu... no hay palabras para describirlo. Nuestro guía, los porteadores y la organización de Explore Peru Travel hicieron que todo fuera perfecto. ¡100% recomendado!\"", testim1Role: "Viajero / España",
+                    testim2: "\"La caminata es exigente pero la recompensa vale cada paso. El paso Warmiwañusca es duro, pero la vista desde la cima es espectacular. Los guías muy profesionales y la comida caliente en el campamento fue un gran detalle. ¡Sin duda, lo mejor de nuestro viaje a Perú!\"", testim2Role: "Viajera / Argentina",
+                    testim3: "\"La organización fue impecable desde el primer día. El guía era muy conocedor y nos explicó la historia de cada ruina. Los campamentos eran cómodos y la comida deliciosa. Llegar a la Puerta del Sol al amanecer fue uno de los momentos más hermosos de mi vida. ¡Gracias Explore Peru Travel!\"", testim3Role: "Viajera / Chile",
+
+                    faqPre: "DUDAS FRECUENTES", faqTitle: "Preguntas Frecuentes",
+                    faqQ1: "¿Con cuánta anticipación debo reservar el Camino Inca?", faqA1: "Debido a que el Gobierno Peruano limita el acceso a 500 personas por día (incluyendo guías y porteadores), es estrictamente necesario reservar con al menos 5 o 6 meses de anticipación, especialmente para la temporada alta (mayo a septiembre).",
+                    faqQ2: "¿Hay baños a lo largo del sendero?", faqA2: "Sí, existen baños construidos por el Ministerio de Cultura en los campamentos y en algunos puntos de almuerzo. Sin embargo, no siempre están en las mejores condiciones. Recomendamos llevar siempre tu propio papel higiénico y alcohol en gel.",
+                    faqQ3: "¿Qué pasa si no hay espacios disponibles para mis fechas?", faqA3: "Si el Camino Inca Clásico está agotado, te recomendamos fuertemente tomar rutas alternativas igual de espectaculares, como el Salkantay Trek (5 días) o el Inca Jungle Trek, los cuales siempre tienen disponibilidad y también terminan en Machu Picchu.",
+                    faqQ4: "¿Puedo contratar un porteador extra para mis cosas?", faqA4: "Sí, puedes contratar un porteador adicional para llevar tu mochila personal (hasta 7 kg). El costo adicional es de aproximadamente $70 USD por todo el trekking. Recomendamos hacerlo con anticipación.",
+
+                    incaCta1: "¿Listos para la", incaCta2: "ruta legendaria?", incaCtaDesc: "No dejes pasar la oportunidad de vivir esta experiencia única. Reserva ahora y asegura tu lugar en el Camino Inca Clásico.",
+
+                    footerAboutTitle: "QUIENES SOMOS", footerAboutUs: "Sobre nosotros", footerConditions: "Condiciones de venta", footerPayments: "Formas de pago",
+                    footerMenuTitle: "MENÚ PRINCIPAL", footerContactTitle: "CONTÁCTENOS",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Agencia de Viajes y Turismo",
+                    policiesTitle: "POLÍTICAS", policy1: "Políticas y Condiciones de Pago", policy2: "Protección de Datos Personales", policy3: "Prevención de la ESNNA en turismo"
+                },
+                en: {
+                    contact: "CONTACT", about: "ABOUT US", home: "HOME", tours: "TOURS", shortTours: "SHORT TOURS", schoolTrips: "SCHOOL TRIPS", adventure: "ADVENTURE",
+                    navT1: "Cusco Basic Package (3D/2N)", navT2: "Cusco Classic Package (4D/3N)", navT3: "Cusco Archaeological Package (5D/4N)", navT4: "Cusco Total Experience (6D/5N)", navT5: "Inka Jungle (4D/3N)", navT6: "Salkantay Trek (5D/4N)", navT7: "Classic Inca Trail (4D/3N)", navT8: "Extreme Choquequirao Trek (4D/3N)",
+                    shortTour1: "Cusco City Tour (Half Day)", shortTour2: "Chinchero, Maras & Moray", shortTour3: "Cusco South Valley (Half Day)", shortTour4: "Sacred Valley (Full Day)",
+                    school1: "Imperial Route: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "Southern Route: Chile - Santiago | 5D/4N", school3: "Northern Route: Tumbes - Guayaquil | 5D/4N", school4: "Cusco - Machu Picchu - Jungle | 5D/4N", school5: "Cusco - Machu Picchu (Train) | 2D/1N", school6: "Lima - Ica - Huacachina | 3D/2N", school7: "Arica - Chile | 4D/3N", school8: "Northern Peru: Chiclayo - Mancora | 6D/5N", school9: "Lima and Oxapampa | 5D/4N",
+                    adv1: "ATVs - Maras & Moray", adv2: "Via Ferrata and Zipline", adv3: "White Water Rafting", adv4: "Bungee Jumping and Slingshot", adv5: "Paragliding over Sacred Valley",
+
+                    incaHeroPre: "🌟 THE LEGENDARY ROUTE", incaHeroT1: "Classic", incaHeroT2: "Inca Trail",
+                    incaHeroSub: "Follow in the footsteps of Andean royalty through clouds and history to the Machu Picchu citadel. 4 days of trekking along ancestral trails, exclusive ruins, and dreamlike landscapes.",
+                    btnIti: "View Itinerary", btnReserve: "Book Now", btnCotizar: "Quote via WhatsApp",
+
+                    info1Title: "Duration", info1: "4 Days / 3 Nights", info2Title: "Type", info2: "Cultural Trekking", info3Title: "Location", info3: "Cusco - Machu Picchu", info4Title: "Group", info4: "Min. 2 People",
+
+                    incaWelcomeT1: "The", incaWelcomeT2: "legendary route awaits!",
+                    incaWelcomeP1: "At <strong>Explore Peru Travel</strong> we know the Classic Inca Trail is a once-in-a-lifetime experience. For 4 days, you will walk the same stone paths walked by Inca emperors, through cloud forests, high mountain passes, and archaeological ruins that only this trail can reveal. The final reward: sunrise over Machu Picchu from the Sun Gate. We take care of permits, guides, and logistics; you just focus on enjoying the landscape.",
+
+                    incaHighTitle1: "The best of this", incaHighTitle2: "Trail",
+                    incaHigh1T: "Exclusive Ruins", incaHigh1D: "Llactapata, Phuyupatamarca and Wiñay Wayna, only accessible by this trail.",
+                    incaHigh2T: "Warmiwañusca Pass", incaHigh2D: "The highest point at 4,215 masl, with spectacular views.",
+                    incaHigh3T: "Sun Gate", incaHigh3D: "The triumphant sunrise over Machu Picchu, the final reward.",
+
+                    collageTitle1: "Postcards from", collageTitle2: "the Trail",
+
+                    detailsPre: "THE ROUTE", detailsT1: "Your Trail", detailsT2: "Itinerary",
+                    detailsTitle: "The <span class='highlight'>Inca</span> route",
+                    detailsDesc: "The Classic Inca Trail is the most famous hiking route in South America. For 4 days, you will walk 43 kilometers through the Andes mountain range, crossing cloud forests and high mountain passes, to finally arrive at the Machu Picchu citadel through the Sun Gate. This route takes you through an incredible variety of ecosystems and allows you to visit Inca ruins that are not accessible by other means.",
+                    feat1: "43 km", feat2: "4,215 masl", feat3: "6 Ruins", feat4: "Machu Picchu",
+
+                    itiPre: "DAY BY DAY", itiTitle1: "Detailed", itiTitle2: "Itinerary",
+                    incaDay1T: "🚶 Cusco - Km 82 - Wayllabamba",
+                    incaDay1D: "Pick up from your hotel and bus transfer to Km 82, the starting point of the Inca Trail. After the official checkpoint, we begin the trekking along the Urubamba River. We will visit the Llactapata ruins, an important Inca administrative center. Moderate hike of approximately 5 hours to the Wayllabamba campsite, where we will spend the first night.",
+                    incaDay2T: "⛰️ Wayllabamba - Warmiwañusca - Pacaymayo",
+                    incaDay2D: "The most challenging day. After breakfast, we begin the steep ascent to the Warmiwañusca Pass, the highest point of the Inca Trail at 4,215 masl. The climb is demanding but the view from the top is spectacular. We will descend down stone steps to the Pacaymayo valley, where we will set up camp. Along the way, we can spot Andean flora and fauna.",
+                    incaDay3T: "🌿 Pacaymayo - Phuyupatamarca - Wiñay Wayna",
+                    incaDay3D: "We begin by crossing the second and third mountain passes, entering the mystical cloud forest. We will visit the ruins of Runkurakay, Sayacmarca and Phuyupatamarca, known as 'the town above the clouds' for its spectacular views. We will descend to Wiñay Wayna, where we will spend the last night in camp, with the best views of the valley.",
+                    incaDay4T: "🏛️ Wiñay Wayna - Inti Punku - Machu Picchu - Cusco",
+                    incaDay4D: "Very early departure with headlamps to arrive at the Sun Gate (Inti Punku) just at sunrise. From here, we will have the first and most spectacular view of Machu Picchu illuminated by the first rays of the sun. 2-hour guided tour of the citadel, visiting the Temple of the Sun, the Intihuatana, and the Temple of the Three Windows. Free time for photos and exploration. Descent to Aguas Calientes, lunch, and return train to Ollantaytambo, then bus to Cusco. End of the adventure.",
+
+                    incTitle: "What's Included?", excTitle: "General Conditions",
+                    incaInc1: "Pre-trip briefing (1-2 days before).",
+                    incaInc2: "Official Inca Trail Permit.",
+                    incaInc3: "Transport Cusco - Km 82 (one way).",
+                    incaInc4: "Professional bilingual guide.",
+                    incaInc5: "Porters (camping equipment and food).",
+                    incaInc6: "Meals during the trek (3 breakfasts, 3 lunches, 3 dinners).",
+                    incaInc7: "Camping equipment (tents, sleeping mats).",
+                    incaInc8: "Machu Picchu Entrance.",
+                    incaInc9: "Return train to Ollantaytambo and bus to Cusco.",
+                    incaInc10: "First aid kit and oxygen.",
+                    incaExc1: "Prices do not include IGV.",
+                    incaExc2: "Minimum 2 people.",
+                    incaExc3: "Booking 5-6 months in advance.",
+                    incaExc4: "Cancellations with 30 days notice without penalty.",
+                    incaExc5: "Limited spots (500 people/day).",
+                    incaExc6: "Travel insurance recommended.",
+
+                    bringTitle1: "The Traveler's", bringTitle2: "Suitcase",
+                    incaBring1: "Original Passport", incaBring2: "Trekking Shoes", incaBring3: "Rain Poncho", incaBring4: "Headlamp", incaBring5: "Repellent (15% DEET)", incaBring6: "Sleeping Bag", incaBring7: "Water Bottle", incaBring8: "Sunblock",
+
+                    incaGalTitle: "Trail Postcards", incaPhoto1: "Machu Picchu", incaPhoto2: "Andean Peaks", incaPhoto3: "Inca Ruins", incaPhoto4: "Cloud Forest",
+
+                    testimTitle1: "What our", testimTitle2: "travelers say",
+                    testim1: "\"The Inca Trail was a transformative experience. Walking the same paths as the Incas, watching the sunrise at the Sun Gate, and arriving at Machu Picchu... there are no words to describe it. Our guide, the porters, and the organization of Explore Peru Travel made everything perfect. 100% recommended!\"", testim1Role: "Traveler / Spain",
+                    testim2: "\"The hike is demanding but the reward is worth every step. The Warmiwañusca Pass is tough, but the view from the top is spectacular. The guides were very professional and the hot food at the camp was a great detail. Without a doubt, the best of our trip to Peru!\"", testim2Role: "Traveler / Argentina",
+                    testim3: "\"The organization was impeccable from day one. The guide was very knowledgeable and explained the history of each ruin. The camps were comfortable and the food delicious. Arriving at the Sun Gate at sunrise was one of the most beautiful moments of my life. Thank you Explore Peru Travel!\"", testim3Role: "Traveler / Chile",
+
+                    faqPre: "FAQ", faqTitle: "Frequently Asked Questions",
+                    faqQ1: "How far in advance should I book the Inca Trail?", faqA1: "Because the Peruvian Government limits access to 500 people per day (including guides and porters), it is strictly necessary to book at least 5 or 6 months in advance, especially for the high season (May to September).",
+                    faqQ2: "Are there bathrooms along the trail?", faqA2: "Yes, there are bathrooms built by the Ministry of Culture in the camps and at some lunch spots. However, they are not always in the best condition. We recommend always bringing your own toilet paper and hand sanitizer.",
+                    faqQ3: "What if there are no spaces available for my dates?", faqA3: "If the Classic Inca Trail is sold out, we strongly recommend taking equally spectacular alternative routes, such as the Salkantay Trek (5 days) or the Inca Jungle Trek, which always have availability and also end at Machu Picchu.",
+                    faqQ4: "Can I hire an extra porter for my things?", faqA4: "Yes, you can hire an additional porter to carry your personal backpack (up to 7 kg). The additional cost is approximately $70 USD for the entire trek. We recommend doing it in advance.",
+
+                    incaCta1: "Ready for the", incaCta2: "legendary route?", incaCtaDesc: "Don't miss the opportunity to live this unique experience. Book now and secure your spot on the Classic Inca Trail.",
+
+                    footerAboutTitle: "ABOUT US", footerAboutUs: "About us", footerConditions: "Terms and conditions", footerPayments: "Payment methods",
+                    footerMenuTitle: "MAIN MENU", footerContactTitle: "CONTACT US",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Travel and Tourism Agency",
+                    policiesTitle: "POLICIES", policy1: "Payment Policies", policy2: "Data Protection", policy3: "Child Protection in Tourism"
+                }
+            };
+
+            let currentLang = localStorage.getItem('preferredLang') || 'es';
+
+            function applyTranslations(lang) {
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    const translation = translations[lang]?.[key];
+                    if (translation) {
+                        if (el.tagName !== 'INPUT' && el.tagName !== 'TEXTAREA' && el.tagName !== 'SELECT' && el.tagName !== 'IMG') {
+                            const hasIcon = el.querySelector('i') || el.querySelector('.fas') || el.querySelector('.fab') || el.querySelector('.far');
+                            if (hasIcon) {
+                                let textNodeUpdated = false;
+                                for (let node of el.childNodes) {
+                                    if (node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '') {
+                                        if (!textNodeUpdated) {
+                                            node.textContent = translation + ' ';
+                                            textNodeUpdated = true;
+                                        } else {
+                                            node.textContent = '';
+                                        }
+                                    }
+                                }
+                                if (!textNodeUpdated) {
+                                    el.insertAdjacentText('afterbegin', translation + ' ');
+                                }
+                            } else {
+                                el.innerHTML = translation;
+                            }
+                        }
+                    }
+                });
+
+                currentLang = lang;
+                localStorage.setItem('preferredLang', lang);
+
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+            }
+
+            const langBtns = document.querySelectorAll('.lang-btn');
+            if (langBtns.length > 0) {
+                langBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const lang = btn.getAttribute('data-lang');
+                        applyTranslations(lang);
+                    });
+                });
+            }
+
+            applyTranslations(currentLang);
+        });
+    </script>
+</body>
+
+</html>
