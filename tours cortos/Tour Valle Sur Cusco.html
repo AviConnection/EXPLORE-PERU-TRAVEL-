@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="description"
+        content="Descubre el Valle Sur de Cusco. Visita Tipón, la joya de la ingeniería hidráulica Inca, Pikillacta y la Capilla Sixtina de América en Andahuaylillas.">
+    <title>Tour Valle Sur Cusco | Explore Peru Travel</title>
+
+    <link rel="icon" href="../tours_y_logos/logoprincipal.png" type="image/png">
+    <link rel="apple-touch-icon" href="../tours_y_logos/logoprincipal.png">
+
+    <!-- Fonts & Icons -->
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap"
+        as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700;800&family=Nunito:wght@300;400;600;700;800;900&display=swap">
+    </noscript>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <style>
+        /* ============================================================
+           RUSTIC FUN DESIGN SYSTEM - EXPLORE PERU TRAVEL
+           ============================================================ */
+
+        :root {
+            --deep: #1f1812;
+            --forest: #3a2e24;
+            --forest-mid: #4f3f31;
+            --forest-light: #6b5442;
+            --cream: #faf5eb;
+            --cream-warm: #f3ebd8;
+            --cream-border: #e0d0b8;
+
+            --terracotta: #c05a3c;
+            --rust-mustard: #e2a02b;
+            --andes-green: #3e6b4a;
+            --inca-red: #a83a32;
+            --andes-sky: #4a8ca8;
+            --gold: #c29b45;
+
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-pill: 100px;
+            --shadow-solid-sm: 4px 4px 0 var(--cream-border);
+            --shadow-solid-md: 8px 8px 0 var(--forest);
+            --shadow-solid-gold: 8px 8px 0 var(--rust-mustard);
+            --shadow-solid-terra: 8px 8px 0 var(--terracotta);
+
+            --transition: 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --nav-height-main: 82px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            background: var(--cream);
+            color: var(--forest);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%233a2e24' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+            width: 100%;
+        }
+
+        .text-gradient {
+            background: linear-gradient(130deg, var(--rust-mustard) 0%, var(--terracotta) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .serif-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* ─── SKELETON LOADER ─── */
+        .skeleton-loader {
+            position: fixed;
+            inset: 0;
+            background: var(--cream);
+            z-index: 99999;
+            display: flex;
+            flex-direction: column;
+            transition: 0.5s ease;
+            pointer-events: none;
+        }
+
+        .skeleton-loader.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .skeleton-navbar {
+            height: var(--nav-height-main);
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        .skeleton-hero {
+            flex: 1;
+            background: linear-gradient(90deg, var(--cream-border) 25%, var(--cream-warm) 50%, var(--cream-border) 75%);
+            background-size: 200% 100%;
+            animation: skeletonShimmer 1.5s infinite;
+        }
+
+        @keyframes skeletonShimmer {
+            0% {
+                background-position: 200% 0;
+            }
+
+            100% {
+                background-position: -200% 0;
+            }
+        }
+
+        /* ─── NAVBAR (ISLA DINÁMICA COMPACTA) ─── */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1050;
+            transition: var(--transition);
+        }
+
+        .main-navbar {
+            height: var(--nav-height-main);
+            display: flex;
+            align-items: center;
+            background: rgba(250, 245, 235, 0.96);
+            backdrop-filter: blur(16px);
+            border-bottom: 2px solid var(--cream-border);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .nav-flex {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            transition: all 0.4s ease;
+        }
+
+        .logo-img {
+            width: 230px;
+            height: auto;
+            transition: all 0.4s ease;
+        }
+
+        .main-header.scrolled .main-navbar {
+            height: 56px;
+            margin: 12px auto;
+            width: fit-content;
+            border-radius: 50px;
+            background: rgba(31, 24, 18, 0.95);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(226, 160, 43, 0.3);
+            border: none;
+            padding: 0 12px;
+        }
+
+        .main-header.scrolled .logo-area {
+            display: none;
+        }
+
+        .main-header.scrolled .nav-flex {
+            justify-content: center;
+            padding: 0 10px;
+            width: auto;
+            gap: 8px;
+        }
+
+        .main-header.scrolled .nav-menu {
+            gap: 14px;
+        }
+
+        .main-header.scrolled .nav-menu a {
+            font-size: 0.65rem;
+            color: var(--cream);
+        }
+
+        .main-header.scrolled .nav-menu a:hover,
+        .main-header.scrolled .nav-menu li.current>a {
+            color: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .nav-menu a::after {
+            background: var(--rust-mustard);
+        }
+
+        .main-header.scrolled .lang-selector {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: transparent;
+        }
+
+        .main-header.scrolled .lang-btn {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .main-header.scrolled .lang-btn.active {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            box-shadow: none;
+        }
+
+        .main-header.scrolled .hamburger span {
+            background: var(--cream);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: clamp(10px, 1.8vw, 22px);
+            align-items: center;
+        }
+
+        .nav-menu a {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            font-size: clamp(0.65rem, 1.3vw, 0.75rem);
+            letter-spacing: 1px;
+            color: var(--forest-mid);
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            position: relative;
+            padding-bottom: 3px;
+            text-transform: uppercase;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--terracotta);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu li.current>a {
+            color: var(--terracotta);
+        }
+
+        .nav-menu a:hover::after,
+        .nav-menu li.current>a::after {
+            width: 100%;
+        }
+
+        .menu-item-has-children {
+            position: relative;
+        }
+
+        .menu-item-has-children>a .fa-chevron-down {
+            transition: transform 0.3s ease;
+            font-size: 0.6rem;
+        }
+
+        .menu-item-has-children:hover>a .fa-chevron-down {
+            transform: rotate(180deg);
+        }
+
+        .sub-menu {
+            position: absolute;
+            top: calc(100% + 15px);
+            left: 0;
+            min-width: 300px;
+            max-height: 75vh;
+            overflow-y: auto;
+            background: var(--cream);
+            border-radius: 12px;
+            padding: 10px 0;
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-md);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            list-style: none;
+        }
+
+        .sub-menu::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sub-menu::-webkit-scrollbar-thumb {
+            background-color: var(--terracotta);
+            border-radius: 10px;
+        }
+
+        .main-header.scrolled .sub-menu {
+            background: var(--deep);
+            border-color: var(--rust-mustard);
+            box-shadow: 6px 6px 0 var(--rust-mustard);
+        }
+
+        .menu-item-has-children:hover .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            top: calc(100% + 6px);
+        }
+
+        .sub-menu li a {
+            display: block;
+            padding: 10px 22px;
+            font-size: 0.7rem;
+            color: var(--forest);
+            transition: all 0.25s ease;
+            white-space: normal;
+        }
+
+        .main-header.scrolled .sub-menu li a {
+            color: var(--cream);
+        }
+
+        .sub-menu li a::after {
+            display: none;
+        }
+
+        .sub-menu li a:hover {
+            background: rgba(192, 90, 60, 0.1);
+            color: var(--terracotta);
+            padding-left: 28px;
+        }
+
+        .main-header.scrolled .sub-menu li a:hover {
+            background: rgba(226, 160, 43, 0.15);
+            color: var(--rust-mustard);
+        }
+
+        .lang-selector {
+            display: flex;
+            gap: 3px;
+            background: var(--cream-warm);
+            padding: 4px;
+            border-radius: var(--radius-pill);
+            border: 2px solid var(--forest);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            font-weight: 800;
+            font-size: 0.65rem;
+            color: var(--forest-light);
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: var(--radius-pill);
+            transition: var(--transition);
+        }
+
+        .lang-btn.active {
+            background: var(--forest);
+            color: white;
+            box-shadow: 2px 2px 0 var(--terracotta);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 6px;
+            background: none;
+            border: none;
+            z-index: 1100;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 24px;
+            height: 3px;
+            background: var(--forest);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(31, 24, 18, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 1055;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .mobile-menu-overlay.open {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: min(320px, 85vw);
+            height: 100dvh;
+            background: var(--cream);
+            z-index: 1060;
+            padding: 70px 24px 30px;
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            overflow-y: auto;
+            border-left: 4px solid var(--forest);
+        }
+
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 40px;
+            height: 40px;
+            background: var(--forest);
+            color: white;
+            border: 2px solid var(--deep);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            box-shadow: 3px 3px 0 var(--terracotta);
+        }
+
+        @media (max-width: 1050px) {
+
+            .nav-menu,
+            .lang-selector {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .main-navbar {
+                height: 65px;
+            }
+
+            .main-header.scrolled .main-navbar {
+                margin: 10px auto;
+                width: calc(100% - 24px);
+                height: 54px;
+                padding: 0 16px;
+            }
+
+            .main-header.scrolled .nav-flex {
+                justify-content: space-between;
+                padding: 0;
+                width: 100%;
+            }
+
+            .logo-img {
+                width: 180px;
+            }
+
+            .main-header.scrolled .logo-area {
+                display: block;
+            }
+
+            .main-header.scrolled .logo-img {
+                width: 120px;
+                filter: brightness(0) invert(1);
+            }
+        }
+
+        /* ─── BOTONES GLOBALES ─── */
+        .btn-gold-solid {
+            background: var(--rust-mustard);
+            color: var(--deep);
+            padding: 14px 32px;
+            border-radius: var(--radius-pill);
+            font-weight: 900;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid var(--deep);
+            box-shadow: 4px 4px 0 var(--deep);
+            transition: var(--transition);
+        }
+
+        .btn-gold-solid:hover {
+            transform: translate(-3px, -3px);
+            box-shadow: 7px 7px 0 var(--deep);
+            background: white;
+            color: var(--terracotta);
+            border-color: var(--terracotta);
+        }
+
+        /* ─── HERO CON VIDEO ─── */
+        .hero-tour {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: calc(var(--nav-height-main) + 60px) 20px 80px;
+            overflow: hidden;
+            background-color: var(--deep);
+        }
+
+        .hero-bg-video {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.65) contrast(1.1);
+            transform: scale(1.02);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31, 24, 18, 0.2) 0%, rgba(31, 24, 18, 0.9) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 4;
+            max-width: 900px;
+            padding: 0 20px;
+        }
+
+        .hero-pre {
+            display: inline-block;
+            background: rgba(42, 139, 168, 0.2);
+            /* andes-sky base */
+            border: 1px solid var(--andes-sky);
+            color: #b3e5fc;
+            padding: 6px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            backdrop-filter: blur(5px);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            color: white;
+            line-height: 1.05;
+            margin-bottom: 20px;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.9);
+            max-width: 750px;
+            margin: 0 auto 35px;
+            font-weight: 400;
+            text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .torn-paper {
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            z-index: 5;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'%3E%3Cpath d='M0,120 L0,40 Q30,80 60,40 T120,40 T180,40 T240,40 T300,40 T360,40 T420,40 T480,40 T540,40 T600,40 T660,40 T720,40 T780,40 T840,40 T900,40 T960,40 T1020,40 T1080,40 T1140,40 T1200,40 L1200,120 Z' fill='%23faf5eb'/%3E%3C/svg%3E");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        /* ─── LOGO & WARM WELCOME ─── */
+        .welcome-warm {
+            padding: 40px 0 20px;
+            background: var(--cream);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .big-logo-container {
+            margin: 0 auto 30px;
+            display: inline-block;
+            position: relative;
+        }
+
+
+        .big-logo {
+            width: 500px;
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.1));
+            transition: var(--transition);
+        }
+
+        .big-logo:hover {
+            transform: scale(1.05) rotate(-2deg);
+        }
+
+        .welcome-text-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* ─── QUICK INFO (CRISTAL FLOTANTE SUPERPUESTO) ─── */
+        .quick-info-wrapper {
+            position: relative;
+            z-index: 10;
+            margin-top: -60px;
+            padding: 0 20px;
+        }
+
+        .quick-info-box {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(15px);
+            max-width: 1100px;
+            margin: 0 auto;
+            border-radius: var(--radius-lg);
+            padding: 25px 30px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid var(--forest);
+            position: relative;
+        }
+
+        .quick-info-box::after {
+            content: '';
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            right: -6px;
+            bottom: -6px;
+            border: 2px dashed var(--andes-sky);
+            border-radius: var(--radius-lg);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        @media (max-width: 900px) {
+            .quick-info-box {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: -40px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .quick-info-box {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .qi-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .qi-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--cream);
+            border: 2px solid var(--forest);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: var(--andes-sky);
+            box-shadow: 3px 3px 0 var(--forest);
+            transform: rotate(-3deg);
+            transition: var(--transition);
+        }
+
+        .qi-item:hover .qi-icon {
+            transform: rotate(5deg) scale(1.1);
+            background: var(--andes-sky);
+            color: white;
+        }
+
+        .qi-text h4 {
+            font-size: 0.8rem;
+            color: var(--forest-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 800;
+            margin-bottom: 2px;
+        }
+
+        .qi-text p {
+            font-size: 1.1rem;
+            color: var(--forest);
+            font-weight: 900;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        /* ─── HIGHLIGHTS (RUSTICO) ─── */
+        .section-highlights {
+            padding: 60px 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hl-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 900px) {
+            .hl-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hl-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .hl-card {
+            background: white;
+            border-radius: var(--radius-md);
+            border: 2px solid var(--forest);
+            box-shadow: var(--shadow-solid-sm);
+            overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .hl-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 8px 8px 0 var(--andes-sky);
+        }
+
+        .hl-img {
+            height: 200px;
+            overflow: hidden;
+            border-bottom: 2px solid var(--forest);
+        }
+
+        .hl-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .hl-card:hover .hl-img img {
+            transform: scale(1.1);
+        }
+
+        .hl-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .hl-body h3 {
+            font-size: 1.4rem;
+            color: var(--forest);
+            margin-bottom: 10px;
+            font-weight: 800;
+        }
+
+        .hl-body p {
+            font-size: 0.9rem;
+            color: var(--forest-light);
+            font-weight: 600;
+        }
+
+        /* ─── ITINERARIO MAPA DEL EXPLORADOR (POR PUNTOS) ─── */
+        .section-itinerary {
+            padding: 60px 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%234a8ca8' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E") var(--cream-warm);
+            border-top: 4px dashed var(--cream-border);
+            border-bottom: 4px dashed var(--cream-border);
+        }
+
+        .timeline-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            padding-left: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-wrapper {
+                padding-left: 30px;
+            }
+        }
+
+        .timeline-wrapper::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            bottom: 20px;
+            left: 20px;
+            width: 4px;
+            background-image: linear-gradient(to bottom, var(--forest) 50%, transparent 50%);
+            background-size: 4px 20px;
+            background-repeat: repeat-y;
+        }
+
+        @media (max-width: 768px) {
+            .timeline-wrapper::before {
+                left: 10px;
+            }
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 50px;
+        }
+
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .timeline-node {
+            position: absolute;
+            left: -48px;
+            top: 0;
+            width: 36px;
+            height: 36px;
+            background: var(--cream);
+            border: 3px solid var(--forest);
+            transform: rotate(45deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            transition: var(--transition);
+        }
+
+        @media (max-width: 768px) {
+            .timeline-node {
+                left: -38px;
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .timeline-item:hover .timeline-node {
+            background: var(--andes-sky);
+            transform: rotate(135deg) scale(1.1);
+        }
+
+        .timeline-node span {
+            transform: rotate(-45deg);
+            font-weight: 900;
+            font-size: 0.9rem;
+            color: var(--forest);
+        }
+
+        .timeline-item:hover .timeline-node span {
+            transform: rotate(-135deg);
+            color: white;
+        }
+
+        .timeline-content {
+            background: white;
+            border: 2px solid var(--forest);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-solid-sm);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .timeline-content:hover {
+            box-shadow: var(--shadow-solid-md);
+            transform: translateY(-5px);
+            border-color: var(--andes-sky);
+        }
+
+        .timeline-item:nth-child(1) .timeline-content {
+            border-top: 6px solid var(--andes-sky);
+        }
+
+        .timeline-item:nth-child(2) .timeline-content {
+            border-top: 6px solid var(--terracotta);
+        }
+
+        .timeline-item:nth-child(3) .timeline-content {
+            border-top: 6px solid var(--rust-mustard);
+        }
+
+        .day-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .day-title {
+            font-size: 1.6rem;
+            color: var(--forest);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+        }
+
+        .day-tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(0, 0, 0, 0.05);
+            padding: 4px 12px;
+            border-radius: var(--radius-pill);
+            font-size: 0.7rem;
+            font-weight: 800;
+            color: var(--forest);
+            border: 1px solid var(--forest-light);
+            text-transform: uppercase;
+        }
+
+        .day-desc {
+            font-size: 0.95rem;
+            color: var(--forest-light);
+            font-weight: 600;
+            line-height: 1.7;
+        }
+
+        /* ─── INCLUSIONES Y EXCLUSIONES ─── */
+        .section-details {
+            padding: 80px 0;
+            background: var(--cream);
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 800px) {
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .detail-box {
+            background: white;
+            border: 2px dashed var(--forest-light);
+            border-radius: var(--radius-md);
+            padding: 35px 30px;
+            position: relative;
+        }
+
+        .detail-box::before {
+            content: '📌';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+        }
+
+        .detail-title {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--forest);
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+
+        .detail-list {
+            list-style: none;
+        }
+
+        .detail-list li {
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--forest-mid);
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .detail-list.inc li i {
+            color: var(--andes-green);
+            margin-top: 4px;
+        }
+
+        .detail-list.exc li i {
+            color: var(--inca-red);
+            margin-top: 4px;
+        }
+
+        /* ─── QUÉ LLEVAR (POST-ITS) ─── */
+        .section-bring {
+            padding: 40px 0 80px;
+        }
+
+        .bring-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        @media (max-width: 900px) {
+            .bring-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .bring-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bring-card {
+            background: #fffdf5;
+            padding: 25px 20px;
+            border: 1px solid #e0d0b8;
+            box-shadow: 3px 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .bring-card:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+
+        .bring-card:nth-child(even) {
+            transform: rotate(2deg);
+            background: #fdf5ea;
+        }
+
+        .bring-card::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-3deg);
+            width: 50px;
+            height: 18px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .bring-card:hover {
+            transform: translateY(-5px) rotate(0deg);
+            box-shadow: 8px 8px 0 var(--andes-sky);
+            border-color: var(--andes-sky);
+            z-index: 2;
+        }
+
+        .bring-icon {
+            font-size: 2.2rem;
+            color: var(--andes-sky);
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .bring-card h4 {
+            text-align: center;
+            font-size: 1rem;
+            color: var(--forest);
+            font-weight: 800;
+        }
+
+        /* ─── GALERÍA SWIPER 3D ─── */
+        .section-gallery {
+            padding: 80px 0;
+            background: var(--deep);
+            color: white;
+            text-align: center;
+            border-bottom: 4px dashed var(--andes-sky);
+        }
+
+        .gallery-title {
+            color: var(--cream);
+            margin-bottom: 40px;
+        }
+
+        .swiper {
+            width: 280px;
+            height: 380px;
+        }
+
+        @media (min-width: 600px) {
+            .swiper {
+                width: 320px;
+                height: 420px;
+            }
+        }
+
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 18px;
+            background-color: #fff;
+            padding: 10px 10px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 1px solid #ccc;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: sepia(0.2) contrast(1.1);
+        }
+
+        .polaroid-text {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: var(--forest);
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        /* ─── CTA INFERIOR ─── */
+        .section-cta-bottom {
+            padding: 80px 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M54.627 0l.83.83v58.34h-58.34v-.83l57.51-58.34zM57.51 0l.83.83v58.34h-.83V.83L57.51 0zM51.745 0l.83.83v58.34h-.83V.83L51.745 0z' fill='%233a2e24' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E") var(--cream);
+            text-align: center;
+            position: relative;
+        }
+
+        /* ─── FOOTER FUTURISTA ─── */
+        .footer-futurista {
+            position: relative;
+            padding: 60px 0 25px;
+            overflow: hidden;
+            color: white;
+            background: #111;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .footer-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .footer-video-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .footer-overlay-gradient {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(44, 36, 24, 0.95), rgba(58, 46, 36, 0.93));
+            z-index: 1;
+        }
+
+        .footer-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .futurista-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 1024px) {
+            .futurista-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .futurista-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        .futurista-col {
+            padding: 22px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(8px);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(184, 134, 11, 0.12);
+            transition: var(--transition);
+        }
+
+        .futurista-col:hover {
+            transform: translateY(-4px);
+            border-color: rgba(184, 134, 11, 0.3);
+        }
+
+        .footer-glow-icon {
+            width: 42px;
+            height: 42px;
+            background: linear-gradient(135deg, rgba(184, 134, 11, 0.12), rgba(184, 134, 11, 0.04));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .footer-glow-icon i {
+            font-size: 1.2rem;
+            color: var(--gold);
+        }
+
+        .futurista-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: 18px;
+            letter-spacing: 2px;
+        }
+
+        .futurista-links,
+        .futurista-contact {
+            list-style: none;
+        }
+
+        .futurista-links li {
+            margin-bottom: 8px;
+        }
+
+        .futurista-links a {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 0.78rem;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 600;
+        }
+
+        .futurista-links a::before {
+            content: '›';
+            color: var(--gold);
+            opacity: 0;
+            transition: 0.2s;
+        }
+
+        .futurista-links a:hover {
+            color: var(--gold);
+            transform: translateX(5px);
+        }
+
+        .futurista-links a:hover::before {
+            opacity: 1;
+        }
+
+        .futurista-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.78rem;
+            color: rgba(255, 255, 255, 0.65);
+            font-weight: 600;
+        }
+
+        .futurista-contact li i {
+            color: var(--gold);
+            font-size: 0.85rem;
+            margin-top: 2px;
+        }
+
+        .footer-phones {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .futurista-divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 25px;
+        }
+
+        .divider-line {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(184, 134, 11, 0.4), transparent);
+        }
+
+        .divider-icon {
+            width: 32px;
+            height: 32px;
+            background: rgba(184, 134, 11, 0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(184, 134, 11, 0.2);
+        }
+
+        .divider-icon i {
+            color: var(--gold);
+            font-size: 0.8rem;
+        }
+
+        .futurista-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        @media (max-width: 640px) {
+            .futurista-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .futurista-copyright {
+            font-size: 0.68rem;
+            color: rgba(255, 255, 255, 0.45);
+            font-weight: 600;
+        }
+
+        .futurista-social {
+            display: flex;
+            gap: 10px;
+        }
+
+        .futurista-social a {
+            width: 34px;
+            height: 34px;
+            background: rgba(255, 255, 255, 0.04);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.85rem;
+            transition: var(--transition);
+            border: 1px solid rgba(184, 134, 11, 0.15);
+        }
+
+        .futurista-social a:hover {
+            color: var(--deep);
+            background: var(--gold);
+            border-color: var(--gold);
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .fab-whatsapp {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: var(--transition);
+            z-index: 1000;
+            border: 2px solid white;
+        }
+
+        .fab-whatsapp:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- SKELETON LOADER -->
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-navbar"></div>
+        <div class="skeleton-hero"></div>
+    </div>
+
+    <!-- CABECERA PRINCIPAL (Isla Dinámica Unificada) -->
+    <header class="main-header" id="mainHeader">
+        <div class="main-navbar">
+            <div class="nav-flex">
+                <div class="logo-area">
+                    <a href="../index.html">
+                        <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel" class="logo-img"
+                            onerror="this.src='https://placehold.co/280x90?text=Explore+Peru'">
+                    </a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="../index.html"><span data-key="home">INICIO</span></a></li>
+                    <li><a href="../nosotros.html"><span data-key="about">NOSOTROS</span></a></li>
+                    <li class="menu-item-has-children">
+                        <a href="../tours.html"><span data-key="tours">TOURS</span> <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../tours/Paquete Cusco Basico.html"><span data-key="navT1">Paquete Cusco Básico
+                                        (3D/2N)</span></a></li>
+                            <li><a href="../tours/Paquete Cusco Clásico.html"><span data-key="navT2">Paquete Cusco
+                                        Clásico (4D/3N)</span></a></li>
+                            <li><a href="../tours/Paquete Cusco Arqueologico.html"><span data-key="navT3">Paquete Cusco
+                                        Arqueológico (5D/4N)</span></a></li>
+                            <li><a href="../tours/Paquete Experiencia Cusco Total.html"><span data-key="navT4">Paquete
+                                        Experiencia Cusco Total (6D/5N)</span></a></li>
+                            <li><a href="../tours/Inka Jungle.html"><span data-key="navT5">Inka Jungle
+                                        (4D/3N)</span></a></li>
+                            <li><a href="../tours/Paquete_Desafio_Andino_Salkantay_Trek.html"><span
+                                        data-key="navT6">Salkantay Trek (5D/4N)</span></a></li>
+                            <li><a href="../tours/Camino Inca Clasico.html"><span data-key="navT7">Camino Inca Clásico
+                                        (4D/3N)</span></a></li>
+                            <li><a href="../tours/Trekking Choquequirao.html"><span data-key="navT8">Trekking
+                                        Choquequirao Extremo (4D/3N)</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="current menu-item-has-children">
+                        <a href="../tours-cortos.html"><span data-key="shortTours">TOURS CORTOS</span> <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="City Tour Cusco.html"><span data-key="shortTour1">City Tour Cusco (Medio
+                                        Día)</span></a></li>
+                            <li><a href="Tour Chinchero, Maras y Moray.html"><span data-key="shortTour2">Chinchero,
+                                        Maras y Moray</span></a></li>
+                            <li class="current"><a href="Tour Valle Sur Cusco.html"><span data-key="shortTour3">Valle
+                                        Sur Cusco (Medio Día)</span></a></li>
+                            <li><a href="Tour Valle Sagrado de los Incas.html"><span data-key="shortTour4">Valle Sagrado
+                                        (Full Day)</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../viajes-escolares.html"><span data-key="schoolTrips">VIAJES ESCOLARES</span> <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../viajes escolares/escolar-imperial.html"><span data-key="school1">Ruta
+                                        Imperial: Arequipa - Cusco - Oxapampa | 6D/5N</span></a></li>
+                            <li><a href="../viajes escolares/escolar-sur-chile.html"><span data-key="school2">Ruta al
+                                        Sur: Chile - Santiago | 5D/4N</span></a></li>
+                            <li><a href="../viajes escolares/escolar-norte-ecuador.html"><span data-key="school3">Ruta
+                                        al Norte: Tumbes - Guayaquil | 5D/4N</span></a></li>
+                            <li><a href="../viajes escolares/escolar-cusco-selva.html"><span data-key="school4">Cusco -
+                                        Machu Picchu - Selva | 5D/4N</span></a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="../aventuras.html"><span data-key="adventure">AVENTURA</span> <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="sub-menu">
+                            <li><a href="../aventuras/Aventura en Cuatrimotos.html"><span data-key="adv1">Cuatrimotos -
+                                        Maras y Moray</span></a></li>
+                            <li><a href="../aventuras/Vía Ferrata y Zipline.html"><span data-key="adv2">Vía Ferrata y
+                                        Zipline</span></a></li>
+                            <li><a href="../aventuras/Canotaje (Rafting).html"><span data-key="adv3">Rafting en el Río
+                                        Vilcanota</span></a></li>
+                            <li><a href="../aventuras/Bungee Jumping.html"><span data-key="adv4">Bungee Jumping y
+                                        Slingshot</span></a></li>
+                            <li><a href="../aventuras/Parapente sobre el valle sagrado.html"><span
+                                        data-key="adv5">Parapente sobre el Valle Sagrado</span></a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../contacto.html"><span data-key="contact">CONTACTO</span></a></li>
+                </ul>
+                <div class="lang-selector">
+                    <button class="lang-btn active" data-lang="es">ES</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO CON VIDEO DEL VALLE SUR -->
+        <section class="hero-tour">
+            <video class="hero-bg-video" autoplay muted loop playsinline>
+                <!-- VIDEO ACTUALIZADO SEGÚN REQUERIMIENTO -->
+                <source src="../tours_y_logos/vallesur.mp4" type="video/mp4">
+            </video>
+            <div class="hero-overlay"></div>
+
+            <div class="hero-content" data-aos="zoom-in" data-aos-duration="1200">
+                <span class="hero-pre" data-key="vsHeroPre">TESOROS DEL SUR</span>
+                <h1 class="hero-title serif-font">
+                    <span data-key="vsHeroT1">Valle Sur</span> <br>
+                    <span class="text-gradient" data-key="vsHeroT2">El Valle Escondido</span>
+                </h1>
+                <p class="hero-subtitle" data-key="vsHeroSub">
+                    Un circuito fuera de lo convencional. Maravíllate con la ingeniería hidráulica perfecta de Tipón,
+                    explora la ciudad pre-inca de Pikillacta y admira los impresionantes frescos de Andahuaylillas.
+                </p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#itinerario" class="btn-gold-solid">
+                        <i class="fas fa-map"></i> <span data-key="btnIti">Ver Itinerario</span>
+                    </a>
+                </div>
+            </div>
+            <div class="torn-paper"></div>
+        </section>
+
+        <!-- INFO RÁPIDA FLOTANTE -->
+        <div class="quick-info-wrapper">
+            <div class="quick-info-box" data-aos="fade-up">
+                <div class="qi-item">
+                    <div class="qi-icon"><i class="fas fa-clock"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info1Title">Duración</h4>
+                        <p data-key="info1">Medio Día (5 hrs)</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon" style="color: var(--terracotta);"><i class="fas fa-landmark"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info2Title">Tipo de Viaje</h4>
+                        <p data-key="info2">Arqueológico</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon"><i class="fas fa-bus-alt"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info3Title">Transporte</h4>
+                        <p data-key="info3">Bus Turístico</p>
+                    </div>
+                </div>
+                <div class="qi-item">
+                    <div class="qi-icon" style="color: var(--rust-mustard);"><i class="fas fa-users"></i></div>
+                    <div class="qi-text">
+                        <h4 data-key="info4Title">Salidas</h4>
+                        <p data-key="info4">Diarias</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOGO & WARM WELCOME -->
+        <section class="welcome-warm">
+            <div class="container" data-aos="fade-up">
+                <div class="big-logo-container">
+                    <img src="../tours_y_logos/logo.png" alt="Explore Peru Travel Gran Logo" class="big-logo"
+                        onerror="this.src='https://placehold.co/400x150?text=EXPLORE+PERU+TRAVEL'">
+                </div>
+                <div class="welcome-text-wrapper" style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2 class="section-title" style="margin-bottom: 20px;">
+                        <span data-key="vsWelcomeT1">Descubre lo que</span> <span class="text-gradient"
+                            data-key="vsWelcomeT2">otros no ven</span>
+                    </h2>
+                    <!-- Usamos p para que las etiquetas innerHTML (como <strong>) se pinten correctamente -->
+                    <p style="font-size: 1.15rem; color: var(--forest-mid); line-height: 1.7; font-weight: 500;"
+                        data-key="vsWelcomeP1">
+                        ¡Hola! Sabemos que buscas algo más allá de lo tradicional. El Valle Sur es ese rincón mágico
+                        donde el agua "canta" a través de los canales incas y la historia se siente en cada muro.
+                    </p>
+                    <p style="font-size: 1.15rem; color: var(--forest-mid); line-height: 1.7; font-weight: 500; margin-top: 15px;"
+                        data-key="vsWelcomeP2">
+                        En este recorrido de medio día, te llevaremos a explorar la asombrosa ingeniería de
+                        <strong>Tipón</strong>, los misterios pre-incas de <strong>Pikillacta</strong> y el deslumbrante
+                        arte barroco de <strong>Andahuaylillas</strong>. ¡Prepárate para un viaje lleno de sorpresas y
+                        mucha cultura!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <section class="section-highlights">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="vsHighTitle1">Lo mejor del</span> <span
+                            class="text-gradient" data-key="vsHighTitle2">Valle Sur</span></h2>
+                </div>
+                <div class="hl-grid">
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="hl-img">
+                            <img src="../tours_y_logos/Tipón.jpg" alt="Tipón"
+                                onerror="this.src='https://placehold.co/600x400?text=Tipon'">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="vsHigh1T">Tipón</h3>
+                            <p data-key="vsHigh1D">Una obra maestra de la ingeniería hidráulica Inca. Sus acueductos y
+                                fuentes de agua siguen fluyendo a la perfección hasta el día de hoy.</p>
+                        </div>
+                    </div>
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="150">
+                        <div class="hl-img">
+                            <img src="../tours_y_logos/Pikillacta.jpg" alt="Pikillacta"
+                                onerror="this.src='https://placehold.co/600x400?text=Pikillacta'">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="vsHigh2T">Pikillacta</h3>
+                            <p data-key="vsHigh2D">La inmensa ciudad pre-inca de la cultura Wari. Recorre sus calles
+                                estrechas y muros gigantescos que desafían al tiempo.</p>
+                        </div>
+                    </div>
+                    <div class="hl-card" data-aos="fade-up" data-aos-delay="250">
+                        <div class="hl-img">
+                            <img src="../tours_y_logos/Andahuaylillas.jpg" alt="Andahuaylillas"
+                                onerror="this.src='https://placehold.co/600x400?text=Andahuaylillas'">
+                        </div>
+                        <div class="hl-body">
+                            <h3 class="serif-font" data-key="vsHigh3T">Andahuaylillas</h3>
+                            <p data-key="vsHigh3D">Conocida como la "Capilla Sixtina de América". Sorpréndete con sus
+                                impresionantes frescos y decoración bañada en pan de oro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ITINERARIO -->
+        <section class="section-itinerary" id="itinerario">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="itiTitle1">Tu Itinerario</span> <span
+                            class="text-gradient" data-key="itiTitle2">Paso a Paso</span></h2>
+                </div>
+
+                <div class="timeline-wrapper">
+                    <!-- Punto 1 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>P1</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="vsDay1T">Tipón: El Culto al Agua</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-water"></i> Ingeniería</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="vsDay1D">Nuestra aventura comienza recogiéndote en el hotel.
+                                Viajaremos hacia el sur de Cusco hasta llegar a Tipón. Aquí, nuestro guía te explicará
+                                cómo los Incas dominaron el flujo del agua para sus sofisticados sistemas agrícolas.
+                                Podrás tomar fotos increíbles de sus impresionantes terrazas y fuentes ceremoniales
+                                intactas.</p>
+                        </div>
+                    </div>
+
+                    <!-- Punto 2 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>P2</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="vsDay2T">Pikillacta: Los Gigantes de Piedra</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-city"></i> Ciudad Pre-Inca</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="vsDay2D">Continuaremos nuestro trayecto hacia la extensa y
+                                misteriosa Pikillacta. A diferencia de las curvas orgánicas Incas, aquí caminarás por
+                                calles rectas y simétricas de la cultura Wari. Te sorprenderán las paredes recubiertas
+                                de yeso que alguna vez albergaron a más de 10,000 personas en la antigüedad.</p>
+                        </div>
+                    </div>
+
+                    <!-- Punto 3 -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-node"><span>P3</span></div>
+                        <div class="timeline-content">
+                            <div class="day-header">
+                                <h3 class="day-title" data-key="vsDay3T">Andahuaylillas: El Arte Colonial</h3>
+                                <div class="day-tags">
+                                    <span class="tag"><i class="fas fa-church"></i> Frescos Barrocos</span>
+                                </div>
+                            </div>
+                            <p class="day-desc" data-key="vsDay3D">Para cerrar con broche de oro, visitaremos el
+                                tranquilo pueblo de Andahuaylillas. Ingresaremos a su modesta iglesia que por dentro
+                                esconde un espectáculo visual inigualable: techos dorados y murales espectaculares que
+                                justifican plenamente su título de la "Capilla Sixtina de América". Finalmente,
+                                retornaremos a la ciudad del Cusco.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INCLUSIONES / EXCLUSIONES -->
+        <section class="section-details">
+            <div class="container">
+                <div class="details-grid">
+                    <div class="detail-box" data-aos="fade-right">
+                        <h3 class="detail-title" data-key="incTitle">¿Qué Incluye?</h3>
+                        <ul class="detail-list inc">
+                            <!-- Los íconos quedan fuera de los spans para evitar que el innerHTML los borre -->
+                            <li><i class="fas fa-check"></i> <span data-key="vsInc1">Transporte turístico (ida y
+                                    vuelta).</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="vsInc2">Guía Oficial de Turismo bilingüe
+                                    (Español/Inglés).</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="vsInc3">Recojo desde tu hotel (si está en
+                                    el centro histórico).</span></li>
+                            <li><i class="fas fa-check"></i> <span data-key="vsInc4">Asistencia permanente durante todo
+                                    el recorrido.</span></li>
+                        </ul>
+                    </div>
+                    <div class="detail-box" data-aos="fade-left">
+                        <h3 class="detail-title" data-key="excTitle">No Incluye</h3>
+                        <ul class="detail-list exc">
+                            <li><i class="fas fa-times"></i> <span data-key="vsExc1">Boleto Turístico del Cusco
+                                    (Requerido para Tipón y Pikillacta).</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="vsExc2">Entrada a la Iglesia de
+                                    Andahuaylillas.</span></li>
+                            <li><i class="fas fa-times"></i> <span data-key="vsExc3">Alimentación ni bebidas.</span>
+                            </li>
+                            <li><i class="fas fa-times"></i> <span data-key="vsExc4">Propinas (opcionales).</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUÉ LLEVAR (POST-ITS) -->
+        <section class="section-bring">
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title"><span data-key="bringTitle1">La Mochila del</span> <span
+                            class="text-gradient" data-key="bringTitle2">Viajero</span></h2>
+                </div>
+                <div class="bring-grid">
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="50">
+                        <div class="bring-icon"><i class="fas fa-ticket-alt"></i></div>
+                        <h4 data-key="vsBring1">Boleto Turístico del Cusco</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="bring-icon"><i class="fas fa-cloud-sun"></i></div>
+                        <h4 data-key="vsBring2">Bloqueador solar y sombrero de ala ancha</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="150">
+                        <div class="bring-icon"><i class="fas fa-shoe-prints"></i></div>
+                        <h4 data-key="vsBring3">Zapatillas cómodas para caminar en Pikillacta</h4>
+                    </div>
+                    <div class="bring-card" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="bring-icon"><i class="fas fa-camera"></i></div>
+                        <h4 data-key="vsBring4">Cámara lista para fotos espectaculares</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERÍA SWIPER 3D -->
+        <section class="section-gallery">
+            <div class="container">
+                <h2 class="gallery-title serif-font"><span data-key="vsGalTitle">Postales del Valle Sur</span>
+                </h2>
+                <div class="swiper mySwiper" data-aos="zoom-in">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="../tours_y_logos/terrazas de tipon.jpg" alt="Tipón">
+                            <div class="polaroid-text" data-key="vsPhoto1">Terrazas de Tipón</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../tours_y_logos/muros de pikillacta.jpg" alt="Pikillacta">
+                            <div class="polaroid-text" data-key="vsPhoto2">Muros de Pikillacta</div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="../tours_y_logos/arte de andahuaylillas.jpg" alt="Andahuaylillas">
+                            <div class="polaroid-text" data-key="vsPhoto3">Arte en Andahuaylillas</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA INFERIOR -->
+        <section class="section-cta-bottom">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title"><span data-key="vsCta1">¿Listo para salir de</span> <span
+                        class="text-gradient" data-key="vsCta2">lo convencional?</span></h2>
+                <p style="margin-bottom: 25px; color: var(--forest-light); font-weight: 600;" data-key="vsCtaDesc">
+                    Asegura tu lugar en el Tour Valle Sur hoy mismo.</p>
+                <a href="https://wa.me/51930164904" target="_blank" class="btn-gold-solid">
+                    <i class="fab fa-whatsapp"></i> <span data-key="btnReserve">Reservar Ahora</span>
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER FUTURISTA UNIFICADO -->
+    <footer class="footer-futurista">
+        <div class="footer-bg">
+            <video autoplay muted loop playsinline class="footer-video-bg">
+                <source src="../tours_y_logos/footer.mp4" type="video/mp4">
+            </video>
+            <div class="footer-overlay-gradient"></div>
+        </div>
+        <div class="container footer-container">
+            <div class="footer-grid futurista-grid">
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-compass"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerAboutTitle">QUIENES SOMOS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../nosotros.html"><span data-key="footerAboutUs">Sobre nosotros</span></a></li>
+                        <li><a href="../politicas-pago.html"><span data-key="footerConditions">Condiciones de
+                                    venta</span></a></li>
+                        <li><a href="../politicas-pago.html"><span data-key="footerPayments">Formas de pago</span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-map-marked-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerMenuTitle">MENÚ PRINCIPAL</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../index.html"><span data-key="home">INICIO</span></a></li>
+                        <li><a href="../nosotros.html"><span data-key="about">NOSOTROS</span></a></li>
+                        <li><a href="../tours.html"><span data-key="tours">TOURS</span></a></li>
+                        <li><a href="../tours-cortos.html"><span data-key="shortTours">TOURS CORTOS</span></a></li>
+                        <li><a href="../viajes-escolares.html"><span data-key="schoolTrips">VIAJES ESCOLARES</span></a>
+                        </li>
+                        <li><a href="../aventuras.html"><span data-key="adventure">AVENTURA</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="policiesTitle">POLÍTICAS</h3>
+                    <ul class="footer-links futurista-links">
+                        <li><a href="../politicas-pago.html"><span data-key="policy1">Políticas y Condiciones de
+                                    Pago</span></a></li>
+                        <li><a href="../proteccion-datos.html"><span data-key="policy2">Protección de Datos
+                                    Personales</span></a></li>
+                        <li><a href="../prevencion-esnna.html"><span data-key="policy3">Prevención de la ESNNA en
+                                    turismo</span></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col futurista-col">
+                    <div class="footer-glow-icon"><i class="fas fa-headset"></i></div>
+                    <h3 class="footer-title futurista-title" data-key="footerContactTitle">CONTÁCTENOS</h3>
+                    <ul class="footer-contact-list futurista-contact">
+                        <li><i class="fas fa-map-marker-alt"></i><span data-key="footerAddress">Urbanización Tito
+                                Z-26<br>Wanchag - Cusco</span></li>
+                        <li><i class="fas fa-envelope"></i><a
+                                href="mailto:exploreperutravel@gmail.com">exploreperutravel@gmail.com</a></li>
+                        <li><i class="fas fa-phone-alt"></i>
+                            <div class="footer-phones"><span>+51 930 164 904</span><span>+51 984 764 403</span><span>+51
+                                    986 530 343</span></div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider futurista-divider">
+                <div class="divider-line"></div>
+                <div class="divider-icon"><i class="fas fa-star-of-life"></i></div>
+                <div class="divider-line"></div>
+            </div>
+            <div class="footer-bottom futurista-bottom">
+                <p class="copyright futurista-copyright" data-key="footerCopyright">© 2026 EXPLORE PERU TRAVEL | Agencia
+                    de Viajes y Turismo</p>
+                <div class="footer-social futurista-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/51930164904" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FAB WHATSAPP -->
+    <a href="https://wa.me/51930164904" class="fab-whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <!-- LIBRERÍAS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <!-- LÓGICA PRINCIPAL Y TRADUCCIONES MEJORADAS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            if (typeof AOS !== 'undefined') AOS.init({ duration: 800, once: true, offset: 40 });
+
+            const skeletonLoader = document.getElementById('skeletonLoader');
+            if (skeletonLoader) {
+                const hideSkeleton = () => {
+                    if (!skeletonLoader.classList.contains('hide')) {
+                        skeletonLoader.classList.add('hide');
+                        setTimeout(() => { if (skeletonLoader.parentNode) skeletonLoader.remove(); }, 500);
+                    }
+                };
+                window.addEventListener('load', hideSkeleton);
+                setTimeout(hideSkeleton, 1200);
+            }
+
+            const header = document.getElementById('mainHeader');
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) header.classList.add('scrolled');
+                    else header.classList.remove('scrolled');
+                });
+            }
+
+            const hamburger = document.getElementById('hamburger');
+            if (hamburger && !document.querySelector('.mobile-menu')) {
+                const mobileMenuOverlay = document.createElement('div');
+                mobileMenuOverlay.className = 'mobile-menu-overlay';
+                const mobileMenu = document.createElement('div');
+                mobileMenu.className = 'mobile-menu';
+
+                const closeBtn = document.createElement('button');
+                closeBtn.className = 'mobile-menu-close';
+                closeBtn.innerHTML = '<i class="fas fa-times"></i>';
+                mobileMenu.appendChild(closeBtn);
+
+                const navMenu = document.querySelector('.nav-menu');
+                const mobileNavList = document.createElement('ul');
+                mobileNavList.style.listStyle = 'none';
+                mobileNavList.style.marginTop = '20px';
+
+                if (navMenu) {
+                    const navLinks = navMenu.querySelectorAll('li');
+                    navLinks.forEach(li => {
+                        if (li.parentElement === navMenu) {
+                            const a = li.querySelector('a');
+                            if (a) {
+                                const liCopy = document.createElement('li');
+                                liCopy.style.marginBottom = '15px';
+                                const aCopy = document.createElement('a');
+                                aCopy.href = a.href;
+                                aCopy.innerHTML = a.innerHTML; // Conserva los spans de data-key
+                                aCopy.style.color = 'var(--forest)';
+                                aCopy.style.fontWeight = '800';
+                                aCopy.style.fontFamily = "'Nunito', sans-serif";
+                                aCopy.style.textDecoration = 'none';
+                                liCopy.appendChild(aCopy);
+                                mobileNavList.appendChild(liCopy);
+                            }
+                        }
+                    });
+                }
+                mobileMenu.appendChild(mobileNavList);
+                document.body.appendChild(mobileMenuOverlay);
+                document.body.appendChild(mobileMenu);
+
+                function toggleMobileMenu() {
+                    hamburger.classList.toggle('open');
+                    mobileMenu.classList.toggle('open');
+                    mobileMenuOverlay.classList.toggle('open');
+                    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+                }
+
+                hamburger.addEventListener('click', toggleMobileMenu);
+                closeBtn.addEventListener('click', toggleMobileMenu);
+                mobileMenuOverlay.addEventListener('click', toggleMobileMenu);
+            }
+
+            if (typeof Swiper !== 'undefined') {
+                new Swiper(".mySwiper", {
+                    effect: "cards", grabCursor: true, loop: true,
+                    autoplay: { delay: 3000, disableOnInteraction: false }
+                });
+            }
+
+            // TRADUCCIONES BILINGÜES COMPLETAS (CORREGIDO)
+            const translations = {
+                es: {
+                    contact: "CONTACTO", about: "NOSOTROS", home: "INICIO", tours: "TOURS", shortTours: "TOURS CORTOS", schoolTrips: "VIAJES ESCOLARES", adventure: "AVENTURA",
+                    navT1: "Paquete Cusco Básico (3D/2N)", navT2: "Paquete Cusco Clásico (4D/3N)", navT3: "Paquete Cusco Arqueológico (5D/4N)", navT4: "Paquete Experiencia Cusco Total (6D/5N)", navT5: "Inka Jungle (4D/3N)", navT6: "Salkantay Trek (5D/4N)", navT7: "Camino Inca Clásico (4D/3N)", navT8: "Trekking Choquequirao Extremo (4D/3N)",
+                    shortTour1: "City Tour Cusco (Medio Día)", shortTour2: "Chinchero, Maras y Moray", shortTour3: "Valle Sur Cusco (Medio Día)", shortTour4: "Valle Sagrado (Full Day)",
+                    school1: "Ruta Imperial: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "Ruta al Sur: Chile - Santiago | 5D/4N", school3: "Ruta al Norte: Tumbes - Guayaquil | 5D/4N", school4: "Cusco - Machu Picchu - Selva | 5D/4N",
+                    adv1: "Cuatrimotos - Maras y Moray", adv2: "Vía Ferrata y Zipline", adv3: "Rafting en el Río Vilcanota", adv4: "Bungee Jumping y Slingshot", adv5: "Parapente sobre el Valle Sagrado",
+
+                    vsHeroPre: "TESOROS DEL SUR", vsHeroT1: "Valle Sur", vsHeroT2: "El Valle Escondido",
+                    vsHeroSub: "Un circuito fuera de lo convencional. Maravíllate con la ingeniería hidráulica perfecta de Tipón, explora la ciudad pre-inca de Pikillacta y admira los impresionantes frescos de Andahuaylillas.",
+                    btnIti: "Ver Itinerario", btnReserve: "Reservar Ahora",
+
+                    info1Title: "Duración", info1: "Medio Día (5 hrs)", info2Title: "Tipo de Viaje", info2: "Arqueológico", info3Title: "Transporte", info3: "Bus Turístico", info4Title: "Salidas", info4: "Diarias",
+
+                    vsWelcomeT1: "Descubre lo que", vsWelcomeT2: "otros no ven",
+                    vsWelcomeP1: "¡Hola! Sabemos que buscas algo más allá de lo tradicional. El Valle Sur es ese rincón mágico donde el agua \"canta\" a través de los canales incas y la historia se siente en cada muro.",
+                    vsWelcomeP2: "En este recorrido de medio día, te llevaremos a explorar la asombrosa ingeniería de <strong>Tipón</strong>, los misterios pre-incas de <strong>Pikillacta</strong> y el deslumbrante arte barroco de <strong>Andahuaylillas</strong>. ¡Prepárate para un viaje lleno de sorpresas y mucha cultura!",
+
+                    vsHighTitle1: "Lo mejor del", vsHighTitle2: "Valle Sur",
+                    vsHigh1T: "Tipón", vsHigh1D: "Una obra maestra de la ingeniería hidráulica Inca. Sus acueductos y fuentes de agua siguen fluyendo a la perfección hasta el día de hoy.",
+                    vsHigh2T: "Pikillacta", vsHigh2D: "La inmensa ciudad pre-inca de la cultura Wari. Recorre sus calles estrechas y muros gigantescos que desafían al tiempo.",
+                    vsHigh3T: "Andahuaylillas", vsHigh3D: "Conocida como la \"Capilla Sixtina de América\". Sorpréndete con sus impresionantes frescos y decoración bañada en pan de oro.",
+
+                    itiTitle1: "Tu Itinerario", itiTitle2: "Paso a Paso",
+                    vsDay1T: "Tipón: El Culto al Agua", vsDay1D: "Nuestra aventura comienza recogiéndote en el hotel. Viajaremos hacia el sur de Cusco hasta llegar a Tipón. Aquí, nuestro guía te explicará cómo los Incas dominaron el flujo del agua para sus sofisticados sistemas agrícolas. Podrás tomar fotos increíbles de sus impresionantes terrazas y fuentes ceremoniales intactas.",
+                    vsDay2T: "Pikillacta: Los Gigantes de Piedra", vsDay2D: "Continuaremos nuestro trayecto hacia la extensa y misteriosa Pikillacta. A diferencia de las curvas orgánicas Incas, aquí caminarás por calles rectas y simétricas de la cultura Wari. Te sorprenderán las paredes recubiertas de yeso que alguna vez albergaron a más de 10,000 personas en la antigüedad.",
+                    vsDay3T: "Andahuaylillas: El Arte Colonial", vsDay3D: "Para cerrar con broche de oro, visitaremos el tranquilo pueblo de Andahuaylillas. Ingresaremos a su modesta iglesia que por dentro esconde un espectáculo visual inigualable: techos dorados y murales espectaculares que justifican plenamente su título de la \"Capilla Sixtina de América\". Finalmente, retornaremos a la ciudad del Cusco.",
+
+                    incTitle: "¿Qué Incluye?", excTitle: "No Incluye",
+                    vsInc1: "Transporte turístico (ida y vuelta).", vsInc2: "Guía Oficial de Turismo bilingüe (Español/Inglés).", vsInc3: "Recojo desde tu hotel (si está en el centro histórico).", vsInc4: "Asistencia permanente durante todo el recorrido.",
+                    vsExc1: "Boleto Turístico del Cusco (Requerido para Tipón y Pikillacta).", vsExc2: "Entrada a la Iglesia de Andahuaylillas.", vsExc3: "Alimentación ni bebidas.", vsExc4: "Propinas (opcionales).",
+
+                    bringTitle1: "La Mochila del", bringTitle2: "Viajero",
+                    vsBring1: "Boleto Turístico del Cusco", vsBring2: "Bloqueador solar y sombrero de ala ancha", vsBring3: "Zapatillas cómodas para caminar en Pikillacta", vsBring4: "Cámara lista para fotos espectaculares",
+
+                    vsGalTitle: "Postales del Valle Sur", vsPhoto1: "Terrazas de Tipón", vsPhoto2: "Muros de Pikillacta", vsPhoto3: "Arte en Andahuaylillas",
+                    vsCta1: "¿Listo para salir de", vsCta2: "lo convencional?", vsCtaDesc: "Asegura tu lugar en el Tour Valle Sur hoy mismo.",
+
+                    footerAboutTitle: "QUIENES SOMOS", footerAboutUs: "Sobre nosotros", footerConditions: "Condiciones de venta", footerPayments: "Formas de pago",
+                    footerMenuTitle: "MENÚ PRINCIPAL", footerContactTitle: "CONTÁCTENOS",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Agencia de Viajes y Turismo",
+                    policiesTitle: "POLÍTICAS", policy1: "Políticas y Condiciones de Pago", policy2: "Protección de Datos Personales", policy3: "Prevención de la ESNNA en turismo"
+                },
+                en: {
+                    contact: "CONTACT", about: "ABOUT US", home: "HOME", tours: "TOURS", shortTours: "SHORT TOURS", schoolTrips: "SCHOOL TRIPS", adventure: "ADVENTURE",
+                    navT1: "Cusco Basic Package (3D/2N)", navT2: "Cusco Classic Package (4D/3N)", navT3: "Cusco Archaeological Package (5D/4N)", navT4: "Cusco Total Experience (6D/5N)", navT5: "Inka Jungle (4D/3N)", navT6: "Salkantay Trek (5D/4N)", navT7: "Classic Inca Trail (4D/3N)", navT8: "Extreme Choquequirao Trek (4D/3N)",
+                    shortTour1: "Cusco City Tour (Half Day)", shortTour2: "Chinchero, Maras & Moray", shortTour3: "Cusco South Valley (Half Day)", shortTour4: "Sacred Valley (Full Day)",
+                    school1: "Imperial Route: Arequipa - Cusco - Oxapampa | 6D/5N", school2: "Southern Route: Chile - Santiago | 5D/4N", school3: "Northern Route: Tumbes - Guayaquil | 5D/4N", school4: "Cusco - Machu Picchu - Jungle | 5D/4N",
+                    adv1: "ATVs - Maras & Moray", adv2: "Via Ferrata and Zipline", adv3: "Vilcanota River Rafting", adv4: "Bungee Jumping and Slingshot", adv5: "Paragliding over Sacred Valley",
+
+                    vsHeroPre: "SOUTHERN TREASURES", vsHeroT1: "South Valley", vsHeroT2: "The Hidden Valley",
+                    vsHeroSub: "An unconventional circuit. Marvel at the perfect hydraulic engineering of Tipón, explore the pre-Inca city of Pikillacta, and admire the impressive frescoes of Andahuaylillas.",
+                    btnIti: "View Itinerary", btnReserve: "Book Now",
+
+                    info1Title: "Duration", info1: "Half Day (5 hrs)", info2Title: "Trip Type", info2: "Archaeological", info3Title: "Transport", info3: "Tourist Bus", info4Title: "Departures", info4: "Daily",
+
+                    vsWelcomeT1: "Discover what", vsWelcomeT2: "others don't see",
+                    vsWelcomeP1: "Hello! We know you're looking for something beyond the traditional. The South Valley is that magical corner where water \"sings\" through Inca canals and history is felt in every wall.",
+                    vsWelcomeP2: "On this half-day tour, we will take you to explore the amazing engineering of <strong>Tipón</strong>, the pre-Inca mysteries of <strong>Pikillacta</strong>, and the dazzling baroque art of <strong>Andahuaylillas</strong>. Get ready for a trip full of surprises and rich culture!",
+
+                    vsHighTitle1: "Highlights of the", vsHighTitle2: "South Valley",
+                    vsHigh1T: "Tipón", vsHigh1D: "A masterpiece of Inca hydraulic engineering. Its aqueducts and water fountains still flow perfectly to this day.",
+                    vsHigh2T: "Pikillacta", vsHigh2D: "The immense pre-Inca city of the Wari culture. Walk through its narrow streets and gigantic walls that defy time.",
+                    vsHigh3T: "Andahuaylillas", vsHigh3D: "Known as the \"Sistine Chapel of the Americas\". Be amazed by its impressive frescoes and gold-leaf decoration.",
+
+                    itiTitle1: "Your Itinerary", itiTitle2: "Step by Step",
+                    vsDay1T: "Tipón: The Cult of Water", vsDay1D: "Our adventure begins by picking you up at the hotel. We will travel south of Cusco until we reach Tipón. Here, our guide will explain how the Incas mastered the flow of water for their sophisticated agricultural systems. You can take incredible photos of its impressive intact terraces and ceremonial fountains.",
+                    vsDay2T: "Pikillacta: The Stone Giants", vsDay2D: "We will continue our journey to the extensive and mysterious Pikillacta. Unlike organic Inca curves, here you will walk through straight, symmetrical streets of the Wari culture. You will be amazed by the plaster-covered walls that once housed over 10,000 people in ancient times.",
+                    vsDay3T: "Andahuaylillas: Colonial Art", vsDay3D: "To finish with a flourish, we will visit the quiet town of Andahuaylillas. We will enter its modest church, which inside hides a unique visual spectacle: golden ceilings and spectacular murals that fully justify its title as the \"Sistine Chapel of the Americas\". Finally, we will return to the city of Cusco.",
+
+                    incTitle: "What's Included?", excTitle: "Not Included",
+                    vsInc1: "Tourist transport (round trip).", vsInc2: "Bilingual Official Tour Guide (Spanish/English).", vsInc3: "Pick up from your hotel (if in the historic center).", vsInc4: "Permanent assistance throughout the tour.",
+                    vsExc1: "Cusco Tourist Ticket (Required for Tipón and Pikillacta).", vsExc2: "Entrance to the Andahuaylillas Church.", vsExc3: "Meals and drinks.", vsExc4: "Tips (optional).",
+
+                    bringTitle1: "The Traveler's", bringTitle2: "Backpack",
+                    vsBring1: "Cusco Tourist Ticket", vsBring2: "Sunblock and a wide-brimmed hat", vsBring3: "Comfortable shoes for walking in Pikillacta", vsBring4: "Camera ready for spectacular photos",
+
+                    vsGalTitle: "Postcards from the South Valley", vsPhoto1: "Tipón Terraces", vsPhoto2: "Pikillacta Walls", vsPhoto3: "Art in Andahuaylillas",
+                    vsCta1: "Ready to step out of", vsCta2: "the conventional?", vsCtaDesc: "Secure your spot on the South Valley Tour today.",
+
+                    footerAboutTitle: "ABOUT US", footerAboutUs: "About us", footerConditions: "Terms and conditions", footerPayments: "Payment methods",
+                    footerMenuTitle: "MAIN MENU", footerContactTitle: "CONTACT US",
+                    footerAddress: "Urbanización Tito Z-26<br>Wanchag - Cusco",
+                    footerCopyright: "© 2026 EXPLORE PERU TRAVEL | Travel and Tourism Agency",
+                    policiesTitle: "POLICIES", policy1: "Payment Policies", policy2: "Data Protection", policy3: "Child Protection in Tourism"
+                }
+            };
+
+            let currentLang = localStorage.getItem('preferredLang') || 'es';
+
+            // SOLUCIÓN DEFINITIVA BUG DE HTML: Se usa directamente innerHTML para todo
+            // dado que en el HTML nos aseguramos que los atributos data-key
+            // estén en contenedores limpios (como spans o p), por tanto no se borran los íconos (<i class="...">)
+            function applyTranslations(lang) {
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    const translation = translations[lang]?.[key];
+                    if (translation) {
+                        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                            el.placeholder = translation;
+                        } else if (el.tagName === 'SELECT') {
+                            const option = el.querySelector(`option[data-key="${key}"]`);
+                            if (option) option.textContent = translation;
+                        } else {
+                            // Gracias a esta línea, el <strong> se renderiza como HTML sin romper íconos
+                            el.innerHTML = translation;
+                        }
+                    }
+                });
+
+                currentLang = lang;
+                localStorage.setItem('preferredLang', lang);
+
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+                });
+            }
+
+            const langBtns = document.querySelectorAll('.lang-btn');
+            if (langBtns.length > 0) {
+                langBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const lang = btn.getAttribute('data-lang');
+                        applyTranslations(lang);
+                    });
+                });
+            }
+
+            applyTranslations(currentLang);
+        });
+    </script>
+</body>
+
+</html>
